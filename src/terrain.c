@@ -27,7 +27,7 @@ int getY(terrain * leTerrain){
 	return leTerrain->dimy;
 }
 char * getnom(terrain * leTerrain){
-	return &(leTerrain->nomTerrain);
+	return leTerrain->nomTerrain;
 }
 char getgrilleXY (int x, int y,terrain * leTerrain){
 	return leTerrain->grille[x][y];
@@ -48,14 +48,25 @@ void TerrainInit (terrain * leTerrain){
 
 terrain * TerrainCreer (int dimx, int dimy, char nomTerrain[MAX_CHAR_NOM_TERRAIN]){
 	terrain * temp = NULL;
-	temp = malloc(sizeof(terrain));
+	temp = malloc(sizeof(terrain)); //semble avoir un probleme ici
 	setXY(dimx,dimy,temp);
 	setnomTerrain(nomTerrain,temp);
 	TerrainInit(temp);
 	return temp;
 }
 
-/*
-void TerrainCreerFichier (terrain * leTerrain);
 
+void TerrainCreerFichier (terrain * leTerrain){
+	FILE * fichier;
+	errno_t err;
+	err = fopen_s(&fichier, "./data/test.terrain","w");
+	int i, j;
+	for(i = 0; i<(leTerrain->dimx); i++){
+		for(j = 0; j<leTerrain->dimy; j++){
+			//fscanf(fichier,"%c ", leTerrain->grille[i][j]);
+		}
+		 //fscanf(fichier,"/n");
+	}
+}
+/*
 terrain * TerrainLireFichier (char nomTerrain[MAX_CHAR_NOM_TERRAIN]); */
