@@ -5,4 +5,4 @@
 
 typedef struct coordonnees{
     int x, y;
-}
+};
