@@ -8,6 +8,17 @@
 #define MAX_CHAR_NOM_TERRAIN 101
 #define MAX_TAILLE_XY 1000
 
+/** @struct terrain
+ *  @brief Structure definissant un terrain et ses dimensions
+ *  @var terrain::dimx
+ *  Largeur du terrain
+ *  @var terrain::dimy
+ *  Hauteur du terrain
+ *	@var terrain::nomTerrain
+ *	Nom du terrain en chaine de carractere limité a 101 carracteres
+ *	@var terrain::grille
+ *	Grille a deux dimension de carractere definisant la grille du terrain (sol / mur)
+ */
 typedef struct MTerrain{
     int dimx, dimy;
     char nomTerrain[MAX_CHAR_NOM_TERRAIN];
@@ -21,13 +32,13 @@ typedef struct MTerrain{
 	@param y Entier pour la hauteur du terrain
 	@param leTerrain Pointeur sur la structure terrain a editer
 */
-void setXY (int x, int y, terrain * leTerrain);
+void setXY_terr (int x, int y, terrain * leTerrain);
 /**
 	@brief Edition du nom du terrain dans sa structure
 	@param nom Chaine de carractere ne pouvant dépasser les 101 carractere et definissant le nom du terrain
 	@param leTerrain Pointeur sur la structure terrain a editer
 */
-void setnomTerrain(char nom[MAX_CHAR_NOM_TERRAIN], terrain * leTerrain);
+void setnomTerrain_terr(char nom[MAX_CHAR_NOM_TERRAIN], terrain * leTerrain);
 /**
 	@brief Edition de la grille du terrain au coordonnées X/Y
 	@param x Valeur ou le point de la grille doit etre edité en X
@@ -35,25 +46,25 @@ void setnomTerrain(char nom[MAX_CHAR_NOM_TERRAIN], terrain * leTerrain);
 	@param leTerrain Pointeur sur la structure terrain a editer
 	@param valeur Carractere definissant ce que serra la case
 */
-void setgrilleXY (int x, int y, terrain * leTerrain, char valeur);
+void setgrilleXY_terr (int x, int y, terrain * leTerrain, char valeur);
 /**
 	@brief Recupère la dimension en X de la structure terrain
-	@param leTerrain Pointeur sur la structure terrain a editer
+	@param leTerrain Pointeur sur la structure terrain a lire
 	@return Entier de la dimension en X du terrain
 */
-int getX(terrain * leTerrain);
+int getX_terr(terrain * leTerrain);
 /**
 	@brief Recupère la dimension en Y de la structure terrain
-	@param leTerrain Pointeur sur la structure terrain a editer
+	@param leTerrain Pointeur sur la structure terrain a lire
 	@return Entier de la dimension en Y du terrain
 */
-int getY(terrain * leTerrain);
+int getY_terr(terrain * leTerrain);
 /**
 	@brief Recupère le nom de la structure terrain
-	@param leTerrain Pointeur sur la structure terrain a editer
+	@param leTerrain Pointeur sur la structure terrain a lire
 	@return Chaine de carractere du nom du terrain pointé
 */
-char * getnom(terrain * leTerrain);
+char * getnom_terr(terrain * leTerrain);
 /**
 	@brief Recupere la valleur de la grille au point X/Y
 	@param x Position en x a recuperer
@@ -61,14 +72,14 @@ char * getnom(terrain * leTerrain);
 	@param leTerrain Pointeur sur la structure terrain a editer
 	@return Le carractere de la grille en X/Y
 */
-char getgrilleXY (int x, int y,terrain * leTerrain);
+char getgrilleXY_terr (int x, int y,terrain * leTerrain);
 
 
 /**
 	@brief Sert a remplir la grille de terrain avec un valeur par défaut
 	@param leTerrain Pointeur sur la structure terrain a editer
 */
-void TerrainInitGrille (terrain * leTerrain);
+void TerrainInitGrille_terr (terrain * leTerrain);
 /**
 	@brief Creer un terrain avec les dimension et le nom choisi et initialise sa grille en appelant TerrainInitGrille
 	@param dimx La largeur du terrain
@@ -76,18 +87,18 @@ void TerrainInitGrille (terrain * leTerrain);
 	@param nomTerrain Nom du terrain a creer
 	@return Pointeur vers le terrain nouvellement creer
 */
-terrain * TerrainCreer (int dimx, int dimy, char nomTerrain[MAX_CHAR_NOM_TERRAIN]);
+terrain * TerrainCreer_terr (int dimx, int dimy, char nomTerrain[MAX_CHAR_NOM_TERRAIN]);
 /**
 	@brief Sauvegarde le terrain pointé dans un fichier (.terrain)
 	@param leTerrain Pointeur sur la structure terrain a sauvegarder
 */
-void TerrainCreerFichier (terrain * leTerrain);
+void TerrainCreerFichier_terr (terrain * leTerrain);
 /**
 	@brief Li le fichier terrain de nom spécifié et le retourne par un pointeur
 	@param nomTerrain Nom du fichier terrain à lire
 	@return Pointeur vers la structure lu dans le fichier
 */
-terrain * TerrainLireFichier (char nomTerrain[MAX_CHAR_NOM_TERRAIN]);
+terrain * TerrainLireFichier_terr (char nomTerrain[MAX_CHAR_NOM_TERRAIN]);
 
 
 
