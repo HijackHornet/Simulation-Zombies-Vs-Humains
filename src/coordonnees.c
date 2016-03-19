@@ -3,32 +3,39 @@
 #include <stdlib.h>
 #include <math.h>
 
-
-void setXYcord_Cord (int x, int y, coordonnees * laCord){
-
-	laCord->Xcord=x;
-	laCord->Ycord=y;
+int main(int argc, char *argv[])
+{
+    
+    return 0;
 }
 
-int getXcord_Cord(coordonnees * laCord){
-	return laCord->Xcord;
+
+
+void setXYCoord_Coord (int x, int y, Coordonnees * pCoord){
+
+	pCoord->xCoord=x;
+	pCoord->yCoord=y;
 }
 
-int getYcord_Cord(coordonnees * laCord){
-	return laCord->Ycord;
+int getXCoord_Coord(Coordonnees * pCoord){
+	return pCoord->xCoord;
 }
 
-float distanceEntreDeuxCoordonnees_Cord (coordonnees * cord1, coordonnees * cord2){
-	return (float) (sqrt(pow((double)((cord1->Xcord)-(cord2->Xcord)),2)+pow((double)((cord1->Ycord)-(cord2->Ycord)),2)));
+int getYCoord_Coord(Coordonnees * pCoord){
+	return pCoord->yCoord;
 }
 
-int sontEgale_Cord (coordonnees * cord1, coordonnees * cord2){
+float distanceEntreDeuxCoordonnees_Coord (Coordonnees * coord1, Coordonnees * coord2){
+	return (float) (sqrt(pow((double)((coord1->xCoord)-(coord2->xCoord)),2)+pow((double)((coord1->yCoord)-(coord2->yCoord)),2)));
+}
+
+int sontEgale_Coord (Coordonnees * coord1, Coordonnees * coord2){
 	int x1, x2, y1, y2;
 
-	x1 = getXcord_Cord(cord1);
-	x2 = getXcord_Cord(cord2);
-	y1 = getYcord_Cord(cord1);
-	y2 = getYcord_Cord(cord2);
+	x1 = getXCoord_Coord(coord1);
+	x2 = getXCoord_Coord(coord2);
+	y1 = getYCoord_Coord(coord1);
+	y2 = getYCoord_Coord(coord2);
 
 
 	if((x1==x2)&&(y1==y2)){

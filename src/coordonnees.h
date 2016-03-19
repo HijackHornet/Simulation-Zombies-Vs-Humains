@@ -1,5 +1,5 @@
 /**
-   @file coordonnees.h
+   @file coordonnes.h
    @brief  Définit les coordonnées atomiques du terrain et ses accesseurs
 */
 
@@ -7,54 +7,54 @@
 #define _COORDONNEES
 
 
-/** @struct coordonnees
+/** @struct Coordonnes
  *  @brief Structure definissant des coordonnees en deux dimension (pour des entitées)
- *  @var coordonnees::Xcord
+ *  @var coordonnees::xCoord
  *  Position sur l'axe des X
-  *  @var coordonnees::Ycord
+  * @var coordonnees::yCoor
  *  Position sur l'axe des Y
  */
 typedef struct Mcoordonnees{
-    int Xcord;
-	int Ycord;
-} coordonnees;
+    int xCoord;
+    int yCoord;
+} Coordonnees;
 
 
 /**
-	@brief Edition de XCord et de YCord dans la structure
-	@param Xcord Valeur sur l'axe des x
-	@param ycord Valeur sur l'axe des y
-	@param laCord Pointeur sur la structure coordonnees a editer
+	@brief Edition de xCoord et de yCoord dans la structure
+	@param xCoord Valeur sur l'axe des x
+	@param yCoord Valeur sur l'axe des y
+	@param pCoord Pointeur sur la structure Coordonnees a editer
 */
-void setXYcord_Cord (int x, int y, coordonnees * laCord);
+void setXYcoord_Coord (int x, int y, Coordonnees * pCoord);
 /**
-	@brief Recupère Xcord
-	@param laCord Pointeur sur la structure coordonnees a lire
-	@return La valeur de Xcord
+	@brief Recupère xCoord
+	@param pCoord Pointeur sur la structure Coordonnees a lire
+	@return La valeur de xCoord
 */
-int getXcord_Cord(coordonnees * laCord);
+int getXCoord_Coord(Coordonnees * pCoord);
 /**
-	@brief Recupère Ycord
-	@param laCord Pointeur sur la structure coordonnees a lire
-	@return La valeur de Ycord
+	@brief Recupère yCoord
+	@param pCoord Pointeur sur la structure Coordonnees a lire
+	@return La valeur de YCoord
 */
-int getYcord_Cord(coordonnees * laCord);
+int getYCoord_Coord(Coordonnees * pCoord);
 
 /**
-	@brief Retourne la distance entre deux coordonnes
-	@param cord1 Coordonnees de la premier entitée
-	@param cord2 Coordonnees de la seconde entitée
+	@brief Retourne la distance entre deux Coordonnees
+	@param coord1 Coordonnees de la premier entitée
+	@param coord2 Coordonnees de la seconde entitée
 	@return float représentant la distance entre ses deux coordonnées
 */
-float distanceEntreDeuxCoordonnees_Cord (coordonnees * cord1, coordonnees * cord2);
+float distanceEntreDeuxCoordonnees_Coord (Coordonnees * coord1, Coordonnees * coord2);
 
 /**
-	@brief Vérifie si deux coordonnees donné sont identiques.
-	@param cord1 Coordonnees de la premier entitée
-	@param cord2 Coordonnees de la seconde entitée
+	@brief Vérifie si deux Coordonnees donné sont identiques.
+	@param coord1 Coordonnees de la premier entitée
+	@param coord2 Coordonnees de la seconde entitée
 	@return Retourne 1 si elles sont identique, 0 sinon
 */
-int sontEgale_Cord (coordonnees * cord1, coordonnees * cord2);
+int sontEgale_Coord (Coordonnees * coord1, Coordonnees * coord2);
 
 
 #endif
