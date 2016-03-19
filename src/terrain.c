@@ -2,11 +2,8 @@
    @file terrain.c
    @brief  Implémente les fonctions de manipulation du Terrain
 */
-#include <stdio.h>
-#include <stdlib.h>
-#include <errno.h>
-#include "terrain.h"
 
+#include "terrain.h"
 
 void setXY_terr (int x, int y, Terrain * pTerrain){
 

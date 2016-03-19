@@ -5,6 +5,12 @@
 #ifndef _TERRAIN
 #define _TERRAIN
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <errno.h>
+
+#include "caseDeplacement.h"
+
 #define MAX_CHAR_NOM_TERRAIN 101
 #define MAX_TAILLE_XY 1000
 
@@ -22,8 +28,7 @@
 typedef struct MTerrain{
     int dimX, dimY;
     char nomTerrain[MAX_CHAR_NOM_TERRAIN];
-	char grille[MAX_TAILLE_XY][MAX_TAILLE_XY];
-    
+    caseDeplacement grille[MAX_TAILLE_XY][MAX_TAILLE_XY];
 } Terrain;
 
 /**
