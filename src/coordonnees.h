@@ -26,7 +26,7 @@ typedef struct Mcoordonnees{
 	@param yCoord Valeur sur l'axe des y
 	@param pCoord Pointeur sur la structure Coordonnees a editer
 */
-void setXYcoord_Coord (int x, int y, Coordonnees * pCoord);
+void setXYCoord_Coord (int x, int y, Coordonnees * pCoord);
 /**
 	@brief Recupère xCoord
 	@param pCoord Pointeur sur la structure Coordonnees a lire
@@ -55,6 +55,11 @@ float distanceEntreDeuxCoordonnees_Coord (Coordonnees * coord1, Coordonnees * co
 	@return Retourne 1 si elles sont identique, 0 sinon
 */
 int sontEgale_Coord (Coordonnees * coord1, Coordonnees * coord2);
+
+/**
+	@brief Teste le module coordonnees et ses fonctions
+*/
+void testFonctions_Coord();
 
 
 #endif

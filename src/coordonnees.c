@@ -2,9 +2,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-
+#include <assert.h>
 
 void setXYCoord_Coord (int x, int y, Coordonnees * pCoord){
+	assert(x>=0);
+	assert(y>=0);
 
 	pCoord->xCoord=x;
 	pCoord->yCoord=y;
@@ -38,3 +40,26 @@ int sontEgale_Coord (Coordonnees * coord1, Coordonnees * coord2){
 		return 0;
 	}
 }
+
+void testFonctions_Coord(){
+	int dimx, dimy, dimx2, dimy2;
+	int dimtestx, dimtesty;
+	int egaleOuPas;
+	float distance12;
+	Coordonnees coord, coord2;
+
+	dimx = 100; dimx2 = 104;
+	dimy = 100; dimy2 = 24;
+	setXYCoord_Coord(dimx,dimy, &coord);
+	setXYCoord_Coord(dimx2,dimy2, &coord2);
+	dimtestx = getXCoord_Coord(&coord);
+	dimtesty = getYCoord_Coord(&coord);
+	distance12 = distanceEntreDeuxCoordonnees_Coord(&coord, &coord2);
+	assert(distance12>=0);
+	egaleOuPas = sontEgale_Coord(&coord,&coord2);
+	assert(egaleOuPas==0);
+	printf("Execution du module coordonnees et de ses fonctions sans erreurs... \n");
+}
+
+
+
