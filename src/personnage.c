@@ -1,7 +1,7 @@
 #include "personnage.h"
 
 
-char verifDeplacementHaut_perso(Policier * pPolicier, Terrain * pTerrain){
+char verifDeplacementBas_perso(Policier * pPolicier, Terrain * pTerrain){
     if((pPolicier -> coord -> yCoord) > 0){
 	return 1;
     }
@@ -11,7 +11,7 @@ char verifDeplacementHaut_perso(Policier * pPolicier, Terrain * pTerrain){
     }
 }
 
-char verifDeplacementBas_perso(Policier * pPolicier, Terrain * pTerrain){
+char verifDeplacementHaut_perso(Policier * pPolicier, Terrain * pTerrain){
     if((pPolicier -> coord -> yCoord) < (pTerrain -> dimY)){
 	return 1;
     }
@@ -43,10 +43,10 @@ void deplacementHaut_perso(Policier * pPolicier, Terrain * pTerrain){
     int xPolicier = pPolicier -> coord -> xCoord;
     int yPolicier = pPolicier -> coord -> yCoord;
     
-    pTerrain -> grille[yPolicier][xPolicier].persoCase = LIBRE;
+    pTerrain -> grille[xPolicier][yPolicier].persoCase = LIBRE;
 	
-    (pPolicier -> coord -> xCoord)--;
-    yPolicier--;
+    (pPolicier -> coord -> yCoord)++;
+    yPolicier++;
 
     pTerrain -> grille[yPolicier][xPolicier].persoCase = POLICIER;
 }
