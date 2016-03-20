@@ -1,4 +1,4 @@
-#include "policier.h"
+#include "personnage.h"
 
 
 char verifDeplacementHaut_perso(Policier * pPolicier, Terrain * pTerrain){
