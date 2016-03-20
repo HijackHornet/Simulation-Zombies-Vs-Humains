@@ -2,12 +2,13 @@
    @file terrain.c
    @brief  Définit les fonctions et les structures du terrain
 */
-#ifndef _TERRAIN
-#define _TERRAIN
+#ifndef _TERRAIN_H
+#define _TERRAIN_H
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <errno.h>
+#include <assert.h>
 
 #include "caseDeplacement.h"
 
@@ -51,7 +52,8 @@ void setnomTerrain_terr(char nom[MAX_CHAR_NOM_TERRAIN], Terrain * pTerrain);
 	@param pTerrain Pointeur sur la structure Terrain a editer
 	@param valeur Carractere definissant ce que serra la case
 */
-void setgrilleXY_terr (int x, int y, Terrain * pTerrain, char valeur);
+void setgrilleXY_terr (int x, int y, Terrain * pTerrain, caseDeplacement caseDep);
+
 /**
 	@brief Recupère la dimension en X de la structure Terrain
 	@param pTerrain Pointeur sur la structure Terrain a lire
@@ -77,7 +79,7 @@ char * getnom_terr(Terrain * pTerrain);
 	@param pTerrain Pointeur sur la structure Terrain a editer
 	@return Le carractere de la grille en X/Y
 */
-char getgrilleXY_terr (int x, int y,Terrain * pTerrain);
+caseDeplacement getgrilleXY_terr (int x, int y,Terrain * pTerrain);
 
 
 /**
