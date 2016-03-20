@@ -1,7 +1,7 @@
 #include "policier.h"
 
 
-char verifDeplacementHaut_pol(Policier * pPolicier, Terrain * pTerrain){
+char verifDeplacementHaut_perso(Policier * pPolicier, Terrain * pTerrain){
     if((pPolicier -> coord -> yCoord) > 0){
 	return 1;
     }
@@ -11,7 +11,7 @@ char verifDeplacementHaut_pol(Policier * pPolicier, Terrain * pTerrain){
     }
 }
 
-char verifDeplacementBas_pol(Policier * pPolicier, Terrain * pTerrain){
+char verifDeplacementBas_perso(Policier * pPolicier, Terrain * pTerrain){
     if((pPolicier -> coord -> yCoord) < (pTerrain -> dimY)){
 	return 1;
     }
@@ -20,7 +20,7 @@ char verifDeplacementBas_pol(Policier * pPolicier, Terrain * pTerrain){
     }
 }
 
-char verifDeplacementGauche_pol(Policier *  pPolicier, Terrain * pTerrain){
+char verifDeplacementGauche_perso(Policier *  pPolicier, Terrain * pTerrain){
     if((pPolicier -> coord -> xCoord) > 0){
 	return 1;
     }
@@ -30,7 +30,7 @@ char verifDeplacementGauche_pol(Policier *  pPolicier, Terrain * pTerrain){
     }
 }
 
-char verifDeplacementDroite_pol(Policier * pPolicier, Terrain * pTerrain){
+char verifDeplacementDroite_perso(Policier * pPolicier, Terrain * pTerrain){
     if((pPolicier -> coord -> xCoord) < (pTerrain -> dimX)){
 	return 1;
     }
@@ -39,7 +39,7 @@ char verifDeplacementDroite_pol(Policier * pPolicier, Terrain * pTerrain){
     }
 }
 
-void deplacementHaut(Policier * pPolicier, Terrain * pTerrain){
+void deplacementHaut_perso(Policier * pPolicier, Terrain * pTerrain){
     int xPolicier = pPolicier -> coord -> xCoord;
     int yPolicier = pPolicier -> coord -> yCoord;
     
