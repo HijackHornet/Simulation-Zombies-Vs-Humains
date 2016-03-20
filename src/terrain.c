@@ -1,81 +1,82 @@
 /**
    @file terrain.c
-   @brief  Implémente les fonctions de manipulation du terrain
+   @brief  Implémente les fonctions de manipulation du Terrain
 */
 #include <stdio.h>
 #include <stdlib.h>
+#include <errno.h>
 #include "terrain.h"
 
 
-void setXY_terr (int x, int y, terrain * leTerrain){
+void setXY_terr (int x, int y, Terrain * pTerrain){
 
-	leTerrain->dimx = x;
-	leTerrain->dimy = y;
+	pTerrain->dimX = x;
+	pTerrain->dimY = y;
 }
 
 
-void setnomTerrain_terr(char * nom, terrain * leTerrain){
+void setnomTerrain_terr(char * nom, Terrain * pTerrain){
 	int i;
 	for (i=0; i<MAX_CHAR_NOM_TERRAIN; i++){
-		leTerrain->nomTerrain[i] = nom[i];}
+		pTerrain->nomTerrain[i] = nom[i];}
 }
 
-void setgrilleXY_terr (int x, int y, terrain * leTerrain, char valeur){
-	leTerrain->grille[x][y] = valeur;
+void setgrilleXY_terr (int x, int y, Terrain * pTerrain, char valeur){
+	pTerrain->grille[x][y] = valeur;
 }
 
-int getX_terr(terrain * leTerrain){
-	return leTerrain->dimx;
+int getX_terr(Terrain * pTerrain){
+	return pTerrain->dimX;
 }
 
-int getY_terr(terrain * leTerrain){
-	return leTerrain->dimy;
+int getY_terr(Terrain * pTerrain){
+	return pTerrain->dimY;
 }
 
-char * getnom_terr(terrain * leTerrain){
-	return leTerrain->nomTerrain;
+char * getnom_terr(Terrain * pTerrain){
+	return pTerrain->nomTerrain;
 }
 
-char getgrilleXY_terr (int x, int y,terrain * leTerrain){
-	return leTerrain->grille[x][y];
+char getgrilleXY_terr (int x, int y,Terrain * pTerrain){
+	return pTerrain->grille[x][y];
 }
 
 
 
-void TerrainInitGrille_terr (terrain * leTerrain){
+void terrainInitGrille_terr (Terrain * pTerrain){
 	int i,j;
 	char X = 'X';
-	for(i=0;i<(leTerrain->dimx);i++){
-		for(j=0;j<(leTerrain->dimy);j++){
-			setgrilleXY_terr(i,j,leTerrain,X);
+	for(i=0;i<(pTerrain->dimX);i++){
+		for(j=0;j<(pTerrain->dimY);j++){
+			setgrilleXY_terr(i,j,pTerrain,X);
 		}
 	}
 
 }
 
-terrain * TerrainCreer_terr (int dimx, int dimy, char nomTerrain[MAX_CHAR_NOM_TERRAIN]){
-	terrain * temp = NULL;
-	temp = malloc(sizeof(terrain)); //semble avoir un probleme ici
-	setXY_terr(dimx,dimy,temp);
+Terrain * terrainCreer_terr (int dimX, int dimY, char nomTerrain[MAX_CHAR_NOM_TERRAIN]){
+	Terrain * temp = NULL;
+	temp = malloc(sizeof(Terrain)); //semble avoir un probleme ici
+	setXY_terr(dimX,dimY,temp);
 	setnomTerrain_terr(nomTerrain,temp);
-	TerrainInitGrille_terr(temp);
+	terrainInitGrille_terr(temp);
 	return temp;
 }
 
 
-void TerrainCreerFichier_terr (terrain * leTerrain){
+void terrainCreerFichier_terr (Terrain * pTerrain){
 	FILE * fichier;
-	errno_t err;
-	//err = fopen_s(&fichier, "./data/test.terrain","w");
+	int err;
+	//err = fopen_s(&fichier, "./data/test.Terrain","w");
 	int i, j;
-	for(i = 0; i<(leTerrain->dimx); i++){
-		for(j = 0; j<leTerrain->dimy; j++){
-			//fscanf(fichier,"%c ", leTerrain->grille[i][j]);
+	for(i = 0; i<(pTerrain->dimX); i++){
+		for(j = 0; j<pTerrain->dimY; j++){
+			//fscanf(fichier,"%c ", pTerrain->grille[i][j]);
 		}
 		 //fscanf(fichier,"/n");
 	}
 }
 /*
-terrain * TerrainLireFichier (char nomTerrain[MAX_CHAR_NOM_TERRAIN]);
+Terrain * terrainLireFichier (char nomTerrain[MAX_CHAR_NOM_TERRAIN]);
 A CODER QUAND LE FONCTION DU DESSUS MARCHERA
 */
