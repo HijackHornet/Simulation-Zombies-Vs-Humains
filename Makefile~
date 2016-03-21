@@ -1,9 +1,0 @@
-CC = gcc
-CFLAGS = -Wall -ggdb
-
-SRC_TARGET = src
-BIN_TARGET = bin
-DATA_TARGET = data
-
-all:
-	$(CC) $(CFLAGS) -o $@ -c $<
