@@ -1,8 +1,8 @@
 #include "personnage.h"
 
 
-char verifDeplacementBas_perso(Policier * pPolicier, Terrain * pTerrain){
-    if((pPolicier -> coord -> yCoord) > 0){
+char verifDeplacementBas_perso(Perso * pPerso, Terrain * pTerrain){
+    if((pPerso -> coord -> yCoord) > 0){
 	return 1;
     }
 
@@ -11,8 +11,8 @@ char verifDeplacementBas_perso(Policier * pPolicier, Terrain * pTerrain){
     }
 }
 
-char verifDeplacementHaut_perso(Policier * pPolicier, Terrain * pTerrain){
-    if((pPolicier -> coord -> yCoord) < (pTerrain -> dimY)){
+char verifDeplacementHaut_perso(Perso * pPerso, Terrain * pTerrain){
+    if((pPerso -> coord -> yCoord) < (pTerrain -> dimY)){
 	return 1;
     }
     else{
@@ -20,8 +20,8 @@ char verifDeplacementHaut_perso(Policier * pPolicier, Terrain * pTerrain){
     }
 }
 
-char verifDeplacementGauche_perso(Policier *  pPolicier, Terrain * pTerrain){
-    if((pPolicier -> coord -> xCoord) > 0){
+char verifDeplacementGauche_perso(Perso *  pPerso, Terrain * pTerrain){
+    if((pPerso -> coord -> xCoord) > 0){
 	return 1;
     }
 
@@ -30,8 +30,8 @@ char verifDeplacementGauche_perso(Policier *  pPolicier, Terrain * pTerrain){
     }
 }
 
-char verifDeplacementDroite_perso(Policier * pPolicier, Terrain * pTerrain){
-    if((pPolicier -> coord -> xCoord) < (pTerrain -> dimX)){
+char verifDeplacementDroite_perso(Perso * pPerso, Terrain * pTerrain){
+    if((pPerso -> coord -> xCoord) < (pTerrain -> dimX)){
 	return 1;
     }
     else{
@@ -39,14 +39,58 @@ char verifDeplacementDroite_perso(Policier * pPolicier, Terrain * pTerrain){
     }
 }
 
-void deplacementHaut_perso(Policier * pPolicier, Terrain * pTerrain){
-    int xPolicier = pPolicier -> coord -> xCoord;
-    int yPolicier = pPolicier -> coord -> yCoord;
+void deplacementHaut_perso(Perso * pPerso, Terrain * pTerrain){
+    assert(verifDeplacementHaut_perso(pPerso, pTerrain));
     
-    pTerrain -> grille[xPolicier][yPolicier].persoCase = LIBRE;
+    int xPerso = pPerso -> coord -> xCoord;
+    int yPerso = pPerso -> coord -> yCoord;
+    
+    pTerrain -> grille[xPerso][yPerso].persoCase = NULL;
 	
-    (pPolicier -> coord -> yCoord)++;
-    yPolicier++;
+    (pPerso -> coord -> yCoord)++;
+    yPerso++;
 
-    pTerrain -> grille[yPolicier][xPolicier].persoCase = POLICIER;
+    pTerrain -> grille[xPerso][yPerso].persoCase = pPerso;
+}
+
+void deplacementBas_perso(Perso * pPerso, Terrain * pTerrain){
+    assert(verifDeplacementBas_perso(pPerso, pTerrain));
+    
+    int xPerso = pPerso -> coord -> xCoord;
+    int yPerso = pPerso -> coord -> yCoord;
+    
+    pTerrain -> grille[xPerso][yPerso].persoCase = NULL;
+	
+    (pPerso -> coord -> yCoord)--;
+    yPerso--;
+
+    pTerrain -> grille[xPerso][yPerso].persoCase = pPerso;
+}
+
+void deplacementGauche_perso(Perso * pPerso, Terrain * pTerrain){
+    assert(verifDeplacementGauche_perso(pPerso, pTerrain));
+    
+    int xPerso = pPerso -> coord -> xCoord;
+    int yPerso = pPerso -> coord -> yCoord;
+    
+    pTerrain -> grille[xPerso][yPerso].persoCase = NULL;
+	
+    (pPerso -> coord -> xCoord)--;
+    xPerso--;
+
+    pTerrain -> grille[xPerso][yPerso].persoCase = pPerso;
+}
+
+void deplacementDroite_perso(Perso * pPerso, Terrain * pTerrain){
+    assert(verifDeplacementDroite_perso(pPerso, pTerrain));
+    
+    int xPerso = pPerso -> coord -> xCoord;
+    int yPerso = pPerso -> coord -> yCoord;
+    
+    pTerrain -> grille[xPerso][yPerso].persoCase = NULL;
+	
+    (pPerso -> coord -> xCoord)++;
+    xPerso++;
+
+    pTerrain -> grille[xPerso][yPerso].persoCase = pPerso;
 }

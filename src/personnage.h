@@ -1,16 +1,29 @@
+#ifndef PERSONNAGE_H
+#define PERSONNAGE_H
+
 #include "coordonnees.h"
 #include "terrain.h"
+#include "assert.h"
 
-typedef struct MPolicier {
+enum typePerso {LIBRE, POLICIER, ZOMBIE, CITOYEN};
+
+typedef struct MPerso {
     Coordonnees * coord;
-} Policier;
+    enum typePerso type;
+} Perso;
 
-char verifDeplacementHaut_pol(Policier * pPolicier, Terrain * pTerrain);
+char verifDeplacementHaut_perso(Perso * pPerso, Terrain * pTerrain);
 
-char verifDeplacementBas_pol(Policier * pPolicier, Terrain * pTerrain);
+char verifDeplacementBas_perso(Perso * pPerso, Terrain * pTerrain);
 
-char verifDeplacementGauche_pol(Policier * pPolicier, Terrain * pTerrain);
+char verifDeplacementGauche_perso(Perso * pPerso, Terrain * pTerrain);
 
-char verifDeplacementDroite_pol(Policier * pPolicier, Terrain * pTerrain);
+char verifDeplacementDroite_perso(Perso * pPerso, Terrain * pTerrain);
 
-void deplacementHaut(Policier * pPolicier, Terrain * pTerrain);
+void deplacementHaut_perso(Perso * pPerso, Terrain * pTerrain);
+
+void deplacementBas_perso(Perso * pPerso, Terrain * pTerrain);
+
+
+
+#endif

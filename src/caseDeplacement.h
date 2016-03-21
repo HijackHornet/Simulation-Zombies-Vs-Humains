@@ -7,13 +7,13 @@
 #define CASE_H
 
 #include "coordonnees.h"
+#include "personnage.h"
 
-enum env {VIDE, MUR} ;
-enum perso {LIBRE, POLICIER, ZOMBIE, CITOYEN};
+enum env {VIDE, MUR};
 
 typedef struct McaseDeplacement{
     enum env envCase;
-    enum perso persoCase;
+    struct MPerso * persoCase;
 } caseDeplacement;
 
 #endif
