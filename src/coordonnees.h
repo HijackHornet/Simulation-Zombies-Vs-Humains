@@ -20,6 +20,10 @@ typedef struct Mcoordonnees{
 } Coordonnees;
 
 
+void setXCoord_Coord(int x, Coordonnees * pCoord);
+
+void setYCoord_Coord(int y, Coordonnees * pCoord);
+
 /**
 	@brief Edition de xCoord et de yCoord dans la structure
 	@param xCoord Valeur sur l'axe des x

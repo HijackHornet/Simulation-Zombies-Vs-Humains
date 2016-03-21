@@ -1,5 +1,5 @@
 /**
-   @file terrain.c
+   @file terrain.h
    @brief  Définit les fonctions et les structures du terrain
 */
 #ifndef _TERRAIN_H
@@ -11,6 +11,7 @@
 #include <assert.h>
 
 #include "caseDeplacement.h"
+#include "coordonnees.h"
 
 #define MAX_CHAR_NOM_TERRAIN 101
 #define MAX_TAILLE_XY 1000
@@ -99,6 +100,9 @@ Terrain * terrainCreer_terr (int dimX, int dimY, char nomTerrain[MAX_CHAR_NOM_TE
 	@brief Sauvegarde le terrain pointé dans un fichier (.terrain)
 	@param pTerrain Pointeur sur la structure Terrain a sauvegarder
 */
+
+char estDansTerrain_terr(Terrain * pTerrain, Coordonnees * pCoord);
+
 void terrainCreerFichier_terr (Terrain * pTerrain);
 /**
 	@brief Li le fichier terrain de nom spécifié et le retourne par un pointeur
@@ -107,6 +111,29 @@ void terrainCreerFichier_terr (Terrain * pTerrain);
 */
 Terrain * terrainLireFichier_terr (char nomTerrain[MAX_CHAR_NOM_TERRAIN]);
 
+char verifDeplacementHaut_perso(Perso * pPerso, Terrain * pTerrain);
+
+char verifDeplacementBas_perso(Perso * pPerso, Terrain * pTerrain);
+
+char verifDeplacementGauche_perso(Perso * pPerso, Terrain * pTerrain);
+
+char verifDeplacementDroite_perso(Perso * pPerso, Terrain * pTerrain);
+
+void deplacementHaut_perso(Perso * pPerso, Terrain * pTerrain);
+
+void deplacementBas_perso(Perso * pPerso, Terrain * pTerrain);
+
+void deplacementAleatoire_perso(Perso * pPerso, Terrain * pTerrain);
+
+char humainEnHaut(Terrain * pTerrain, Coordonnees * coordZombie);
+
+char humainEnBas(Terrain * pTerrain, Coordonnees * coordZombie);
+
+char humainAGauche(Terrain * pTerrain, Coordonnees * coordZombie);
+
+char humainADroite(Terrain * pTerrain, Coordonnees * coordZombie);
+
+void * zombieComtamineHumain(Perso * pZombie, Terrain * pTerrain);
 
 
 #endif

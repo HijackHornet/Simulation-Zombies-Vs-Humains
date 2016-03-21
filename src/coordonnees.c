@@ -4,6 +4,14 @@
 #include <math.h>
 #include <assert.h>
 
+void setXCoord_Coord(int x, Coordonnees * pCoord){
+    pCoord -> xCoord = x;
+}
+
+void setYCoord_Coord(int y, Coordonnees * pCoord){
+    pCoord -> yCoord = y;
+}
+
 void setXYCoord_Coord (int x, int y, Coordonnees * pCoord){
 	assert(x>=0);
 	assert(y>=0);

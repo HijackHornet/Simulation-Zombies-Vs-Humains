@@ -2,7 +2,6 @@
 #define PERSONNAGE_H
 
 #include "coordonnees.h"
-#include "terrain.h"
 #include "assert.h"
 #include "time.h"
 
@@ -13,30 +12,14 @@ typedef struct MPerso {
     enum typePerso type;
 } Perso;
 
-char verifDeplacementHaut_perso(Perso * pPerso, Terrain * pTerrain);
+Coordonnees * getCoordonneesPerso_perso(Perso * pPerso);
 
-char verifDeplacementBas_perso(Perso * pPerso, Terrain * pTerrain);
+int getXPerso_perso(Perso * pPerso);
 
-char verifDeplacementGauche_perso(Perso * pPerso, Terrain * pTerrain);
+int getYPerso_perso(Perso * pPerso);
 
-char verifDeplacementDroite_perso(Perso * pPerso, Terrain * pTerrain);
-
-void deplacementHaut_perso(Perso * pPerso, Terrain * pTerrain);
-
-void deplacementBas_perso(Perso * pPerso, Terrain * pTerrain);
-
-void deplacementAleatoire_perso(Perso * pPerso, Terrain * pTerrain);
+enum typePerso getTypePerso(Perso * pPerso);
 
 Perso * contaminationHumain(Perso * pHumain);
-
-char humainEnHaut(Terrain * pTerrain, Coordonnees * coordZombie);
-
-char humainEnBas(Terrain * pTerrain, Coordonnees * coordZombie);
-
-char humainAGauche(Terrain * pTerrain, Coordonnees * coordZombie);
-
-char humainADroite(Terrain * pTerrain, Coordonnees * coordZombie);
-
-Perso * zombieComtamineHumain(Perso * pZombie, Terrain * pTerrain);
 
 #endif
