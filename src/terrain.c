@@ -17,15 +17,8 @@ void setXY_terr (int x, int y, Terrain * pTerrain){
 }
 
 void setnomTerrain_terr(char * nom, Terrain * pTerrain){
-<<<<<<< HEAD
-	assert(strlen(nom)<MAX_CHAR_NOM_TERRAIN);
-	strcpy(pTerrain->nomTerrain, nom);
-=======
-    int i;
-    for (i=0; i<MAX_CHAR_NOM_TERRAIN; i++){
-	pTerrain->nomTerrain[i] = nom[i];
-    }
->>>>>>> refs/remotes/origin/master
+    assert(strlen(nom)<MAX_CHAR_NOM_TERRAIN);
+    strcpy(pTerrain->nomTerrain, nom);
 }
 
 void setgrilleXY_terr (int x, int y, Terrain * pTerrain, caseDeplacement caseDep){
@@ -66,21 +59,13 @@ void terrainInitGrille_terr (Terrain * pTerrain){
 }
 
 Terrain * terrainCreer_terr (int dimX, int dimY, char nomTerrain[MAX_CHAR_NOM_TERRAIN]){
-<<<<<<< HEAD
-	Terrain * pTerrain = NULL;
-    pTerrain =(Terrain*)malloc(sizeof(Terrain));
-	setXY_terr(dimX,dimY, pTerrain);
-	setnomTerrain_terr(nomTerrain, pTerrain);
-	terrainInitGrille_terr(pTerrain);
-	return pTerrain;
-=======
     Terrain * pTerrain = NULL;
-    pTerrain = malloc(sizeof(Terrain));
+    pTerrain =(Terrain*)malloc(sizeof(Terrain));
     setXY_terr(dimX,dimY, pTerrain);
     setnomTerrain_terr(nomTerrain, pTerrain);
     terrainInitGrille_terr(pTerrain);
     return pTerrain;
->>>>>>> refs/remotes/origin/master
+
 }
 
 /////////////////////////////////////////////////////////////////////////////
@@ -273,56 +258,38 @@ void afficherGrilleConsole(Terrain * pTerrain){
     }
 }
 
-<<<<<<< HEAD
-=======
 
->>>>>>> refs/remotes/origin/master
 void terrainCreerFichier_terr (Terrain * pTerrain){
     FILE * pFichier;
+    pFichier = fopen("../data/test.terrain","w");
 
-<<<<<<< HEAD
-	pFichier = fopen("../data/test.terrain","w");
-=======
->>>>>>> refs/remotes/origin/master
 
-    pFichier = fopen("../data/test.ter","w");
-
-<<<<<<< HEAD
     fprintf(pFichier, "%d-%d\n", pTerrain->dimX, pTerrain->dimY);
-	int i, j;
-	for(i = (pTerrain -> dimY) - 1; i >= 0; i--){
-	    for(j = 0; j < (pTerrain -> dimX); j++){
-            if((pTerrain -> grille)[i][j].envCase == VIDE){
-		    fputc('O', pFichier);
-		    }
-		}
-	    fprintf(pFichier, "\n");
-=======
-    assert(pFichier != NULL);
-	
     int i, j;
-    for(i = getY_terr(pTerrain) - 1; i >= 0; i--){
-	for(j = 0; j < getX_terr(pTerrain); j++){
-	    if(getEnvCase((getgrilleXY_terr(j, i, pTerrain))) == VIDE)
-		fputc('v', pFichier);
->>>>>>> refs/remotes/origin/master
+    for(i = (pTerrain -> dimY) - 1; i >= 0; i--){
+	for(j = 0; j < (pTerrain -> dimX); j++){
+            if((pTerrain -> grille)[i][j].envCase == VIDE){
+		fputc('O', pFichier);
+	    }
 	}
 	fprintf(pFichier, "\n");
+
     }
+    fprintf(pFichier, "\n");
 }
 
 Terrain * terrainLireFichier_terr (char nomTerrain[MAX_CHAR_NOM_TERRAIN]){
-	FILE * pFichier;
-	Terrain * pTerrain;
-	char car;
-	int dimX1, dimY1;
+    FILE * pFichier;
+    Terrain * pTerrain;
+    char car;
+    int dimX1, dimY1;
 
-	pFichier = fopen("../data/nomTerrain.terrain","w"); //A faire leo
+    pFichier = fopen("../data/nomTerrain.terrain","w"); //A faire leo
 
     fscanf(pFichier,"%d-%d\n", &dimX1, &dimY1);
     pTerrain = terrainCreer_terr (dimX1,dimY1,nomTerrain);
     for(int i = (pTerrain -> dimY) - 1; i >= 0; i--){
-	    for(int j = 0; j < (pTerrain -> dimX); j++){
+	for(int j = 0; j < (pTerrain -> dimX); j++){
             fscanf(pFichier,"%c", &car);
             if(car=='O'){
                 caseDeplacement caseVide;
@@ -336,18 +303,18 @@ Terrain * terrainLireFichier_terr (char nomTerrain[MAX_CHAR_NOM_TERRAIN]){
                 setPersoCase(&caseVide,NULL);
                 setgrilleXY_terr(i,j,pTerrain,caseVide);
             }
-		}
-	    fscanf(pFichier,"\n");
 	}
+	fscanf(pFichier,"\n");
+    }
 
 
 }
 
 void testFonctions_terr(){
-Terrain * pFichierLectureTest;
-Terrain * pFichierEcritureTest;
-char * nomF = "FichierTestEcriture";
+    Terrain * pFichierLectureTest;
+    Terrain * pFichierEcritureTest;
+    char * nomF = "FichierTestEcriture";
 
-pFichierEcritureTest = terrainCreer_terr (20, 15, nomF);
-terrainCreerFichier_terr (pFichierEcritureTest);
+    pFichierEcritureTest = terrainCreer_terr (20, 15, nomF);
+    terrainCreerFichier_terr (pFichierEcritureTest);
 }
