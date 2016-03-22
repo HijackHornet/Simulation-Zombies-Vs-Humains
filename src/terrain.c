@@ -12,21 +12,28 @@
 //////////////////////////////////////////////////////////////////////////////
 
 void setXY_terr (int x, int y, Terrain * pTerrain){
-	pTerrain->dimX = x;
-	pTerrain->dimY = y;
+    pTerrain->dimX = x;
+    pTerrain->dimY = y;
 }
 
 void setnomTerrain_terr(char * nom, Terrain * pTerrain){
+<<<<<<< HEAD
 	assert(strlen(nom)<MAX_CHAR_NOM_TERRAIN);
 	strcpy(pTerrain->nomTerrain, nom);
+=======
+    int i;
+    for (i=0; i<MAX_CHAR_NOM_TERRAIN; i++){
+	pTerrain->nomTerrain[i] = nom[i];
+    }
+>>>>>>> refs/remotes/origin/master
 }
 
 void setgrilleXY_terr (int x, int y, Terrain * pTerrain, caseDeplacement caseDep){
-	pTerrain->grille[x][y] = caseDep;
+    pTerrain->grille[x][y] = caseDep;
 }
 
 int getX_terr(Terrain * pTerrain){
-	return pTerrain->dimX;
+    return pTerrain->dimX;
 }
 
 int getY_terr(Terrain * pTerrain){
@@ -46,23 +53,34 @@ caseDeplacement * getgrilleXY_terr (int x, int y,Terrain * pTerrain){
 //////////////////////////////////////////////////////////////////////////////
 
 void terrainInitGrille_terr (Terrain * pTerrain){
-	int i,j;
-	caseDeplacement X = (caseDeplacement){VIDE, VIDE};
-	for(i=0; i < (pTerrain->dimX); i++){
-		for(j=0; j < (pTerrain->dimY); j++){
-			setgrilleXY_terr(i, j, pTerrain,X);
-		}
+    int i,j;
+    caseDeplacement X;
+    setPersoCase(&X, NULL);
+    setEnvCase(&X, VIDE);
+    for(i=0; i < getX_terr(pTerrain); i++){
+	for(j=0; j < getY_terr(pTerrain); j++){
+	    setgrilleXY_terr(i, j, pTerrain, X);
 	}
+    }
 
 }
 
 Terrain * terrainCreer_terr (int dimX, int dimY, char nomTerrain[MAX_CHAR_NOM_TERRAIN]){
+<<<<<<< HEAD
 	Terrain * pTerrain = NULL;
     pTerrain =(Terrain*)malloc(sizeof(Terrain));
 	setXY_terr(dimX,dimY, pTerrain);
 	setnomTerrain_terr(nomTerrain, pTerrain);
 	terrainInitGrille_terr(pTerrain);
 	return pTerrain;
+=======
+    Terrain * pTerrain = NULL;
+    pTerrain = malloc(sizeof(Terrain));
+    setXY_terr(dimX,dimY, pTerrain);
+    setnomTerrain_terr(nomTerrain, pTerrain);
+    terrainInitGrille_terr(pTerrain);
+    return pTerrain;
+>>>>>>> refs/remotes/origin/master
 }
 
 /////////////////////////////////////////////////////////////////////////////
@@ -192,44 +210,46 @@ void deplacementAleatoire_perso(Perso * pPerso, Terrain * pTerrain){
     }
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////
-//SPECIFIQUE ZOMBIE////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+//SPECIFIQUE ZOMBIE//////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
 char humainEnHaut(Terrain * pTerrain, Coordonnees * coordZombie){
-    if(pTerrain -> grille[(coordZombie -> xCoord)][(coordZombie -> yCoord) + 1].persoCase -> type == CITOYEN \
-       || \
-       pTerrain -> grille[coordZombie -> xCoord][(coordZombie -> yCoord) + 1].persoCase -> type == POLICIER){
+    caseDeplacement * caseHaut = getgrilleXY_terr(getXCoord_Coord(coordZombie), getYCoord_Coord(coordZombie) + 1, pTerrain);
+    
+    if(getTypePerso(getPersoCase(caseHaut)) == CITOYEN || getTypePerso(getPersoCase(caseHaut)) == POLICIER){
 	return 1;
     }
     else{
-	return 0;
+	return 0; 
     }
 }
 
 char humainEnBas(Terrain * pTerrain, Coordonnees * coordZombie){
-    if(pTerrain -> grille[coordZombie -> xCoord][(coordZombie -> yCoord) - 1].persoCase -> type == CITOYEN \
-       || \
-       pTerrain -> grille[coordZombie -> xCoord][(coordZombie -> yCoord) - 1].persoCase -> type == POLICIER){
+    caseDeplacement * caseBas = getgrilleXY_terr(getXCoord_Coord(coordZombie), getYCoord_Coord(coordZombie) - 1, pTerrain);
+    
+    if(getTypePerso(getPersoCase(caseBas)) == CITOYEN || getTypePerso(getPersoCase(caseBas)) == POLICIER){
 	return 1;
     }
     else{
-	return 0;
+	return 0; 
     }
 }
 
 char humainAGauche(Terrain * pTerrain, Coordonnees * coordZombie){
-    if(pTerrain -> grille[(coordZombie -> xCoord) - 1][coordZombie -> yCoord].persoCase -> type == CITOYEN \
-       || pTerrain -> grille[(coordZombie -> xCoord) - 1][coordZombie -> yCoord].persoCase -> type == POLICIER){
+    caseDeplacement * caseGauche = getgrilleXY_terr(getXCoord_Coord(coordZombie)-1, getYCoord_Coord(coordZombie), pTerrain);
+    
+    if(getTypePerso(getPersoCase(caseGauche)) == CITOYEN || getTypePerso(getPersoCase(caseGauche)) == POLICIER){
 	return 1;
     }
     else{
-	return 0;
+	return 0; 
     }
 }
 
 char humainADroite(Terrain * pTerrain, Coordonnees * coordZombie){
-    if(pTerrain -> grille[(coordZombie -> xCoord) + 1][coordZombie -> yCoord].persoCase -> type == CITOYEN \
-       || pTerrain -> grille[(coordZombie -> xCoord) + 1][coordZombie -> yCoord].persoCase -> type == POLICIER){
+    caseDeplacement * caseDroite = getgrilleXY_terr(getXCoord_Coord(coordZombie)+1, getYCoord_Coord(coordZombie), pTerrain);
+    
+    if(getTypePerso(getPersoCase(caseDroite)) == CITOYEN || getTypePerso(getPersoCase(caseDroite)) == POLICIER){
 	return 1;
     }
     else{
@@ -237,38 +257,14 @@ char humainADroite(Terrain * pTerrain, Coordonnees * coordZombie){
     }
 }
 
-void * zombieComtamineHumain(Perso * pZombie, Terrain * pTerrain){
-    int xZombie, yZombie;
 
-    if(humainEnHaut(pTerrain, pZombie -> coord)){
-	xZombie = pZombie -> coord -> xCoord;
-	yZombie = pZombie -> coord -> yCoord;
-    }
-
-    else if(humainEnBas(pTerrain, pZombie -> coord)){
-	xZombie = pZombie -> coord -> xCoord;
-	yZombie = pZombie -> coord -> yCoord;
-    }
-
-    else if(humainAGauche(pTerrain, pZombie -> coord)){
-	xZombie = pZombie -> coord -> xCoord;
-	yZombie = pZombie -> coord -> yCoord;
-    }
-
-    else if(humainAGauche(pTerrain, pZombie -> coord)){
-	xZombie = pZombie -> coord -> xCoord;
-	yZombie = pZombie -> coord -> yCoord;
-    }
-}
-
-
-////////////////////////////////////////////////////////////////////////////////////////////////
-//ENTREES-SORTIES///////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+//ENTREES-SORTIES////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
 
 void afficherGrilleConsole(Terrain * pTerrain){
-    for(int i = 0; i < (pTerrain -> dimX); i++){
-	for (int j = 0; j < (pTerrain -> dimY); j++) {
+    for(int i = 0; i < getX_terr(pTerrain); i++){
+	for (int j = 0; j < getY_terr(pTerrain); j++) {
 	    if((pTerrain -> grille)[i][j].envCase == VIDE){
 		printf("v");
 	    }
@@ -277,13 +273,21 @@ void afficherGrilleConsole(Terrain * pTerrain){
     }
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> refs/remotes/origin/master
 void terrainCreerFichier_terr (Terrain * pTerrain){
-	FILE * pFichier;
+    FILE * pFichier;
 
+<<<<<<< HEAD
 	pFichier = fopen("../data/test.terrain","w");
+=======
+>>>>>>> refs/remotes/origin/master
 
-	assert(pFichier != NULL);
+    pFichier = fopen("../data/test.ter","w");
 
+<<<<<<< HEAD
     fprintf(pFichier, "%d-%d\n", pTerrain->dimX, pTerrain->dimY);
 	int i, j;
 	for(i = (pTerrain -> dimY) - 1; i >= 0; i--){
@@ -293,8 +297,18 @@ void terrainCreerFichier_terr (Terrain * pTerrain){
 		    }
 		}
 	    fprintf(pFichier, "\n");
+=======
+    assert(pFichier != NULL);
+	
+    int i, j;
+    for(i = getY_terr(pTerrain) - 1; i >= 0; i--){
+	for(j = 0; j < getX_terr(pTerrain); j++){
+	    if(getEnvCase((getgrilleXY_terr(j, i, pTerrain))) == VIDE)
+		fputc('v', pFichier);
+>>>>>>> refs/remotes/origin/master
 	}
-	fclose(pFichier);
+	fprintf(pFichier, "\n");
+    }
 }
 
 Terrain * terrainLireFichier_terr (char nomTerrain[MAX_CHAR_NOM_TERRAIN]){
