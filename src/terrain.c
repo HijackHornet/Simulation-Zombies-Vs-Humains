@@ -48,10 +48,12 @@ caseDeplacement * getgrilleXY_terr (int x, int y,Terrain * pTerrain){
 
 void terrainInitGrille_terr (Terrain * pTerrain){
 	int i,j;
-	caseDeplacement X = (caseDeplacement){VIDE, VIDE};
+	caseDeplacement X;
+	setPersoCase(&X, NULL);
+	setEnvCase(&X, VIDE);
 	for(i=0; i < (pTerrain->dimX); i++){
 		for(j=0; j < (pTerrain->dimY); j++){
-			setgrilleXY_terr(i, j, pTerrain,X);
+			setgrilleXY_terr(i, j, pTerrain, X);
 		}
 	}
 
@@ -59,7 +61,7 @@ void terrainInitGrille_terr (Terrain * pTerrain){
 
 Terrain * terrainCreer_terr (int dimX, int dimY, char nomTerrain[MAX_CHAR_NOM_TERRAIN]){
 	Terrain * pTerrain = NULL;
-        pTerrain = malloc(sizeof(Terrain)); //semble avoir un probleme ici
+        pTerrain = malloc(sizeof(Terrain));
 	setXY_terr(dimX,dimY, pTerrain);
 	setnomTerrain_terr(nomTerrain, pTerrain);
 	terrainInitGrille_terr(pTerrain);
@@ -193,49 +195,52 @@ void deplacementAleatoire_perso(Perso * pPerso, Terrain * pTerrain){
     }
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////
-//SPECIFIQUE ZOMBIE////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+//SPECIFIQUE ZOMBIE//////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
 char humainEnHaut(Terrain * pTerrain, Coordonnees * coordZombie){
-    if(pTerrain -> grille[(coordZombie -> xCoord)][(coordZombie -> yCoord) + 1].persoCase -> type == CITOYEN \
-       || \
-       pTerrain -> grille[coordZombie -> xCoord][(coordZombie -> yCoord) + 1].persoCase -> type == POLICIER){
+    caseDeplacement * caseHaut = getgrilleXY_terr(getXCoord_Coord(coordZombie), getYCoord_Coord(coordZombie) + 1, pTerrain);
+    
+    if(getTypePerso(getPersoCase(caseHaut)) == CITOYEN || getTypePerso(getPersoCase(caseHaut)) == POLICIER){
 	return 1;
     }
     else{
-	return 0;
+	return 0; 
     }
 }
 
 char humainEnBas(Terrain * pTerrain, Coordonnees * coordZombie){
-    if(pTerrain -> grille[coordZombie -> xCoord][(coordZombie -> yCoord) - 1].persoCase -> type == CITOYEN \
-       || \
-       pTerrain -> grille[coordZombie -> xCoord][(coordZombie -> yCoord) - 1].persoCase -> type == POLICIER){
+    caseDeplacement * caseBas = getgrilleXY_terr(getXCoord_Coord(coordZombie), getYCoord_Coord(coordZombie) - 1, pTerrain);
+    
+    if(getTypePerso(getPersoCase(caseBas)) == CITOYEN || getTypePerso(getPersoCase(caseBas)) == POLICIER){
 	return 1;
     }
     else{
-	return 0;
+	return 0; 
     }
 }
 
 char humainAGauche(Terrain * pTerrain, Coordonnees * coordZombie){
-    if(pTerrain -> grille[(coordZombie -> xCoord) - 1][coordZombie -> yCoord].persoCase -> type == CITOYEN \
-       || pTerrain -> grille[(coordZombie -> xCoord) - 1][coordZombie -> yCoord].persoCase -> type == POLICIER){
+    caseDeplacement * caseGauche = getgrilleXY_terr(getXCoord_Coord(coordZombie)-1, getYCoord_Coord(coordZombie), pTerrain);
+    
+    if(getTypePerso(getPersoCase(caseGauche)) == CITOYEN || getTypePerso(getPersoCase(caseGauche)) == POLICIER){
 	return 1;
     }
     else{
-	return 0;
+	return 0; 
     }
 }
 
 char humainADroite(Terrain * pTerrain, Coordonnees * coordZombie){
-    if(pTerrain -> grille[(coordZombie -> xCoord) + 1][coordZombie -> yCoord].persoCase -> type == CITOYEN \
-       || pTerrain -> grille[(coordZombie -> xCoord) + 1][coordZombie -> yCoord].persoCase -> type == POLICIER){
+    caseDeplacement * caseDroite = getgrilleXY_terr(getXCoord_Coord(coordZombie)+1, getYCoord_Coord(coordZombie), pTerrain);
+    
+    if(getTypePerso(getPersoCase(caseDroite)) == CITOYEN || getTypePerso(getPersoCase(caseDroite)) == POLICIER){
 	return 1;
     }
     else{
-	return 0;
+	return 0; 
     }
+
 }
 
 void * zombieComtamineHumain(Perso * pZombie, Terrain * pTerrain){
