@@ -80,7 +80,7 @@ char * getnom_terr(Terrain * pTerrain);
 	@param pTerrain Pointeur sur la structure Terrain a editer
 	@return Le carractere de la grille en X/Y
 */
-caseDeplacement getgrilleXY_terr (int x, int y,Terrain * pTerrain);
+caseDeplacement * getgrilleXY_terr (int x, int y,Terrain * pTerrain);
 
 
 /**

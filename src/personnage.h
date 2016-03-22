@@ -5,7 +5,7 @@
 #include "assert.h"
 #include "time.h"
 
-enum typePerso {POLICIER, ZOMBIE, CITOYEN};
+enum typePerso {LIBRE, POLICIER, ZOMBIE, CITOYEN};
 
 typedef struct MPerso {
     Coordonnees * coord;

@@ -31,15 +31,15 @@ int getX_terr(Terrain * pTerrain){
 }
 
 int getY_terr(Terrain * pTerrain){
-	return pTerrain->dimY;
+    return pTerrain->dimY;
 }
 
 char * getnom_terr(Terrain * pTerrain){
-	return pTerrain->nomTerrain;
+    return pTerrain->nomTerrain;
 }
 
-caseDeplacement getgrilleXY_terr (int x, int y,Terrain * pTerrain){
-	return pTerrain->grille[x][y];
+caseDeplacement * getgrilleXY_terr (int x, int y,Terrain * pTerrain){
+    return &(pTerrain->grille[x][y]);
 }
 
 //////////////////////////////////////////////////////////////////////////////
@@ -119,54 +119,54 @@ void deplacementHaut_perso(Perso * pPerso, Terrain * pTerrain){
     int xPerso = getXPerso_perso(pPerso);
     int yPerso = getYPerso_perso(pPerso);
     
-    setPersoCase(getgrilleXY_terr(xPerso, yPerso))= NULL;
+    setPersoCase(getgrilleXY_terr(xPerso, yPerso, pTerrain), NULL);
 
     yPerso++;
     setYPerso_perso(pPerso, yPerso);
 
-    pTerrain -> grille[xPerso][yPerso].persoCase = pPerso;
+    setPersoCase(getgrilleXY_terr(xPerso, yPerso, pTerrain), pPerso);
 }
 
 void deplacementBas_perso(Perso * pPerso, Terrain * pTerrain){
-    assert(verifDeplacementBas_perso(pPerso, pTerrain));
-    
-    int xPerso = pPerso -> coord -> xCoord;
-    int yPerso = pPerso -> coord -> yCoord;
-    
-    pTerrain -> grille[xPerso][yPerso].persoCase = NULL;
-	
-    (pPerso -> coord -> yCoord)--;
-    yPerso--;
+    assert(verifDeplacementHaut_perso(pPerso, pTerrain));
 
-    pTerrain -> grille[xPerso][yPerso].persoCase = pPerso;
+    int xPerso = getXPerso_perso(pPerso);
+    int yPerso = getYPerso_perso(pPerso);
+    
+    setPersoCase(getgrilleXY_terr(xPerso, yPerso, pTerrain), NULL);
+
+    yPerso--;
+    setYPerso_perso(pPerso, yPerso);
+
+    setPersoCase(getgrilleXY_terr(xPerso, yPerso, pTerrain), pPerso);
 }
 
 void deplacementGauche_perso(Perso * pPerso, Terrain * pTerrain){
-    assert(verifDeplacementGauche_perso(pPerso, pTerrain));
-    
-    int xPerso = pPerso -> coord -> xCoord;
-    int yPerso = pPerso -> coord -> yCoord;
-    
-    pTerrain -> grille[xPerso][yPerso].persoCase = NULL;
-	
-    (pPerso -> coord -> xCoord)--;
-    xPerso--;
+    assert(verifDeplacementHaut_perso(pPerso, pTerrain));
 
-    pTerrain -> grille[xPerso][yPerso].persoCase = pPerso;
+    int xPerso = getXPerso_perso(pPerso);
+    int yPerso = getYPerso_perso(pPerso);
+    
+    setPersoCase(getgrilleXY_terr(xPerso, yPerso, pTerrain), NULL);
+
+    xPerso--;
+    setXPerso_perso(pPerso, xPerso);
+
+    setPersoCase(getgrilleXY_terr(xPerso, yPerso, pTerrain), pPerso);
 }
 
 void deplacementDroite_perso(Perso * pPerso, Terrain * pTerrain){
-    assert(verifDeplacementDroite_perso(pPerso, pTerrain));
-    
-    int xPerso = pPerso -> coord -> xCoord;
-    int yPerso = pPerso -> coord -> yCoord;
-    
-    pTerrain -> grille[xPerso][yPerso].persoCase = NULL;
-	
-    (pPerso -> coord -> xCoord)++;
-    xPerso++;
+    assert(verifDeplacementHaut_perso(pPerso, pTerrain));
 
-    pTerrain -> grille[xPerso][yPerso].persoCase = pPerso;
+    int xPerso = getXPerso_perso(pPerso);
+    int yPerso = getYPerso_perso(pPerso);
+    
+    setPersoCase(getgrilleXY_terr(xPerso, yPerso, pTerrain), NULL);
+
+    xPerso++;
+    setXPerso_perso(pPerso, xPerso);
+
+    setPersoCase(getgrilleXY_terr(xPerso, yPerso, pTerrain), pPerso);
 }
 
 void deplacementAleatoire_perso(Perso * pPerso, Terrain * pTerrain){
