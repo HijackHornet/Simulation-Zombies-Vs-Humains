@@ -85,7 +85,7 @@ char verifDeplacementBas_perso(Perso * pPerso, Terrain * pTerrain){
     Coordonnees * pCoordPerso = getCoordonneesPerso_perso(pPerso);
 
     setYCoord_Coord(getYCoord_Coord(pCoordPerso) - 1, pCoordPerso);
-    
+
     return estDansTerrain_terr(pTerrain, pCoordPerso);
 }
 
@@ -93,7 +93,7 @@ char verifDeplacementHaut_perso(Perso * pPerso, Terrain * pTerrain){
     Coordonnees * pCoordPerso = getCoordonneesPerso_perso(pPerso);
 
     setYCoord_Coord(getYCoord_Coord(pCoordPerso) + 1, pCoordPerso);
-    
+
     return estDansTerrain_terr(pTerrain, pCoordPerso);
 }
 
@@ -101,7 +101,7 @@ char verifDeplacementGauche_perso(Perso *  pPerso, Terrain * pTerrain){
     Coordonnees * pCoordPerso = getCoordonneesPerso_perso(pPerso);
 
     setXCoord_Coord(getXCoord_Coord(pCoordPerso) - 1, pCoordPerso);
-    
+
     return estDansTerrain_terr(pTerrain, pCoordPerso);
 }
 
@@ -109,7 +109,7 @@ char verifDeplacementDroite_perso(Perso * pPerso, Terrain * pTerrain){
     Coordonnees * pCoordPerso = getCoordonneesPerso_perso(pPerso);
 
     setXCoord_Coord(getXCoord_Coord(pCoordPerso) + 1, pCoordPerso);
-    
+
     return estDansTerrain_terr(pTerrain, pCoordPerso);
 }
 
@@ -118,7 +118,7 @@ void deplacementHaut_perso(Perso * pPerso, Terrain * pTerrain){
 
     int xPerso = getXPerso_perso(pPerso);
     int yPerso = getYPerso_perso(pPerso);
-    
+
     setPersoCase(getgrilleXY_terr(xPerso, yPerso, pTerrain), NULL);
 
     yPerso++;
@@ -132,7 +132,7 @@ void deplacementBas_perso(Perso * pPerso, Terrain * pTerrain){
 
     int xPerso = getXPerso_perso(pPerso);
     int yPerso = getYPerso_perso(pPerso);
-    
+
     setPersoCase(getgrilleXY_terr(xPerso, yPerso, pTerrain), NULL);
 
     yPerso--;
@@ -146,7 +146,7 @@ void deplacementGauche_perso(Perso * pPerso, Terrain * pTerrain){
 
     int xPerso = getXPerso_perso(pPerso);
     int yPerso = getYPerso_perso(pPerso);
-    
+
     setPersoCase(getgrilleXY_terr(xPerso, yPerso, pTerrain), NULL);
 
     xPerso--;
@@ -160,7 +160,7 @@ void deplacementDroite_perso(Perso * pPerso, Terrain * pTerrain){
 
     int xPerso = getXPerso_perso(pPerso);
     int yPerso = getYPerso_perso(pPerso);
-    
+
     setPersoCase(getgrilleXY_terr(xPerso, yPerso, pTerrain), NULL);
 
     xPerso++;
@@ -240,7 +240,7 @@ char humainADroite(Terrain * pTerrain, Coordonnees * coordZombie){
 
 void * zombieComtamineHumain(Perso * pZombie, Terrain * pTerrain){
     int xZombie, yZombie;
-    
+
     if(humainEnHaut(pTerrain, pZombie -> coord)){
 	xZombie = pZombie -> coord -> xCoord;
 	yZombie = pZombie -> coord -> yCoord;
@@ -283,22 +283,31 @@ void afficherGrilleConsole(Terrain * pTerrain){
 void terrainCreerFichier_terr (Terrain * pTerrain){
 	FILE * pFichier;
 
-	pFichier = fopen("../data/test.ter","w");
+	pFichier = fopen("../data/test.terrain","w"); //remplacer test par pTerrain->nomTerrain
 
 	assert(pFichier != NULL);
-	
+
+    fprintf(pFichier, "%d-%d\n", pTerrain->dimX, pTerrain->dimY);
 	int i, j;
 	for(i = (pTerrain -> dimY) - 1; i >= 0; i--){
 	    for(j = 0; j < (pTerrain -> dimX); j++){
 		if((pTerrain -> grille)[i][j].envCase == VIDE)
-		    fputc('v', pFichier);
+		    fputc('O', pFichier);
 		}
 	    fprintf(pFichier, "\n");
 	}
+	fclose(pFichier);
 }
 
+Terrain * terrainLireFichier_terr (char nomTerrain[MAX_CHAR_NOM_TERRAIN]){
+	FILE * pFichier;
+	Terrain * pTerrain;
 
-/*
-Terrain * terrainLireFichier (char nomTerrain[MAX_CHAR_NOM_TERRAIN]);
-A CODER QUAND LE FONCTION DU DESSUS MARCHERA
-*/
+	pFichier = fopen("../data/nomTerrain.terrain","w"); //A faire leo
+
+    int dimX1 = pTerrain->dimX;
+    int dimY1 = pTerrain->dimY;
+    pTerrain = terrainCreer_terr (dimX1,dimY1,nomTerrain);
+
+
+}
