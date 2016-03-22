@@ -4,5 +4,5 @@
 
 void main(){
     testFonctions_Coord();
-
+    testFonctions_terr();
 }
