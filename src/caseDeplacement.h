@@ -18,5 +18,12 @@ typedef struct McaseDeplacement{
     struct MPerso * persoCase;
 } caseDeplacement;
 
+enum env getEnvCase(caseDeplacement * caseDep);
+
+Perso * getPersoCase(caseDeplacement * caseDep);
+
+void setEnvCase(caseDeplacement * caseDep, enum env valeurEnv);
+
+void setPersoCase(caseDeplacement * caseDep, Perso * pPerso);
 
 #endif

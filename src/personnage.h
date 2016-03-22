@@ -18,6 +18,10 @@ int getXPerso_perso(Perso * pPerso);
 
 int getYPerso_perso(Perso * pPerso);
 
+void setXPerso_perso(Perso * pPerso, int xPerso);
+
+void setYPerso_perso(Perso * pPerso, int yPerso);
+
 enum typePerso getTypePerso(Perso * pPerso);
 
 Perso * contaminationHumain(Perso * pHumain);
