@@ -21,7 +21,7 @@ void setXPerso_perso(Perso * pPerso, int xPerso){
 }
 
 void setYPerso_perso(Perso * pPerso, int yPerso){
-    setYCoord_Coord(yPerso, getCoordonneesPerso_perso pPerso));
+    setYCoord_Coord(yPerso, getCoordonneesPerso_perso (pPerso));
 }
 
 enum typePerso getTypePerso(Perso * pPerso){
