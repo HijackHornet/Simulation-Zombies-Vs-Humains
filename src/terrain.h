@@ -76,7 +76,7 @@ char * getnom_terr(Terrain * pTerrain);
 /**
 	@brief Recupere la valleur de la grille au point X/Y
 	@param x Position en x a recuperer
-	@param y poisition en u a récuperer 
+	@param y poisition en u a récuperer
 	@param pTerrain Pointeur sur la structure Terrain a editer
 	@return Le carractere de la grille en X/Y
 */
@@ -100,7 +100,6 @@ Terrain * terrainCreer_terr (int dimX, int dimY, char nomTerrain[MAX_CHAR_NOM_TE
 	@brief Sauvegarde le terrain pointé dans un fichier (.terrain)
 	@param pTerrain Pointeur sur la structure Terrain a sauvegarder
 */
-
 char estDansTerrain_terr(Terrain * pTerrain, Coordonnees * pCoord);
 
 void terrainCreerFichier_terr (Terrain * pTerrain);
@@ -110,6 +109,10 @@ void terrainCreerFichier_terr (Terrain * pTerrain);
 	@return Pointeur vers la structure lu dans le fichier
 */
 Terrain * terrainLireFichier_terr (char nomTerrain[MAX_CHAR_NOM_TERRAIN]);
+/**
+	@brief Teste le module coordonnees et ses fonctions
+*/
+void testFonctions_terr();
 
 char verifDeplacementHaut_perso(Perso * pPerso, Terrain * pTerrain);
 
