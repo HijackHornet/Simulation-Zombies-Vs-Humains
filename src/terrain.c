@@ -14,7 +14,6 @@ void setXY_terr (int x, int y, Terrain * pTerrain){
 	pTerrain->dimY = y;
 }
 
-
 void setnomTerrain_terr(char * nom, Terrain * pTerrain){
 	int i;
 	for (i=0; i<MAX_CHAR_NOM_TERRAIN; i++){
@@ -277,8 +276,6 @@ void afficherGrilleConsole(Terrain * pTerrain){
 	printf("\n");
     }
 }
-
-
 
 void terrainCreerFichier_terr (Terrain * pTerrain){
 	FILE * pFichier;
