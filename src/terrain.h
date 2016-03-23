@@ -139,5 +139,4 @@ char humainADroite(Terrain * pTerrain, Coordonnees * coordZombie);
 
 void * zombieComtamineHumain(Perso * pZombie, Terrain * pTerrain);
 
-
 #endif

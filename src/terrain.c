@@ -248,10 +248,13 @@ char humainADroite(Terrain * pTerrain, Coordonnees * coordZombie){
 /////////////////////////////////////////////////////////////////////////////
 
 void afficherGrilleConsole(Terrain * pTerrain){
-    for(int i = 0; i < getX_terr(pTerrain); i++){
-	for (int j = 0; j < getY_terr(pTerrain); j++) {
-	    if((pTerrain -> grille)[i][j].envCase == VIDE){
-		printf("v");
+    for(int i = getY_terr(pTerrain) - 1; i >= 0; i--){
+	for (int j = 0; j < getX_terr(pTerrain); j++) {
+	    if(getEnvCase(getgrilleXY_terr(j, i, pTerrain)) == VIDE){
+		printf(" ");
+	    }
+	    else{
+		printf("X");
 	    }
 	}
 	printf("\n");
@@ -263,19 +266,25 @@ void terrainCreerFichier_terr (Terrain * pTerrain){
     FILE * pFichier;
 
     char cheminFichier[MAX_CHAR_NOM_TERRAIN + 16] = "../data/"; //16 correspond à la taille de la chaine d'accees
+    
     strcat(cheminFichier, getnom_terr(pTerrain));
-
     strcat(cheminFichier, ".terrain");
     
     pFichier = fopen(cheminFichier,"w");
 
-
-    fprintf(pFichier, "%d %d\n", pTerrain->dimX, pTerrain->dimY);
+    int dimX = getX_terr(pTerrain);
+    int dimY = getY_terr(pTerrain);
+    
+    fprintf(pFichier, "%d %d\n", dimX, dimY);
+    
     int i, j;
-    for(i = (pTerrain -> dimY) - 1; i >= 0; i--){
-	for(j = 0; j < (pTerrain -> dimX); j++){
-            if((pTerrain -> grille)[i][j].envCase == VIDE){
-		fputc('O', pFichier);
+    for(i = dimY - 1; i >= 0; i--){
+	for(j = 0; j < dimX; j++){
+            if(getEnvCase(getgrilleXY_terr(j, i, pTerrain)) == VIDE){
+		fputc(' ', pFichier);
+	    }
+	    else{
+		fputc('X', pFichier);
 	    }
 	}
 	fprintf(pFichier, "\n");
@@ -284,43 +293,59 @@ void terrainCreerFichier_terr (Terrain * pTerrain){
     fprintf(pFichier, "\n");
 }
 
-Terrain * terrainLireFichier_terr (char nomTerrain[MAX_CHAR_NOM_TERRAIN]){
+Terrain * terrainLireFichier_terr (char * nomTerrain){
     FILE * pFichier;
-    Terrain * pTerrain;
-    char car;
-    int dimX1, dimY1;
+    
+    char cheminFichier[MAX_CHAR_NOM_TERRAIN + 16] = "../data/"; //16 correspond à la taille de la chaine d'accees
+    strcat(cheminFichier, nomTerrain);
+    strcat(cheminFichier, ".terrain");
+    
+    pFichier = fopen(cheminFichier,"r");
 
-    pFichier = fopen("../data/nomTerrain.terrain","w"); //A faire leo
+    assert(pFichier != NULL);
 
-    fscanf(pFichier,"%d-%d\n", &dimX1, &dimY1);
-    pTerrain = terrainCreer_terr (dimX1,dimY1,nomTerrain);
-    for(int i = (pTerrain -> dimY) - 1; i >= 0; i--){
-	for(int j = 0; j < (pTerrain -> dimX); j++){
-            fscanf(pFichier,"%c", &car);
-            if(car=='O'){
-                caseDeplacement caseVide;
+    Terrain * pTerrain = NULL;
+    int dimX, dimY;
+    fscanf(pFichier,"%d %d\n", &dimX, &dimY);
+    printf("%d %d\n", dimX, dimY);
+    pTerrain = terrainCreer_terr(dimX, dimY, nomTerrain);
+
+    assert(pTerrain != NULL);
+
+    caseDeplacement caseVide;
+    char caseFichier;
+    for(int i = dimY - 1; i >= 0; i--){
+	for(int j = 0; j < dimX; j++){
+            fscanf(pFichier,"%c", &caseFichier);
+	    
+            if(caseFichier==' '){
                 setEnvCase(&caseVide,VIDE);
                 setPersoCase(&caseVide,NULL);
-                setgrilleXY_terr(i,j,pTerrain,caseVide);
+                setgrilleXY_terr(j,i,pTerrain,caseVide);
             }
-            if(car=='X'){
-                caseDeplacement caseVide;
+	    
+            if(caseFichier=='X'){
                 setEnvCase(&caseVide,MUR);
                 setPersoCase(&caseVide,NULL);
-                setgrilleXY_terr(i,j,pTerrain,caseVide);
+                setgrilleXY_terr(j,i,pTerrain,caseVide);
             }
 	}
 	fscanf(pFichier,"\n");
     }
 
-
+    return pTerrain;
 }
 
 void testFonctions_terr(){
     Terrain * pFichierLectureTest;
     Terrain * pFichierEcritureTest;
-    char * nomF = "FichierTestEcriture";
+    
+    char * nomFicEcriture = "FichierTestEcriture";
+    char * nomFicLecture = "FichierTestLecture";
 
-    pFichierEcritureTest = terrainCreer_terr (20, 15, nomF);
+    pFichierEcritureTest = terrainCreer_terr (20, 15, nomFicEcriture);
     terrainCreerFichier_terr(pFichierEcritureTest);
+
+    pFichierLectureTest = terrainLireFichier_terr(nomFicLecture);
+    afficherGrilleConsole(pFichierLectureTest);
 }
