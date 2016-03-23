@@ -9,6 +9,7 @@
 #include <stdlib.h>
 #include <errno.h>
 #include <assert.h>
+#include <string.h>
 
 #include "caseDeplacement.h"
 #include "coordonnees.h"

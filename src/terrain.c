@@ -130,7 +130,7 @@ void deplacementHaut_perso(Perso * pPerso, Terrain * pTerrain){
 }
 
 void deplacementBas_perso(Perso * pPerso, Terrain * pTerrain){
-    assert(verifDeplacementHaut_perso(pPerso, pTerrain));
+    assert(verifDeplacementBas_perso(pPerso, pTerrain));
 
     int xPerso = getXPerso_perso(pPerso);
     int yPerso = getYPerso_perso(pPerso);
@@ -144,7 +144,7 @@ void deplacementBas_perso(Perso * pPerso, Terrain * pTerrain){
 }
 
 void deplacementGauche_perso(Perso * pPerso, Terrain * pTerrain){
-    assert(verifDeplacementHaut_perso(pPerso, pTerrain));
+    assert(verifDeplacementGauche_perso(pPerso, pTerrain));
 
     int xPerso = getXPerso_perso(pPerso);
     int yPerso = getYPerso_perso(pPerso);
@@ -158,7 +158,7 @@ void deplacementGauche_perso(Perso * pPerso, Terrain * pTerrain){
 }
 
 void deplacementDroite_perso(Perso * pPerso, Terrain * pTerrain){
-    assert(verifDeplacementHaut_perso(pPerso, pTerrain));
+    assert(verifDeplacementDroite_perso(pPerso, pTerrain));
 
     int xPerso = getXPerso_perso(pPerso);
     int yPerso = getYPerso_perso(pPerso);
@@ -261,10 +261,16 @@ void afficherGrilleConsole(Terrain * pTerrain){
 
 void terrainCreerFichier_terr (Terrain * pTerrain){
     FILE * pFichier;
-    pFichier = fopen("../data/test.terrain","w");
+
+    char cheminFichier[MAX_CHAR_NOM_TERRAIN + 16] = "../data/"; //16 correspond à la taille de la chaine d'accees
+    strcat(cheminFichier, getnom_terr(pTerrain));
+
+    strcat(cheminFichier, ".terrain");
+    
+    pFichier = fopen(cheminFichier,"w");
 
 
-    fprintf(pFichier, "%d-%d\n", pTerrain->dimX, pTerrain->dimY);
+    fprintf(pFichier, "%d %d\n", pTerrain->dimX, pTerrain->dimY);
     int i, j;
     for(i = (pTerrain -> dimY) - 1; i >= 0; i--){
 	for(j = 0; j < (pTerrain -> dimX); j++){
@@ -316,5 +322,5 @@ void testFonctions_terr(){
     char * nomF = "FichierTestEcriture";
 
     pFichierEcritureTest = terrainCreer_terr (20, 15, nomF);
-    terrainCreerFichier_terr (pFichierEcritureTest);
+    terrainCreerFichier_terr(pFichierEcritureTest);
 }
