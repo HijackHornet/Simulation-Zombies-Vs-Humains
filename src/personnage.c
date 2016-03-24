@@ -24,21 +24,33 @@ void setYPerso_perso(Perso * pPerso, int yPerso){
     setYCoord_Coord(yPerso, getCoordonneesPerso_perso (pPerso));
 }
 
+void setCoordPerso_perso(Coordonnees * coord, Perso * pPerso){
+    pPerso -> coord = coord;
+}
+
 enum typePerso getTypePerso(Perso * pPerso){
     return pPerso -> type;
 }
 
+void setTypePerso_perso(enum typePerso typePerso, Perso * pPerso){
+    pPerso -> type = typePerso;
+}
+
 
 //////////////////////////////////////////////////////////////////////////////
-//PARTIE ZOMBIE///////////////////////////////////////////////////////////////
+//CREATION PERSO//////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
 
-/*ERREURS A CORRIGER : NE VERIFIE PAS LES BORDURES DE LA GRILLE
-UTILISER VERIF DU DESSUS
-*/
+Perso * initPerso(Coordonnees * coord, enum typePerso typePerso){
+    Perso * pPerso = (Perso *)malloc(sizeof(Perso));
 
-Perso * contaminationHumain(Perso * pHumain){ //retourne l'humain en mode zombie
-    pHumain -> type = ZOMBIE;
+    setCoordPerso_perso(coord, pPerso);
+    setTypePerso_perso(typePerso, pPerso);
 
-    return pHumain;
+    return pPerso;
+}
+
+void testamentPerso(Perso * pPerso){
+    free(pPerso);
+    pPerso = NULL;
 }

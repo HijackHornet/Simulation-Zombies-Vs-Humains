@@ -5,6 +5,8 @@
 #include "assert.h"
 #include "time.h"
 
+#include <stdlib.h>
+
 enum typePerso {LIBRE, POLICIER, ZOMBIE, CITOYEN};
 
 typedef struct MPerso {
@@ -24,6 +26,11 @@ void setYPerso_perso(Perso * pPerso, int yPerso);
 
 enum typePerso getTypePerso(Perso * pPerso);
 
-Perso * contaminationHumain(Perso * pHumain);
+void setTypePerso_perso(enum typePerso type, Perso * pPerso);
+
+void setCoordPerso_perso(Coordonnees * coord, Perso * pPerso);
+
+void testamentPerso(Perso * pPerso);
+
 
 #endif
