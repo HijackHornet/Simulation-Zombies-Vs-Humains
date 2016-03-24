@@ -1,17 +1,20 @@
+CC = gcc
+CFLAGS = -Wall -std=c99 -lm
+
 all: terrain.o caseDeplacement.o personnage.o coordonnees.o main.o
-	gcc -Wall -std=c99 caseDeplacement.o terrain.o personnage.o coordonnees.o main.o -o projet.out -lm
+	$(CC) $(CFLAGS) caseDeplacement.o terrain.o personnage.o coordonnees.o main.o -o projet.out
 
 main.c: terrain.c caseDeplacement.c coordonnees.c personnage.c
-	gcc -Wall -std=c99 -c terrain.c -ggdb
+	$(CC) $(CFLAGS) -c terrain.c
 
 terrain.c: caseDeplacement.c
-	gcc -Wall -std=c99 -c terrain.c
+	$(CC) $(CFLAGS)-c terrain.c
 
 caseDeplacement.c: coordonnees.c personnage.c
-	gcc -Wall -std=c99 -c caseDeplacement.c -ggdb
+	$(CC) $(CFLAGS) -c caseDeplacement.c
 
 personnage.c: coordonnees.c
-	gcc -Wall -std=c99 -c personnage.c -ggdb
+	$(CC) $(CFLAGS)-c personnage.c
 
 coordonnees.c:
-	gcc -Wall -std=c99 -c coordonnees.c -ggdb
+	$(CC) $(CFLAGS) -c coordonnees.c

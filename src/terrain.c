@@ -4,42 +4,78 @@
 */
 
 #include "terrain.h"
-#include <string.h>
 
 
 //////////////////////////////////////////////////////////////////////////////
 //ACCESSEURS//////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
 
-void setXY_terr (int x, int y, Terrain * pTerrain){
+void setDim_terr (int x, int y, Terrain * pTerrain){
     pTerrain->dimX = x;
     pTerrain->dimY = y;
 }
 
-void setnomTerrain_terr(char * nom, Terrain * pTerrain){
+void setNomTerrain_terr(char * nom, Terrain * pTerrain){
     assert(strlen(nom)<MAX_CHAR_NOM_TERRAIN);
     strcpy(pTerrain->nomTerrain, nom);
 }
 
-void setgrilleXY_terr (int x, int y, Terrain * pTerrain, caseDeplacement caseDep){
+void setGrilleByXY_terr (int x, int y, Terrain * pTerrain, caseDeplacement caseDep){
     pTerrain->grille[x][y] = caseDep;
 }
 
-int getX_terr(Terrain * pTerrain){
+int getDimX_terr(Terrain * pTerrain){
     return pTerrain->dimX;
 }
 
-int getY_terr(Terrain * pTerrain){
+int getDimY_terr(Terrain * pTerrain){
     return pTerrain->dimY;
 }
 
-char * getnom_terr(Terrain * pTerrain){
+char * getNomTerrain_terr(Terrain * pTerrain){
     return pTerrain->nomTerrain;
 }
 
-caseDeplacement * getgrilleXY_terr (int x, int y,Terrain * pTerrain){
+caseDeplacement * getGrilleByXY_terr (int x, int y,Terrain * pTerrain){
     return &(pTerrain->grille[x][y]);
 }
+
+caseDeplacement * getGrilleByCoord_terr(Coordonnees * coord, Terrain * pTerrain){
+    return getGrilleByXY_terr(getXCoord_Coord(coord), getYCoord_Coord(coord), pTerrain);
+}
+
+Coordonnees getCoordCaseDroiteByXY_terr(int x, int y){
+    return (Coordonnees){x + 1, y};
+}
+
+Coordonnees getCoordCaseGaucheByXY_terr(int x, int y){
+    return (Coordonnees){x - 1, y};
+}
+
+Coordonnees getCoordCaseHautByXY_terr(int x, int y){
+    return (Coordonnees){x, y + 1};
+}
+
+Coordonnees getCoordCaseBasByXY_terr(int x, int y){
+    return (Coordonnees){x, y - 1};
+}
+
+Coordonnees getCoordCaseBasByCoord_terr(Coordonnees * coord){
+    return getCoordCaseBasByXY_terr(getXCoord_Coord(coord), getYCoord_Coord(coord));
+}
+
+Coordonnees getCoordCaseHautByCoord_terr(Coordonnees * coord){
+    return getCoordCaseHautByXY_terr(getXCoord_Coord(coord), getYCoord_Coord(coord));
+}
+
+Coordonnees getCoordCaseDroiteByCoord_terr(Coordonnees * coord){
+    return getCoordCaseDroiteByXY_terr(getXCoord_Coord(coord), getYCoord_Coord(coord));
+}
+
+Coordonnees getCoordCaseGaucheByCoord_terr(Coordonnees * coord){
+    return getCoordCaseGaucheByXY_terr(getXCoord_Coord(coord), getYCoord_Coord(coord));
+}
+
 
 //////////////////////////////////////////////////////////////////////////////
 //CREATION////////////////////////////////////////////////////////////////////
@@ -50,9 +86,9 @@ void terrainInitGrille_terr (Terrain * pTerrain){
     caseDeplacement X;
     setPersoCase(&X, NULL);
     setEnvCase(&X, VIDE);
-    for(i=0; i < getX_terr(pTerrain); i++){
-	for(j=0; j < getY_terr(pTerrain); j++){
-	    setgrilleXY_terr(i, j, pTerrain, X);
+    for(i=0; i < getDimX_terr(pTerrain); i++){
+	for(j=0; j < getDimY_terr(pTerrain); j++){
+	    setGrilleByXY_terr(i, j, pTerrain, X);
 	}
     }
 
@@ -61,8 +97,8 @@ void terrainInitGrille_terr (Terrain * pTerrain){
 Terrain * terrainCreer_terr (int dimX, int dimY, char nomTerrain[MAX_CHAR_NOM_TERRAIN]){
     Terrain * pTerrain = NULL;
     pTerrain =(Terrain*)malloc(sizeof(Terrain));
-    setXY_terr(dimX,dimY, pTerrain);
-    setnomTerrain_terr(nomTerrain, pTerrain);
+    setDim_terr(dimX,dimY, pTerrain);
+    setNomTerrain_terr(nomTerrain, pTerrain);
     terrainInitGrille_terr(pTerrain);
     return pTerrain;
 
@@ -76,8 +112,8 @@ char estDansTerrain_terr(Terrain * pTerrain, Coordonnees * pCoord){
     int xCoord = getXCoord_Coord(pCoord);
     int yCoord = getYCoord_Coord(pCoord);
 
-    return (xCoord >= 0 && xCoord < getX_terr(pTerrain) && \
-	    yCoord >= 0 && yCoord < getY_terr(pTerrain));
+    return (xCoord >= 0 && xCoord < getDimX_terr(pTerrain) && \
+	    yCoord >= 0 && yCoord < getDimY_terr(pTerrain));
 }
 
 /////////////////////////////////////////////////////////////////////////////
@@ -121,12 +157,12 @@ void deplacementHaut_perso(Perso * pPerso, Terrain * pTerrain){
     int xPerso = getXPerso_perso(pPerso);
     int yPerso = getYPerso_perso(pPerso);
 
-    setPersoCase(getgrilleXY_terr(xPerso, yPerso, pTerrain), NULL);
+    setPersoCase(getGrilleByXY_terr(xPerso, yPerso, pTerrain), NULL);
 
     yPerso++;
     setYPerso_perso(pPerso, yPerso);
 
-    setPersoCase(getgrilleXY_terr(xPerso, yPerso, pTerrain), pPerso);
+    setPersoCase(getGrilleByXY_terr(xPerso, yPerso, pTerrain), pPerso);
 }
 
 void deplacementBas_perso(Perso * pPerso, Terrain * pTerrain){
@@ -135,12 +171,12 @@ void deplacementBas_perso(Perso * pPerso, Terrain * pTerrain){
     int xPerso = getXPerso_perso(pPerso);
     int yPerso = getYPerso_perso(pPerso);
 
-    setPersoCase(getgrilleXY_terr(xPerso, yPerso, pTerrain), NULL);
+    setPersoCase(getGrilleByXY_terr(xPerso, yPerso, pTerrain), NULL);
 
     yPerso--;
     setYPerso_perso(pPerso, yPerso);
 
-    setPersoCase(getgrilleXY_terr(xPerso, yPerso, pTerrain), pPerso);
+    setPersoCase(getGrilleByXY_terr(xPerso, yPerso, pTerrain), pPerso);
 }
 
 void deplacementGauche_perso(Perso * pPerso, Terrain * pTerrain){
@@ -149,12 +185,12 @@ void deplacementGauche_perso(Perso * pPerso, Terrain * pTerrain){
     int xPerso = getXPerso_perso(pPerso);
     int yPerso = getYPerso_perso(pPerso);
 
-    setPersoCase(getgrilleXY_terr(xPerso, yPerso, pTerrain), NULL);
+    setPersoCase(getGrilleByXY_terr(xPerso, yPerso, pTerrain), NULL);
 
     xPerso--;
     setXPerso_perso(pPerso, xPerso);
 
-    setPersoCase(getgrilleXY_terr(xPerso, yPerso, pTerrain), pPerso);
+    setPersoCase(getGrilleByXY_terr(xPerso, yPerso, pTerrain), pPerso);
 }
 
 void deplacementDroite_perso(Perso * pPerso, Terrain * pTerrain){
@@ -163,12 +199,12 @@ void deplacementDroite_perso(Perso * pPerso, Terrain * pTerrain){
     int xPerso = getXPerso_perso(pPerso);
     int yPerso = getYPerso_perso(pPerso);
 
-    setPersoCase(getgrilleXY_terr(xPerso, yPerso, pTerrain), NULL);
+    setPersoCase(getGrilleByXY_terr(xPerso, yPerso, pTerrain), NULL);
 
     xPerso++;
     setXPerso_perso(pPerso, xPerso);
 
-    setPersoCase(getgrilleXY_terr(xPerso, yPerso, pTerrain), pPerso);
+    setPersoCase(getGrilleByXY_terr(xPerso, yPerso, pTerrain), pPerso);
 }
 
 void deplacementAleatoire_perso(Perso * pPerso, Terrain * pTerrain){
@@ -199,43 +235,67 @@ void deplacementAleatoire_perso(Perso * pPerso, Terrain * pTerrain){
 //SPECIFIQUE ZOMBIE//////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
 char humainEnHaut(Terrain * pTerrain, Coordonnees * coordZombie){
-    caseDeplacement * caseHaut = getgrilleXY_terr(getXCoord_Coord(coordZombie), getYCoord_Coord(coordZombie) + 1, pTerrain);
-    
-    if(getTypePerso(getPersoCase(caseHaut)) == CITOYEN || getTypePerso(getPersoCase(caseHaut)) == POLICIER){
-	return 1;
+    Coordonnees coordCaseHaut = getCoordCaseHautByCoord_terr(coordZombie);
+
+    if(estDansTerrain_terr(pTerrain, &coordCaseHaut)){
+	caseDeplacement * caseHaut = getGrilleByCoord_terr(&coordCaseHaut, pTerrain);
+	if(getTypePerso(getPersoCase(caseHaut)) == CITOYEN || getTypePerso(getPersoCase(caseHaut)) == POLICIER){
+	    return 1;
+	}
+	else{
+	    return 0; 
+	}
     }
     else{
-	return 0; 
+	return 0;
     }
 }
 
 char humainEnBas(Terrain * pTerrain, Coordonnees * coordZombie){
-    caseDeplacement * caseBas = getgrilleXY_terr(getXCoord_Coord(coordZombie), getYCoord_Coord(coordZombie) - 1, pTerrain);
-    
-    if(getTypePerso(getPersoCase(caseBas)) == CITOYEN || getTypePerso(getPersoCase(caseBas)) == POLICIER){
-	return 1;
+    Coordonnees coordCaseBas = getCoordCaseBasByCoord_terr(coordZombie);
+
+    if(estDansTerrain_terr(pTerrain, &coordCaseBas)){
+	caseDeplacement * caseBas = getGrilleByCoord_terr(&coordCaseBas, pTerrain);
+	if(getTypePerso(getPersoCase(caseBas)) == CITOYEN || getTypePerso(getPersoCase(caseBas)) == POLICIER){
+	    return 1;
+	}
+	else{
+	    return 0; 
+	}
     }
     else{
-	return 0; 
+	return 0;
     }
 }
 
 char humainAGauche(Terrain * pTerrain, Coordonnees * coordZombie){
-    caseDeplacement * caseGauche = getgrilleXY_terr(getXCoord_Coord(coordZombie)-1, getYCoord_Coord(coordZombie), pTerrain);
-    
-    if(getTypePerso(getPersoCase(caseGauche)) == CITOYEN || getTypePerso(getPersoCase(caseGauche)) == POLICIER){
-	return 1;
+    Coordonnees coordCaseGauche = getCoordCaseGaucheByCoord_terr(coordZombie);
+
+    if(estDansTerrain_terr(pTerrain, &coordCaseGauche)){
+	caseDeplacement * caseGauche = getGrilleByCoord_terr(&coordCaseGauche, pTerrain);
+	if(getTypePerso(getPersoCase(caseGauche)) == CITOYEN || getTypePerso(getPersoCase(caseGauche)) == POLICIER){
+	    return 1;
+	}
+	else{
+	    return 0; 
+	}
     }
     else{
-	return 0; 
+	return 0;
     }
 }
 
 char humainADroite(Terrain * pTerrain, Coordonnees * coordZombie){
-    caseDeplacement * caseDroite = getgrilleXY_terr(getXCoord_Coord(coordZombie)+1, getYCoord_Coord(coordZombie), pTerrain);
-    
-    if(getTypePerso(getPersoCase(caseDroite)) == CITOYEN || getTypePerso(getPersoCase(caseDroite)) == POLICIER){
-	return 1;
+    Coordonnees coordCaseDroite = getCoordCaseDroiteByCoord_terr(coordZombie);
+
+    if(estDansTerrain_terr(pTerrain, &coordCaseDroite)){
+	caseDeplacement * caseDroite = getGrilleByCoord_terr(&coordCaseDroite, pTerrain);
+	if(getTypePerso(getPersoCase(caseDroite)) == CITOYEN || getTypePerso(getPersoCase(caseDroite)) == POLICIER){
+	    return 1;
+	}
+	else{
+	    return 0; 
+	}
     }
     else{
 	return 0;
@@ -248,9 +308,9 @@ char humainADroite(Terrain * pTerrain, Coordonnees * coordZombie){
 /////////////////////////////////////////////////////////////////////////////
 
 void afficherGrilleConsole(Terrain * pTerrain){
-    for(int i = getY_terr(pTerrain) - 1; i >= 0; i--){
-	for (int j = 0; j < getX_terr(pTerrain); j++) {
-	    if(getEnvCase(getgrilleXY_terr(j, i, pTerrain)) == VIDE){
+    for(int i = getDimY_terr(pTerrain) - 1; i >= 0; i--){
+	for (int j = 0; j < getDimX_terr(pTerrain); j++) {
+	    if(getEnvCase(getGrilleByXY_terr(j, i, pTerrain)) == VIDE){
 		printf(" ");
 	    }
 	    else{
@@ -267,20 +327,20 @@ void terrainCreerFichier_terr (Terrain * pTerrain){
 
     char cheminFichier[MAX_CHAR_NOM_TERRAIN + 16] = "../data/"; //16 correspond à la taille de la chaine d'accees
     
-    strcat(cheminFichier, getnom_terr(pTerrain));
+    strcat(cheminFichier, getNomTerrain_terr(pTerrain));
     strcat(cheminFichier, ".terrain");
     
     pFichier = fopen(cheminFichier,"w");
 
-    int dimX = getX_terr(pTerrain);
-    int dimY = getY_terr(pTerrain);
+    int dimX = getDimX_terr(pTerrain);
+    int dimY = getDimY_terr(pTerrain);
     
     fprintf(pFichier, "%d %d\n", dimX, dimY);
     
     int i, j;
     for(i = dimY - 1; i >= 0; i--){
 	for(j = 0; j < dimX; j++){
-            if(getEnvCase(getgrilleXY_terr(j, i, pTerrain)) == VIDE){
+            if(getEnvCase(getGrilleByXY_terr(j, i, pTerrain)) == VIDE){
 		fputc(' ', pFichier);
 	    }
 	    else{
@@ -321,13 +381,13 @@ Terrain * terrainLireFichier_terr (char * nomTerrain){
             if(caseFichier==' '){
                 setEnvCase(&caseVide,VIDE);
                 setPersoCase(&caseVide,NULL);
-                setgrilleXY_terr(j,i,pTerrain,caseVide);
+                setGrilleByXY_terr(j,i,pTerrain,caseVide);
             }
 	    
             if(caseFichier=='X'){
                 setEnvCase(&caseVide,MUR);
                 setPersoCase(&caseVide,NULL);
-                setgrilleXY_terr(j,i,pTerrain,caseVide);
+                setGrilleByXY_terr(j,i,pTerrain,caseVide);
             }
 	}
 	fscanf(pFichier,"\n");
