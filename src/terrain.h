@@ -146,9 +146,13 @@ char verifDeplacementGauche_perso(Perso * pPerso, Terrain * pTerrain);
 
 char verifDeplacementDroite_perso(Perso * pPerso, Terrain * pTerrain);
 
-void deplacementHaut_perso(Perso * pPerso, Terrain * pTerrain);
+char deplacementHaut_perso(Perso * pPerso, Terrain * pTerrain);
 
-void deplacementBas_perso(Perso * pPerso, Terrain * pTerrain);
+char deplacementBas_perso(Perso * pPerso, Terrain * pTerrain);
+
+char deplacementGauche_perso(Perso * pPerso, Terrain * pTerrain);
+
+char deplacementDroite_perso(Perso * pPerso, Terrain * pTerrain);
 
 void deplacementAleatoire_perso(Perso * pPerso, Terrain * pTerrain);
 

@@ -151,8 +151,8 @@ char verifDeplacementDroite_perso(Perso * pPerso, Terrain * pTerrain){
     return estDansTerrain_terr(pTerrain, pCoordPerso);
 }
 
-void deplacementHaut_perso(Perso * pPerso, Terrain * pTerrain){
-    assert(verifDeplacementHaut_perso(pPerso, pTerrain));
+char deplacementHaut_perso(Perso * pPerso, Terrain * pTerrain){
+    if(verifDeplacementHaut_perso(pPerso, pTerrain)){
 
     int xPerso = getXPerso_perso(pPerso);
     int yPerso = getYPerso_perso(pPerso);
@@ -163,10 +163,17 @@ void deplacementHaut_perso(Perso * pPerso, Terrain * pTerrain){
     setYPerso_perso(pPerso, yPerso);
 
     setPersoCase(getGrilleByXY_terr(xPerso, yPerso, pTerrain), pPerso);
+
+    return 1;
+    }
+
+    else{
+	return 0;
+    }
 }
 
-void deplacementBas_perso(Perso * pPerso, Terrain * pTerrain){
-    assert(verifDeplacementBas_perso(pPerso, pTerrain));
+char deplacementBas_perso(Perso * pPerso, Terrain * pTerrain){
+    if(verifDeplacementBas_perso(pPerso, pTerrain)){
 
     int xPerso = getXPerso_perso(pPerso);
     int yPerso = getYPerso_perso(pPerso);
@@ -177,10 +184,17 @@ void deplacementBas_perso(Perso * pPerso, Terrain * pTerrain){
     setYPerso_perso(pPerso, yPerso);
 
     setPersoCase(getGrilleByXY_terr(xPerso, yPerso, pTerrain), pPerso);
+
+    return 1;
+    }
+
+    else{
+	return 0;
+    }
 }
 
-void deplacementGauche_perso(Perso * pPerso, Terrain * pTerrain){
-    assert(verifDeplacementGauche_perso(pPerso, pTerrain));
+char deplacementGauche_perso(Perso * pPerso, Terrain * pTerrain){
+    if(verifDeplacementGauche_perso(pPerso, pTerrain)){
 
     int xPerso = getXPerso_perso(pPerso);
     int yPerso = getYPerso_perso(pPerso);
@@ -191,43 +205,61 @@ void deplacementGauche_perso(Perso * pPerso, Terrain * pTerrain){
     setXPerso_perso(pPerso, xPerso);
 
     setPersoCase(getGrilleByXY_terr(xPerso, yPerso, pTerrain), pPerso);
+    
+    return 1;
+    }
+
+    else{
+	return 0;
+    }
 }
 
-void deplacementDroite_perso(Perso * pPerso, Terrain * pTerrain){
-    assert(verifDeplacementDroite_perso(pPerso, pTerrain));
+char deplacementDroite_perso(Perso * pPerso, Terrain * pTerrain){
+    if(verifDeplacementDroite_perso(pPerso, pTerrain)){
 
-    int xPerso = getXPerso_perso(pPerso);
-    int yPerso = getYPerso_perso(pPerso);
+	int xPerso = getXPerso_perso(pPerso);
+	int yPerso = getYPerso_perso(pPerso);
 
-    setPersoCase(getGrilleByXY_terr(xPerso, yPerso, pTerrain), NULL);
+	setPersoCase(getGrilleByXY_terr(xPerso, yPerso, pTerrain), NULL);
 
-    xPerso++;
-    setXPerso_perso(pPerso, xPerso);
+	xPerso++;
+	setXPerso_perso(pPerso, xPerso);
 
-    setPersoCase(getGrilleByXY_terr(xPerso, yPerso, pTerrain), pPerso);
+	setPersoCase(getGrilleByXY_terr(xPerso, yPerso, pTerrain), pPerso);
+	return 1;
+    }
+
+    else{
+	return 0;
+    }
 }
 
 void deplacementAleatoire_perso(Perso * pPerso, Terrain * pTerrain){
     srand(time(NULL));
 
-    char direction = rand()%4;
+    char deplacementEffectue;
 
-    assert(direction < 4 && direction >= 0);
+    while(deplacementEffectue != 1){
+    
+	char direction = rand()%4;
 
-    if(direction == 0){
-	deplacementBas_perso(pPerso, pTerrain);
-    }
+	assert(direction < 4 && direction >= 0);
+    
+	if(direction == 0){
+	    deplacementEffectue = deplacementBas_perso(pPerso, pTerrain);
+	}
 
-    else if(direction == 1){
-	deplacementHaut_perso(pPerso, pTerrain);
-    }
+	else if(direction == 1){
+	    deplacementEffectue = deplacementHaut_perso(pPerso, pTerrain);
+	}
 
-    else if(direction == 2){
-	deplacementDroite_perso(pPerso, pTerrain);
-    }
+	else if(direction == 2){
+	    deplacementEffectue = deplacementDroite_perso(pPerso, pTerrain);
+	}
 
-    else{
-	deplacementGauche_perso(pPerso, pTerrain);
+	else{
+	    deplacementEffectue = deplacementGauche_perso(pPerso, pTerrain);
+	}
     }
 }
 
