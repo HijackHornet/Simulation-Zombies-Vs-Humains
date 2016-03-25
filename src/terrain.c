@@ -144,51 +144,39 @@ char estDansTerrain_terr(Terrain * pTerrain, Coordonnees * pCoord){
 //DEPLACEMENT PERSONNAGES////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
 char verifDeplacementBas_perso(Perso * pPerso, Terrain * pTerrain){
-    Coordonnees * pCoordPerso = getCoordonneesPerso_perso(pPerso);
+    Coordonnees coordBas = (Coordonnees){getXPerso_perso(pPerso), getYPerso_perso(pPerso) - 1};
 
-    setYCoord_Coord(getYCoord_Coord(pCoordPerso) - 1, pCoordPerso);
-
-    return estDansTerrain_terr(pTerrain, pCoordPerso);
+    return estDansTerrain_terr(pTerrain, &coordBas);
 }
 
 char verifDeplacementHaut_perso(Perso * pPerso, Terrain * pTerrain){
-    Coordonnees * pCoordPerso = getCoordonneesPerso_perso(pPerso);
+    Coordonnees coordHaut = (Coordonnees){getXPerso_perso(pPerso), getYPerso_perso(pPerso) - 1};
 
-    setYCoord_Coord(getYCoord_Coord(pCoordPerso) + 1, pCoordPerso);
-
-    return estDansTerrain_terr(pTerrain, pCoordPerso);
+    return estDansTerrain_terr(pTerrain, &coordHaut);
 }
 
 char verifDeplacementGauche_perso(Perso *  pPerso, Terrain * pTerrain){
-    Coordonnees * pCoordPerso = getCoordonneesPerso_perso(pPerso);
+    Coordonnees coordGauche = (Coordonnees){getXPerso_perso(pPerso), getYPerso_perso(pPerso) - 1};
 
-    setXCoord_Coord(getXCoord_Coord(pCoordPerso) - 1, pCoordPerso);
-
-    return estDansTerrain_terr(pTerrain, pCoordPerso);
+    return estDansTerrain_terr(pTerrain, &coordGauche);
 }
 
 char verifDeplacementDroite_perso(Perso * pPerso, Terrain * pTerrain){
-    Coordonnees * pCoordPerso = getCoordonneesPerso_perso(pPerso);
+    Coordonnees coordDroite = (Coordonnees){getXPerso_perso(pPerso), getYPerso_perso(pPerso) - 1};
 
-    setXCoord_Coord(getXCoord_Coord(pCoordPerso) + 1, pCoordPerso);
-
-    return estDansTerrain_terr(pTerrain, pCoordPerso);
+    return estDansTerrain_terr(pTerrain, &coordDroite);
 }
 
 char deplacementHaut_perso(Perso * pPerso, Terrain * pTerrain){
     if(verifDeplacementHaut_perso(pPerso, pTerrain)){
+	
+	placePersoByCoord(NULL, getCoordonneesPerso_perso(pPerso), pTerrain);
 
-    int xPerso = getXPerso_perso(pPerso);
-    int yPerso = getYPerso_perso(pPerso);
+	setYPerso_perso(pPerso, getYPerso_perso(pPerso) + 1);
 
-    setPersoCase(getGrilleByXY_terr(xPerso, yPerso, pTerrain), NULL);
+	placePersoByCoord(pPerso, getCoordonneesPerso_perso(pPerso), pTerrain);
 
-    yPerso++;
-    setYPerso_perso(pPerso, yPerso);
-
-    setPersoCase(getGrilleByXY_terr(xPerso, yPerso, pTerrain), pPerso);
-
-    return 1;
+	return 1;
     }
 
     else{
@@ -199,17 +187,13 @@ char deplacementHaut_perso(Perso * pPerso, Terrain * pTerrain){
 char deplacementBas_perso(Perso * pPerso, Terrain * pTerrain){
     if(verifDeplacementBas_perso(pPerso, pTerrain)){
 
-    int xPerso = getXPerso_perso(pPerso);
-    int yPerso = getYPerso_perso(pPerso);
+        setPersoCase(getGrilleByCoord_terr(getCoordonneesPerso_perso(pPerso), pTerrain), NULL);
 
-    setPersoCase(getGrilleByXY_terr(xPerso, yPerso, pTerrain), NULL);
+	setYPerso_perso(pPerso, getYPerso_perso(pPerso) - 1);
 
-    yPerso--;
-    setYPerso_perso(pPerso, yPerso);
+        setPersoCase(getGrilleByCoord_terr(getCoordonneesPerso_perso(pPerso), pTerrain), pPerso);
 
-    setPersoCase(getGrilleByXY_terr(xPerso, yPerso, pTerrain), pPerso);
-
-    return 1;
+	return 1;
     }
 
     else{
@@ -220,17 +204,13 @@ char deplacementBas_perso(Perso * pPerso, Terrain * pTerrain){
 char deplacementGauche_perso(Perso * pPerso, Terrain * pTerrain){
     if(verifDeplacementGauche_perso(pPerso, pTerrain)){
 
-    int xPerso = getXPerso_perso(pPerso);
-    int yPerso = getYPerso_perso(pPerso);
+	placePersoByCoord(NULL, getCoordonneesPerso_perso(pPerso), pTerrain);
 
-    setPersoCase(getGrilleByXY_terr(xPerso, yPerso, pTerrain), NULL);
+	setXPerso_perso(pPerso, getXPerso_perso(pPerso) - 1);
 
-    xPerso--;
-    setXPerso_perso(pPerso, xPerso);
-
-    setPersoCase(getGrilleByXY_terr(xPerso, yPerso, pTerrain), pPerso);
+	placePersoByCoord(pPerso, getCoordonneesPerso_perso(pPerso), pTerrain);
     
-    return 1;
+	return 1;
     }
 
     else{
@@ -239,17 +219,13 @@ char deplacementGauche_perso(Perso * pPerso, Terrain * pTerrain){
 }
 
 char deplacementDroite_perso(Perso * pPerso, Terrain * pTerrain){
-    if(verifDeplacementDroite_perso(pPerso, pTerrain)){
+    if(verifDeplacementBas_perso(pPerso, pTerrain)){
+        setPersoCase(getGrilleByCoord_terr(getCoordonneesPerso_perso(pPerso), pTerrain), NULL);
 
-	int xPerso = getXPerso_perso(pPerso);
-	int yPerso = getYPerso_perso(pPerso);
+	setXPerso_perso(pPerso, getXPerso_perso(pPerso) + 1);
 
-	setPersoCase(getGrilleByXY_terr(xPerso, yPerso, pTerrain), NULL);
+        setPersoCase(getGrilleByCoord_terr(getCoordonneesPerso_perso(pPerso), pTerrain), pPerso);
 
-	xPerso++;
-	setXPerso_perso(pPerso, xPerso);
-
-	setPersoCase(getGrilleByXY_terr(xPerso, yPerso, pTerrain), pPerso);
 	return 1;
     }
 
@@ -348,7 +324,7 @@ char humainADroite(Terrain * pTerrain, Coordonnees * coordZombie){
     Coordonnees coordCaseDroite = getCoordCaseDroiteByCoord_terr(coordZombie);
 
     if(estDansTerrain_terr(pTerrain, &coordCaseDroite) && \
-	getPersoCase(getGrilleByCoord_terr(&coordCaseDroite, pTerrain)) != NULL){ //Vérifie d'une part que la case est dans le terrain, d'autre part qu'il y a bien un personnage sur cette case pour pouvoir appeler getTypePerso (SEGFAULT si NULL)
+       getPersoCase(getGrilleByCoord_terr(&coordCaseDroite, pTerrain)) != NULL){ //Vérifie d'une part que la case est dans le terrain, d'autre part qu'il y a bien un personnage sur cette case pour pouvoir appeler getTypePerso (SEGFAULT si NULL)
 	caseDeplacement * caseDroite = getGrilleByCoord_terr(&coordCaseDroite, pTerrain);
 	if(getTypePerso(getPersoCase(caseDroite)) == CITOYEN || getTypePerso(getPersoCase(caseDroite)) == POLICIER){
 	    return 1;
@@ -483,6 +459,16 @@ void testFonctions_terr(){
     placePersoByCoord(pHumain, coordHumain, pFichierEcritureTest);
 
     if(humainEnHaut(pFichierEcritureTest, getCoordonneesPerso_perso(pZombie))){
+	printf("YES\n");
+    }
+    else{
+	printf("NO\n");
+    }
+
+    deplacementDroite_perso(pHumain, pFichierEcritureTest);
+    deplacementBas_perso(pHumain, pFichierEcritureTest);
+
+    if(humainADroite(pFichierEcritureTest, getCoordonneesPerso_perso(pZombie)) && !humainEnHaut(pFichierEcritureTest, getCoordonneesPerso_perso(pZombie))){
 	printf("YES\n");
     }
     else{
