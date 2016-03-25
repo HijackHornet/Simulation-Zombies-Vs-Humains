@@ -146,25 +146,25 @@ char estDansTerrain_terr(Terrain * pTerrain, Coordonnees * pCoord){
 char verifDeplacementBas_perso(Perso * pPerso, Terrain * pTerrain){
     Coordonnees coordBas = (Coordonnees){getXPerso_perso(pPerso), getYPerso_perso(pPerso) - 1};
 
-    return (estDansTerrain_terr(pTerrain, &coordBas) && getGrilleByCoord_terr(&coordBas, pTerrain) == NULL);
+    return (estDansTerrain_terr(pTerrain, &coordBas) && getGrilleByCoord_terr(&coordBas, pTerrain) == NULL && !(getEnvCase(getGrilleByCoord_terr(&coordBas, pTerrain))));
 }
 
 char verifDeplacementHaut_perso(Perso * pPerso, Terrain * pTerrain){
     Coordonnees coordHaut = (Coordonnees){getXPerso_perso(pPerso), getYPerso_perso(pPerso) - 1};
 
-    return (estDansTerrain_terr(pTerrain, &coordHaut) && getGrilleByCoord_terr(&coordHaut, pTerrain) == NULL);
+    return (estDansTerrain_terr(pTerrain, &coordHaut) && getGrilleByCoord_terr(&coordHaut, pTerrain) == NULL && !(getEnvCase(getGrilleByCoord_terr(&coordHaut, pTerrain))));
 }
 
 char verifDeplacementGauche_perso(Perso *  pPerso, Terrain * pTerrain){
     Coordonnees coordGauche = (Coordonnees){getXPerso_perso(pPerso), getYPerso_perso(pPerso) - 1};
 
-    return (estDansTerrain_terr(pTerrain, &coordGauche) && getGrilleByCoord_terr(&coordGauche, pTerrain) == NULL);
+    return (estDansTerrain_terr(pTerrain, &coordGauche) && getGrilleByCoord_terr(&coordGauche, pTerrain) == NULL && !(getEnvCase(getGrilleByCoord_terr(&coordGauche, pTerrain))));
 }
 
 char verifDeplacementDroite_perso(Perso * pPerso, Terrain * pTerrain){
     Coordonnees coordDroite = (Coordonnees){getXPerso_perso(pPerso), getYPerso_perso(pPerso) - 1};
 
-    return (estDansTerrain_terr(pTerrain, &coordDroite) && getGrilleByCoord_terr(&coordDroite, pTerrain) == NULL);
+    return (estDansTerrain_terr(pTerrain, &coordDroite) && getGrilleByCoord_terr(&coordDroite, pTerrain) == NULL && !(getEnvCase(getGrilleByCoord_terr(&coordDroite, pTerrain))));
 }
 
 char deplacementHaut_perso(Perso * pPerso, Terrain * pTerrain){
