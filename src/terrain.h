@@ -58,7 +58,7 @@ void setNomTerrain_terr(char nom[MAX_CHAR_NOM_TERRAIN], Terrain * pTerrain);
 	@param pTerrain Pointeur sur la structure Terrain a editer
 	@param valeur Carractere definissant ce que serra la case
 */
-void setGrilleByXY_terr (int x, int y, Terrain * pTerrain, caseDeplacement caseDep);
+void setGrilleByXY_terr (int x, int y, Terrain * pTerrain, caseDeplacement * caseDep);
 
 /**
 	@brief Recupère la dimension en X de la structure Terrain
@@ -111,6 +111,7 @@ Coordonnees getCoordCaseDroiteByCoord(Coordonnees * coord);
 
 caseDeplacement * getGrilleFromCoord_terr(Coordonnees * pCoord, Terrain * pTerrain);
 
+void setGrilleByCoord_terr(Coordonnees * coord, Terrain * pTerrain, caseDeplacement * caseDep);
 
 //////////////////////////////////////////////////////////////////////////////
 //CREATION////////////////////////////////////////////////////////////////////

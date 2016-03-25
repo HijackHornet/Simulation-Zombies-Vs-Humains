@@ -6,4 +6,5 @@
 int main(){
     testFonctions_Coord();
     testFonctions_terr();
+    testFonctions_perso();
 }

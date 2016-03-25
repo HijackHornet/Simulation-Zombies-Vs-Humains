@@ -6,6 +6,7 @@
 #include "time.h"
 
 #include <stdlib.h>
+#include <stdio.h>
 
 enum typePerso {LIBRE, POLICIER, ZOMBIE, CITOYEN};
 
@@ -30,7 +31,11 @@ void setTypePerso_perso(enum typePerso type, Perso * pPerso);
 
 void setCoordPerso_perso(Coordonnees * coord, Perso * pPerso);
 
+Perso * initPerso(Coordonnees * coord, enum typePerso typePerso);
+
 void testamentPerso(Perso * pPerso);
+
+void testFonctions_perso();
 
 
 #endif

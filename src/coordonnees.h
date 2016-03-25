@@ -63,6 +63,11 @@ int sontEgale_Coord (Coordonnees * coord1, Coordonnees * coord2);
 /**
 	@brief Teste le module coordonnees et ses fonctions
 */
+
+Coordonnees * initCoordonnees_coord(int x, int y);
+
+void testamentCoord(Coordonnees * coord);
+
 void testFonctions_Coord();
 
 

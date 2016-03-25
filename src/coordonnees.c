@@ -49,9 +49,23 @@ int sontEgale_Coord (Coordonnees * coord1, Coordonnees * coord2){
 	}
 }
 
+Coordonnees * initCoordonnees_coord(int x, int y){
+    Coordonnees * coord = (Coordonnees *)malloc(sizeof(Coordonnees));
+
+    coord -> xCoord = x;
+    coord -> yCoord = y;
+
+    return coord;
+}
+
+void testamentCoord(Coordonnees * coord){
+    free(coord);
+
+    coord = NULL;
+}
+
 void testFonctions_Coord(){
 	int dimx, dimy, dimx2, dimy2;
-	int dimtestx, dimtesty;
 	int egaleOuPas;
 	float distance12;
 	Coordonnees coord, coord2;
@@ -60,8 +74,8 @@ void testFonctions_Coord(){
 	dimy = 100; dimy2 = 24;
 	setXYCoord_Coord(dimx,dimy, &coord);
 	setXYCoord_Coord(dimx2,dimy2, &coord2);
-	dimtestx = getXCoord_Coord(&coord);
-	dimtesty = getYCoord_Coord(&coord);
+	assert(getXCoord_Coord(&coord) == dimx);
+	assert(getYCoord_Coord(&coord) == dimy);
 	distance12 = distanceEntreDeuxCoordonnees_Coord(&coord, &coord2);
 	assert(distance12>=0);
 	egaleOuPas = sontEgale_Coord(&coord,&coord2);

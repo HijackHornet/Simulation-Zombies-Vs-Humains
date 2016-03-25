@@ -26,4 +26,8 @@ void setEnvCase(caseDeplacement * caseDep, enum env valeurEnv);
 
 void setPersoCase(caseDeplacement * caseDep, Perso * pPerso);
 
+caseDeplacement * initCase(enum env envCase, Perso * pPerso);
+
+void testamentCase(caseDeplacement * caseDep);
+
 #endif
