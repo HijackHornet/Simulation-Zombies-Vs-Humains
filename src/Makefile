@@ -18,3 +18,6 @@ personnage.c: coordonnees.c
 
 coordonnees.c:
 	$(CC) $(CFLAGS) -c coordonnees.c
+
+clean:
+	rm -f *.o
