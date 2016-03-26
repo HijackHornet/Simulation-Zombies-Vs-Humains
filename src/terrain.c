@@ -80,7 +80,7 @@ Coordonnees getCoordCaseGaucheByCoord_terr(Coordonnees * coord){
 }
 
 char placePersoByCoord(Perso * pPerso, Coordonnees * coord, Terrain * pTerrain){
-    if(getEnvCase(getGrilleByCoord_terr(coord, pTerrain)) == VIDE){
+    if(getEnvCase(getGrilleByCoord_terr(coord, pTerrain)) == VIDE && getPersoCase(getGrilleByCoord_terr(coord, pTerrain)) == NULL){
 	caseDeplacement * pCase = initCase(VIDE, pPerso);
 	
 	setGrilleByCoord_terr(coord, pTerrain, pCase);
@@ -93,6 +93,25 @@ char placePersoByCoord(Perso * pPerso, Coordonnees * coord, Terrain * pTerrain){
     else{
 	return 0;
     }
+}
+
+Perso * creePersoTerrainRand(Terrain * pTerrain, enum typePerso type){ //crée un perso et le place sur le terrain
+    srand(time((NULL)));
+
+    Coordonnees * pCoordZombie = initCoordonnees_coord(-1, -1);
+    Perso * pZombie = initPerso(pCoordZombie, type);
+
+    char coordOk = 0;
+    
+    while(!coordOk){
+	setXCoord_Coord(rand()%getDimX_terr(pTerrain), pCoordZombie);
+	setYCoord_Coord(rand()%getDimY_terr(pTerrain), pCoordZombie);
+
+	coordOk = placePersoByCoord(pZombie, pCoordZombie, pTerrain);
+    }
+
+    return pZombie;
+    
 }
 
 //////////////////////////////////////////////////////////////////////////////
@@ -146,31 +165,31 @@ char estDansTerrain_terr(Terrain * pTerrain, Coordonnees * pCoord){
 char verifDeplacementBas_perso(Perso * pPerso, Terrain * pTerrain){
     Coordonnees coordBas = (Coordonnees){getXPerso_perso(pPerso), getYPerso_perso(pPerso) - 1};
 
-    return (estDansTerrain_terr(pTerrain, &coordBas) && getGrilleByCoord_terr(&coordBas, pTerrain) == NULL && !(getEnvCase(getGrilleByCoord_terr(&coordBas, pTerrain))));
+    return (estDansTerrain_terr(pTerrain, &coordBas) && getPersoCase(getGrilleByCoord_terr(&coordBas, pTerrain)) == NULL && getEnvCase(getGrilleByCoord_terr(&coordBas, pTerrain)) == VIDE);
 }
 
 char verifDeplacementHaut_perso(Perso * pPerso, Terrain * pTerrain){
-    Coordonnees coordHaut = (Coordonnees){getXPerso_perso(pPerso), getYPerso_perso(pPerso) - 1};
+    Coordonnees coordHaut = (Coordonnees){getXPerso_perso(pPerso), getYPerso_perso(pPerso) + 1};
 
-    return (estDansTerrain_terr(pTerrain, &coordHaut) && getGrilleByCoord_terr(&coordHaut, pTerrain) == NULL && !(getEnvCase(getGrilleByCoord_terr(&coordHaut, pTerrain))));
+    return (estDansTerrain_terr(pTerrain, &coordHaut) && getPersoCase(getGrilleByCoord_terr(&coordHaut, pTerrain)) == NULL && getEnvCase(getGrilleByCoord_terr(&coordHaut, pTerrain)) == VIDE);
 }
 
 char verifDeplacementGauche_perso(Perso *  pPerso, Terrain * pTerrain){
-    Coordonnees coordGauche = (Coordonnees){getXPerso_perso(pPerso), getYPerso_perso(pPerso) - 1};
+    Coordonnees coordGauche = (Coordonnees){getXPerso_perso(pPerso) - 1, getYPerso_perso(pPerso)};
 
-    return (estDansTerrain_terr(pTerrain, &coordGauche) && getGrilleByCoord_terr(&coordGauche, pTerrain) == NULL && !(getEnvCase(getGrilleByCoord_terr(&coordGauche, pTerrain))));
+    return (estDansTerrain_terr(pTerrain, &coordGauche) && getPersoCase(getGrilleByCoord_terr(&coordGauche, pTerrain)) == NULL && getEnvCase(getGrilleByCoord_terr(&coordGauche, pTerrain)) == VIDE);
 }
 
 char verifDeplacementDroite_perso(Perso * pPerso, Terrain * pTerrain){
-    Coordonnees coordDroite = (Coordonnees){getXPerso_perso(pPerso), getYPerso_perso(pPerso) - 1};
+    Coordonnees coordDroite = (Coordonnees){getXPerso_perso(pPerso) + 1, getYPerso_perso(pPerso)};
 
-    return (estDansTerrain_terr(pTerrain, &coordDroite) && getGrilleByCoord_terr(&coordDroite, pTerrain) == NULL && !(getEnvCase(getGrilleByCoord_terr(&coordDroite, pTerrain))));
+    return (estDansTerrain_terr(pTerrain, &coordDroite) && getPersoCase(getGrilleByCoord_terr(&coordDroite, pTerrain)) == NULL && getEnvCase(getGrilleByCoord_terr(&coordDroite, pTerrain)) == VIDE);
 }
 
 char deplacementHaut_perso(Perso * pPerso, Terrain * pTerrain){
     if(verifDeplacementHaut_perso(pPerso, pTerrain)){
 	
-	placePersoByCoord(NULL, getCoordonneesPerso_perso(pPerso), pTerrain);
+        setPersoCase(getGrilleByCoord_terr(getCoordonneesPerso_perso(pPerso), pTerrain), NULL);
 
 	setYPerso_perso(pPerso, getYPerso_perso(pPerso) + 1);
 
@@ -204,7 +223,7 @@ char deplacementBas_perso(Perso * pPerso, Terrain * pTerrain){
 char deplacementGauche_perso(Perso * pPerso, Terrain * pTerrain){
     if(verifDeplacementGauche_perso(pPerso, pTerrain)){
 
-	placePersoByCoord(NULL, getCoordonneesPerso_perso(pPerso), pTerrain);
+        setPersoCase(getGrilleByCoord_terr(getCoordonneesPerso_perso(pPerso), pTerrain), NULL);
 
 	setXPerso_perso(pPerso, getXPerso_perso(pPerso) - 1);
 
@@ -219,7 +238,7 @@ char deplacementGauche_perso(Perso * pPerso, Terrain * pTerrain){
 }
 
 char deplacementDroite_perso(Perso * pPerso, Terrain * pTerrain){
-    if(verifDeplacementBas_perso(pPerso, pTerrain)){
+    if(verifDeplacementDroite_perso(pPerso, pTerrain)){
         setPersoCase(getGrilleByCoord_terr(getCoordonneesPerso_perso(pPerso), pTerrain), NULL);
 
 	setXPerso_perso(pPerso, getXPerso_perso(pPerso) + 1);
@@ -346,11 +365,24 @@ char humainADroite(Terrain * pTerrain, Coordonnees * coordZombie){
 void afficherGrilleConsole(Terrain * pTerrain){
     for(int i = getDimY_terr(pTerrain) - 1; i >= 0; i--){
 	for (int j = 0; j < getDimX_terr(pTerrain); j++) {
-	    if(getEnvCase(getGrilleByXY_terr(j, i, pTerrain)) == VIDE){
-		printf(" ");
+	    if(getPersoCase(getGrilleByXY_terr(j, i, pTerrain)) != NULL){
+		if(getTypePerso(getPersoCase(getGrilleByXY_terr(j, i, pTerrain))) == ZOMBIE){
+		    printf("Z");
+		}
+		else if(getTypePerso(getPersoCase(getGrilleByXY_terr(j, i, pTerrain))) == CITOYEN){
+		    printf("C");
+		}
+		else if(getTypePerso(getPersoCase(getGrilleByXY_terr(j, i, pTerrain))) == POLICIER){
+		    printf("P");
+		}
 	    }
 	    else{
-		printf("X");
+		if(getEnvCase(getGrilleByXY_terr(j, i, pTerrain)) == VIDE){
+		    printf(" ");
+		}
+		else{
+		    printf("X");
+		}
 	    }
 	}
 	printf("\n");
@@ -458,6 +490,8 @@ void testFonctions_terr(){
     placePersoByCoord(pZombie, coordZombie, pFichierEcritureTest);
     placePersoByCoord(pHumain, coordHumain, pFichierEcritureTest);
 
+    afficherGrilleConsole(pFichierEcritureTest);
+
     if(humainEnHaut(pFichierEcritureTest, getCoordonneesPerso_perso(pZombie))){
 	printf("YES\n");
     }
@@ -467,6 +501,9 @@ void testFonctions_terr(){
 
     deplacementDroite_perso(pHumain, pFichierEcritureTest);
     deplacementBas_perso(pHumain, pFichierEcritureTest);
+    deplacementAleatoire_perso(pHumain, pFichierEcritureTest);
+
+    afficherGrilleConsole(pFichierEcritureTest);
 
     if(humainADroite(pFichierEcritureTest, getCoordonneesPerso_perso(pZombie)) && !humainEnHaut(pFichierEcritureTest, getCoordonneesPerso_perso(pZombie))){
 	printf("YES\n");
