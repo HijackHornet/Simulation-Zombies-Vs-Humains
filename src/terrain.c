@@ -517,6 +517,10 @@ void testFonctions_terr(){
     
     testamentPerso(pZombie);
     testamentPerso(pHumain);
+
+    pZombie = creePersoTerrainRand(pFichierLectureTest, ZOMBIE);
+
+    afficherGrilleConsole(pFichierLectureTest);
     
     testamentTerrain_terr(pFichierEcritureTest);
     testamentTerrain_terr(pFichierLectureTest);
