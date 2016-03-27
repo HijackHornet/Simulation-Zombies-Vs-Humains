@@ -23,4 +23,4 @@ coordonnees.c:
 	$(CC) $(CFLAGS) -c coordonnees.c
 
 clean:
-	rm -f *.o
+	rm -f *.o && rm projet.out
