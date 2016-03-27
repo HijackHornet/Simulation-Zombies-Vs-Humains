@@ -44,4 +44,6 @@ void deplacerZombies_sim(Simulation * pSim);
 
 void testFonctions_sim();
 
+void contaminations(Simulation * pSim);
+
 #endif

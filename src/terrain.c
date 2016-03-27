@@ -359,6 +359,46 @@ char humainADroite(Terrain * pTerrain, Coordonnees * coordZombie){
 
 
 /////////////////////////////////////////////////////////////////////////////
+//INTERACTIONS///////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+
+char zombieContamineHumain(Perso * pZombie, Terrain * pTerrain){
+    Coordonnees * coordZombie = getCoordonneesPerso_perso(pZombie);
+    Coordonnees coordHumain;
+    caseDeplacement * caseHumain;
+    
+    if(humainEnHaut(pTerrain, coordZombie)){
+	coordHumain = getCoordCaseHautByCoord_terr(coordZombie);
+	caseHumain = getGrilleByCoord_terr(&coordHumain, pTerrain);
+	setTypePerso_perso(ZOMBIE, getPersoCase(caseHumain));
+	return 1;
+    }
+    
+    else if(humainEnBas(pTerrain, coordZombie)){
+	coordHumain = getCoordCaseBasByCoord_terr(coordZombie);
+	caseHumain = getGrilleByCoord_terr(&coordHumain, pTerrain);
+	setTypePerso_perso(ZOMBIE, getPersoCase(caseHumain));
+	return 1;
+    }
+
+    else if(humainAGauche(pTerrain, coordZombie)){
+	coordHumain = getCoordCaseGaucheByCoord_terr(coordZombie);
+	caseHumain = getGrilleByCoord_terr(&coordHumain, pTerrain);
+	setTypePerso_perso(ZOMBIE, getPersoCase(caseHumain));
+	return 1;
+    }
+
+    else if(humainADroite(pTerrain, coordZombie)){
+	coordHumain = getCoordCaseDroiteByCoord_terr(coordZombie);
+	caseHumain = getGrilleByCoord_terr(&coordHumain, pTerrain);
+	setTypePerso_perso(ZOMBIE, getPersoCase(caseHumain));
+	return 1;
+    }
+
+    return 0;
+}
+
+/////////////////////////////////////////////////////////////////////////////
 //ENTREES-SORTIES////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
 

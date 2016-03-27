@@ -101,13 +101,13 @@ Coordonnees getCoordCaseGaucheByXY_terr(int x, int y);
 
 Coordonnees getCoordCaseHautByXY_terr(int x, int y);
 
-Coordonnees getCoordCaseBasByCoord(Coordonnees * coord);
+Coordonnees getCoordCaseBasByCoord_terr(Coordonnees * coord);
 
-Coordonnees getCoordCaseHautByCoord(Coordonnees * coord);
+Coordonnees getCoordCaseHautByCoord_terr(Coordonnees * coord);
 
-Coordonnees getCoordCaseGaucheByCoord(Coordonnees * coord);
+Coordonnees getCoordCaseGaucheByCoord_terr(Coordonnees * coord);
 
-Coordonnees getCoordCaseDroiteByCoord(Coordonnees * coord);
+Coordonnees getCoordCaseDroiteByCoord_terr(Coordonnees * coord);
 
 caseDeplacement * getGrilleByCoord_terr(Coordonnees * pCoord, Terrain * pTerrain);
 
@@ -158,6 +158,12 @@ char deplacementGauche_perso(Perso * pPerso, Terrain * pTerrain);
 char deplacementDroite_perso(Perso * pPerso, Terrain * pTerrain);
 
 void deplacementAleatoire_perso(Perso * pPerso, Terrain * pTerrain);
+
+/////////////////////////////////////////////////////////////////////////////
+//INTERACTIONS///////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+
+char zombieContamineHumain(Perso * pZombie, Terrain * pTerrain);
 
 /////////////////////////////////////////////////////////////////////////////
 //SPECIFIQUE ZOMBIE//////////////////////////////////////////////////////////
