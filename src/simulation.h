@@ -3,6 +3,9 @@
 
 typedef struct MSimulation{
     Terrain * pTerrain;
+    int nbZombies;
+    int nbCitoyens;
+    int nbPoliciers;
     Perso *  zombies[100];
     Perso * citoyens[100];
     Perso * policiers[100];

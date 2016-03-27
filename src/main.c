@@ -6,8 +6,8 @@
 #include "simulation.h"
 
 int main(){
-    testFonctions_Coord();
-    testFonctions_terr();
-    testFonctions_perso();
+    //testFonctions_Coord();
+    //testFonctions_terr();
+    //testFonctions_perso();
     testFonctions_sim();
 }
