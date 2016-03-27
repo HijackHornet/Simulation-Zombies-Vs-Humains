@@ -96,8 +96,6 @@ char placePersoByCoord(Perso * pPerso, Coordonnees * coord, Terrain * pTerrain){
 }
 
 Perso * creePersoTerrainRand(Terrain * pTerrain, enum typePerso type){ //crée un perso et le place sur le terrain
-    srand(time((NULL)));
-
     Coordonnees * pCoordZombie = initCoordonnees_coord(-1, -1);
     Perso * pZombie = initPerso(pCoordZombie, type);
 
@@ -254,8 +252,6 @@ char deplacementDroite_perso(Perso * pPerso, Terrain * pTerrain){
 }
 
 void deplacementAleatoire_perso(Perso * pPerso, Terrain * pTerrain){
-    srand(time(NULL));
-
     char deplacementEffectue;
 
     while(deplacementEffectue != 1){
