@@ -1,3 +1,6 @@
+#ifndef _SIMULATION
+#define _SIMULATION
+
 #include "terrain.h"
 #include "personnage.h"
 
@@ -31,4 +34,14 @@ void initSimulation_sim(Simulation * pSim, int nbZombies, int nbCitoyens, int nb
 
 Simulation * creerSimulation_sim(int nbZombies, int nbCitoyens, int nbPoliciers, char * nomFic);
 
+void deplacerPerso_sim(Simulation * pSim);
+
+void deplacerPoliciers_sim(Simulation * pSim);
+
+void deplacerCitoyens_sim(Simulation * pSim);
+
+void deplacerZombies_sim(Simulation * pSim);
+
 void testFonctions_sim();
+
+#endif

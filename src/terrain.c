@@ -437,7 +437,6 @@ Terrain * terrainLireFichier_terr (char * nomTerrain){
     Terrain * pTerrain = NULL;
     int dimX, dimY;
     fscanf(pFichier,"%d %d\n", &dimX, &dimY);
-    printf("%d %d\n", dimX, dimY);
     pTerrain = terrainCreer_terr(dimX, dimY, nomTerrain);
 
     assert(pTerrain != NULL);
