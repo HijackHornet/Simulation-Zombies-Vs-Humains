@@ -11,5 +11,5 @@ int main(){
     //testFonctions_terr();
     //testFonctions_perso();
     //testFonctions_sim();
-    lanceSimulation("FichierTestLectureLOL");
+    lanceSimulation("FichierTestLecture");
 }

@@ -11,6 +11,7 @@
 enum typePerso {LIBRE, POLICIER, ZOMBIE, CITOYEN};
 
 typedef struct MPerso {
+    int id;
     Coordonnees * coord;
     enum typePerso type;
 } Perso;
@@ -31,11 +32,12 @@ void setTypePerso_perso(enum typePerso type, Perso * pPerso);
 
 void setCoordPerso_perso(Coordonnees * coord, Perso * pPerso);
 
-Perso * initPerso(Coordonnees * coord, enum typePerso typePerso);
+Perso * initPerso(Coordonnees * coord, enum typePerso typePerso, int idPerso);
 
 void testamentPerso(Perso * pPerso);
 
 void testFonctions_perso();
 
+int getIdPerso(Perso * pPerso);
 
 #endif

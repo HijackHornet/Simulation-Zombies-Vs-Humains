@@ -97,9 +97,9 @@ char placePersoByCoord(Perso * pPerso, Coordonnees * coord, Terrain * pTerrain){
     }
 }
 
-Perso * creePersoTerrainRand(Terrain * pTerrain, enum typePerso type){ //crée un perso et le place sur le terrain
+Perso * creePersoTerrainRand(Terrain * pTerrain, enum typePerso type, int idPerso){ //crée un perso et le place sur le terrain
     Coordonnees * pCoordZombie = initCoordonnees_coord(-1, -1);
-    Perso * pZombie = initPerso(pCoordZombie, type);
+    Perso * pZombie = initPerso(pCoordZombie, type, idPerso);
 
     char coordOk = 0;
     
@@ -364,7 +364,7 @@ char humainADroite(Terrain * pTerrain, Coordonnees * coordZombie){
 //INTERACTIONS///////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
 
-char zombieContamineHumain(Perso * pZombie, Terrain * pTerrain){
+Perso * zombieContamineHumain(Perso * pZombie, Terrain * pTerrain){
     Coordonnees * coordZombie = getCoordonneesPerso_perso(pZombie);
     Coordonnees coordHumain;
     caseDeplacement * caseHumain;
@@ -376,7 +376,7 @@ char zombieContamineHumain(Perso * pZombie, Terrain * pTerrain){
 	caseHumain = getGrilleByCoord_terr(&coordHumain, pTerrain);
 	setTypePerso_perso(ZOMBIE, getPersoCase(caseHumain));
 	assert(getTypePerso(getPersoCase(caseHumain)) == ZOMBIE);
-	return 1;
+	return getPersoCase(caseHumain);
     }
     
     else if(humainEnBas(pTerrain, coordZombie)){
@@ -385,7 +385,7 @@ char zombieContamineHumain(Perso * pZombie, Terrain * pTerrain){
 	caseHumain = getGrilleByCoord_terr(&coordHumain, pTerrain);
 	setTypePerso_perso(ZOMBIE, getPersoCase(caseHumain));
 	assert(getTypePerso(getPersoCase(caseHumain)) == ZOMBIE);
-	return 1;
+        return getPersoCase(caseHumain);
     }
 
     else if(humainAGauche(pTerrain, coordZombie)){
@@ -393,7 +393,7 @@ char zombieContamineHumain(Perso * pZombie, Terrain * pTerrain){
 	caseHumain = getGrilleByCoord_terr(&coordHumain, pTerrain);
 	setTypePerso_perso(ZOMBIE, getPersoCase(caseHumain));
 	assert(getTypePerso(getPersoCase(caseHumain)) == ZOMBIE);
-	return 1;
+        return getPersoCase(caseHumain);
     }
 
     else if(humainADroite(pTerrain, coordZombie)){
@@ -401,10 +401,10 @@ char zombieContamineHumain(Perso * pZombie, Terrain * pTerrain){
 	caseHumain = getGrilleByCoord_terr(&coordHumain, pTerrain);
 	setTypePerso_perso(ZOMBIE, getPersoCase(caseHumain));
         assert(getTypePerso(getPersoCase(caseHumain)) == ZOMBIE);
-	return 1;
+        return getPersoCase(caseHumain);
     }
 
-    return 0;
+    return NULL;
 }
 
 /////////////////////////////////////////////////////////////////////////////
@@ -532,8 +532,8 @@ void testFonctions_terr(){
     Coordonnees * coordZombie = initCoordonnees_coord(2,3);
     Coordonnees * coordHumain = initCoordonnees_coord(2,2);
 
-    Perso * pZombie = initPerso(coordZombie, ZOMBIE);
-    Perso * pHumain = initPerso(coordHumain, CITOYEN);
+    Perso * pZombie = initPerso(coordZombie, ZOMBIE, 0);
+    Perso * pHumain = initPerso(coordHumain, CITOYEN, 1);
 
     placePersoByCoord(pZombie, coordZombie, pFichierEcritureTest);
     placePersoByCoord(pHumain, coordHumain, pFichierEcritureTest);

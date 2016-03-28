@@ -113,7 +113,7 @@ caseDeplacement * getGrilleByCoord_terr(Coordonnees * pCoord, Terrain * pTerrain
 
 void setGrilleByCoord_terr(Coordonnees * coord, Terrain * pTerrain, caseDeplacement * caseDep);
 
-Perso * creePersoTerrainRand(Terrain * pTerrain, enum typePerso type);
+Perso * creePersoTerrainRand(Terrain * pTerrain, enum typePerso type, int idPerso);
 
 ////////////////////////////////////////////////////////////////////////////
 //CREATION//////////////////////////////////////////////////////////////////
@@ -165,7 +165,7 @@ void deplacementAleatoire_perso(Perso * pPerso, Terrain * pTerrain);
 //INTERACTIONS///////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
 
-char zombieContamineHumain(Perso * pZombie, Terrain * pTerrain);
+Perso * zombieContamineHumain(Perso * pZombie, Terrain * pTerrain);
 
 /////////////////////////////////////////////////////////////////////////////
 //SPECIFIQUE ZOMBIE//////////////////////////////////////////////////////////

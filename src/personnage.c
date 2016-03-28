@@ -36,16 +36,25 @@ void setTypePerso_perso(enum typePerso typePerso, Perso * pPerso){
     pPerso -> type = typePerso;
 }
 
+void setIdPerso(int idPerso, Perso * pPerso){
+    pPerso -> id = idPerso;
+}
+
+int getIdPerso(Perso * pPerso){
+    return pPerso -> id;
+}
+
 
 ////////////////////////////////////////////////////////////////////////////
 //CREATION PERSO////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////
 
-Perso * initPerso(Coordonnees * coord, enum typePerso typePerso){
+Perso * initPerso(Coordonnees * coord, enum typePerso typePerso, int idPerso){
     Perso * pPerso = (Perso *)malloc(sizeof(Perso));
 
     setCoordPerso_perso(coord, pPerso);
     setTypePerso_perso(typePerso, pPerso);
+    setIdPerso(idPerso, pPerso);
     
     return pPerso;
 }
@@ -64,7 +73,7 @@ void testFonctions_perso(){
 
     Coordonnees * coordPerso = initCoordonnees_coord(3, 4);
 
-    pPerso = initPerso(coordPerso, ZOMBIE);
+    pPerso = initPerso(coordPerso, ZOMBIE, 0);
 
     assert(getTypePerso(pPerso) == ZOMBIE && sontEgale_Coord(getCoordonneesPerso_perso(pPerso), coordPerso));
 
