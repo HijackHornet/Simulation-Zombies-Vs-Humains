@@ -9,9 +9,9 @@ typedef struct MSimulation{
     int nbZombies;
     int nbCitoyens;
     int nbPoliciers;
-    Perso *  zombies[100];
-    Perso * citoyens[100];
-    Perso * policiers[100];
+    Perso *  zombies[500];
+    Perso * citoyens[500];
+    Perso * policiers[500];
 } Simulation;
 
 Terrain * getTerrain_sim(Simulation * pSim);
@@ -23,6 +23,8 @@ Perso ** getCitoyens_sim(Simulation * pSim);
 Perso ** getPoliciers_sim(Simulation * pSim);
 
 int getNbZombies_sim(Simulation * pSim);
+
+int getNbCitoyens_sim(Simulation * pSim);
 
 void zombiesInit_sim(int nbZombies, Simulation * pSim);
 
@@ -47,5 +49,7 @@ void deplacerZombies_sim(Simulation * pSim);
 void testFonctions_sim();
 
 void contaminations(Simulation * pSim);
+
+int getNbPoliciers_sim(Simulation * pSim);
 
 #endif

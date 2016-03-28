@@ -64,9 +64,7 @@ Coordonnees getCoordCaseBasByXY_terr(int x, int y){
 }
 
 Coordonnees getCoordCaseBasByCoord_terr(Coordonnees * coord){
-    Coordonnees coord2 = getCoordCaseBasByXY_terr(getXCoord_Coord(coord), getYCoord_Coord(coord));
-    printf("%d %d", coord2.xCoord, coord2.yCoord);
-    return coord2;
+    return getCoordCaseBasByXY_terr(getXCoord_Coord(coord), getYCoord_Coord(coord));
 }
 
 Coordonnees getCoordCaseHautByCoord_terr(Coordonnees * coord){
@@ -255,6 +253,8 @@ char deplacementDroite_perso(Perso * pPerso, Terrain * pTerrain){
 void deplacementAleatoire_perso(Perso * pPerso, Terrain * pTerrain){
     char deplacementEffectue = 0;
 
+    assert(pPerso != NULL);
+
     while(deplacementEffectue != 1){
     
 	char direction = rand()%4;
@@ -283,10 +283,7 @@ void deplacementAleatoire_perso(Perso * pPerso, Terrain * pTerrain){
 //SPECIFIQUE ZOMBIE//////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
 char humainEnHaut(Terrain * pTerrain, Coordonnees * coordZombie){
-    Coordonnees coordCaseHaut = getCoordCaseHautByCoord_terr(coordZombie);
-
-    printf("%d %d", coordZombie -> xCoord, coordZombie -> yCoord);
-    
+    Coordonnees coordCaseHaut = getCoordCaseHautByCoord_terr(coordZombie);    
     if(estDansTerrain_terr(pTerrain, &coordCaseHaut) && \
        getPersoCase(getGrilleByCoord_terr(&coordCaseHaut, pTerrain)) != NULL){ //Vérifie d'une part que la case est dans le terrain, d'autre part qu'il y a bien un personnage sur cette case pour pouvoir appeler getTypePerso (SEGFAULT si NULL)
 	caseDeplacement * caseHaut = getGrilleByCoord_terr(&coordCaseHaut, pTerrain);
@@ -304,8 +301,6 @@ char humainEnHaut(Terrain * pTerrain, Coordonnees * coordZombie){
 
 char humainEnBas(Terrain * pTerrain, Coordonnees * coordZombie){
     Coordonnees coordCaseBas = getCoordCaseBasByCoord_terr(coordZombie);
-
-    printf("%d %d", coordCaseBas.xCoord, coordCaseBas.yCoord);
     
     if(estDansTerrain_terr(pTerrain, &coordCaseBas) && \
        getPersoCase(getGrilleByCoord_terr(&coordCaseBas, pTerrain)) != NULL){ //Vérifie d'une part que la case est dans le terrain, d'autre part qu'il y a bien un personnage sur cette case pour pouvoir appeler getTypePerso (SEGFAULT si NULL)
@@ -368,39 +363,32 @@ Perso * zombieContamineHumain(Perso * pZombie, Terrain * pTerrain){
     Coordonnees * coordZombie = getCoordonneesPerso_perso(pZombie);
     Coordonnees coordHumain;
     caseDeplacement * caseHumain;
-
-    printf("%d %d %d",coordZombie -> xCoord, coordZombie -> yCoord, humainEnHaut(pTerrain, coordZombie));
     
     if(humainEnHaut(pTerrain, coordZombie)){
 	coordHumain = getCoordCaseHautByCoord_terr(coordZombie);
 	caseHumain = getGrilleByCoord_terr(&coordHumain, pTerrain);
-	setTypePerso_perso(ZOMBIE, getPersoCase(caseHumain));
-	assert(getTypePerso(getPersoCase(caseHumain)) == ZOMBIE);
+
 	return getPersoCase(caseHumain);
     }
     
     else if(humainEnBas(pTerrain, coordZombie)){
 	coordHumain = getCoordCaseBasByCoord_terr(coordZombie);
-	printf("ping %d %d\n", coordHumain.xCoord, coordHumain.yCoord);
 	caseHumain = getGrilleByCoord_terr(&coordHumain, pTerrain);
-	setTypePerso_perso(ZOMBIE, getPersoCase(caseHumain));
-	assert(getTypePerso(getPersoCase(caseHumain)) == ZOMBIE);
+
         return getPersoCase(caseHumain);
     }
 
     else if(humainAGauche(pTerrain, coordZombie)){
 	coordHumain = getCoordCaseGaucheByCoord_terr(coordZombie);
 	caseHumain = getGrilleByCoord_terr(&coordHumain, pTerrain);
-	setTypePerso_perso(ZOMBIE, getPersoCase(caseHumain));
-	assert(getTypePerso(getPersoCase(caseHumain)) == ZOMBIE);
+
         return getPersoCase(caseHumain);
     }
 
     else if(humainADroite(pTerrain, coordZombie)){
 	coordHumain = getCoordCaseDroiteByCoord_terr(coordZombie);
 	caseHumain = getGrilleByCoord_terr(&coordHumain, pTerrain);
-	setTypePerso_perso(ZOMBIE, getPersoCase(caseHumain));
-        assert(getTypePerso(getPersoCase(caseHumain)) == ZOMBIE);
+
         return getPersoCase(caseHumain);
     }
 

@@ -33,7 +33,7 @@ int getNbPoliciers_sim(Simulation * pSim){
 }
 
 void setNbPoliciers_sim(int nbPoliciers, Simulation * pSim){
-    pSim -> nbPoliciers= nbPoliciers;
+    pSim -> nbPoliciers = nbPoliciers;
 }
 
 Perso ** getZombies_sim(Simulation * pSim){
@@ -54,8 +54,8 @@ Perso ** getPoliciers_sim(Simulation * pSim){
 
 void zombiesInit_sim(int nbZombies, Simulation * pSim){
     Perso ** tabZombies = getZombies_sim(pSim); 
-    for (int i = 0; i< nbZombies; i++) {
-	tabZombies[i] = creePersoTerrainRand(getTerrain_sim(pSim), ZOMBIE);
+    for (int i = 0; i < nbZombies; i++) {
+	tabZombies[i] = creePersoTerrainRand(getTerrain_sim(pSim), ZOMBIE, i);
     }
 
     setNbZombies_sim(nbZombies, pSim);
@@ -63,8 +63,8 @@ void zombiesInit_sim(int nbZombies, Simulation * pSim){
 
 void citoyensInit_sim(int nbCitoyens, Simulation * pSim){
     Perso ** tabCitoyens = getCitoyens_sim(pSim); 
-    for (int i = 0; i< nbCitoyens; i++) {
-	tabCitoyens[i] = creePersoTerrainRand(getTerrain_sim(pSim), CITOYEN);
+    for (int i = 0; i < nbCitoyens; i++) {
+	tabCitoyens[i] = creePersoTerrainRand(getTerrain_sim(pSim), CITOYEN, i);
     }
 
     setNbCitoyens_sim(nbCitoyens, pSim);
@@ -72,8 +72,8 @@ void citoyensInit_sim(int nbCitoyens, Simulation * pSim){
 
 void policiersInit_sim(int nbPoliciers, Simulation * pSim){
     Perso ** tabPoliciers = getPoliciers_sim(pSim); 
-    for (int i = 0; i< nbPoliciers; i++) {
-	tabPoliciers[i] = creePersoTerrainRand(getTerrain_sim(pSim), POLICIER);
+    for (int i = 0; i < nbPoliciers; i++) {
+	tabPoliciers[i] = creePersoTerrainRand(getTerrain_sim(pSim), POLICIER, i);
     }
 
     setNbPoliciers_sim(nbPoliciers, pSim);
@@ -130,12 +130,100 @@ void testamentSim(Simulation * pSim){
 
 }
 
+void ajouterZombie(Perso * pZombie, Simulation * pSim){
+    Perso ** tabZombies = getZombies_sim(pSim);
+    int nbZombies = getNbZombies_sim(pSim);
+
+    nbZombies++;
+    setNbZombies_sim(nbZombies, pSim);
+
+    tabZombies[nbZombies - 1] = pZombie;
+}
+
+void supprimerZombie(Perso * pZombie, Simulation * pSim){
+    Perso ** tabZombies = getZombies_sim(pSim);
+    int nbZombies = getNbZombies_sim(pSim);
+
+    int idZombie = getIdPerso(pZombie);
+
+    for(int i = idZombie; i < nbZombies - 1; i++){
+	tabZombies[i] = tabZombies[i + 1];
+	(tabZombies[i] -> id)--;
+    }
+
+    nbZombies--;
+    tabZombies[nbZombies - 1] = NULL;
+
+    setNbZombies_sim(nbZombies, pSim);
+}
+
+void ajouterCitoyen(Perso * pCitoyen, Simulation * pSim){
+    Perso ** tabCitoyens = getCitoyens_sim(pSim);
+    int nbCitoyens = getNbCitoyens_sim(pSim);
+
+    nbCitoyens++;
+    setNbCitoyens_sim(nbCitoyens,pSim);
+
+    tabCitoyens[nbCitoyens - 1] = pCitoyen;
+}
+
+void supprimerCitoyen(Perso * pCitoyen, Simulation * pSim){
+    Perso ** tabCitoyens = getCitoyens_sim(pSim);
+    int nbCitoyens = getNbCitoyens_sim(pSim);
+
+    int idCitoyen = getIdPerso(pCitoyen);
+
+    for(int i = idCitoyen; i < nbCitoyens - 1; i++){
+	tabCitoyens[i] = tabCitoyens[i + 1];	
+	(tabCitoyens[i] -> id)--;
+    }
+
+    tabCitoyens[nbCitoyens - 1] = NULL;
+
+    nbCitoyens--;
+
+    printf("CITOYENS %d", nbCitoyens);
+    
+    setNbCitoyens_sim(nbCitoyens, pSim);
+}
+
+void ajouterPolicier(Perso * pPolicier, Simulation * pSim){
+    Perso ** tabPoliciers = getPoliciers_sim(pSim);
+    int nbPoliciers = getNbPoliciers_sim(pSim);
+
+    nbPoliciers++;
+    (pSim -> nbPoliciers)++;
+
+    tabPoliciers[nbPoliciers - 1] = pPolicier;
+}
+
+
+void supprimerPolicier(Perso * pPolicier, Simulation * pSim){
+    Perso ** tabPoliciers = getPoliciers_sim(pSim);
+    int nbPoliciers = getNbPoliciers_sim(pSim);
+
+    int idPolicier = getIdPerso(pPolicier);
+
+    for(int i = idPolicier; i < nbPoliciers - 1; i++){
+	tabPoliciers[i] = tabPoliciers[i + 1];	
+	(tabPoliciers[i] -> id)--;
+    }
+
+    tabPoliciers[nbPoliciers - 1] = NULL;
+
+    nbPoliciers--;
+    
+    setNbPoliciers_sim(nbPoliciers, pSim);
+}
+
+
 ///////////////////////////////////////////////////////////////////////////////
 //EXECUTION////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 
 void deplacerZombies_sim(Simulation * pSim){
     int nbZombies = getNbZombies_sim(pSim);
+    printf("ZOMBIE %d\n", nbZombies);
     Perso ** tabZombies = getZombies_sim(pSim);
     for(int i = 0; i < nbZombies; i++){
 	deplacementAleatoire_perso(tabZombies[i], getTerrain_sim(pSim));
@@ -153,6 +241,7 @@ void deplacerCitoyens_sim(Simulation * pSim){
 void deplacerPoliciers_sim(Simulation * pSim){
     int nbPoliciers = getNbPoliciers_sim(pSim);
     Perso ** tabPoliciers = getPoliciers_sim(pSim);
+    
     for(int i = 0; i < nbPoliciers; i++){
 	deplacementAleatoire_perso(tabPoliciers[i], getTerrain_sim(pSim));
     }
@@ -172,8 +261,22 @@ void deplacerPerso_sim(Simulation * pSim){
 void contaminations(Simulation * pSim){
     int nbZombies = getNbZombies_sim(pSim);
     Perso ** tabZombies = getZombies_sim(pSim);
+    Perso * persoContamine = NULL;
     for (int i = 0; i < nbZombies; i++) {
-	zombieContamineHumain(tabZombies[i], getTerrain_sim(pSim));
+	persoContamine = zombieContamineHumain(tabZombies[i], getTerrain_sim(pSim));
+	if(persoContamine != NULL){
+	    if(getTypePerso(persoContamine) == CITOYEN){
+		supprimerCitoyen(persoContamine, pSim);
+		setTypePerso_perso(ZOMBIE, persoContamine);
+		ajouterZombie(persoContamine, pSim);
+	    }
+
+	    else if(getTypePerso(persoContamine) == POLICIER){
+		supprimerPolicier(persoContamine, pSim);
+		setTypePerso_perso(ZOMBIE, persoContamine);
+		ajouterZombie(persoContamine, pSim);
+	    }
+	}
     }
 }
 
@@ -182,15 +285,22 @@ void contaminations(Simulation * pSim){
 ///////////////////////////////////////////////////////////////////////////////
 
 void testFonctions_sim(){
+    srand(time(NULL));
     char * nomFic = "FichierTestLecture";
 
-    Simulation * pSim = creerSimulation_sim(2, 2, 1, nomFic);
+    Simulation * pSim = creerSimulation_sim(100, 30, 30, nomFic);
 
     afficherGrilleConsole(getTerrain_sim(pSim));
 
+    contaminations(pSim);
     deplacerPerso_sim(pSim);
+    contaminations(pSim);
+    deplacerPerso_sim(pSim);
+    contaminations(pSim);
 
     afficherGrilleConsole(getTerrain_sim(pSim));
+
+    printf("%d %d %d", getNbZombies_sim(pSim), getNbCitoyens_sim(pSim), getNbPoliciers_sim(pSim));
 
     testamentSim(pSim);
 }
