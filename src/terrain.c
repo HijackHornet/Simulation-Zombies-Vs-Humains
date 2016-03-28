@@ -64,7 +64,9 @@ Coordonnees getCoordCaseBasByXY_terr(int x, int y){
 }
 
 Coordonnees getCoordCaseBasByCoord_terr(Coordonnees * coord){
-    return getCoordCaseBasByXY_terr(getXCoord_Coord(coord), getYCoord_Coord(coord));
+    Coordonnees coord2 = getCoordCaseBasByXY_terr(getXCoord_Coord(coord), getYCoord_Coord(coord));
+    printf("%d %d", coord2.xCoord, coord2.yCoord);
+    return coord2;
 }
 
 Coordonnees getCoordCaseHautByCoord_terr(Coordonnees * coord){
@@ -283,6 +285,8 @@ void deplacementAleatoire_perso(Perso * pPerso, Terrain * pTerrain){
 char humainEnHaut(Terrain * pTerrain, Coordonnees * coordZombie){
     Coordonnees coordCaseHaut = getCoordCaseHautByCoord_terr(coordZombie);
 
+    printf("%d %d", coordZombie -> xCoord, coordZombie -> yCoord);
+    
     if(estDansTerrain_terr(pTerrain, &coordCaseHaut) && \
        getPersoCase(getGrilleByCoord_terr(&coordCaseHaut, pTerrain)) != NULL){ //Vérifie d'une part que la case est dans le terrain, d'autre part qu'il y a bien un personnage sur cette case pour pouvoir appeler getTypePerso (SEGFAULT si NULL)
 	caseDeplacement * caseHaut = getGrilleByCoord_terr(&coordCaseHaut, pTerrain);
@@ -301,8 +305,11 @@ char humainEnHaut(Terrain * pTerrain, Coordonnees * coordZombie){
 char humainEnBas(Terrain * pTerrain, Coordonnees * coordZombie){
     Coordonnees coordCaseBas = getCoordCaseBasByCoord_terr(coordZombie);
 
+    printf("%d %d", coordCaseBas.xCoord, coordCaseBas.yCoord);
+    
     if(estDansTerrain_terr(pTerrain, &coordCaseBas) && \
        getPersoCase(getGrilleByCoord_terr(&coordCaseBas, pTerrain)) != NULL){ //Vérifie d'une part que la case est dans le terrain, d'autre part qu'il y a bien un personnage sur cette case pour pouvoir appeler getTypePerso (SEGFAULT si NULL)
+	
 	caseDeplacement * caseBas = getGrilleByCoord_terr(&coordCaseBas, pTerrain);
 	if(getTypePerso(getPersoCase(caseBas)) == CITOYEN || getTypePerso(getPersoCase(caseBas)) == POLICIER){
 	    return 1;
@@ -361,18 +368,23 @@ char zombieContamineHumain(Perso * pZombie, Terrain * pTerrain){
     Coordonnees * coordZombie = getCoordonneesPerso_perso(pZombie);
     Coordonnees coordHumain;
     caseDeplacement * caseHumain;
+
+    printf("%d %d %d",coordZombie -> xCoord, coordZombie -> yCoord, humainEnHaut(pTerrain, coordZombie));
     
     if(humainEnHaut(pTerrain, coordZombie)){
 	coordHumain = getCoordCaseHautByCoord_terr(coordZombie);
 	caseHumain = getGrilleByCoord_terr(&coordHumain, pTerrain);
 	setTypePerso_perso(ZOMBIE, getPersoCase(caseHumain));
+	assert(getTypePerso(getPersoCase(caseHumain)) == ZOMBIE);
 	return 1;
     }
     
     else if(humainEnBas(pTerrain, coordZombie)){
 	coordHumain = getCoordCaseBasByCoord_terr(coordZombie);
+	printf("ping %d %d\n", coordHumain.xCoord, coordHumain.yCoord);
 	caseHumain = getGrilleByCoord_terr(&coordHumain, pTerrain);
 	setTypePerso_perso(ZOMBIE, getPersoCase(caseHumain));
+	assert(getTypePerso(getPersoCase(caseHumain)) == ZOMBIE);
 	return 1;
     }
 
@@ -380,6 +392,7 @@ char zombieContamineHumain(Perso * pZombie, Terrain * pTerrain){
 	coordHumain = getCoordCaseGaucheByCoord_terr(coordZombie);
 	caseHumain = getGrilleByCoord_terr(&coordHumain, pTerrain);
 	setTypePerso_perso(ZOMBIE, getPersoCase(caseHumain));
+	assert(getTypePerso(getPersoCase(caseHumain)) == ZOMBIE);
 	return 1;
     }
 
@@ -387,6 +400,7 @@ char zombieContamineHumain(Perso * pZombie, Terrain * pTerrain){
 	coordHumain = getCoordCaseDroiteByCoord_terr(coordZombie);
 	caseHumain = getGrilleByCoord_terr(&coordHumain, pTerrain);
 	setTypePerso_perso(ZOMBIE, getPersoCase(caseHumain));
+        assert(getTypePerso(getPersoCase(caseHumain)) == ZOMBIE);
 	return 1;
     }
 
@@ -503,27 +517,27 @@ Terrain * terrainLireFichier_terr (char * nomTerrain){
 }
 
 void testFonctions_terr(){
-    Terrain * pFichierLectureTest;
+    //Terrain * pFichierLectureTest;
     Terrain * pFichierEcritureTest;
     
     char * nomFicEcriture = "FichierTestEcriture";
-    char * nomFicLecture = "FichierTestLecture";
+    //char * nomFicLecture = "FichierTestLecture";
 
     pFichierEcritureTest = terrainCreer_terr (20, 15, nomFicEcriture);
     terrainCreerFichier_terr(pFichierEcritureTest);
 
-    pFichierLectureTest = terrainLireFichier_terr(nomFicLecture);
-    afficherGrilleConsole(pFichierLectureTest);
+    //pFichierLectureTest = terrainLireFichier_terr(nomFicLecture);
+    //afficherGrilleConsole(pFichierLectureTest);
 
     Coordonnees * coordZombie = initCoordonnees_coord(2,3);
-    Coordonnees * coordHumain = initCoordonnees_coord(2,4);
+    Coordonnees * coordHumain = initCoordonnees_coord(2,2);
 
     Perso * pZombie = initPerso(coordZombie, ZOMBIE);
     Perso * pHumain = initPerso(coordHumain, CITOYEN);
 
     placePersoByCoord(pZombie, coordZombie, pFichierEcritureTest);
     placePersoByCoord(pHumain, coordHumain, pFichierEcritureTest);
-
+    
     afficherGrilleConsole(pFichierEcritureTest);
 
     if(humainEnHaut(pFichierEcritureTest, getCoordonneesPerso_perso(pZombie))){
@@ -533,6 +547,12 @@ void testFonctions_terr(){
 	printf("NO\n");
     }
 
+    zombieContamineHumain(pZombie, pFichierEcritureTest);
+
+    afficherGrilleConsole(pFichierEcritureTest);
+
+    /*
+    
     deplacementDroite_perso(pHumain, pFichierEcritureTest);
     deplacementBas_perso(pHumain, pFichierEcritureTest);
     deplacementAleatoire_perso(pHumain, pFichierEcritureTest);
@@ -557,4 +577,5 @@ void testFonctions_terr(){
     
     testamentTerrain_terr(pFichierEcritureTest);
     testamentTerrain_terr(pFichierLectureTest);
+    */
 }

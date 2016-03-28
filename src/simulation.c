@@ -182,12 +182,11 @@ void contaminations(Simulation * pSim){
 ///////////////////////////////////////////////////////////////////////////////
 
 void testFonctions_sim(){
-    char * nomFic = "FichierTestLectureLOL";
+    char * nomFic = "FichierTestLecture";
 
     Simulation * pSim = creerSimulation_sim(2, 2, 1, nomFic);
 
     afficherGrilleConsole(getTerrain_sim(pSim));
-
 
     deplacerPerso_sim(pSim);
 

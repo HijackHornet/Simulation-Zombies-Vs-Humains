@@ -22,6 +22,8 @@ Perso ** getCitoyens_sim(Simulation * pSim);
 
 Perso ** getPoliciers_sim(Simulation * pSim);
 
+int getNbZombies_sim(Simulation * pSim);
+
 void zombiesInit_sim(int nbZombies, Simulation * pSim);
 
 void citoyensInit_sim(int nbCitoyens, Simulation * pSim);
