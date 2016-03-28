@@ -80,10 +80,9 @@ void policiersInit_sim(int nbPoliciers, Simulation * pSim){
 }
 
 void terrainInit_sim(char * nomFic, Simulation * pSim){
-    Terrain * pTerrain = (Terrain *)malloc(sizeof(Terrain));
-    pTerrain = terrainLireFichier_terr(nomFic);
-
-    setTerrain_sim(pTerrain, pSim);
+    pSim -> pTerrain = (Terrain *)malloc(sizeof(Terrain));
+    
+    pSim -> pTerrain = terrainLireFichier_terr(nomFic);
 }
 
 void initSimulation_sim(Simulation * pSim, int nbZombies, int nbCitoyens, int nbPoliciers, char * nomFic){
@@ -102,6 +101,33 @@ Simulation * creerSimulation_sim(int nbZombies, int nbCitoyens, int nbPoliciers,
     initSimulation_sim(pSim, nbZombies, nbCitoyens, nbPoliciers, nomFic);
 
     return pSim;
+}
+
+void testamentSim(Simulation * pSim){
+    testamentTerrain_terr(getTerrain_sim(pSim));
+
+    int nbZombies = getNbZombies_sim(pSim);
+    int nbCitoyens = getNbCitoyens_sim(pSim);
+    int nbPoliciers = getNbCitoyens_sim(pSim);
+
+    Perso ** tabZombies = getZombies_sim(pSim);
+    Perso ** tabCitoyens = getCitoyens_sim(pSim);
+    Perso ** tabPoliciers = getPoliciers_sim(pSim);
+	
+    for (int i = 0; i< nbZombies; i++) {
+	testamentPerso(tabZombies[i]);
+    }
+
+    for (int i = 0; i < nbCitoyens; i++) {
+	testamentPerso(tabCitoyens[i]);
+    }
+
+    for (int i = 0; i < nbPoliciers; i++) {
+	testamentPerso(tabPoliciers[i]);
+    }
+
+    free(pSim);
+
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -156,13 +182,16 @@ void contaminations(Simulation * pSim){
 ///////////////////////////////////////////////////////////////////////////////
 
 void testFonctions_sim(){
-    char * nomFic = "FichierTestLecture";
+    char * nomFic = "FichierTestLectureLOL";
 
     Simulation * pSim = creerSimulation_sim(2, 2, 1, nomFic);
 
     afficherGrilleConsole(getTerrain_sim(pSim));
 
+
     deplacerPerso_sim(pSim);
 
     afficherGrilleConsole(getTerrain_sim(pSim));
+
+    testamentSim(pSim);
 }

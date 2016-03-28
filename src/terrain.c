@@ -107,9 +107,8 @@ Perso * creePersoTerrainRand(Terrain * pTerrain, enum typePerso type){ //crée u
 
 	coordOk = placePersoByCoord(pZombie, pCoordZombie, pTerrain);
     }
-
-    return pZombie;
     
+    return pZombie;
 }
 
 //////////////////////////////////////////////////////////////////////////////
@@ -252,7 +251,7 @@ char deplacementDroite_perso(Perso * pPerso, Terrain * pTerrain){
 }
 
 void deplacementAleatoire_perso(Perso * pPerso, Terrain * pTerrain){
-    char deplacementEffectue;
+    char deplacementEffectue = 0;
 
     while(deplacementEffectue != 1){
     
@@ -417,7 +416,7 @@ void afficherGrilleConsole(Terrain * pTerrain){
 		    printf(" ");
 		}
 		else{
-		    printf("X");
+		    printf("#");
 		}
 	    }
 	}
@@ -448,7 +447,7 @@ void terrainCreerFichier_terr (Terrain * pTerrain){
 		fputc(' ', pFichier);
 	    }
 	    else{
-		fputc('X', pFichier);
+		fputc('#', pFichier);
 	    }
 	}
 	fprintf(pFichier, "\n");
@@ -489,7 +488,7 @@ Terrain * terrainLireFichier_terr (char * nomTerrain){
                 setGrilleByXY_terr(j,i,pTerrain,&caseVide);
             }
 	    
-            if(caseFichier=='X'){
+            if(caseFichier=='#'){
                 setEnvCase(&caseVide,MUR);
                 setPersoCase(&caseVide,NULL);
                 setGrilleByXY_terr(j,i,pTerrain,&caseVide);
@@ -546,9 +545,6 @@ void testFonctions_terr(){
     else{
 	printf("NO\n");
     }
-
-    testamentCoord(coordZombie);
-    testamentCoord(coordHumain);
     
     testamentPerso(pZombie);
     testamentPerso(pHumain);
@@ -556,6 +552,8 @@ void testFonctions_terr(){
     pZombie = creePersoTerrainRand(pFichierLectureTest, ZOMBIE);
 
     afficherGrilleConsole(pFichierLectureTest);
+
+    testamentPerso(pZombie);
     
     testamentTerrain_terr(pFichierEcritureTest);
     testamentTerrain_terr(pFichierLectureTest);

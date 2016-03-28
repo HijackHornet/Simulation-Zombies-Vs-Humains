@@ -50,12 +50,12 @@ int sontEgale_Coord (Coordonnees * coord1, Coordonnees * coord2){
 }
 
 Coordonnees * initCoordonnees_coord(int x, int y){
-    Coordonnees * coord = (Coordonnees *)malloc(sizeof(Coordonnees));
+    Coordonnees * pCoord = (Coordonnees *)malloc(sizeof(Coordonnees));
 
-    coord -> xCoord = x;
-    coord -> yCoord = y;
+    pCoord -> xCoord = x;
+    pCoord -> yCoord = y;
 
-    return coord;
+    return pCoord;
 }
 
 void testamentCoord(Coordonnees * coord){

@@ -51,6 +51,8 @@ Perso * initPerso(Coordonnees * coord, enum typePerso typePerso){
 }
 
 void testamentPerso(Perso * pPerso){
+    testamentCoord(pPerso -> coord);
+    
     free(pPerso);
     
     pPerso = NULL;
