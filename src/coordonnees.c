@@ -4,6 +4,10 @@
 #include <math.h>
 #include <assert.h>
 
+///////////////////////////////////////////////////////////////////////
+//ACCESSEURS///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+
 void setXCoord_Coord(int x, Coordonnees * pCoord){
     pCoord -> xCoord = x;
 }
@@ -28,6 +32,94 @@ int getYCoord_Coord(Coordonnees * pCoord){
 	return pCoord->yCoord;
 }
 
+Coordonnees getCoordCaseDroiteByXY_terr(int x, int y){
+    return (Coordonnees){x + 1, y};
+}
+
+Coordonnees getCoordCaseGaucheByXY_terr(int x, int y){
+    return (Coordonnees){x - 1, y};
+}
+
+Coordonnees getCoordCaseHautByXY_terr(int x, int y){
+    return (Coordonnees){x, y + 1};
+}
+
+Coordonnees getCoordCaseBasByXY_terr(int x, int y){
+    return (Coordonnees){x, y - 1};
+}
+
+Coordonnees getCoordCase2DroiteByXY_terr(int x, int y){
+    return (Coordonnees){x + 2, y};
+}
+
+Coordonnees getCoordCase2GaucheByXY_terr(int x, int y){
+    return (Coordonnees){x - 2, y};
+}
+
+Coordonnees getCoordCase2HautByXY_terr(int x, int y){
+    return (Coordonnees){x, y + 2};
+}
+
+Coordonnees getCoordCase2BasByXY_terr(int x, int y){
+    return (Coordonnees){x, y - 2};
+}
+
+Coordonnees getCoordCaseBasByCoord_terr(Coordonnees * coord){
+    return getCoordCaseBasByXY_terr(getXCoord_Coord(coord), getYCoord_Coord(coord));
+}
+
+Coordonnees getCoordCaseHautByCoord_terr(Coordonnees * coord){
+    return getCoordCaseHautByXY_terr(getXCoord_Coord(coord), getYCoord_Coord(coord));
+}
+
+Coordonnees getCoordCaseDroiteByCoord_terr(Coordonnees * coord){
+    return getCoordCaseDroiteByXY_terr(getXCoord_Coord(coord), getYCoord_Coord(coord));
+}
+
+Coordonnees getCoordCaseGaucheByCoord_terr(Coordonnees * coord){
+    return getCoordCaseGaucheByXY_terr(getXCoord_Coord(coord), getYCoord_Coord(coord));
+}
+
+Coordonnees getCoordCase2BasByCoord_terr(Coordonnees * coord){
+    return getCoordCase2BasByXY_terr(getXCoord_Coord(coord), getYCoord_Coord(coord));
+}
+
+Coordonnees getCoordCase2HautByCoord_terr(Coordonnees * coord){
+    return getCoordCase2HautByXY_terr(getXCoord_Coord(coord), getYCoord_Coord(coord));
+}
+
+Coordonnees getCoordCase2DroiteByCoord_terr(Coordonnees * coord){
+    return getCoordCase2DroiteByXY_terr(getXCoord_Coord(coord), getYCoord_Coord(coord));
+}
+
+Coordonnees getCoordCase2GaucheByCoord_terr(Coordonnees * coord){
+    return getCoordCase2GaucheByXY_terr(getXCoord_Coord(coord), getYCoord_Coord(coord));
+}
+
+
+/////////////////////////////////////////////////////////////////////////
+//INITIALISATIONS-TESTAMENTS/////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+
+Coordonnees * initCoordonnees_coord(int x, int y){
+    Coordonnees * pCoord = (Coordonnees *)malloc(sizeof(Coordonnees));
+
+    pCoord -> xCoord = x;
+    pCoord -> yCoord = y;
+
+    return pCoord;
+}
+
+void testamentCoord(Coordonnees * coord){
+    free(coord);
+
+    coord = NULL;
+}
+
+/////////////////////////////////////////////////////////////////////////
+//CALCULS////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+
 float distanceEntreDeuxCoordonnees_Coord (Coordonnees * coord1, Coordonnees * coord2){
 	return (float) (sqrt(pow((double)((coord1->xCoord)-(coord2->xCoord)),2)+pow((double)((coord1->yCoord)-(coord2->yCoord)),2)));
 }
@@ -49,20 +141,10 @@ int sontEgale_Coord (Coordonnees * coord1, Coordonnees * coord2){
 	}
 }
 
-Coordonnees * initCoordonnees_coord(int x, int y){
-    Coordonnees * pCoord = (Coordonnees *)malloc(sizeof(Coordonnees));
 
-    pCoord -> xCoord = x;
-    pCoord -> yCoord = y;
-
-    return pCoord;
-}
-
-void testamentCoord(Coordonnees * coord){
-    free(coord);
-
-    coord = NULL;
-}
+///////////////////////////////////////////////////////////////////////////
+//TESTS////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
 
 void testFonctions_Coord(){
 	int dimx, dimy, dimx2, dimy2;

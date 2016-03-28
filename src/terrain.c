@@ -47,37 +47,6 @@ caseDeplacement * getGrilleByCoord_terr(Coordonnees * coord, Terrain * pTerrain)
     return getGrilleByXY_terr(getXCoord_Coord(coord), getYCoord_Coord(coord), pTerrain);
 }
 
-Coordonnees getCoordCaseDroiteByXY_terr(int x, int y){
-    return (Coordonnees){x + 1, y};
-}
-
-Coordonnees getCoordCaseGaucheByXY_terr(int x, int y){
-    return (Coordonnees){x - 1, y};
-}
-
-Coordonnees getCoordCaseHautByXY_terr(int x, int y){
-    return (Coordonnees){x, y + 1};
-}
-
-Coordonnees getCoordCaseBasByXY_terr(int x, int y){
-    return (Coordonnees){x, y - 1};
-}
-
-Coordonnees getCoordCaseBasByCoord_terr(Coordonnees * coord){
-    return getCoordCaseBasByXY_terr(getXCoord_Coord(coord), getYCoord_Coord(coord));
-}
-
-Coordonnees getCoordCaseHautByCoord_terr(Coordonnees * coord){
-    return getCoordCaseHautByXY_terr(getXCoord_Coord(coord), getYCoord_Coord(coord));
-}
-
-Coordonnees getCoordCaseDroiteByCoord_terr(Coordonnees * coord){
-    return getCoordCaseDroiteByXY_terr(getXCoord_Coord(coord), getYCoord_Coord(coord));
-}
-
-Coordonnees getCoordCaseGaucheByCoord_terr(Coordonnees * coord){
-    return getCoordCaseGaucheByXY_terr(getXCoord_Coord(coord), getYCoord_Coord(coord));
-}
 
 char placePersoByCoord(Perso * pPerso, Coordonnees * coord, Terrain * pTerrain){
     if(getEnvCase(getGrilleByCoord_terr(coord, pTerrain)) == VIDE && getPersoCase(getGrilleByCoord_terr(coord, pTerrain)) == NULL){
@@ -356,6 +325,157 @@ char humainADroite(Terrain * pTerrain, Coordonnees * coordZombie){
 
 
 /////////////////////////////////////////////////////////////////////////////
+//SPECIFIQUE POLICIER////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+
+char zombieEnHaut(Terrain * pTerrain, Coordonnees * coordZombie){
+    Coordonnees coordCaseHaut = getCoordCaseHautByCoord_terr(coordZombie);    
+    if(estDansTerrain_terr(pTerrain, &coordCaseHaut) && \
+       getPersoCase(getGrilleByCoord_terr(&coordCaseHaut, pTerrain)) != NULL){ //Vérifie d'une part que la case est dans le terrain, d'autre part qu'il y a bien un personnage sur cette case pour pouvoir appeler getTypePerso (SEGFAULT si NULL)
+	caseDeplacement * caseHaut = getGrilleByCoord_terr(&coordCaseHaut, pTerrain);
+	if(getTypePerso(getPersoCase(caseHaut)) == ZOMBIE){
+	    return 1;
+	}
+	else{
+	    return 0; 
+	}
+    }
+    else{
+	return 0;
+    }
+}
+
+char zombieEnBas(Terrain * pTerrain, Coordonnees * coordZombie){
+    Coordonnees coordCaseBas = getCoordCaseBasByCoord_terr(coordZombie);
+    
+    if(estDansTerrain_terr(pTerrain, &coordCaseBas) && \
+       getPersoCase(getGrilleByCoord_terr(&coordCaseBas, pTerrain)) != NULL){ //Vérifie d'une part que la case est dans le terrain, d'autre part qu'il y a bien un personnage sur cette case pour pouvoir appeler getTypePerso (SEGFAULT si NULL)
+	
+	caseDeplacement * caseBas = getGrilleByCoord_terr(&coordCaseBas, pTerrain);
+	if(getTypePerso(getPersoCase(caseBas)) == ZOMBIE){
+	    return 1;
+	}
+	else{
+	    return 0; 
+	}
+    }
+    else{
+	return 0;
+    }
+}
+
+char zombieAGauche(Terrain * pTerrain, Coordonnees * coordZombie){
+    Coordonnees coordCaseGauche = getCoordCaseGaucheByCoord_terr(coordZombie);
+
+    if(estDansTerrain_terr(pTerrain, &coordCaseGauche) && \
+       getPersoCase(getGrilleByCoord_terr(&coordCaseGauche, pTerrain)) != NULL){ //Vérifie d'une part que la case est dans le terrain, d'autre part qu'il y a bien un personnage sur cette case pour pouvoir appeler getTypePerso (SEGFAULT si NULL)
+	caseDeplacement * caseGauche = getGrilleByCoord_terr(&coordCaseGauche, pTerrain);
+	if(getTypePerso(getPersoCase(caseGauche)) == ZOMBIE){
+	    return 1;
+	}
+	else{
+	    return 0; 
+	}
+    }
+    else{
+	return 0;
+    }
+}
+
+char zombieADroite(Terrain * pTerrain, Coordonnees * coordZombie){
+    Coordonnees coordCaseDroite = getCoordCaseDroiteByCoord_terr(coordZombie);
+
+    if(estDansTerrain_terr(pTerrain, &coordCaseDroite) && \
+       getPersoCase(getGrilleByCoord_terr(&coordCaseDroite, pTerrain)) != NULL){ //Vérifie d'une part que la case est dans le terrain, d'autre part qu'il y a bien un personnage sur cette case pour pouvoir appeler getTypePerso (SEGFAULT si NULL)
+	caseDeplacement * caseDroite = getGrilleByCoord_terr(&coordCaseDroite, pTerrain);
+	if(getTypePerso(getPersoCase(caseDroite)) == ZOMBIE){
+	    return 1;
+	}
+	else{
+	    return 0; 
+	}
+    }
+    else{
+	return 0;
+    }
+}
+
+
+
+char zombieEn2Haut(Terrain * pTerrain, Coordonnees * coordZombie){
+    Coordonnees coordCase2Haut = getCoordCase2HautByCoord_terr(coordZombie);    
+    if(estDansTerrain_terr(pTerrain, &coordCase2Haut) && \
+       getPersoCase(getGrilleByCoord_terr(&coordCase2Haut, pTerrain)) != NULL){ //Vérifie d'une part que la case est dans le terrain, d'autre part qu'il y a bien un personnage sur cette case pour pouvoir appeler getTypePerso (SEGFAULT si NULL)
+	caseDeplacement * case2Haut = getGrilleByCoord_terr(&coordCase2Haut, pTerrain);
+	if(getTypePerso(getPersoCase(case2Haut)) == ZOMBIE){
+	    return 1;
+	}
+	else{
+	    return 0; 
+	}
+    }
+    else{
+	return 0;
+    }
+}
+
+char zombieEn2Bas(Terrain * pTerrain, Coordonnees * coordZombie){
+    Coordonnees coordCase2Bas = getCoordCaseBasByCoord_terr(coordZombie);
+    
+    if(estDansTerrain_terr(pTerrain, &coordCase2Bas) && \
+       getPersoCase(getGrilleByCoord_terr(&coordCase2Bas, pTerrain)) != NULL){ //Vérifie d'une part que la case est dans le terrain, d'autre part qu'il y a bien un personnage sur cette case pour pouvoir appeler getTypePerso (SEGFAULT si NULL)
+	
+	caseDeplacement * case2Bas = getGrilleByCoord_terr(&coordCase2Bas, pTerrain);
+	if(getTypePerso(getPersoCase(case2Bas)) == ZOMBIE){
+	    return 1;
+	}
+	else{
+	    return 0; 
+	}
+    }
+    else{
+	return 0;
+    }
+}
+
+char zombieA2Gauche(Terrain * pTerrain, Coordonnees * coordZombie){
+    Coordonnees coordCase2Gauche = getCoordCase2GaucheByCoord_terr(coordZombie);
+
+    if(estDansTerrain_terr(pTerrain, &coordCase2Gauche) && \
+       getPersoCase(getGrilleByCoord_terr(&coordCase2Gauche, pTerrain)) != NULL){ //Vérifie d'une part que la case est dans le terrain, d'autre part qu'il y a bien un personnage sur cette case pour pouvoir appeler getTypePerso (SEGFAULT si NULL)
+	caseDeplacement * case2Gauche = getGrilleByCoord_terr(&coordCase2Gauche, pTerrain);
+	if(getTypePerso(getPersoCase(case2Gauche)) == ZOMBIE){
+	    return 1;
+	}
+	else{
+	    return 0; 
+	}
+    }
+    else{
+	return 0;
+    }
+}
+
+char zombieA2Droite(Terrain * pTerrain, Coordonnees * coordZombie){
+    Coordonnees coordCase2Droite = getCoordCase2DroiteByCoord_terr(coordZombie);
+
+    if(estDansTerrain_terr(pTerrain, &coordCase2Droite) && \
+       getPersoCase(getGrilleByCoord_terr(&coordCase2Droite, pTerrain)) != NULL){ //Vérifie d'une part que la case est dans le terrain, d'autre part qu'il y a bien un personnage sur cette case pour pouvoir appeler getTypePerso (SEGFAULT si NULL)
+	caseDeplacement * case2Droite = getGrilleByCoord_terr(&coordCase2Droite, pTerrain);
+	if(getTypePerso(getPersoCase(case2Droite)) == ZOMBIE){
+	    return 1;
+	}
+	else{
+	    return 0; 
+	}
+    }
+    else{
+	return 0;
+    }
+}
+
+
+/////////////////////////////////////////////////////////////////////////////
 //INTERACTIONS///////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
 
@@ -393,6 +513,63 @@ Perso * zombieContamineHumain(Perso * pZombie, Terrain * pTerrain){
     }
 
     return NULL;
+}
+
+Perso * policierTueZombie(Perso * pPolicier, Terrain * pTerrain){
+    Coordonnees * coordPolicier = getCoordonneesPerso_perso(pPolicier);
+    Coordonnees coordZombie;
+    caseDeplacement * caseZombie = NULL;
+
+    Perso * pZombie = NULL;
+    
+    if(zombieEnHaut(pTerrain, coordPolicier)){
+	coordZombie = getCoordCaseHautByCoord_terr(coordPolicier);
+	caseZombie = getGrilleByCoord_terr(&coordZombie, pTerrain);
+    }
+    
+    else if(zombieEnBas(pTerrain, coordPolicier)){
+	coordZombie = getCoordCaseBasByCoord_terr(coordPolicier);
+	caseZombie = getGrilleByCoord_terr(&coordZombie, pTerrain);
+    }
+
+    else if(zombieAGauche(pTerrain, coordPolicier)){
+	coordZombie = getCoordCaseGaucheByCoord_terr(coordPolicier);
+	caseZombie = getGrilleByCoord_terr(&coordZombie, pTerrain);
+    }
+
+    else if(zombieADroite(pTerrain, coordPolicier)){
+	coordZombie = getCoordCaseDroiteByCoord_terr(coordPolicier);
+	caseZombie = getGrilleByCoord_terr(&coordZombie, pTerrain);
+    }
+
+    else if(zombieEn2Haut(pTerrain, coordPolicier)){
+	coordZombie = getCoordCase2HautByCoord_terr(coordPolicier);
+	caseZombie = getGrilleByCoord_terr(&coordZombie, pTerrain);
+    }
+
+    else if(zombieEn2Bas(pTerrain, coordPolicier)){
+	coordZombie = getCoordCase2BasByCoord_terr(coordPolicier);
+	caseZombie = getGrilleByCoord_terr(&coordZombie, pTerrain);
+    }
+
+    else if(zombieA2Gauche(pTerrain, coordPolicier)){
+	coordZombie = getCoordCase2GaucheByCoord_terr(coordPolicier);
+	caseZombie = getGrilleByCoord_terr(&coordZombie, pTerrain);
+    }
+
+    else if(zombieA2Droite(pTerrain, coordPolicier)){
+	coordZombie = getCoordCase2DroiteByCoord_terr(coordPolicier);
+	caseZombie = getGrilleByCoord_terr(&coordZombie, pTerrain);
+
+    }
+    
+
+    if(caseZombie != NULL){
+	pZombie = getPersoCase(caseZombie);
+	setPersoCase(caseZombie, NULL);
+    }
+	
+    return pZombie;
 }
 
 /////////////////////////////////////////////////////////////////////////////

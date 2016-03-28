@@ -20,6 +20,10 @@ typedef struct Mcoordonnees{
 } Coordonnees;
 
 
+///////////////////////////////////////////////////////////////////////
+//ACCESSEURS///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+
 void setXCoord_Coord(int x, Coordonnees * pCoord);
 
 void setYCoord_Coord(int y, Coordonnees * pCoord);
@@ -44,6 +48,55 @@ int getXCoord_Coord(Coordonnees * pCoord);
 */
 int getYCoord_Coord(Coordonnees * pCoord);
 
+Coordonnees getCoordCaseBasByXY_terr(int x, int y);
+
+Coordonnees getCoordCaseDroiteByXY_terr(int x, int y);
+
+Coordonnees getCoordCaseGaucheByXY_terr(int x, int y);
+
+Coordonnees getCoordCaseHautByXY_terr(int x, int y);
+
+Coordonnees getCoordCaseBasByCoord_terr(Coordonnees * coord);
+
+Coordonnees getCoordCaseHautByCoord_terr(Coordonnees * coord);
+
+Coordonnees getCoordCaseGaucheByCoord_terr(Coordonnees * coord);
+
+Coordonnees getCoordCaseDroiteByCoord_terr(Coordonnees * coord);
+
+Coordonnees getCoordCase2DroiteByXY_terr(int x, int y);
+
+Coordonnees getCoordCase2GaucheByXY_terr(int x, int y);
+
+Coordonnees getCoordCase2HautByXY_terr(int x, int y);
+
+Coordonnees getCoordCase2BasByXY_terr(int x, int y);
+
+Coordonnees getCoordCaseBasByCoord_terr(Coordonnees * coord);
+
+Coordonnees getCoordCaseDroiteByCoord_terr(Coordonnees * coord);
+
+Coordonnees getCoordCaseGaucheByCoord_terr(Coordonnees * coord);
+
+Coordonnees getCoordCase2BasByCoord_terr(Coordonnees * coord);
+
+Coordonnees getCoordCase2HautByCoord_terr(Coordonnees * coord);
+
+Coordonnees getCoordCase2DroiteByCoord_terr(Coordonnees * coord);
+
+Coordonnees getCoordCase2GaucheByCoord_terr(Coordonnees * coord);
+
+/////////////////////////////////////////////////////////////////////////
+//INITIALISATIONS-TESTAMENTS/////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+
+Coordonnees * initCoordonnees_coord(int x, int y);
+
+void testamentCoord(Coordonnees * coord);
+
+/////////////////////////////////////////////////////////////////////////
+//CALCULS////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
 /**
 	@brief Retourne la distance entre deux Coordonnees
 	@param coord1 Coordonnees de la premier entitée
@@ -64,9 +117,10 @@ int sontEgale_Coord (Coordonnees * coord1, Coordonnees * coord2);
 	@brief Teste le module coordonnees et ses fonctions
 */
 
-Coordonnees * initCoordonnees_coord(int x, int y);
+///////////////////////////////////////////////////////////////////////////
+//TESTS////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
 
-void testamentCoord(Coordonnees * coord);
 
 void testFonctions_Coord();
 

@@ -93,21 +93,7 @@ caseDeplacement * getGrilleByXY_terr (int x, int y,Terrain * pTerrain);
 	@param pTerrain Pointeur sur la structure Terrain a editer
 */
 
-Coordonnees getCoordCaseBasByXY_terr(int x, int y);
 
-Coordonnees getCoordCaseDroiteByXY_terr(int x, int y);
-
-Coordonnees getCoordCaseGaucheByXY_terr(int x, int y);
-
-Coordonnees getCoordCaseHautByXY_terr(int x, int y);
-
-Coordonnees getCoordCaseBasByCoord_terr(Coordonnees * coord);
-
-Coordonnees getCoordCaseHautByCoord_terr(Coordonnees * coord);
-
-Coordonnees getCoordCaseGaucheByCoord_terr(Coordonnees * coord);
-
-Coordonnees getCoordCaseDroiteByCoord_terr(Coordonnees * coord);
 
 caseDeplacement * getGrilleByCoord_terr(Coordonnees * pCoord, Terrain * pTerrain);
 
@@ -166,6 +152,8 @@ void deplacementAleatoire_perso(Perso * pPerso, Terrain * pTerrain);
 /////////////////////////////////////////////////////////////////////////////
 
 Perso * zombieContamineHumain(Perso * pZombie, Terrain * pTerrain);
+
+Perso * policierTueZombie(Perso * pPolicier, Terrain * pTerrain);
 
 /////////////////////////////////////////////////////////////////////////////
 //SPECIFIQUE ZOMBIE//////////////////////////////////////////////////////////

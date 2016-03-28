@@ -114,7 +114,7 @@ void testamentSim(Simulation * pSim){
     Perso ** tabCitoyens = getCitoyens_sim(pSim);
     Perso ** tabPoliciers = getPoliciers_sim(pSim);
 	
-    for (int i = 0; i< nbZombies; i++) {
+    for (int i = 0; i < nbZombies; i++) {
 	testamentPerso(tabZombies[i]);
     }
 
@@ -151,8 +151,8 @@ void supprimerZombie(Perso * pZombie, Simulation * pSim){
 	(tabZombies[i] -> id)--;
     }
 
-    nbZombies--;
     tabZombies[nbZombies - 1] = NULL;
+    nbZombies--;
 
     setNbZombies_sim(nbZombies, pSim);
 }
@@ -179,10 +179,7 @@ void supprimerCitoyen(Perso * pCitoyen, Simulation * pSim){
     }
 
     tabCitoyens[nbCitoyens - 1] = NULL;
-
     nbCitoyens--;
-
-    printf("CITOYENS %d", nbCitoyens);
     
     setNbCitoyens_sim(nbCitoyens, pSim);
 }
@@ -223,7 +220,6 @@ void supprimerPolicier(Perso * pPolicier, Simulation * pSim){
 
 void deplacerZombies_sim(Simulation * pSim){
     int nbZombies = getNbZombies_sim(pSim);
-    printf("ZOMBIE %d\n", nbZombies);
     Perso ** tabZombies = getZombies_sim(pSim);
     for(int i = 0; i < nbZombies; i++){
 	deplacementAleatoire_perso(tabZombies[i], getTerrain_sim(pSim));
@@ -276,6 +272,20 @@ void contaminations(Simulation * pSim){
 		setTypePerso_perso(ZOMBIE, persoContamine);
 		ajouterZombie(persoContamine, pSim);
 	    }
+	}
+    }
+}
+
+void tirs(Simulation * pSim){
+    int nbPoliciers = getNbPoliciers_sim(pSim);
+    Perso ** tabPoliciers = getPoliciers_sim(pSim);
+    Perso * zombieAPortee = NULL;
+
+    for (int i = 0; i < nbPoliciers; i++) {
+	zombieAPortee = policierTueZombie(tabPoliciers[i], getTerrain_sim(pSim));
+	if(zombieAPortee != NULL){
+	    supprimerZombie(zombieAPortee, pSim);
+	    testamentPerso(zombieAPortee);
 	}
     }
 }
