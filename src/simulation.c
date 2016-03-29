@@ -137,6 +137,7 @@ void ajouterZombie(Perso * pZombie, Simulation * pSim){
     nbZombies++;
     setNbZombies_sim(nbZombies, pSim);
 
+    setIdPerso(nbZombies - 1, pZombie);
     tabZombies[nbZombies - 1] = pZombie;
 }
 
@@ -164,6 +165,7 @@ void ajouterCitoyen(Perso * pCitoyen, Simulation * pSim){
     nbCitoyens++;
     setNbCitoyens_sim(nbCitoyens,pSim);
 
+    setIdPerso(nbCitoyens - 1, pCitoyen);
     tabCitoyens[nbCitoyens - 1] = pCitoyen;
 }
 
@@ -191,6 +193,7 @@ void ajouterPolicier(Perso * pPolicier, Simulation * pSim){
     nbPoliciers++;
     (pSim -> nbPoliciers)++;
 
+    setIdPerso(nbPoliciers - 1, pPolicier);
     tabPoliciers[nbPoliciers - 1] = pPolicier;
 }
 

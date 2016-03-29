@@ -40,4 +40,6 @@ void testFonctions_perso();
 
 int getIdPerso(Perso * pPerso);
 
+void setIdPerso(int idPerso, Perso * pPerso);
+
 #endif
