@@ -87,7 +87,6 @@
 		<Unit filename="src/simulation_SDL2.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="src/simulation_SDL2.h" />
 		<Unit filename="src/terrain.c">
 			<Option compilerVar="CC" />
 		</Unit>
