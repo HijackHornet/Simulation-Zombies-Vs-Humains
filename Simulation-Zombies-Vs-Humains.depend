@@ -22,16 +22,8 @@
 	<math.h>
 	<assert.h>
 
-1459846336 source:c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\main.c
-	<stdio.h>
-	<stdlib.h>
-	"coordonnees.h"
-	"terrain.h"
-	"simulation.h"
-	<SDL2/SDL.h>
-	<SDL2/SDL_image.h>
-	<SDL2/SDL_ttf.h>
-	<SDL2/SDL_mixer.h>
+1459847981 source:c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\main.c
+	"defs.h"
 
 1459842638 source:c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\simulation.c
 	"simulation.h"
@@ -399,4 +391,48 @@
 	"SDL_version.h"
 	"begin_code.h"
 	"close_code.h"
+
+1459850014 source:c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\simulation_sdl2.c
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	<SDL2/SDL_ttf.h>
+	<SDL2/SDL_mixer.h>
+	"input.h"
+	"initialisationSDL.h"
+	"affichage_SDL.h"
+
+1459847981 c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\defs.h
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<math.h>
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	<SDL2/SDL_ttf.h>
+	<SDL2/SDL_mixer.h>
+	"coordonnees.h"
+	"terrain.h"
+	"simulation.h"
+
+1459849977 source:c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\input.c
+	"defs.h"
+	"input.h"
+
+1459848995 c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\input.h
+	"defs.h"
+
+1459849977 source:c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\affichage_sdl.c
+	"affichage_SDL.h"
+	"defs.h"
+	"input.h"
+
+1459849795 c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\affichage_sdl.h
+
+1459849977 source:c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\initialisationsdl.c
+	"initialisationSDL.h"
+	"affichage_SDL.h"
+	"defs.h"
+	"input.h"
+
+1459849794 c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\initialisationsdl.h
 

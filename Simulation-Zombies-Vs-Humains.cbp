@@ -52,6 +52,10 @@
 			<Add directory="C:/Program Files (x86)/CodeBlocks/SDL2/i686-w64-mingw32/lib" />
 		</Linker>
 		<Unit filename="src/Makefile" />
+		<Unit filename="src/affichage_SDL.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/affichage_SDL.h" />
 		<Unit filename="src/caseDeplacement.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -60,6 +64,15 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/coordonnees.h" />
+		<Unit filename="src/defs.h" />
+		<Unit filename="src/initialisationSDL.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/initialisationSDL.h" />
+		<Unit filename="src/input.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/input.h" />
 		<Unit filename="src/main.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -71,6 +84,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/simulation.h" />
+		<Unit filename="src/simulation_SDL2.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/simulation_SDL2.h" />
 		<Unit filename="src/terrain.c">
 			<Option compilerVar="CC" />
 		</Unit>
