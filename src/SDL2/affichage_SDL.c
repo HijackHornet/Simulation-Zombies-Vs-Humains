@@ -1,5 +1,5 @@
 #include "affichage_SDL.h"
-#include "defs.h"
+#include "../defs.h"
 #include "input.h"
 
 SDL_Texture *loadImage(char *name)
@@ -44,12 +44,15 @@ void drawImage(SDL_Texture *image, int x, int y)
 void affichageFenetre(void)
 {
     SDL_Texture *fond;
-    fond = loadImage("./data/Graphics/Case.png");
+    SDL_Texture *zombieText;
+    SDL_Texture *citoyenText;
+    SDL_Texture *policierText;
+    fond = loadImage("../data/Graphics/Case.png");
+    zombieText = loadImage("../data/Graphics/Zombie.png");
+    citoyenText = loadImage("../data/Graphics/Citoyen.png");
+    policierText = loadImage("../data/Graphics/Policier.png");
     int i,j;
     i=0; j=0;
-
-    // Remplis le renderer de noir, efface l'écran et l'affiche.
-    //SDL_RenderPresent() remplace SDL_Flip de la SDL 1.2
     while(i<SCREEN_WIDTH){
             while(j<SCREEN_HEIGHT){
                 drawImage(fond,i,j);

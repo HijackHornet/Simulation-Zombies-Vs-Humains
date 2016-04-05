@@ -1,4 +1,4 @@
-#include "defs.h"
+#include "../defs.h"
 #include "input.h"
 
 void getInput(Input *input)

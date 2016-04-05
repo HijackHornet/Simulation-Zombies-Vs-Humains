@@ -1,6 +1,6 @@
 #ifndef DEF_INPUT
 #define DEF_INPUT
-#include "defs.h"
+#include "../defs.h"
 
 typedef struct Input
 {

@@ -1,6 +1,6 @@
 #include "initialisationSDL.h"
 #include "affichage_SDL.h"
-#include "defs.h"
+#include "../defs.h"
 #include "input.h"
 
 SDL_Window *screen;

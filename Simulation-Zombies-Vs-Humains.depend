@@ -22,7 +22,7 @@
 	<math.h>
 	<assert.h>
 
-1459847981 source:c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\main.c
+1459863174 source:c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\main.c
 	"defs.h"
 
 1459842638 source:c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\simulation.c
@@ -392,7 +392,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1459855301 source:c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\simulation_sdl2.c
+1459861408 source:c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\simulation_sdl2.c
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 	<SDL2/SDL_ttf.h>
@@ -422,7 +422,7 @@
 1459848995 c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\input.h
 	"defs.h"
 
-1459856073 source:c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\affichage_sdl.c
+1459862271 source:c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\affichage_sdl.c
 	"affichage_SDL.h"
 	"defs.h"
 	"input.h"
@@ -436,4 +436,22 @@
 	"input.h"
 
 1459849794 c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\initialisationsdl.h
+
+1459864275 source:c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\sdl2\affichage_sdl.c
+	"affichage_SDL.h"
+	"../defs.h"
+	"input.h"
+
+1459849795 c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\sdl2\affichage_sdl.h
+
+1459864280 c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\sdl2\input.h
+	"../defs.h"
+
+1459864285 source:c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\sdl2\initialisationsdl.c
+	"initialisationSDL.h"
+	"affichage_SDL.h"
+	"../defs.h"
+	"input.h"
+
+1459849794 c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\sdl2\initialisationsdl.h
 

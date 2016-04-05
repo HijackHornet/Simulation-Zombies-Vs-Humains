@@ -7,7 +7,8 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/Simulation-Zombies-Vs-Humains" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Simulation-Zombies-Vs-Humains" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin" />
 				<Option object_output="obj/Debug/" />
 				<Option type="0" />
 				<Option compiler="gcc" />
@@ -52,10 +53,21 @@
 			<Add directory="C:/Program Files (x86)/CodeBlocks/SDL2/i686-w64-mingw32/lib" />
 		</Linker>
 		<Unit filename="src/Makefile" />
-		<Unit filename="src/affichage_SDL.c">
+		<Unit filename="src/SDL2/affichage_SDL.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="src/affichage_SDL.h" />
+		<Unit filename="src/SDL2/affichage_SDL.h" />
+		<Unit filename="src/SDL2/initialisationSDL.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/SDL2/initialisationSDL.h" />
+		<Unit filename="src/SDL2/input.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/SDL2/input.h" />
+		<Unit filename="src/SDL2/simulation_SDL2.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="src/caseDeplacement.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -65,14 +77,6 @@
 		</Unit>
 		<Unit filename="src/coordonnees.h" />
 		<Unit filename="src/defs.h" />
-		<Unit filename="src/initialisationSDL.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="src/initialisationSDL.h" />
-		<Unit filename="src/input.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="src/input.h" />
 		<Unit filename="src/main.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -84,9 +88,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/simulation.h" />
-		<Unit filename="src/simulation_SDL2.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="src/terrain.c">
 			<Option compilerVar="CC" />
 		</Unit>

@@ -8,11 +8,10 @@
 #include "initialisationSDL.h"
 #include "affichage_SDL.h"
 
-int lancerSimulationSdl (int argc, char* argv[]){
+int lancerSimulationSDL2 (Simulation * pSim){
 
         unsigned int frameLimit = SDL_GetTicks() + 16;
     int go;
-
     // Initialisation de la SDL
     init("Simulation Humains VS Zombie - Par Leo et Tristan");
     // Appelle la fonction cleanup à la fin du programme
