@@ -145,7 +145,7 @@ char deplacementGauche_perso(Perso * pPerso, Terrain * pTerrain);
 
 char deplacementDroite_perso(Perso * pPerso, Terrain * pTerrain);
 
-void deplacementAleatoire_perso(Perso * pPerso, Terrain * pTerrain);
+char deplacementAleatoire_perso(Perso * pPerso, Terrain * pTerrain);
 
 /////////////////////////////////////////////////////////////////////////////
 //INTERACTIONS///////////////////////////////////////////////////////////////

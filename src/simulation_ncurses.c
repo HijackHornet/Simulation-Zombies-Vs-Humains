@@ -3,7 +3,7 @@
 void lanceSimulation(char * nomFic){
     srand(time(NULL));
     
-    Simulation * pSim = creerSimulation_sim(5, 5, 5, nomFic);
+    Simulation * pSim = creerSimulation_sim(50, 50, 50, nomFic);
 
     initscr();
     start_color();

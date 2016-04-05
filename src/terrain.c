@@ -219,8 +219,10 @@ char deplacementDroite_perso(Perso * pPerso, Terrain * pTerrain){
     }
 }
 
-void deplacementAleatoire_perso(Perso * pPerso, Terrain * pTerrain){
+char deplacementAleatoire_perso(Perso * pPerso, Terrain * pTerrain){
     char deplacementEffectue = 0;
+
+    char deplacementEssaye[4] = {0};
 
     assert(pPerso != NULL);
 
@@ -231,21 +233,36 @@ void deplacementAleatoire_perso(Perso * pPerso, Terrain * pTerrain){
 	assert(direction < 4 && direction >= 0);
     
 	if(direction == 0){
+	    deplacementEssaye[0] = 1;
 	    deplacementEffectue = deplacementBas_perso(pPerso, pTerrain);
 	}
 
 	else if(direction == 1){
+	    deplacementEssaye[1] = 1;
 	    deplacementEffectue = deplacementHaut_perso(pPerso, pTerrain);
 	}
 
 	else if(direction == 2){
+	    deplacementEssaye[2] = 1;
 	    deplacementEffectue = deplacementDroite_perso(pPerso, pTerrain);
 	}
 
 	else{
+	    deplacementEssaye[3] = 1;
 	    deplacementEffectue = deplacementGauche_perso(pPerso, pTerrain);
 	}
+
+	int nbDeplacementEssayes = 0;
+	for (int i = 0; i < 4; i++) {
+	    nbDeplacementEssayes += deplacementEssaye[i];
+	}
+
+	if(nbDeplacementEssayes == 4){
+	    return 0; //le personnage est bloque
+	}
     }
+
+    return deplacementEffectue;
 }
 
 /////////////////////////////////////////////////////////////////////////////
@@ -279,7 +296,7 @@ char humainEnBas(Terrain * pTerrain, Coordonnees * coordZombie){
 	    return 1;
 	}
 	else{
-	    return 0; 
+	    return 0;
 	}
     }
     else{
