@@ -30,7 +30,14 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
+			<Add directory="include/SDL2/i686-w64-mingw32/include" />
 		</Compiler>
+		<Linker>
+			<Add library="CodeBlcoks/MinGW/lib/libmingw32.a" />
+			<Add library="include/SDL2/i686-w64-mingw32/lib/libSDL2main.a" />
+			<Add library="include/SDL2/i686-w64-mingw32/lib/libSDL2.dll.a" />
+			<Add directory="include/SDL2/i686-w64-mingw32/lib" />
+		</Linker>
 		<Unit filename="src/Makefile" />
 		<Unit filename="src/caseDeplacement.c">
 			<Option compilerVar="CC" />
