@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-enum typePerso {LIBRE, POLICIER, ZOMBIE, CITOYEN};
+enum typePerso {POLICIER, ZOMBIE, CITOYEN};
 
 typedef struct MPerso {
     int id;

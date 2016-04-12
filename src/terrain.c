@@ -698,6 +698,57 @@ Terrain * terrainLireFichier_terr (char * nomTerrain){
     return pTerrain;
 }
 
+/////////////////////////////////////////////////////////////////////////////
+//CHAMPS/////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+
+void propagationChamp(caseDeplacement * caseChamp, int intensite, enum typePerso type, int idPerso, Coordonnees  * coordCase, Terrain * pTerrain){
+    if(!(caseChamp -> marqueur)){ //si la propagation n'a pas été faite
+	switch (type) {
+	case ZOMBIE: {
+	    (caseChamp -> champZombies)[idPerso] = intensite;
+	    break;
+	}
+	case CITOYEN:{
+	    (caseChamp -> champCitoyens)[idPerso] = intensite;
+	    break;
+	}
+	case POLICIER:{
+	    (caseChamp -> champCitoyens)[idPerso] = intensite;
+	    break;
+	}
+	}
+
+	//propagation sur les cases adjacentes
+	Coordonnees coordCaseGauche = getCoordCaseGaucheByCoord_terr(coordCase);
+	if(estDansTerrain_terr(pTerrain, &coordCaseGauche)){
+	    caseDeplacement * caseGauche = getGrilleByCoord_terr(&coordCaseGauche, pTerrain);
+	    return propagationChamp(caseGauche, intensite + 1, type, idPerso, &coordCaseGauche, pTerrain);
+	}
+
+	Coordonnees coordCaseDroite = getCoordCaseDroiteByCoord_terr(coordCase);
+	if(estDansTerrain_terr(pTerrain, &coordCaseDroite)){
+	    caseDeplacement * caseDroite = getGrilleByCoord_terr(&coordCaseDroite, pTerrain);
+	    return propagationChamp(caseDroite, intensite + 1, type, idPerso, &coordCaseDroite, pTerrain);
+	}
+
+	Coordonnees coordCaseBas = getCoordCaseBasByCoord_terr(coordCase);
+	if(estDansTerrain_terr(pTerrain, &coordCaseBas)){
+	caseDeplacement * caseBas = getGrilleByCoord_terr(&coordCaseBas, pTerrain);
+	    return propagationChamp(caseBas, intensite + 1, type, idPerso, &coordCaseBas, pTerrain);
+	}
+
+	Coordonnees coordCaseHaut = getCoordCaseHautByCoord_terr(coordCase);
+	if(estDansTerrain_terr(pTerrain, &coordCaseHaut)){
+	caseDeplacement * caseHaut = getGrilleByCoord_terr(&coordCaseHaut, pTerrain);
+	    return propagationChamp(caseHaut, intensite + 1, type, idPerso, &coordCaseHaut, pTerrain);
+	}
+    }
+}
+/////////////////////////////////////////////////////////////////////////////
+//NON-REGRESSION/////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+
 void testFonctions_terr(){
     //Terrain * pFichierLectureTest;
     Terrain * pFichierEcritureTest;
