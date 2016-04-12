@@ -2,6 +2,27 @@
 #include "../defs.h"
 #include "input.h"
 
+
+void delay(unsigned int frameLimit)
+{
+    // Gestion des 60 fps (images/stories/seconde)
+    unsigned int ticks = SDL_GetTicks();
+
+    if (frameLimit < ticks)
+    {
+        return;
+    }
+
+    if (frameLimit > ticks + 16)
+    {
+        SDL_Delay(16);
+    }
+
+    else
+    {
+        SDL_Delay(frameLimit - ticks);
+    }
+}
 SDL_Texture *loadImage(char *name)
 {
 
@@ -41,16 +62,47 @@ void drawImage(SDL_Texture *image, int x, int y)
     SDL_RenderCopy(getrenderer(), image, NULL, &dest);
 
 }
-void affichageFenetre(void)
-{
-    SDL_Texture *fond;
+void afficherPersoFenetre(Simulation * pSim){
+
+    Terrain * pTerrain = getTerrain_sim(pSim);
+
     SDL_Texture *zombieText;
     SDL_Texture *citoyenText;
     SDL_Texture *policierText;
-    fond = loadImage("../data/Graphics/Case.png");
+
     zombieText = loadImage("../data/Graphics/Zombie.png");
     citoyenText = loadImage("../data/Graphics/Citoyen.png");
     policierText = loadImage("../data/Graphics/Policier.png");
+
+    for(int i = 0; i < getDimY_terr(pTerrain); i++){
+        for (int j = 0; j < getDimX_terr(pTerrain); j++) {
+            if(getPersoCase(getGrilleByXY_terr(j, i, pTerrain)) != NULL){
+                if(getTypePerso(getPersoCase(getGrilleByXY_terr(j, i, pTerrain))) == ZOMBIE){
+                    drawImage(zombieText,j*50,i*50);
+                }
+                else if(getTypePerso(getPersoCase(getGrilleByXY_terr(j, i, pTerrain))) == CITOYEN){
+                    drawImage(citoyenText,j*50,i*50);
+                }
+                else if(getTypePerso(getPersoCase(getGrilleByXY_terr(j, i, pTerrain))) == POLICIER){
+                    drawImage(policierText,j*50,i*50);
+                }
+            }
+	    }
+	}
+
+
+   SDL_RenderPresent(getrenderer());
+
+    // Délai pour laisser respirer le proc
+    SDL_Delay(500);
+}
+
+void affichageFenetre(Simulation *pSim)
+{
+    SDL_Texture *fond;
+
+    fond = loadImage("../data/Graphics/Case.png");
+
     int i,j;
     i=0; j=0;
     while(i<SCREEN_WIDTH){
@@ -61,6 +113,8 @@ void affichageFenetre(void)
             i=i+50;
             j=0;
     }
+
+
 
      // Affiche l'écran
     SDL_RenderPresent(getrenderer());
@@ -74,23 +128,4 @@ void affichageFenetre(void)
 
 
 
-void delay(unsigned int frameLimit)
-{
-    // Gestion des 60 fps (images/stories/seconde)
-    unsigned int ticks = SDL_GetTicks();
 
-    if (frameLimit < ticks)
-    {
-        return;
-    }
-
-    if (frameLimit > ticks + 16)
-    {
-        SDL_Delay(16);
-    }
-
-    else
-    {
-        SDL_Delay(frameLimit - ticks);
-    }
-}

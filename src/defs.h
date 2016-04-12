@@ -17,7 +17,7 @@
 #include "simulation.h"
 
 // Taille de la fenêtre : 800x480 pixels
-#define SCREEN_WIDTH 1280
-#define SCREEN_HEIGHT 720
+#define SCREEN_WIDTH 1920
+#define SCREEN_HEIGHT 1080
 
 #endif

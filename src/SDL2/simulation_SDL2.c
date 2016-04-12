@@ -27,7 +27,15 @@ int lancerSimulationSDL2 (Simulation * pSim){
         getInput(&input);
 
         //On dessine tout
-        affichageFenetre();
+
+        affichageFenetre(pSim);
+        contaminations(pSim);
+        afficherPersoFenetre(pSim);
+        tirs(pSim);
+        afficherPersoFenetre(pSim);
+        deplacerPerso_sim(pSim);
+        afficherPersoFenetre(pSim);
+
 
         // Gestion des 60 fps (1000ms/60 = 16.6 -> 16
         delay(frameLimit);
