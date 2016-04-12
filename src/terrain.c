@@ -47,7 +47,6 @@ caseDeplacement * getGrilleByCoord_terr(Coordonnees * coord, Terrain * pTerrain)
     return getGrilleByXY_terr(getXCoord_Coord(coord), getYCoord_Coord(coord), pTerrain);
 }
 
-
 char placePersoByCoord(Perso * pPerso, Coordonnees * coord, Terrain * pTerrain){
     if(getEnvCase(getGrilleByCoord_terr(coord, pTerrain)) == VIDE && getPersoCase(getGrilleByCoord_terr(coord, pTerrain)) == NULL){
 	caseDeplacement * pCase = initCase(VIDE, pPerso);
@@ -80,9 +79,14 @@ Perso * creePersoTerrainRand(Terrain * pTerrain, enum typePerso type, int idPers
     return pZombie;
 }
 
-//////////////////////////////////////////////////////////////////////////////
-//CREATION-TESTAMENT//////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////
+void setMarqueurByXY(int x, int y, char valeur, Terrain * pTerrain){
+    caseDeplacement * caseDep = getGrilleByXY_terr(x, y, pTerrain);
+    setMarqueur(valeur, caseDep);
+}
+
+/////////////////////////////////////////////////////////////////////////////
+//CREATION-TESTAMENT/////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
 
 void terrainInitGrille_terr (Terrain * pTerrain){
     caseDeplacement X;
@@ -702,7 +706,16 @@ Terrain * terrainLireFichier_terr (char * nomTerrain){
 //CHAMPS/////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
 
-void propagationChamp(caseDeplacement * caseChamp, int intensite, enum typePerso type, int idPerso, Coordonnees  * coordCase, Terrain * pTerrain){
+void initialisationMarqueurs(Terrain * pTerrain){
+    for(int i = 0; i < getDimX_terr(pTerrain); i++){
+	for (int j = 0; j < getDimY_terr(pTerrain); j++) {
+	    setMarqueurByXY(i, j, 0, pTerrain);   
+	}
+    }
+}
+
+void propagationChamp(int intensite, enum typePerso type, int idPerso, Coordonnees  * coordCase, Terrain * pTerrain){
+    caseDeplacement * caseChamp = getGrilleByCoord_terr(coordCase, pTerrain);
     if(!(caseChamp -> marqueur)){ //si la propagation n'a pas été faite
 	switch (type) {
 	case ZOMBIE: {
@@ -719,29 +732,27 @@ void propagationChamp(caseDeplacement * caseChamp, int intensite, enum typePerso
 	}
 	}
 
+	setMarqueur(1, caseChamp);
+
 	//propagation sur les cases adjacentes
 	Coordonnees coordCaseGauche = getCoordCaseGaucheByCoord_terr(coordCase);
 	if(estDansTerrain_terr(pTerrain, &coordCaseGauche)){
-	    caseDeplacement * caseGauche = getGrilleByCoord_terr(&coordCaseGauche, pTerrain);
-	    return propagationChamp(caseGauche, intensite + 1, type, idPerso, &coordCaseGauche, pTerrain);
+	    propagationChamp(intensite + 1, type, idPerso, &coordCaseGauche, pTerrain);
 	}
 
 	Coordonnees coordCaseDroite = getCoordCaseDroiteByCoord_terr(coordCase);
 	if(estDansTerrain_terr(pTerrain, &coordCaseDroite)){
-	    caseDeplacement * caseDroite = getGrilleByCoord_terr(&coordCaseDroite, pTerrain);
-	    return propagationChamp(caseDroite, intensite + 1, type, idPerso, &coordCaseDroite, pTerrain);
+	    propagationChamp(intensite + 1, type, idPerso, &coordCaseDroite, pTerrain);
 	}
 
 	Coordonnees coordCaseBas = getCoordCaseBasByCoord_terr(coordCase);
 	if(estDansTerrain_terr(pTerrain, &coordCaseBas)){
-	caseDeplacement * caseBas = getGrilleByCoord_terr(&coordCaseBas, pTerrain);
-	    return propagationChamp(caseBas, intensite + 1, type, idPerso, &coordCaseBas, pTerrain);
+	    propagationChamp(intensite + 1, type, idPerso, &coordCaseBas, pTerrain);
 	}
 
 	Coordonnees coordCaseHaut = getCoordCaseHautByCoord_terr(coordCase);
 	if(estDansTerrain_terr(pTerrain, &coordCaseHaut)){
-	caseDeplacement * caseHaut = getGrilleByCoord_terr(&coordCaseHaut, pTerrain);
-	    return propagationChamp(caseHaut, intensite + 1, type, idPerso, &coordCaseHaut, pTerrain);
+	    propagationChamp(intensite + 1, type, idPerso, &coordCaseHaut, pTerrain);
 	}
     }
 }

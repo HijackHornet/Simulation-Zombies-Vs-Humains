@@ -34,3 +34,7 @@ void testamentCase(caseDeplacement * caseDep){
     
     caseDep = NULL;
 }
+
+void setMarqueur(char valeur, caseDeplacement * caseDep){
+    caseDep -> marqueur = valeur;
+}

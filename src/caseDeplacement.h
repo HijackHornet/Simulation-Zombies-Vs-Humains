@@ -34,4 +34,6 @@ caseDeplacement * initCase(enum env envCase, Perso * pPerso);
 
 void testamentCase(caseDeplacement * caseDep);
 
+void setMarqueur(char valeur, caseDeplacement * caseDep);
+
 #endif

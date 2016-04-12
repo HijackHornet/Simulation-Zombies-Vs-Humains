@@ -24,7 +24,7 @@ void lanceSimulation(char * nomFic){
 void afficheGrille(Simulation * pSim){
     clear();
     Terrain * pTerrain = getTerrain_sim(pSim);
-    mvprintw(0, 0, "Nombre de zombies : %d \t Nombre de citoyens : %d \t Nombre de policiers : %d \t", getNbZombies_sim(pSim), getNbCitoyens_sim(pSim), getNbPoliciers_sim(pSim));
+    mvprintw(0, 0, "Nombre de zombies : %d \t Nombre de citoyens : %d \t Nombre de policiers : %d \t Valeur du champ sur la case (10, 10) : %d", getNbZombies_sim(pSim), getNbCitoyens_sim(pSim), getNbPoliciers_sim(pSim), ((pSim -> pTerrain -> grille)[10][10].champZombies)[0]);
     for(int i = 0; i < getDimY_terr(pTerrain); i++){
 	for (int j = 0; j < getDimX_terr(pTerrain); j++) {
 	    if(getPersoCase(getGrilleByXY_terr(j, i, pTerrain)) != NULL){
@@ -66,6 +66,7 @@ void boucleSimulation(Simulation * pSim){
 	tirs(pSim);
 	afficheGrille(pSim);
 	sleep(1);
+	propagerChampsPersos(pSim);
 	deplacerPerso_sim(pSim);
     }
 }
