@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -Wall -std=c99 -lm -lncurses -ggdb
+CFLAGS = -Wall -std=c99 -lm -lncurses -ggdb -fshort-enums
 
 all: terrain.o caseDeplacement.o personnage.o coordonnees.o main.o simulation.o simulation_ncurses.o
 	$(CC) $(CFLAGS) caseDeplacement.o terrain.o personnage.o coordonnees.o simulation.o main.o -o projet.out simulation_ncurses.o

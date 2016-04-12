@@ -16,9 +16,9 @@ enum env {VIDE, MUR};
 typedef struct McaseDeplacement{
     enum env envCase;
     struct MPerso * persoCase;
-    int champZombies[500];
-    int champCitoyens[500];
-    int champPoliciers[500];
+    unsigned short champZombies[250];
+    unsigned short champCitoyens[250];
+    unsigned short champPoliciers[250];
     char marqueur;
 } caseDeplacement;
 
