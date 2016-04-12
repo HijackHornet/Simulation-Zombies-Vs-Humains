@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="ZombiesVsHumains" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/ZombiesVsHumains" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin" />
+				<Option object_output="obj/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-std=c99" />
+					<Add option="-g" />
+					<Add directory="C:/Program Files (x86)/CodeBlocks/SDL2/i686-w64-mingw32/include" />
+					<Add directory="C:/Program Files (x86)/CodeBlocks/GTK/include" />
+				</Compiler>
+				<Linker>
+					<Add library="C:/Program Files (x86)/CodeBlocks/MinGW/lib/libmingw32.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/SDL2/i686-w64-mingw32/lib/libSDL2main.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/SDL2/i686-w64-mingw32/lib/libSDL2.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/SDL2/i686-w64-mingw32/lib/libSDL2_image.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/SDL2/i686-w64-mingw32/lib/libSDL2_image.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/SDL2/i686-w64-mingw32/lib/libSDL2_mixer.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/SDL2/i686-w64-mingw32/lib/libSDL2_mixer.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/SDL2/i686-w64-mingw32/lib/libSDL2_ttf.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/SDL2/i686-w64-mingw32/lib/libSDL2_ttf.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/GTK/lib/atk-1.0.lib" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/GTK/lib/cairo.lib" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/GTK/lib/fontconfig.lib" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/GTK/lib/gailutil.lib" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/GTK/lib/gdk_pixbuf-2.0.lib" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/GTK/lib/gdk-win32-3.0.lib" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/GTK/lib/gio-2.0.lib" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/GTK/lib/glib-2.0.lib" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/GTK/lib/gmodule-2.0.lib" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/GTK/lib/gobject-2.0.lib" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/GTK/lib/gthread-2.0.lib" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/GTK/lib/gtk-win32-3.0.lib" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/GTK/lib/libatk-1.0.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/GTK/lib/libcairo.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/GTK/lib/libcairo-gobject.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/GTK/lib/libcairo-script-interpreter.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/GTK/lib/libcroco-0.6.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/GTK/lib/libffi.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/GTK/lib/libfontconfig.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/GTK/lib/libfreetype.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/GTK/lib/libgailutil-3.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/GTK/lib/libgdk_pixbuf-2.0.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/GTK/lib/libgdk-3.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/GTK/lib/libgio-2.0.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/GTK/lib/libglib-2.0.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/GTK/lib/libgmodule-2.0.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/GTK/lib/libgobject-2.0.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/GTK/lib/libgthread-2.0.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/GTK/lib/libgtk-3.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/GTK/lib/libiconv.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/GTK/lib/libintl.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/GTK/lib/libjasper.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/GTK/lib/libjpeg.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/GTK/lib/liblzma.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/GTK/lib/libpango-1.0.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/GTK/lib/libpangocairo-1.0.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/GTK/lib/libpangoft2-1.0.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/GTK/lib/libpangowin32-1.0.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/GTK/lib/libpixman-1.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/GTK/lib/libpng.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/GTK/lib/libpng15.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/GTK/lib/librsvg-2.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/GTK/lib/libtiff.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/GTK/lib/libxml2.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/GTK/lib/libz.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/GTK/lib/pango-1.0.lib" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/GTK/lib/pangocairo-1.0.lib" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/GTK/lib/pangoft2-1.0.lib" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/GTK/lib/pangowin32-1.0.lib" />
+					<Add directory="C:/Program Files (x86)/CodeBlocks/SDL2/i686-w64-mingw32/lib" />
+					<Add directory="C:/Program Files (x86)/CodeBlocks/GTK/lib" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/ZombiesVsHumains" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-mms-bitfields" />
+			<Add option="-Wall" />
+			<Add directory="C:/Program Files (x86)/CodeBlocks/GTK/include" />
+			<Add directory="C:/Program Files (x86)/CodeBlocks/GTK/include/gtk-3.0" />
+			<Add directory="C:/Program Files (x86)/CodeBlocks/GTK/include/cairo" />
+			<Add directory="C:/Program Files (x86)/CodeBlocks/GTK/include/gdk" />
+			<Add directory="C:/Program Files (x86)/CodeBlocks/GTK/include/glib-2.0" />
+			<Add directory="C:/Program Files (x86)/CodeBlocks/GTK/lib/glib-2.0/include" />
+			<Add directory="C:/Program Files (x86)/CodeBlocks/GTK/include/pango-1.0" />
+			<Add directory="C:/Program Files (x86)/CodeBlocks/GTK/lib/gtk-3.0/include" />
+			<Add directory="C:/Program Files (x86)/CodeBlocks/GTK/include/atk-1.0" />
+			<Add directory="C:/Program Files (x86)/CodeBlocks/GTK/include/gdk-pixbuf-2.0" />
+		</Compiler>
+		<Linker>
+			<Add library="gtk-win32-3.0" />
+			<Add library="gobject-2.0" />
+			<Add library="glib-2.0" />
+			<Add directory="C:/Program Files (x86)/CodeBlocks/GTK/lib" />
+		</Linker>
+		<Unit filename="../src/Makefile" />
+		<Unit filename="src/Makefile" />
+		<Unit filename="src/SDL2/affichage_SDL.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/SDL2/affichage_SDL.h" />
+		<Unit filename="src/SDL2/initialisationSDL.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/SDL2/initialisationSDL.h" />
+		<Unit filename="src/SDL2/input.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/SDL2/input.h" />
+		<Unit filename="src/SDL2/simulation_SDL2.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/caseDeplacement.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/caseDeplacement.h" />
+		<Unit filename="src/coordonnees.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/coordonnees.h" />
+		<Unit filename="src/defs.h" />
+		<Unit filename="src/main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/personnage.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/personnage.h" />
+		<Unit filename="src/simulation.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/simulation.h" />
+		<Unit filename="src/terrain.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/terrain.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
