@@ -62,7 +62,7 @@ void drawImage(SDL_Texture *image, int x, int y)
     SDL_RenderCopy(getrenderer(), image, NULL, &dest);
 
 }
-void afficherPersoFenetre(Simulation * pSim){
+void afficherParamFenetre(Simulation * pSim){
 
     Terrain * pTerrain = getTerrain_sim(pSim);
 
@@ -85,23 +85,30 @@ void afficherPersoFenetre(Simulation * pSim){
                 }
                 else if(getTypePerso(getPersoCase(getGrilleByXY_terr(j, i, pTerrain))) == POLICIER){
                     drawImage(policierText,j*50,i*50);
+
                 }
             }
+
+
 	    }
 	}
-
 
    SDL_RenderPresent(getrenderer());
 
     // Délai pour laisser respirer le proc
-    SDL_Delay(500);
+    SDL_Delay(200);
 }
 
 void affichageFenetre(Simulation *pSim)
 {
+
+    Terrain * pTerrain = getTerrain_sim(pSim);
     SDL_Texture *fond;
+    SDL_Texture *murText;
+
 
     fond = loadImage("../data/Graphics/Case.png");
+    murText = loadImage("../data/Graphics/Mur.png");
 
     int i,j;
     i=0; j=0;
@@ -113,6 +120,19 @@ void affichageFenetre(Simulation *pSim)
             i=i+50;
             j=0;
     }
+
+
+    for(int i = 0; i < getDimY_terr(pTerrain); i++){
+        for (int j = 0; j < getDimX_terr(pTerrain); j++) {
+            if(getEnvCase(getGrilleByXY_terr(j, i, pTerrain)) == MUR){
+                    drawImage(murText,j*50,i*50);
+
+                }
+
+
+	    }
+	}
+
 
 
 

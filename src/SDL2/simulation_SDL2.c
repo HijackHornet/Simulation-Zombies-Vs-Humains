@@ -30,11 +30,11 @@ int lancerSimulationSDL2 (Simulation * pSim){
 
         affichageFenetre(pSim);
         contaminations(pSim);
-        afficherPersoFenetre(pSim);
+        afficherParamFenetre(pSim);
         tirs(pSim);
-        afficherPersoFenetre(pSim);
+        afficherParamFenetre(pSim);
         deplacerPerso_sim(pSim);
-        afficherPersoFenetre(pSim);
+        afficherParamFenetre(pSim);
 
 
         // Gestion des 60 fps (1000ms/60 = 16.6 -> 16
