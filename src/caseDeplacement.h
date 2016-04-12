@@ -16,6 +16,10 @@ enum env {VIDE, MUR};
 typedef struct McaseDeplacement{
     enum env envCase;
     struct MPerso * persoCase;
+    int champZombies[500];
+    int champCitoyens[500];
+    int champPoliciers[500];
+    char marqueur;
 } caseDeplacement;
 
 enum env getEnvCase(caseDeplacement * caseDep);
