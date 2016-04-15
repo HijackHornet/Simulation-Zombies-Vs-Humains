@@ -17,9 +17,11 @@
 #include "coordonnees.h"
 #include "terrain.h"
 #include "simulation.h"
+#include "gtk.h"
 
 // Taille de la fenêtre : 800x480 pixels
-#define SCREEN_WIDTH 1920
-#define SCREEN_HEIGHT 1080
-
+#define SCREEN_WIDTH 1030 //1300
+#define SCREEN_HEIGHT 500 //500
+#define RENDERERSCALE 0.3 //0.3
+#define DELAYREFRESH 300 //300
 #endif

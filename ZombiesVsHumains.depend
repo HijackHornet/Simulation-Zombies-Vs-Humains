@@ -2941,7 +2941,7 @@
 1460472026 source:c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\personnage.c
 	"personnage.h"
 
-1460472026 source:c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\sdl2\affichage_sdl.c
+1460714043 source:c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\sdl2\affichage_sdl.c
 	"affichage_SDL.h"
 	"../defs.h"
 	"input.h"
@@ -2962,7 +2962,7 @@
 	"caseDeplacement.h"
 	"coordonnees.h"
 
-1460472249 c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\defs.h
+1460715789 c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\defs.h
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
@@ -2975,11 +2975,12 @@
 	"coordonnees.h"
 	"terrain.h"
 	"simulation.h"
+	"gtk.h"
 
 1460472026 c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\sdl2\input.h
 	"../defs.h"
 
-1460472026 source:c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\sdl2\initialisationsdl.c
+1460712687 source:c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\sdl2\initialisationsdl.c
 	"initialisationSDL.h"
 	"affichage_SDL.h"
 	"../defs.h"
@@ -2991,7 +2992,7 @@
 	"../defs.h"
 	"input.h"
 
-1460472026 source:c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\sdl2\simulation_sdl2.c
+1460713814 source:c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\sdl2\simulation_sdl2.c
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 	<SDL2/SDL_ttf.h>
@@ -3006,8 +3007,14 @@
 1460472026 source:c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\terrain.c
 	"terrain.h"
 
-1460634891 source:c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\main.c
+1460715716 source:c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\main.c
+	"defs.h"
+	<stdlib.h>
+
+1460715716 source:c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\gtk.c
 	"defs.h"
 	<stdlib.h>
 	<gtk/gtk.h>
+
+1460715762 c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\gtk.h
 

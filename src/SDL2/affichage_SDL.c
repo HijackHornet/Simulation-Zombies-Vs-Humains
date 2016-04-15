@@ -78,13 +78,13 @@ void afficherParamFenetre(Simulation * pSim){
         for (int j = 0; j < getDimX_terr(pTerrain); j++) {
             if(getPersoCase(getGrilleByXY_terr(j, i, pTerrain)) != NULL){
                 if(getTypePerso(getPersoCase(getGrilleByXY_terr(j, i, pTerrain))) == ZOMBIE){
-                    drawImage(zombieText,j*50,i*50);
+                    drawImage(zombieText,j*50,(getDimY_terr(pTerrain)*50 - i*50)-50);
                 }
                 else if(getTypePerso(getPersoCase(getGrilleByXY_terr(j, i, pTerrain))) == CITOYEN){
-                    drawImage(citoyenText,j*50,i*50);
+                    drawImage(citoyenText,j*50,(getDimY_terr(pTerrain)*50 - i*50)-50);
                 }
                 else if(getTypePerso(getPersoCase(getGrilleByXY_terr(j, i, pTerrain))) == POLICIER){
-                    drawImage(policierText,j*50,i*50);
+                    drawImage(policierText,j*50,(getDimY_terr(pTerrain)*50 - i*50)-50);
 
                 }
             }
@@ -96,7 +96,9 @@ void afficherParamFenetre(Simulation * pSim){
    SDL_RenderPresent(getrenderer());
 
     // Délai pour laisser respirer le proc
-    SDL_Delay(200);
+    SDL_Delay(DELAYREFRESH);
+    SDL_RenderClear(getrenderer());
+
 }
 
 void affichageFenetre(Simulation *pSim)
@@ -109,11 +111,10 @@ void affichageFenetre(Simulation *pSim)
 
     fond = loadImage("../data/Graphics/Case.png");
     murText = loadImage("../data/Graphics/Mur.png");
-
     int i,j;
     i=0; j=0;
-    while(i<SCREEN_WIDTH){
-            while(j<SCREEN_HEIGHT){
+    while(i<SCREEN_WIDTH*(1/RENDERERSCALE)){
+            while(j<SCREEN_HEIGHT*(1/RENDERERSCALE)){
                 drawImage(fond,i,j);
                 j=j+50;
             }
@@ -125,7 +126,7 @@ void affichageFenetre(Simulation *pSim)
     for(int i = 0; i < getDimY_terr(pTerrain); i++){
         for (int j = 0; j < getDimX_terr(pTerrain); j++) {
             if(getEnvCase(getGrilleByXY_terr(j, i, pTerrain)) == MUR){
-                    drawImage(murText,j*50,i*50);
+                    drawImage(murText,j*50,(getDimY_terr(pTerrain)*50 - i*50)-50);
 
                 }
 
@@ -136,14 +137,8 @@ void affichageFenetre(Simulation *pSim)
 
 
 
-     // Affiche l'écran
-    SDL_RenderPresent(getrenderer());
 
-    // Délai pour laisser respirer le proc
-    SDL_Delay(1);
-
-    // Délai pour laisser respirer le proc
-    SDL_Delay(1);
+    afficherParamFenetre(pSim);
 }
 
 

@@ -140,6 +140,10 @@
 		</Unit>
 		<Unit filename="src/coordonnees.h" />
 		<Unit filename="src/defs.h" />
+		<Unit filename="src/gtk.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/gtk.h" />
 		<Unit filename="src/main.c">
 			<Option compilerVar="CC" />
 		</Unit>
