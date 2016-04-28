@@ -6,7 +6,13 @@ int main(int argc, char* argv[]){
     //testFonctions_terr();
     //testFonctions_perso();
     //testFonctions_sim();
-    lanceSimulation("FichierTestLecture");
-    //Simulation * pSim = creerSimulation_sim(50, 50, 50, "FichierTestLecture");
+    lanceSimulation("FichierTestEcriture");
+    /*
+    srand(time(NULL));
+    Simulation * pSim = creerSimulation_sim(1, 0, 0, "FichierTestLectureLOL");
+    propagerChampsPersos(pSim);
+    afficherGrilleConsole(getTerrain_sim(pSim));
+    afficherChamps(getTerrain_sim(pSim));
+    */
     //lancerSimulationSDL2(pSim);
 }

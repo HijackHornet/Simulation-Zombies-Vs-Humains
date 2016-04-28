@@ -36,4 +36,8 @@ void testamentCase(caseDeplacement * caseDep);
 
 void setMarqueur(char valeur, caseDeplacement * caseDep);
 
+unsigned short getChamp(enum typePerso type, int idPerso, caseDeplacement * caseDep);
+
+void setChamp(unsigned short intensite, enum typePerso type, int idPerso, caseDeplacement * caseDep);
+
 #endif

@@ -3,7 +3,7 @@
 void lanceSimulation(char * nomFic){
     srand(time(NULL));
     
-    Simulation * pSim = creerSimulation_sim(50, 50, 50, nomFic);
+    Simulation * pSim = creerSimulation_sim(1, 10, 0, nomFic);
 
     initscr();
     start_color();
@@ -67,6 +67,8 @@ void boucleSimulation(Simulation * pSim){
 	afficheGrille(pSim);
 	sleep(1);
 	propagerChampsPersos(pSim);
-	deplacerPerso_sim(pSim);
+	//afficherChamps(pSim -> pTerrain);
+	sleep(1);
+	deplacementIntelPersos(pSim);
     }
 }

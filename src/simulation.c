@@ -247,10 +247,22 @@ void deplacerPoliciers_sim(Simulation * pSim){
     }
 }
 
+void deplacementIntelZombies_sim(Simulation * pSim){
+    int nbZombies = getNbZombies_sim(pSim);
+    Perso ** tabZombies = getZombies_sim(pSim);
+    for(int i = 0; i < nbZombies; i++){
+	deplacementIntelZombie(tabZombies[i], pSim);
+    }
+}
+
 void deplacerPerso_sim(Simulation * pSim){
     deplacerZombies_sim(pSim);
     deplacerPoliciers_sim(pSim);
     deplacerCitoyens_sim(pSim);
+}
+
+void deplacementIntelPersos(Simulation * pSim){
+    deplacementIntelZombies_sim(pSim);
 }
 
 
@@ -301,19 +313,94 @@ void tirs(Simulation * pSim){
 
 void propagerChampsPersos(Simulation * pSim){
     Terrain * pTerrain = getTerrain_sim(pSim);
-    initialisationMarqueurs(pTerrain);
+    
     for(int i = 0; i < getNbZombies_sim(pSim); i++){
 	Coordonnees * pCoordZombie = getCoordonneesPerso_perso((pSim -> zombies)[i]);
-	propagationChamp(0, ZOMBIE, i, pCoordZombie, pTerrain);
+	propagationChamp(ZOMBIE, i, pCoordZombie, pTerrain);
     }
 
-    initialisationMarqueurs(pTerrain);
     for (int i = 0; i < getNbPoliciers_sim(pSim); i++) {
-	Coordonnees * pCoordPolicier = getCoordonneesPerso_perso((pSim -> zombies)[i]);
-	propagationChamp(0, POLICIER, i, pCoordPolicier, pTerrain);
+	Coordonnees * pCoordPolicier = getCoordonneesPerso_perso((pSim -> policiers)[i]);
+	propagationChamp(POLICIER, i, pCoordPolicier, pTerrain);
+    }
+
+    for (int i = 0; i < getNbCitoyens_sim(pSim); i++) {
+	Coordonnees * pCoordCitoyen = getCoordonneesPerso_perso((pSim -> citoyens)[i]);
+	propagationChamp(CITOYEN, i, pCoordCitoyen, pTerrain);
     }
 
 }
+
+void deplacementIntelZombie(Perso * pPerso, Simulation * pSim){
+    Coordonnees * coordPerso = getCoordonneesPerso_perso(pPerso);
+
+    int sommesChampsCitoyens[4][2]; //bas, haut, gauche, droite - stocke l'id dans le 1er champ
+
+    for (int i = 0; i < 4; i++) {
+	sommesChampsCitoyens[i][0] = 0;
+    }
+
+    
+    caseDeplacement * caseBas = getCaseBasByCoord(coordPerso, getTerrain_sim(pSim));
+    for (int i = 0; i < getNbCitoyens_sim(pSim); i++) {
+	sommesChampsCitoyens[0][0] += (int)getChamp(CITOYEN, i, caseBas);
+	sommesChampsCitoyens[0][1] = 0;
+    }
+
+    caseDeplacement * caseHaut = getCaseHautByCoord(coordPerso, getTerrain_sim(pSim));
+    for (int i = 0; i < getNbCitoyens_sim(pSim); i++) {
+	sommesChampsCitoyens[1][0] += (int)getChamp(CITOYEN, i, caseHaut);
+	sommesChampsCitoyens[1][1] = 1;
+    }
+
+    caseDeplacement * caseGauche = getCaseGaucheByCoord(coordPerso, getTerrain_sim(pSim));
+    for (int i = 0; i < getNbCitoyens_sim(pSim); i++) {
+	sommesChampsCitoyens[2][0] += (int)getChamp(CITOYEN, i, caseGauche);
+	sommesChampsCitoyens[2][1] = 2;
+    }
+    
+    caseDeplacement * caseDroite = getCaseDroiteByCoord(coordPerso, getTerrain_sim(pSim));
+    for (int i = 0; i < getNbCitoyens_sim(pSim); i++) {
+	sommesChampsCitoyens[3][0] += (int)getChamp(CITOYEN, i, caseDroite);
+	sommesChampsCitoyens[3][1] = 3;
+    }
+
+    qsort (sommesChampsCitoyens, 4, 2*sizeof(int), compareTab2D);
+
+    Terrain * pTerrain = getTerrain_sim(pSim);
+    
+    switch (sommesChampsCitoyens[0][1]) {
+    case 0: {
+	verifDeplacementBas_perso(pPerso, getTerrain_sim(pSim));
+	deplacementBas_perso(pPerso, pTerrain);
+	break;
+    }
+
+    case 1: {
+	verifDeplacementHaut_perso(pPerso, getTerrain_sim(pSim));
+	deplacementHaut_perso(pPerso, pTerrain);
+	break;
+    }
+
+    case 2: {
+	verifDeplacementGauche_perso(pPerso, getTerrain_sim(pSim));
+	deplacementGauche_perso(pPerso, pTerrain);
+	break;
+    }
+
+    case 3: {
+	verifDeplacementDroite_perso(pPerso, getTerrain_sim(pSim));
+	deplacementDroite_perso(pPerso, pTerrain);
+	break;
+    }
+	    
+    default:
+	break;
+    }
+    assert(1);
+}
+
+
 
 ////////////////////////////////////////////////////////////////////////////
 //TEST//////////////////////////////////////////////////////////////////////
@@ -338,4 +425,16 @@ void testFonctions_sim(){
     printf("%d %d %d", getNbZombies_sim(pSim), getNbCitoyens_sim(pSim), getNbPoliciers_sim(pSim));
 
     testamentSim(pSim);
+}
+
+
+////////////////////////////////////////////////////////////////////////////
+//AUTRES////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+int compareTab2D(const void * a, const void * b)
+{
+    int * pa = (int *)a;
+    int * pb = (int *)b;
+
+    return pa[0]-pb[0];
 }

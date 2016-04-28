@@ -38,3 +38,31 @@ void testamentCase(caseDeplacement * caseDep){
 void setMarqueur(char valeur, caseDeplacement * caseDep){
     caseDep -> marqueur = valeur;
 }
+
+unsigned short getChamp(enum typePerso type, int idPerso, caseDeplacement * caseDep){
+    if(type == ZOMBIE){
+	return (caseDep -> champZombies)[idPerso];
+    }
+
+    else if(type == CITOYEN){
+	return (caseDep -> champCitoyens)[idPerso];
+    }
+
+    else{
+	return (caseDep -> champPoliciers)[idPerso];
+    }
+}
+
+void setChamp(unsigned short intensite, enum typePerso type, int idPerso, caseDeplacement * caseDep){
+    if(type == ZOMBIE){
+        (caseDep -> champZombies)[idPerso] = intensite;
+    }
+
+    else if(type == CITOYEN){
+	(caseDep -> champCitoyens)[idPerso] = intensite;
+    }
+
+    else{
+	(caseDep -> champPoliciers)[idPerso] = intensite;
+    }
+}

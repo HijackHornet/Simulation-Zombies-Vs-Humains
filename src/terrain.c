@@ -47,6 +47,30 @@ caseDeplacement * getGrilleByCoord_terr(Coordonnees * coord, Terrain * pTerrain)
     return getGrilleByXY_terr(getXCoord_Coord(coord), getYCoord_Coord(coord), pTerrain);
 }
 
+caseDeplacement * getCaseBasByCoord(Coordonnees * coord, Terrain * pTerrain){
+    Coordonnees coordCaseBas = getCoordCaseBasByCoord_terr(coord);
+
+    return getGrilleByCoord_terr(&coordCaseBas, pTerrain);
+}
+
+caseDeplacement * getCaseHautByCoord(Coordonnees * coord, Terrain * pTerrain){
+    Coordonnees coordCaseHaut = getCoordCaseHautByCoord_terr(coord);
+
+    return getGrilleByCoord_terr(&coordCaseHaut, pTerrain);
+}
+
+caseDeplacement * getCaseGaucheByCoord(Coordonnees * coord, Terrain * pTerrain){
+    Coordonnees coordCaseGauche = getCoordCaseGaucheByCoord_terr(coord);
+
+    return getGrilleByCoord_terr(&coordCaseGauche, pTerrain);
+}
+
+caseDeplacement * getCaseDroiteByCoord(Coordonnees * coord, Terrain * pTerrain){
+    Coordonnees coordCaseDroite = getCoordCaseDroiteByCoord_terr(coord);
+
+    return getGrilleByCoord_terr(&coordCaseDroite, pTerrain);
+}
+
 char placePersoByCoord(Perso * pPerso, Coordonnees * coord, Terrain * pTerrain){
     if(getEnvCase(getGrilleByCoord_terr(coord, pTerrain)) == VIDE && getPersoCase(getGrilleByCoord_terr(coord, pTerrain)) == NULL){
 	caseDeplacement * pCase = initCase(VIDE, pPerso);
@@ -268,6 +292,7 @@ char deplacementAleatoire_perso(Perso * pPerso, Terrain * pTerrain){
 
     return deplacementEffectue;
 }
+
 
 /////////////////////////////////////////////////////////////////////////////
 //SPECIFIQUE ZOMBIE//////////////////////////////////////////////////////////
@@ -702,6 +727,16 @@ Terrain * terrainLireFichier_terr (char * nomTerrain){
     return pTerrain;
 }
 
+void afficherChamps(Terrain * pTerrain){
+    for(int i = getDimY_terr(pTerrain) - 1; i >= 0; i--){
+	for (int j = 0; j < getDimX_terr(pTerrain); j++) {
+	    caseDeplacement * caseDep = getGrilleByXY_terr(j, i, pTerrain);
+	    printf("%4d ", getChamp(ZOMBIE, 0, caseDep));
+	}
+	printf("\n");
+    }
+}
+
 /////////////////////////////////////////////////////////////////////////////
 //CHAMPS/////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
@@ -714,48 +749,62 @@ void initialisationMarqueurs(Terrain * pTerrain){
     }
 }
 
-void propagationChamp(int intensite, enum typePerso type, int idPerso, Coordonnees  * coordCase, Terrain * pTerrain){
-    caseDeplacement * caseChamp = getGrilleByCoord_terr(coordCase, pTerrain);
-    if(!(caseChamp -> marqueur)){ //si la propagation n'a pas été faite
-	switch (type) {
-	case ZOMBIE: {
-	    (caseChamp -> champZombies)[idPerso] = intensite;
-	    break;
-	}
-	case CITOYEN:{
-	    (caseChamp -> champCitoyens)[idPerso] = intensite;
-	    break;
-	}
-	case POLICIER:{
-	    (caseChamp -> champCitoyens)[idPerso] = intensite;
-	    break;
-	}
+void propagationChamp(enum typePerso type, int idPerso, Coordonnees  * coordPerso, Terrain * pTerrain){
+    int xPerso = getXCoord_Coord(coordPerso);
+    int yPerso = getYCoord_Coord(coordPerso);
+
+
+    int hauteurTriangleMax = getDimY_terr(pTerrain) + getDimX_terr(pTerrain);
+    
+    //au dessus du perso
+    for (int i = hauteurTriangleMax; i >= 0; i--){
+	Coordonnees sommetTriangle = (Coordonnees){xPerso, yPerso + i};
+	if(estDansTerrain_terr(pTerrain, &sommetTriangle)){
+	    caseDeplacement * pCaseDep = getGrilleByCoord_terr(&sommetTriangle, pTerrain);
+	    setChamp(i, type, idPerso, pCaseDep);
 	}
 
-	setMarqueur(1, caseChamp);
+	for(int j = i - 1; j >= 0; j--){
+	    Coordonnees coordCaseGauche = {xPerso + i - j, yPerso + j};
+	    Coordonnees coordCaseDroite = {xPerso - i + j, yPerso + j};
+	    if(estDansTerrain_terr(pTerrain, &coordCaseGauche)){
+		caseDeplacement * pCaseGauche = getGrilleByCoord_terr(&coordCaseGauche, pTerrain);
+		setChamp(i, type, idPerso, pCaseGauche);
+	    }
 
-	//propagation sur les cases adjacentes
-	Coordonnees coordCaseGauche = getCoordCaseGaucheByCoord_terr(coordCase);
-	if(estDansTerrain_terr(pTerrain, &coordCaseGauche)){
-	    propagationChamp(intensite + 1, type, idPerso, &coordCaseGauche, pTerrain);
+	    if(estDansTerrain_terr(pTerrain, &coordCaseDroite)){
+		caseDeplacement * pCaseDroite = getGrilleByCoord_terr(&coordCaseDroite, pTerrain);
+		setChamp(i, type, idPerso, pCaseDroite);
+	    }
+	}
+    }
+    
+
+    //en dessous du perso
+    for (int i = hauteurTriangleMax; i > 0; i--){
+	Coordonnees sommetTriangle = (Coordonnees){xPerso, yPerso - i};
+	if(estDansTerrain_terr(pTerrain, &sommetTriangle)){
+	    caseDeplacement * pCaseDep = getGrilleByCoord_terr(&sommetTriangle, pTerrain);
+	    setChamp(i, type, idPerso, pCaseDep);
 	}
 
-	Coordonnees coordCaseDroite = getCoordCaseDroiteByCoord_terr(coordCase);
-	if(estDansTerrain_terr(pTerrain, &coordCaseDroite)){
-	    propagationChamp(intensite + 1, type, idPerso, &coordCaseDroite, pTerrain);
-	}
+	for(int j = i - 1; j > 0; j--){
+	    Coordonnees coordCaseGauche = {xPerso + i - j, yPerso - j};
+	    Coordonnees coordCaseDroite = {xPerso - i + j, yPerso - j};
+	    if(estDansTerrain_terr(pTerrain, &coordCaseGauche)){
+		caseDeplacement * pCaseGauche = getGrilleByCoord_terr(&coordCaseGauche, pTerrain);
+		setChamp(i, type, idPerso, pCaseGauche);
+	    }
 
-	Coordonnees coordCaseBas = getCoordCaseBasByCoord_terr(coordCase);
-	if(estDansTerrain_terr(pTerrain, &coordCaseBas)){
-	    propagationChamp(intensite + 1, type, idPerso, &coordCaseBas, pTerrain);
-	}
-
-	Coordonnees coordCaseHaut = getCoordCaseHautByCoord_terr(coordCase);
-	if(estDansTerrain_terr(pTerrain, &coordCaseHaut)){
-	    propagationChamp(intensite + 1, type, idPerso, &coordCaseHaut, pTerrain);
+	    if(estDansTerrain_terr(pTerrain, &coordCaseDroite)){
+		caseDeplacement * pCaseDroite = getGrilleByCoord_terr(&coordCaseDroite, pTerrain);
+		setChamp(i, type, idPerso, pCaseDroite);
+	    }
 	}
     }
 }
+
+
 /////////////////////////////////////////////////////////////////////////////
 //NON-REGRESSION/////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////

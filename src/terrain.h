@@ -34,7 +34,6 @@ typedef struct MTerrain{
     caseDeplacement grille[MAX_TAILLE_XY][MAX_TAILLE_XY];
 } Terrain;
 
-
 //////////////////////////////////////////////////////////////////////////////
 //ACCESSEURS//////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
@@ -100,6 +99,14 @@ caseDeplacement * getGrilleByCoord_terr(Coordonnees * pCoord, Terrain * pTerrain
 void setGrilleByCoord_terr(Coordonnees * coord, Terrain * pTerrain, caseDeplacement * caseDep);
 
 Perso * creePersoTerrainRand(Terrain * pTerrain, enum typePerso type, int idPerso);
+
+caseDeplacement * getCaseBasByCoord(Coordonnees * coord, Terrain * pTerrain);
+
+caseDeplacement * getCaseHautByCoord(Coordonnees * coord, Terrain * pTerrain);
+
+caseDeplacement * getCaseGaucheByCoord(Coordonnees * coord, Terrain * pTerrain);
+
+caseDeplacement * getCaseDroiteByCoord(Coordonnees * coord, Terrain * pTerrain);
 
 ////////////////////////////////////////////////////////////////////////////
 //CREATION//////////////////////////////////////////////////////////////////
@@ -184,13 +191,15 @@ Terrain * terrainLireFichier_terr (char nomTerrain[MAX_CHAR_NOM_TERRAIN]);
 	@brief Teste le module coordonnees et ses fonctions
 */
 
+void afficherChamps(Terrain * pTerrain);
+
 /////////////////////////////////////////////////////////////////////////////
 //CHAMPS/////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
 
 void initialisationMarqueurs(Terrain * pTerrain);
 
-void propagationChamp(int intensite, enum typePerso type, int idPerso, Coordonnees  * coordCase, Terrain * pTerrain);
+void propagationChamp(enum typePerso type, int idPerso, Coordonnees  * coordPerso, Terrain * pTerrain);
 
 /////////////////////////////////////////////////////////////////////////////
 //NON REGRESSION/////////////////////////////////////////////////////////////
