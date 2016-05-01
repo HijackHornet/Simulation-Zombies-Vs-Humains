@@ -17,7 +17,7 @@
 #include "coordonnees.h"
 #include "terrain.h"
 #include "simulation.h"
-#include "gtk.h"
+#include "simulation_gtk.h"
 
 // Taille de la fenêtre : 800x480 pixels
 #define SCREEN_WIDTH 1030 //1300

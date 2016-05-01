@@ -29,10 +29,9 @@ int lancerSimulationSDL2 (Simulation * pSim){
         //On dessine tout
         contaminations(pSim);
         tirs(pSim);
+        propagerChampsPersos(pSim);
         deplacerPerso_sim(pSim);
         affichageFenetre(pSim);
-
-
 
         // Gestion des 60 fps (1000ms/60 = 16.6 -> 16
         delay(frameLimit);

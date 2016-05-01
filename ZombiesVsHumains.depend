@@ -2962,7 +2962,7 @@
 	"caseDeplacement.h"
 	"coordonnees.h"
 
-1460715789 c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\defs.h
+1462099199 c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\defs.h
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
@@ -2975,7 +2975,7 @@
 	"coordonnees.h"
 	"terrain.h"
 	"simulation.h"
-	"gtk.h"
+	"simulation_gtk.h"
 
 1460472026 c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\sdl2\input.h
 	"../defs.h"
@@ -3017,4 +3017,11 @@
 	<gtk/gtk.h>
 
 1460715762 c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\gtk.h
+
+1460715762 c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\simulation_gtk.h
+
+1460715716 source:c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\simulation_gtk.c
+	"defs.h"
+	<stdlib.h>
+	<gtk/gtk.h>
 
