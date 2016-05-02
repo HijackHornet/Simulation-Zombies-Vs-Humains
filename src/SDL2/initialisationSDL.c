@@ -37,7 +37,7 @@ void init(char *title)
                                                                     SCREEN_HEIGHT, SDL_GetError());
         exit(1);
     }
-    SDL_RenderSetScale(renderer,1,1);
+    SDL_RenderSetScale(renderer,RENDERERSCALE,RENDERERSCALE);
 
     //Initialisation du chargement des images png avec SDL_Image 2
     int imgFlags = IMG_INIT_PNG;
@@ -47,8 +47,7 @@ void init(char *title)
         exit(1);
     }
 
-    //On cache le curseur de la souris
-    SDL_ShowCursor(SDL_DISABLE);
+
 
     //On initialise SDL_TTF 2 qui gérera l'écriture de texte
     if (TTF_Init() < 0)

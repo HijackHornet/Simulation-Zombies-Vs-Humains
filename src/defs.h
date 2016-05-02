@@ -18,9 +18,11 @@
 #include "terrain.h"
 #include "simulation.h"
 #include "simulation_ncurses.h"
+#include "simulation_gtk.h"
 
 // Taille de la fenêtre : 800x480 pixels
-#define SCREEN_WIDTH 1000
-#define SCREEN_HEIGHT 1000
-
+#define SCREEN_WIDTH 1030 //1300
+#define SCREEN_HEIGHT 500 //500
+#define RENDERERSCALE 0.3 //0.3
+#define DELAYREFRESH 300 //300
 #endif

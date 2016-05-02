@@ -2915,3 +2915,113 @@
 	<stdlib.h>
 	<gtk/gtk.h>
 
+1460472026 source:c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\casedeplacement.c
+	"caseDeplacement.h"
+
+1460472026 c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\casedeplacement.h
+	"coordonnees.h"
+	"personnage.h"
+
+1460472026 c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\coordonnees.h
+
+1460472026 c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\personnage.h
+	"coordonnees.h"
+	"assert.h"
+	"time.h"
+	<stdlib.h>
+	<stdio.h>
+
+1460472026 source:c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\coordonnees.c
+	"coordonnees.h"
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<assert.h>
+
+1460472026 source:c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\personnage.c
+	"personnage.h"
+
+1460714043 source:c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\sdl2\affichage_sdl.c
+	"affichage_SDL.h"
+	"../defs.h"
+	"input.h"
+
+1460472026 c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\sdl2\affichage_sdl.h
+	"../simulation.h"
+
+1460472026 c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\simulation.h
+	"terrain.h"
+	"personnage.h"
+
+1460472026 c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\terrain.h
+	<stdio.h>
+	<stdlib.h>
+	<errno.h>
+	<assert.h>
+	<string.h>
+	"caseDeplacement.h"
+	"coordonnees.h"
+
+1462099199 c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\defs.h
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<assert.h>
+	<math.h>
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	<SDL2/SDL_ttf.h>
+	<SDL2/SDL_mixer.h>
+	"coordonnees.h"
+	"terrain.h"
+	"simulation.h"
+	"simulation_gtk.h"
+
+1460472026 c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\sdl2\input.h
+	"../defs.h"
+
+1460712687 source:c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\sdl2\initialisationsdl.c
+	"initialisationSDL.h"
+	"affichage_SDL.h"
+	"../defs.h"
+	"input.h"
+
+1460472026 c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\sdl2\initialisationsdl.h
+
+1460472026 source:c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\sdl2\input.c
+	"../defs.h"
+	"input.h"
+
+1460713814 source:c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\sdl2\simulation_sdl2.c
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	<SDL2/SDL_ttf.h>
+	<SDL2/SDL_mixer.h>
+	"input.h"
+	"initialisationSDL.h"
+	"affichage_SDL.h"
+
+1460472026 source:c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\simulation.c
+	"simulation.h"
+
+1460472026 source:c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\terrain.c
+	"terrain.h"
+
+1460715716 source:c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\main.c
+	"defs.h"
+	<stdlib.h>
+
+1460715716 source:c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\gtk.c
+	"defs.h"
+	<stdlib.h>
+	<gtk/gtk.h>
+
+1460715762 c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\gtk.h
+
+1460715762 c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\simulation_gtk.h
+
+1460715716 source:c:\users\tristan rivière\desktop\git\simulation-zombies-vs-humains\src\simulation_gtk.c
+	"defs.h"
+	<stdlib.h>
+	<gtk/gtk.h>
+

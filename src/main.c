@@ -1,12 +1,14 @@
 #include "defs.h"
-//#include "simulation_ncurses.h"
+#include <stdlib.h>
 
-int main(int argc, char* argv[]){
+
+int main (int argc, char *argv[])
+{
     //testFonctions_Coord();
     //testFonctions_terr();
     //testFonctions_perso();
     //testFonctions_sim();
-    lanceSimulation("FichierTestLecture");
+    //lanceSimulation("FichierTestLecture");
     /*
     srand(time(NULL));
     Simulation * pSim = creerSimulation_sim(1, 0, 0, "FichierTestLectureLOL");
@@ -15,4 +17,7 @@ int main(int argc, char* argv[]){
     afficherChamps(getTerrain_sim(pSim));
     */
     //lancerSimulationSDL2(pSim);
+    //lanceSimulation("FichierTestLecture");
+    startGTK(argc, argv);
+ return 0;
 }
