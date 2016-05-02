@@ -3,8 +3,9 @@
 void lanceSimulation(char * nomFic){
     srand(time(NULL));
     
-    Simulation * pSim = creerSimulation_sim(1, 10, 0, nomFic);
+    Simulation * pSim = creerSimulation_sim(5, 10, 0, nomFic);
 
+    
     initscr();
     start_color();
 
@@ -61,14 +62,17 @@ void boucleSimulation(Simulation * pSim){
 	afficheGrille(pSim);
 	sleep(1);	
 	contaminations(pSim);
-	afficheGrille(pSim);
-	sleep(1);
-	tirs(pSim);
-	afficheGrille(pSim);
-	sleep(1);
+	//afficheGrille(pSim);
+	//sleep(1);
+	//tirs(pSim);
+	//afficheGrille(pSim);
+	//sleep(1);
 	propagerChampsPersos(pSim);
 	//afficherChamps(pSim -> pTerrain);
 	sleep(1);
-	deplacementIntelPersos(pSim);
+	deplacementIntelZombies_sim(pSim);
+	//deplacerCitoyens_sim(pSim);
+	//deplacerPoliciers_sim(pSim);
+	
     }
 }

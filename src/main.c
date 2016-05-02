@@ -6,7 +6,7 @@ int main(int argc, char* argv[]){
     //testFonctions_terr();
     //testFonctions_perso();
     //testFonctions_sim();
-    lanceSimulation("FichierTestEcriture");
+    lanceSimulation("FichierTestLecture");
     /*
     srand(time(NULL));
     Simulation * pSim = creerSimulation_sim(1, 0, 0, "FichierTestLectureLOL");

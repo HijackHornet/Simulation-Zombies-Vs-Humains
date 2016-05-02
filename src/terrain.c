@@ -755,9 +755,20 @@ void propagationChamp(enum typePerso type, int idPerso, Coordonnees  * coordPers
 
 
     int hauteurTriangleMax = getDimY_terr(pTerrain) + getDimX_terr(pTerrain);
+
+    //short intensite;
     
     //au dessus du perso
     for (int i = hauteurTriangleMax; i >= 0; i--){
+	/*
+	  if(i <= 4){
+	  intensite = -200;
+	  }
+	  else{
+	  intensite = i;
+	  }
+	*/
+	
 	Coordonnees sommetTriangle = (Coordonnees){xPerso, yPerso + i};
 	if(estDansTerrain_terr(pTerrain, &sommetTriangle)){
 	    caseDeplacement * pCaseDep = getGrilleByCoord_terr(&sommetTriangle, pTerrain);
@@ -782,6 +793,13 @@ void propagationChamp(enum typePerso type, int idPerso, Coordonnees  * coordPers
 
     //en dessous du perso
     for (int i = hauteurTriangleMax; i > 0; i--){
+	/* if(i <= 4){ */
+	/*     i*i*i = -200; */
+	/* } */
+	/* else{ */
+	/*     i*i*i = i; */
+	/* } */
+	
 	Coordonnees sommetTriangle = (Coordonnees){xPerso, yPerso - i};
 	if(estDansTerrain_terr(pTerrain, &sommetTriangle)){
 	    caseDeplacement * pCaseDep = getGrilleByCoord_terr(&sommetTriangle, pTerrain);

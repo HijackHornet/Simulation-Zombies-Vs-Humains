@@ -39,7 +39,7 @@ void setMarqueur(char valeur, caseDeplacement * caseDep){
     caseDep -> marqueur = valeur;
 }
 
-unsigned short getChamp(enum typePerso type, int idPerso, caseDeplacement * caseDep){
+short getChamp(enum typePerso type, int idPerso, caseDeplacement * caseDep){
     if(type == ZOMBIE){
 	return (caseDep -> champZombies)[idPerso];
     }
@@ -53,7 +53,7 @@ unsigned short getChamp(enum typePerso type, int idPerso, caseDeplacement * case
     }
 }
 
-void setChamp(unsigned short intensite, enum typePerso type, int idPerso, caseDeplacement * caseDep){
+void setChamp(short intensite, enum typePerso type, int idPerso, caseDeplacement * caseDep){
     if(type == ZOMBIE){
         (caseDep -> champZombies)[idPerso] = intensite;
     }
