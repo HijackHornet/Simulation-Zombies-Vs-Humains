@@ -31,7 +31,7 @@ caseDeplacement * initCase(enum env envCase, Perso * pPerso){
 
 void testamentCase(caseDeplacement * caseDep){
     free(caseDep);
-    
+
     caseDep = NULL;
 }
 
@@ -39,7 +39,7 @@ void setMarqueur(char valeur, caseDeplacement * caseDep){
     caseDep -> marqueur = valeur;
 }
 
-short getChamp(enum typePerso type, int idPerso, caseDeplacement * caseDep){
+unsigned short getChamp(enum typePerso type, int idPerso, caseDeplacement * caseDep){
     if(type == ZOMBIE){
 	return (caseDep -> champZombies)[idPerso];
     }
@@ -53,7 +53,7 @@ short getChamp(enum typePerso type, int idPerso, caseDeplacement * caseDep){
     }
 }
 
-void setChamp(short intensite, enum typePerso type, int idPerso, caseDeplacement * caseDep){
+void setChamp(unsigned short intensite, enum typePerso type, int idPerso, caseDeplacement * caseDep){
     if(type == ZOMBIE){
         (caseDep -> champZombies)[idPerso] = intensite;
     }

@@ -10,17 +10,15 @@
 #ifdef _WIN32
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
-#include <SDL2/SDL_ttf.h>
-#include <SDL2/SDL_mixer.h>
 #endif
 
 #include "coordonnees.h"
 #include "terrain.h"
 #include "simulation.h"
-#include "simulation_ncurses.h"
+//#include "simulation_ncurses.h"
 #include "simulation_gtk.h"
 
-// Taille de la fenêtre : 800x480 pixels
+// Taille de la fenêtre : 1030*500
 #define SCREEN_WIDTH 1030 //1300
 #define SCREEN_HEIGHT 500 //500
 #define RENDERERSCALE 0.3 //0.3

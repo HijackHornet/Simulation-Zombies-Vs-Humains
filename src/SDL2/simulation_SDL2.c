@@ -1,14 +1,12 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
-#include <SDL2/SDL_ttf.h>
-#include <SDL2/SDL_mixer.h>
 
 
 #include "input.h"
 #include "initialisationSDL.h"
 #include "affichage_SDL.h"
 
-int lancerSimulationSDL2 (Simulation * pSim){
+void lancerSimulationSDL2 (Simulation * pSim){
 
         unsigned int frameLimit = SDL_GetTicks() + 16;
     int go;
@@ -37,8 +35,5 @@ int lancerSimulationSDL2 (Simulation * pSim){
         delay(frameLimit);
         frameLimit = SDL_GetTicks() + 16;
     }
-
-    // On quitte
-    exit(0);
 
 }
