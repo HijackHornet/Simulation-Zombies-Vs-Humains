@@ -37,3 +37,31 @@ void lancerSimulationSDL2 (Simulation * pSim){
     }
 
 }
+void lancerSimulationSDL2Editeur (){
+
+        unsigned int frameLimit = SDL_GetTicks() + 16;
+    int go;
+    // Initialisation de la SDL
+    init("Editeur de Maps");
+    // Appelle la fonction cleanup à la fin du programme
+    atexit(cleanup);
+
+    go = 1;
+
+    // Boucle infinie, principale, du jeu
+    while (go == 1)
+    {
+        Input input;
+        //Gestion des inputs clavier
+        getInput(&input);
+
+        //On dessine tout
+        affichageFenetreEditeur();
+
+        // Gestion des 60 fps (1000ms/60 = 16.6 -> 16
+        delay(frameLimit);
+        frameLimit = SDL_GetTicks() + 16;
+    }
+
+}
+

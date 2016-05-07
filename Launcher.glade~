@@ -162,7 +162,7 @@
             <property name="margin_bottom">40</property>
             <property name="hexpand">True</property>
             <property name="vexpand">True</property>
-            <signal name="clicked" handler="lancerSimulationSDL2" swapped="no"/>
+            <signal name="clicked" handler="on_window_main_destroy" swapped="no"/>
           </object>
           <packing>
             <property name="expand">False</property>
