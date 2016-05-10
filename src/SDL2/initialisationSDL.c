@@ -48,31 +48,6 @@ void init(char *title)
     }
 
 
-
-    //On initialise SDL_TTF 2 qui gérera l'écriture de texte
-    if (TTF_Init() < 0)
-    {
-        printf("Impossible d'initialiser SDL TTF: %s\n", TTF_GetError());
-        exit(1);
-    }
-
-    //On initialise SDL_Mixer 2, qui gérera la musique et les effets sonores
-    int flags = MIX_INIT_MP3;
-    int initted = Mix_Init(flags);
-    if ((initted & flags) != flags)
-    {
-        printf("Mix_Init: Failed to init SDL_Mixer\n");
-        printf("Mix_Init: %s\n", Mix_GetError());
-        exit(1);
-    }
-
-    /* Open 44.1KHz, signed 16bit, system byte order,
-    stereo audio, using 1024 byte chunks (voir la doc pour plus d'infos) */
-    if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 1024) == -1) {
-        printf("Mix_OpenAudio: %s\n", Mix_GetError());
-        exit(1);
-    }
-
     // Définit le nombre de pistes audio (channels) à mixer
     Mix_AllocateChannels(32);
 
