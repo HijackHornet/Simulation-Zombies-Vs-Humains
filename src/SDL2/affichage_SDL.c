@@ -1,7 +1,4 @@
 #include "affichage_SDL.h"
-#include "../defs.h"
-#include "input.h"
-
 
 void delay(unsigned int frameLimit)
 {

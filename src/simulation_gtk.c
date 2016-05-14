@@ -1,7 +1,4 @@
-#include "defs.h"
-#include <stdlib.h>
-#include <gtk/gtk.h>
-
+#include "simulation_gtk.h"
 
 void startSdlMain(){
     Simulation * pSim = creerSimulation_sim(50, 50, 50, "FichierTestLecture");

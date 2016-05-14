@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include "defs.h"
 #include "SDL2/simulation_SDL2.h"
 #include <gtk/gtk.h>
 

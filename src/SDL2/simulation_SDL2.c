@@ -1,10 +1,7 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 
-
-#include "input.h"
-#include "initialisationSDL.h"
-#include "affichage_SDL.h"
+#include "simulation_SDL2.h"
 
 void lancerSimulationSDL2 (Simulation * pSim){
 
@@ -19,11 +16,7 @@ void lancerSimulationSDL2 (Simulation * pSim){
 
     // Boucle infinie, principale, du jeu
     while (go == 1)
-    {
-        Input input;
-        //Gestion des inputs clavier
-        getInput(&input);
-
+      {
         //On dessine tout
         contaminations(pSim);
         tirs(pSim);
@@ -39,7 +32,7 @@ void lancerSimulationSDL2 (Simulation * pSim){
 }
 void lancerSimulationSDL2Editeur (){
 
-        unsigned int frameLimit = SDL_GetTicks() + 16;
+    unsigned int frameLimit = SDL_GetTicks() + 16;
     int go;
     // Initialisation de la SDL
     init("Editeur de Maps");
@@ -51,10 +44,6 @@ void lancerSimulationSDL2Editeur (){
     // Boucle infinie, principale, du jeu
     while (go == 1)
     {
-        Input input;
-        //Gestion des inputs clavier
-        getInput(&input);
-
         //On dessine tout
         affichageFenetreEditeur();
 
