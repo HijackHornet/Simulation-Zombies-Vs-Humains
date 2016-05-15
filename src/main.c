@@ -2,9 +2,15 @@
 #include <gtk/gtk.h>
 
 #include "simulation_gtk.h"
+#include <time.h>
 
 int main (int argc, char ** argv)
 {
+  srand (time(NULL));
+  
+  /*Simulation * pSim = creerSimulation_sim(1, 0, 1, "FichierTestLecture");
+  propagerChampsPersos(pSim);
+  afficherChamps(getTerrain_sim(pSim));*/
   startSdlMain();
   /*lancerSimulationSDL2Editeur();
   GtkBuilder      *builder;

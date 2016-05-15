@@ -750,6 +750,20 @@ void initialisationMarqueurs(Terrain * pTerrain){
 }
 
 void propagationChamp(enum typePerso type, int idPerso, Coordonnees  * coordPerso, Terrain * pTerrain){
+  int largeurTerrain = getDimX_terr(pTerrain), hauteurTerrain = getDimY_terr(pTerrain);
+
+  for(int i = 0; i < largeurTerrain; i++){
+    for(int j = 0; j < hauteurTerrain; j++){
+      Coordonnees coordCase = (Coordonnees){i, j};
+      float valeurChamp = distanceEntreDeuxCoordonnees_Coord(&coordCase, coordPerso);
+      valeurChamp *= 1000;
+      caseDeplacement * pCase = getGrilleByXY_terr(i, j, pTerrain);
+      setChamp(valeurChamp, type, idPerso, pCase);
+    }
+  }
+}
+
+void propagationChampOld(enum typePerso type, int idPerso, Coordonnees  * coordPerso, Terrain * pTerrain){
     int xPerso = getXCoord_Coord(coordPerso);
     int yPerso = getYCoord_Coord(coordPerso);
 

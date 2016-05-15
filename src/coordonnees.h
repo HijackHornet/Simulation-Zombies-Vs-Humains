@@ -11,7 +11,7 @@
  *  @brief Structure definissant des coordonnees en deux dimension (pour des entitées)
  *  @var coordonnees::xCoord
  *  Position sur l'axe des X
-  * @var coordonnees::yCoor
+  * @var coordonnees::yCoord
  *  Position sur l'axe des Y
  */
 typedef struct Mcoordonnees{

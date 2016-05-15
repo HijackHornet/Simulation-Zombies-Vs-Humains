@@ -5,7 +5,7 @@
 
 void lancerSimulationSDL2 (Simulation * pSim){
 
-        unsigned int frameLimit = SDL_GetTicks() + 16;
+    unsigned int frameLimit = SDL_GetTicks() + 16;
     int go;
     // Initialisation de la SDL
     init("Simulation Humains VS Zombie - Par Leo et Tristan");
@@ -21,7 +21,9 @@ void lancerSimulationSDL2 (Simulation * pSim){
         contaminations(pSim);
         tirs(pSim);
         propagerChampsPersos(pSim);
-        deplacerPerso_sim(pSim);
+        deplacementIntelZombies_sim(pSim);
+	deplacementIntelCitoyens_sim(pSim);
+	deplacementIntelPoliciers_sim(pSim);
         affichageFenetre(pSim);
 
         // Gestion des 60 fps (1000ms/60 = 16.6 -> 16
