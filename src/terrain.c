@@ -822,7 +822,7 @@ void afficherChamps(Terrain * pTerrain){
     for(int i = getDimY_terr(pTerrain) - 1; i >= 0; i--){
 	for (int j = 0; j < getDimX_terr(pTerrain); j++) {
 	    caseDeplacement * caseDep = getGrilleByXY_terr(j, i, pTerrain);
-	    printf("%4d ", getChamp(ZOMBIE, 0, caseDep));
+	    printf("%4d ", getChamp(POLICIER, 0, caseDep));
 	}
 	printf("\n");
     }

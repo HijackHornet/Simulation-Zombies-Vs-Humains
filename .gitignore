@@ -32,6 +32,9 @@
 *.dSYM/
 *.su
 
+# Backup files
+*~
+
 # GTAG files
 GPATH
 GRTAGS

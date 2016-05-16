@@ -8,7 +8,7 @@ int main (int argc, char ** argv)
 {
   srand (time(NULL));
   
-  /*Simulation * pSim = creerSimulation_sim(1, 0, 1, "FichierTestLecture");
+  /*Simulation * pSim = creerSimulation_sim(1, 0, 1, "TerrainViergePourEditeur");
   propagerChampsPersos(pSim);
   afficherChamps(getTerrain_sim(pSim));*/
   startSdlMain();
