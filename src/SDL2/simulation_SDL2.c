@@ -3,41 +3,61 @@
 
 #include "simulation_SDL2.h"
 
-void lancerSimulationSDL2 (Simulation * pSim){
+void EventClavier(Terrain * pTerrain){
+    SDL_Event event;
+    while ( SDL_PollEvent(&event) )
+    {
+        switch(event.type)
+    {
+        case SDL_WINDOWEVENT: // Événement de la fenêtre
+            if ( event.window.event == SDL_WINDOWEVENT_CLOSE ) // Fermeture de la fenêtre
+            {
+                exit(0);
+            }
+            break;
+        case SDL_KEYDOWN:
+            if ( event.key.keysym.sym == SDLK_ESCAPE ) // C'est la touche Échap
+            {
+                exit(0);
 
-    unsigned int frameLimit = SDL_GetTicks() + 16;
-    int go;
-    // Initialisation de la SDL
-    init("Simulation Humains VS Zombie");
-    // Appelle la fonction cleanup à la fin du programme
-    atexit(cleanup);
+            }
 
-    go = 1;
+            if (event.key.keysym.sym == SDLK_s) {
 
-    // Boucle infinie, principale, du jeu
-    while (go == 1)
-      {
-        //On dessine tout
-	propagerChampsPersos(pSim);
-        contaminations(pSim);
-	deplacementIntelZombies_sim(pSim);
-        tirs(pSim);
-	deplacementIntelCitoyens_sim(pSim);
-        affichageFenetre(pSim);
-	deplacementIntelPoliciers_sim(pSim);
+                exit(0);
 
-        // Gestion des 60 fps (1000ms/60 = 16.6 -> 16)
-        delay(frameLimit);
-        frameLimit = SDL_GetTicks() + 16;
+            }
+            break;
+        case SDL_MOUSEBUTTONUP:
+            {int x,y;
+            caseDeplacement * caseDep;
+
+
+            SDL_GetMouseState(&x,&y);
+            x=(x/50);
+            y=(y/50);
+            caseDep = getGrilleByXY_terr(x,(getDimY_terr(pTerrain)-y-1),pTerrain);
+            if(getEnvCase(getGrilleByXY_terr(x, (getDimY_terr(pTerrain)-y-1), pTerrain)) == MUR){
+                setEnvCase(caseDep, VIDE);
+                setGrilleByXY_terr (x,(getDimY_terr(pTerrain)-y-1),pTerrain,caseDep);
+            }
+            else{
+                setEnvCase(caseDep, MUR);
+                setGrilleByXY_terr (x,(getDimY_terr(pTerrain)-y-1),pTerrain,caseDep);
+            }
+            break;
+            }
+    }
     }
 
 }
-void lancerSimulationSDL2Editeur (){
 
-    unsigned int frameLimit = SDL_GetTicks() + 16;
+void lancerSimulationSDL2 (Simulation * pSim){
+
+        unsigned int frameLimit = SDL_GetTicks() + 16;
     int go;
     // Initialisation de la SDL
-    init("Editeur de Maps");
+    init("Simulation Humains VS Zombie - Par Leo et Tristan");
     // Appelle la fonction cleanup à la fin du programme
     atexit(cleanup);
 
@@ -46,13 +66,56 @@ void lancerSimulationSDL2Editeur (){
     // Boucle infinie, principale, du jeu
     while (go == 1)
     {
-        //On dessine tout
-        affichageFenetreEditeur();
 
-        // Gestion des 60 fps (1000ms/60 = 16.6 -> 16)
+        //On dessine tout
+        contaminations(pSim);
+        tirs(pSim);
+        propagerChampsPersos(pSim);
+        deplacerPerso_sim(pSim);
+        affichageFenetre(pSim);
+
+        // Gestion des 60 fps (1000ms/60 = 16.6 -> 16
         delay(frameLimit);
         frameLimit = SDL_GetTicks() + 16;
     }
+
+}
+void lancerSimulationSDL2Editeur (){
+
+        unsigned int frameLimit = SDL_GetTicks() + 16;
+    int go;
+    // Initialisation de la SDL
+    initEditeur("Editeur de Maps");
+    // Appelle la fonction cleanup à la fin du programme
+    atexit(cleanup);
+
+    go = 1;
+
+    Terrain * TerrainEdit;
+    TerrainEdit = terrainCreer_terr(15,15,"LeNom");
+
+    // Boucle infinie, principale, du jeu
+    while (go == 1)
+    {
+
+
+        EventClavier(TerrainEdit);
+        //On dessine tout
+        affichageFenetreEditeur(TerrainEdit);
+
+
+        SDL_RenderPresent(getrenderer());
+
+        // Délai pour laisser respirer le proc
+        SDL_Delay(DELAYREFRESH);
+        SDL_RenderClear(getrenderer());
+        printf("h");
+
+        // Gestion des 60 fps (1000ms/60 = 16.6 -> 16
+        delay(frameLimit);
+        frameLimit = SDL_GetTicks() + 16;
+    }
+
 
 }
 

@@ -2,6 +2,21 @@
 <!-- Generated with glade 3.20.0 -->
 <interface>
   <requires lib="gtk+" version="3.20"/>
+  <object class="GtkAdjustment" id="adjustment1">
+    <property name="upper">100</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">10</property>
+  </object>
+  <object class="GtkAdjustment" id="adjustment2">
+    <property name="upper">100</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">10</property>
+  </object>
+  <object class="GtkAdjustment" id="adjustment3">
+    <property name="upper">100</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">10</property>
+  </object>
   <object class="GtkWindow" id="window_main">
     <property name="can_focus">False</property>
     <child>
@@ -47,13 +62,15 @@
               </packing>
             </child>
             <child>
-              <object class="GtkFileChooserButton">
+              <object class="GtkFileChooserButton" id="filechooserbutton1">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="margin_left">10</property>
                 <property name="margin_right">10</property>
                 <property name="margin_top">25</property>
-                <property name="title" translatable="yes"/>
+                <property name="preview_widget_active">False</property>
+                <property name="title" translatable="yes">filechooserbutton1</property>
+                <signal name="file-set" handler="boutton_fichier_cliquee" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -115,6 +132,10 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="margin_right">10</property>
+                <property name="max_width_chars">2</property>
+                <property name="adjustment">adjustment1</property>
+                <property name="numeric">True</property>
+                <property name="value">20</property>
               </object>
               <packing>
                 <property name="left_attach">1</property>
@@ -126,6 +147,9 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="margin_right">10</property>
+                <property name="adjustment">adjustment2</property>
+                <property name="numeric">True</property>
+                <property name="value">20</property>
               </object>
               <packing>
                 <property name="left_attach">1</property>
@@ -137,6 +161,9 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="margin_right">10</property>
+                <property name="adjustment">adjustment3</property>
+                <property name="numeric">True</property>
+                <property name="value">20</property>
               </object>
               <packing>
                 <property name="left_attach">1</property>
@@ -182,6 +209,7 @@
                 <property name="receives_default">True</property>
                 <property name="margin_right">10</property>
                 <property name="margin_bottom">8</property>
+                <signal name="clicked" handler="boutton_editor_cliquee" swapped="no"/>
               </object>
               <packing>
                 <property name="left_attach">1</property>
