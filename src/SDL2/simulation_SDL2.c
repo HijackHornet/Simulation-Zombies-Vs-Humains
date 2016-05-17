@@ -1,17 +1,14 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 
-
-#include "input.h"
-#include "initialisationSDL.h"
-#include "affichage_SDL.h"
+#include "simulation_SDL2.h"
 
 void lancerSimulationSDL2 (Simulation * pSim){
 
-        unsigned int frameLimit = SDL_GetTicks() + 16;
+    unsigned int frameLimit = SDL_GetTicks() + 16;
     int go;
     // Initialisation de la SDL
-    init("Simulation Humains VS Zombie - Par Leo et Tristan");
+    init("Simulation Humains VS Zombie");
     // Appelle la fonction cleanup à la fin du programme
     atexit(cleanup);
 
@@ -19,19 +16,17 @@ void lancerSimulationSDL2 (Simulation * pSim){
 
     // Boucle infinie, principale, du jeu
     while (go == 1)
-    {
-        Input input;
-        //Gestion des inputs clavier
-        getInput(&input);
-
+      {
         //On dessine tout
+	propagerChampsPersos(pSim);
         contaminations(pSim);
+	deplacementIntelZombies_sim(pSim);
         tirs(pSim);
-        propagerChampsPersos(pSim);
-        deplacerPerso_sim(pSim);
+	deplacementIntelCitoyens_sim(pSim);
         affichageFenetre(pSim);
+	deplacementIntelPoliciers_sim(pSim);
 
-        // Gestion des 60 fps (1000ms/60 = 16.6 -> 16
+        // Gestion des 60 fps (1000ms/60 = 16.6 -> 16)
         delay(frameLimit);
         frameLimit = SDL_GetTicks() + 16;
     }
@@ -39,7 +34,7 @@ void lancerSimulationSDL2 (Simulation * pSim){
 }
 void lancerSimulationSDL2Editeur (){
 
-        unsigned int frameLimit = SDL_GetTicks() + 16;
+    unsigned int frameLimit = SDL_GetTicks() + 16;
     int go;
     // Initialisation de la SDL
     init("Editeur de Maps");
@@ -51,14 +46,10 @@ void lancerSimulationSDL2Editeur (){
     // Boucle infinie, principale, du jeu
     while (go == 1)
     {
-        Input input;
-        //Gestion des inputs clavier
-        getInput(&input);
-
         //On dessine tout
         affichageFenetreEditeur();
 
-        // Gestion des 60 fps (1000ms/60 = 16.6 -> 16
+        // Gestion des 60 fps (1000ms/60 = 16.6 -> 16)
         delay(frameLimit);
         frameLimit = SDL_GetTicks() + 16;
     }

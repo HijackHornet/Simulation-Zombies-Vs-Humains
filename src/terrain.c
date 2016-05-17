@@ -520,6 +520,77 @@ char zombieA2Droite(Terrain * pTerrain, Coordonnees * coordZombie){
     }
 }
 
+char zombieHD(Terrain * pTerrain, Coordonnees * coordZombie){
+  Coordonnees coordCaseHD = getCoordCaseHDByCoord_terr(coordZombie);
+
+    if(estDansTerrain_terr(pTerrain, &coordCaseHD) && \
+       getPersoCase(getGrilleByCoord_terr(&coordCaseHD, pTerrain)) != NULL){ //Vérifie d'une part que la case est dans le terrain, d'autre part qu'il y a bien un personnage sur cette case pour pouvoir appeler getTypePerso (SEGFAULT si NULL)
+	caseDeplacement * caseHD = getGrilleByCoord_terr(&coordCaseHD, pTerrain);
+	if(getTypePerso(getPersoCase(caseHD)) == ZOMBIE){
+	    return 1;
+	}
+	else{
+	    return 0;
+	}
+    }
+    else{
+	return 0;
+    }
+}
+
+char zombieBD(Terrain * pTerrain, Coordonnees * coordZombie){
+  Coordonnees coordCaseBD = getCoordCaseBDByCoord_terr(coordZombie);
+
+    if(estDansTerrain_terr(pTerrain, &coordCaseBD) && \
+       getPersoCase(getGrilleByCoord_terr(&coordCaseBD, pTerrain)) != NULL){ //Vérifie d'une part que la case est dans le terrain, d'autre part qu'il y a bien un personnage sur cette case pour pouvoir appeler getTypePerso (SEGFAULT si NULL)
+	caseDeplacement * caseBD = getGrilleByCoord_terr(&coordCaseBD, pTerrain);
+	if(getTypePerso(getPersoCase(caseBD)) == ZOMBIE){
+	    return 1;
+	}
+	else{
+	    return 0;
+	}
+    }
+    else{
+	return 0;
+    }
+}
+
+char zombieBG(Terrain * pTerrain, Coordonnees * coordZombie){
+  Coordonnees coordCaseBG = getCoordCaseBGByCoord_terr(coordZombie);
+
+    if(estDansTerrain_terr(pTerrain, &coordCaseBG) && \
+       getPersoCase(getGrilleByCoord_terr(&coordCaseBG, pTerrain)) != NULL){ //Vérifie d'une part que la case est dans le terrain, d'autre part qu'il y a bien un personnage sur cette case pour pouvoir appeler getTypePerso (SEGFAULT si NULL)
+	caseDeplacement * caseBG = getGrilleByCoord_terr(&coordCaseBG, pTerrain);
+	if(getTypePerso(getPersoCase(caseBG)) == ZOMBIE){
+	    return 1;
+	}
+	else{
+	    return 0;
+	}
+    }
+    else{
+	return 0;
+    }
+}
+
+char zombieHG(Terrain * pTerrain, Coordonnees * coordZombie){
+  Coordonnees coordCaseHG = getCoordCaseHGByCoord_terr(coordZombie);
+
+    if(estDansTerrain_terr(pTerrain, &coordCaseHG) && \
+       getPersoCase(getGrilleByCoord_terr(&coordCaseHG, pTerrain)) != NULL){ //Vérifie d'une part que la case est dans le terrain, d'autre part qu'il y a bien un personnage sur cette case pour pouvoir appeler getTypePerso (SEGFAULT si NULL)
+	caseDeplacement * caseHG = getGrilleByCoord_terr(&coordCaseHG, pTerrain);
+	if(getTypePerso(getPersoCase(caseHG)) == ZOMBIE){
+	    return 1;
+	}
+	else{
+	    return 0;
+	}
+    }
+    else{
+	return 0;
+    }
+}
 
 /////////////////////////////////////////////////////////////////////////////
 //INTERACTIONS///////////////////////////////////////////////////////////////
@@ -609,6 +680,26 @@ Perso * policierTueZombie(Perso * pPolicier, Terrain * pTerrain){
 
     }
 
+    else if(zombieHD(pTerrain, coordPolicier)){
+      coordZombie = getCoordCaseHDByCoord_terr(coordPolicier);
+      caseZombie = getGrilleByCoord_terr(&coordZombie, pTerrain);
+    }
+
+    else if(zombieBD(pTerrain, coordPolicier)){
+      coordZombie = getCoordCaseBDByCoord_terr(coordPolicier);
+      caseZombie = getGrilleByCoord_terr(&coordZombie, pTerrain);
+    }
+
+    else if(zombieBG(pTerrain, coordPolicier)){
+      coordZombie = getCoordCaseBGByCoord_terr(coordPolicier);
+      caseZombie = getGrilleByCoord_terr(&coordZombie, pTerrain);
+    }
+
+    else if(zombieHG(pTerrain, coordPolicier)){
+      coordZombie = getCoordCaseHGByCoord_terr(coordPolicier);
+      caseZombie = getGrilleByCoord_terr(&coordZombie, pTerrain);
+    }
+    
 
     if(caseZombie != NULL){
 	pZombie = getPersoCase(caseZombie);
@@ -731,7 +822,7 @@ void afficherChamps(Terrain * pTerrain){
     for(int i = getDimY_terr(pTerrain) - 1; i >= 0; i--){
 	for (int j = 0; j < getDimX_terr(pTerrain); j++) {
 	    caseDeplacement * caseDep = getGrilleByXY_terr(j, i, pTerrain);
-	    printf("%4d ", getChamp(ZOMBIE, 0, caseDep));
+	    printf("%4d ", getChamp(POLICIER, 0, caseDep));
 	}
 	printf("\n");
     }
@@ -750,6 +841,20 @@ void initialisationMarqueurs(Terrain * pTerrain){
 }
 
 void propagationChamp(enum typePerso type, int idPerso, Coordonnees  * coordPerso, Terrain * pTerrain){
+  int largeurTerrain = getDimX_terr(pTerrain), hauteurTerrain = getDimY_terr(pTerrain);
+
+  for(int i = 0; i < largeurTerrain; i++){
+    for(int j = 0; j < hauteurTerrain; j++){
+      Coordonnees coordCase = (Coordonnees){i, j};
+      float valeurChamp = distanceEntreDeuxCoordonnees_Coord(&coordCase, coordPerso);
+      valeurChamp *= 100;
+      caseDeplacement * pCase = getGrilleByXY_terr(i, j, pTerrain);
+      setChamp(valeurChamp, type, idPerso, pCase);
+    }
+  }
+}
+
+void propagationChampOld(enum typePerso type, int idPerso, Coordonnees  * coordPerso, Terrain * pTerrain){
     int xPerso = getXCoord_Coord(coordPerso);
     int yPerso = getYCoord_Coord(coordPerso);
 
