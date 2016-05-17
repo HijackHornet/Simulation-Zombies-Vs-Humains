@@ -11,7 +11,7 @@
  *  @brief Structure definissant des coordonnees en deux dimension (pour des entitées)
  *  @var coordonnees::xCoord
  *  Position sur l'axe des X
-  * @var coordonnees::yCoord
+  * @var coordonnees::yCoor
  *  Position sur l'axe des Y
  */
 typedef struct Mcoordonnees{
@@ -72,14 +72,6 @@ Coordonnees getCoordCase2HautByXY_terr(int x, int y);
 
 Coordonnees getCoordCase2BasByXY_terr(int x, int y);
 
-Coordonnees getCoordCaseHDByXY_terr(int x, int y);
-
-Coordonnees getCoordCaseBDByXY_terr(int x, int y);
-
-Coordonnees getCoordCaseBGByXY_terr(int x, int y);
-
-Coordonnees getCoordCaseHGByXY_terr(int x, int y);
-
 Coordonnees getCoordCaseBasByCoord_terr(Coordonnees * coord);
 
 Coordonnees getCoordCaseDroiteByCoord_terr(Coordonnees * coord);
@@ -93,14 +85,6 @@ Coordonnees getCoordCase2HautByCoord_terr(Coordonnees * coord);
 Coordonnees getCoordCase2DroiteByCoord_terr(Coordonnees * coord);
 
 Coordonnees getCoordCase2GaucheByCoord_terr(Coordonnees * coord);
-
-Coordonnees getCoordCaseHDByCoord_terr(Coordonnees * coord);
-
-Coordonnees getCoordCaseBDByCoord_terr(Coordonnees * coord);
-
-Coordonnees getCoordCaseBGByCoord_terr(Coordonnees * coord);
-
-Coordonnees getCoordCaseHGByCoord_terr(Coordonnees * coord);
 
 /////////////////////////////////////////////////////////////////////////
 //INITIALISATIONS-TESTAMENTS/////////////////////////////////////////////
