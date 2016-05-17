@@ -3,7 +3,30 @@
 
 #include "simulation_SDL2.h"
 
-void EventClavier(Terrain * pTerrain){
+void EventClavier(){
+    SDL_Event event;
+    while ( SDL_PollEvent(&event) )
+    {
+        switch(event.type)
+    {
+        case SDL_WINDOWEVENT: // Événement de la fenêtre
+            if ( event.window.event == SDL_WINDOWEVENT_CLOSE ) // Fermeture de la fenêtre
+            {
+                exit(0);
+            }
+            break;
+        case SDL_KEYDOWN:
+            if ( event.key.keysym.sym == SDLK_ESCAPE ) // C'est la touche Échap
+            {
+                exit(0);
+
+            }
+            break;
+    }
+    }
+
+}
+void EventClavierEditeur(Terrain * pTerrain){
     SDL_Event event;
     while ( SDL_PollEvent(&event) )
     {
@@ -34,8 +57,8 @@ void EventClavier(Terrain * pTerrain){
 
 
             SDL_GetMouseState(&x,&y);
-            x=(x/50);
-            y=(y/50);
+            x=(x/(50*FULLSCREEN_RENDERERSCALE));
+            y=(y/(50*FULLSCREEN_RENDERERSCALE));
             caseDep = getGrilleByXY_terr(x,(getDimY_terr(pTerrain)-y-1),pTerrain);
             if(getEnvCase(getGrilleByXY_terr(x, (getDimY_terr(pTerrain)-y-1), pTerrain)) == MUR){
                 setEnvCase(caseDep, VIDE);
@@ -68,10 +91,13 @@ void lancerSimulationSDL2 (Simulation * pSim){
     {
 
         //On dessine tout
-        contaminations(pSim);
-        tirs(pSim);
+        EventClavier();
         propagerChampsPersos(pSim);
-        deplacerPerso_sim(pSim);
+        contaminations(pSim);
+        deplacementIntelZombies_sim(pSim);
+        tirs(pSim);
+        deplacementIntelCitoyens_sim(pSim);
+        deplacementIntelPoliciers_sim(pSim);
         affichageFenetre(pSim);
 
         // Gestion des 60 fps (1000ms/60 = 16.6 -> 16
@@ -99,7 +125,7 @@ void lancerSimulationSDL2Editeur (){
     {
 
 
-        EventClavier(TerrainEdit);
+        EventClavierEditeur(TerrainEdit);
         //On dessine tout
         affichageFenetreEditeur(TerrainEdit);
 

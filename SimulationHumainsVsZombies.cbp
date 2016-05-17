@@ -31,10 +31,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/SDL2/affichage_SDL.h" />
-		<Unit filename="src/SDL2/initialisationSDL.c">
+		<Unit filename="src/SDL2/initialisation_SDL.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="src/SDL2/initialisationSDL.h" />
+		<Unit filename="src/SDL2/initialisation_SDL.h" />
 		<Unit filename="src/SDL2/simulation_SDL2.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -47,7 +47,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/coordonnees.h" />
-		<Unit filename="src/defs.h" />
 		<Unit filename="src/main.c">
 			<Option compilerVar="CC" />
 		</Unit>

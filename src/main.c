@@ -42,8 +42,8 @@ G_MODULE_EXPORT void boutton_editor_cliquee(GtkButton * button, gpointer user_da
 
 G_MODULE_EXPORT void boutton_fichier_cliquee(GtkFileChooser *filechooserbutton1)
 {
-    gchar cNome[250];
-      *cNome = gtk_file_chooser_get_filename(filechooserbutton1);
+    gchar *cNome;
+      cNome = gtk_file_chooser_get_filename(filechooserbutton1);
 
       printf("\n%s", cNome);
 
