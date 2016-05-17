@@ -64,6 +64,22 @@ Coordonnees getCoordCase2BasByXY_terr(int x, int y){
     return (Coordonnees){x, y - 2};
 }
 
+Coordonnees getCoordCaseHDByXY_terr(int x, int y){
+  return (Coordonnees){x + 1, y + 1};
+}
+
+Coordonnees getCoordCaseBDByXY_terr(int x, int y){
+  return (Coordonnees){x + 1, y - 1};
+}
+
+Coordonnees getCoordCaseBGByXY_terr(int x, int y){
+  return (Coordonnees){x - 1, y - 1};
+}
+
+Coordonnees getCoordCaseHGByXY_terr(int x, int y){
+  return (Coordonnees){x - 1, y + 1};
+}
+
 Coordonnees getCoordCaseBasByCoord_terr(Coordonnees * coord){
     return getCoordCaseBasByXY_terr(getXCoord_Coord(coord), getYCoord_Coord(coord));
 }
@@ -95,6 +111,24 @@ Coordonnees getCoordCase2DroiteByCoord_terr(Coordonnees * coord){
 Coordonnees getCoordCase2GaucheByCoord_terr(Coordonnees * coord){
     return getCoordCase2GaucheByXY_terr(getXCoord_Coord(coord), getYCoord_Coord(coord));
 }
+
+
+Coordonnees getCoordCaseHDByCoord_terr(Coordonnees * coord){
+  return getCoordCaseHDByXY_terr(getXCoord_Coord(coord), getYCoord_Coord(coord));
+}
+
+Coordonnees getCoordCaseBDByCoord_terr(Coordonnees * coord){
+  return getCoordCaseBDByXY_terr(getXCoord_Coord(coord), getYCoord_Coord(coord));
+}
+
+Coordonnees getCoordCaseBGByCoord_terr(Coordonnees * coord){
+  return getCoordCaseBGByXY_terr(getXCoord_Coord(coord), getYCoord_Coord(coord));
+}
+
+Coordonnees getCoordCaseHGByCoord_terr(Coordonnees * coord){
+  return getCoordCaseHGByXY_terr(getXCoord_Coord(coord), getYCoord_Coord(coord));
+}
+
 
 
 /////////////////////////////////////////////////////////////////////////

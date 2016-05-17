@@ -3,7 +3,7 @@
 void lanceSimulation(char * nomFic){
     srand(time(NULL));
     
-    Simulation * pSim = creerSimulation_sim(5, 10, 0, nomFic);
+    Simulation * pSim = creerSimulation_sim(10, 10, 0, nomFic);
 
     
     initscr();

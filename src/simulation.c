@@ -256,6 +256,22 @@ void deplacementIntelZombies_sim(Simulation * pSim){
     }
 }
 
+void deplacementIntelCitoyens_sim(Simulation * pSim){
+  int nbCitoyens = getNbCitoyens_sim(pSim);
+  Perso ** tabCitoyens = getCitoyens_sim(pSim);
+  for(int i = 0; i < nbCitoyens; i++){
+    deplacementIntelCitoyen(tabCitoyens[i], pSim);
+  }
+}
+
+void deplacementIntelPoliciers_sim(Simulation * pSim){
+  int nbPoliciers = getNbPoliciers_sim(pSim);
+  Perso ** tabPoliciers = getPoliciers_sim(pSim);
+  for(int i = 0; i < nbPoliciers; i++){
+    deplacementIntelPolicier(tabPoliciers[i], pSim);
+  }
+}
+
 void deplacerPerso_sim(Simulation * pSim){
     deplacerZombies_sim(pSim);
     deplacerPoliciers_sim(pSim);
@@ -335,46 +351,84 @@ void propagerChampsPersos(Simulation * pSim){
 void deplacementIntelZombie(Perso * pPerso, Simulation * pSim){
     Coordonnees * coordPerso = getCoordonneesPerso_perso(pPerso);
 
-    int sommesChampsCitoyens[4][2]; //bas, haut, gauche, droite - stocke l'id dans le 1er champ
+    int sommesChampsCitoyens[4][2]; //bas, haut, gauche, droite - stocke l'id dans la 2eme case
+    int sommesChampsPoliciers[4][2]; //bas, haut, gauche, droite - stocke l'id dans la 2eme case
 
-    for (int i = 0; i < 4; i++) {
+    int sommesChamps[4][2]; //bas, haut, gauche, droite - stocke l'id dans la 2eme case
+    
+    for (int i = 0; i < 4; i++) { //initialisation des champs
 	sommesChampsCitoyens[i][0] = 0;
+	sommesChampsPoliciers[i][0] = 0;
     }
-
     
     caseDeplacement * caseBas = getCaseBasByCoord(coordPerso, getTerrain_sim(pSim));
 
     sommesChampsCitoyens[0][1] = 0;
     for (int i = 0; i < getNbCitoyens_sim(pSim); i++) {
-	sommesChampsCitoyens[0][0] += getChamp(CITOYEN, i, caseBas);
+      sommesChampsCitoyens[0][0] += (int)getChamp(CITOYEN, i, caseBas);
     }
+  
+    sommesChampsPoliciers[0][1] = 0;
+    for (int i = 0; i < getNbPoliciers_sim(pSim); i++) {
+      sommesChampsPoliciers[0][0] += (int)getChamp(POLICIER, i, caseBas);
+    }
+
+    sommesChamps[0][1] = 0;
+    sommesChamps[0][0] = sommesChampsCitoyens[0][0] + sommesChampsPoliciers[0][0];
+    
 
     sommesChampsCitoyens[1][1] = 1;
     caseDeplacement * caseHaut = getCaseHautByCoord(coordPerso, getTerrain_sim(pSim));
     for (int i = 0; i < getNbCitoyens_sim(pSim); i++) {
-	sommesChampsCitoyens[1][0] += getChamp(CITOYEN, i, caseHaut);
+      sommesChampsCitoyens[1][0] += (int)getChamp(CITOYEN, i, caseHaut);
     }
 
+    sommesChampsPoliciers[1][1] = 1;
+    for (int i = 0; i < getNbPoliciers_sim(pSim); i++) {
+      sommesChampsPoliciers[1][0] += (int)getChamp(POLICIER, i, caseHaut);
+    }
+
+    sommesChamps[1][1] = 1;
+    sommesChamps[1][0] = sommesChampsCitoyens[1][0] + sommesChampsPoliciers[1][0];
+
+    
     sommesChampsCitoyens[2][1] = 2;
     caseDeplacement * caseGauche = getCaseGaucheByCoord(coordPerso, getTerrain_sim(pSim));
     for (int i = 0; i < getNbCitoyens_sim(pSim); i++) {
-	sommesChampsCitoyens[2][0] += getChamp(CITOYEN, i, caseGauche);
+      sommesChampsCitoyens[2][0] += (int)getChamp(CITOYEN, i, caseGauche);
+    }
+    
+    sommesChampsPoliciers[2][1] = 2;
+    for (int i = 0; i < getNbPoliciers_sim(pSim); i++) {
+      sommesChampsPoliciers[2][0] += (int)getChamp(POLICIER, i, caseGauche);
     }
 
+    sommesChamps[2][1] = 2;
+    sommesChamps[2][0] = sommesChampsCitoyens[2][0] + sommesChampsPoliciers[2][0];
+
+    
     sommesChampsCitoyens[3][1] = 3;
     caseDeplacement * caseDroite = getCaseDroiteByCoord(coordPerso, getTerrain_sim(pSim));
     for (int i = 0; i < getNbCitoyens_sim(pSim); i++) {
-	sommesChampsCitoyens[3][0] += getChamp(CITOYEN, i, caseDroite);
+      sommesChampsCitoyens[3][0] += (int)getChamp(CITOYEN, i, caseDroite);
     }
 
-    qsort (sommesChampsCitoyens, 4, 2*sizeof(int), compareTab2D);
+    sommesChampsPoliciers[3][1] = 3;
+    for (int i = 0; i < getNbPoliciers_sim(pSim); i++) {
+      sommesChampsPoliciers[3][0] += (int)getChamp(POLICIER, i, caseDroite);
+    }
+
+    sommesChamps[3][1] = 3;
+    sommesChamps[3][0] = sommesChampsCitoyens[3][0] + sommesChampsPoliciers[3][0];
+    
+    qsort (sommesChamps, 4, 2*sizeof(int), compareTab2D);
 
     Terrain * pTerrain = getTerrain_sim(pSim);
 
     char deplacementEffectue = 0;
     int i = 0;
     do{
-	switch (sommesChampsCitoyens[i][1]) {
+	switch (sommesChamps[i][1]) {
 	case 0: {
 	    verifDeplacementBas_perso(pPerso, getTerrain_sim(pSim));
 	    deplacementEffectue = deplacementBas_perso(pPerso, pTerrain);
@@ -406,6 +460,160 @@ void deplacementIntelZombie(Perso * pPerso, Simulation * pSim){
 	default:
 	    i++;
 	    break;
+	}
+    } while(!deplacementEffectue && i < 4);
+}
+
+void deplacementIntelCitoyen(Perso * pPerso, Simulation * pSim){
+    Coordonnees * coordPerso = getCoordonneesPerso_perso(pPerso);
+
+    int sommesChampsZombies[4][2]; //bas, haut, gauche, droite - stocke l'id dans la 2eme case
+
+    for (int i = 0; i < 4; i++) { //initialisation des champs
+	sommesChampsZombies[i][0] = 0;
+    }
+    
+    caseDeplacement * caseBas = getCaseBasByCoord(coordPerso, getTerrain_sim(pSim));
+
+    sommesChampsZombies[0][1] = 0;
+    for (int i = 0; i < getNbZombies_sim(pSim); i++) {
+      sommesChampsZombies[0][0] += (int)getChamp(ZOMBIE, i, caseBas);
+    }
+
+    sommesChampsZombies[1][1] = 1;
+    caseDeplacement * caseHaut = getCaseHautByCoord(coordPerso, getTerrain_sim(pSim));
+    for (int i = 0; i < getNbZombies_sim(pSim); i++) {
+      sommesChampsZombies[1][0] += (int)getChamp(ZOMBIE, i, caseHaut);
+    }
+
+    sommesChampsZombies[2][1] = 2;
+    caseDeplacement * caseGauche = getCaseGaucheByCoord(coordPerso, getTerrain_sim(pSim));
+    for (int i = 0; i < getNbZombies_sim(pSim); i++) {
+      sommesChampsZombies[2][0] += (int)getChamp(ZOMBIE, i, caseGauche);
+    }
+
+    sommesChampsZombies[3][1] = 3;
+    caseDeplacement * caseDroite = getCaseDroiteByCoord(coordPerso, getTerrain_sim(pSim));
+    for (int i = 0; i < getNbZombies_sim(pSim); i++) {
+      sommesChampsZombies[3][0] += (int)getChamp(ZOMBIE, i, caseDroite);
+    }
+
+    qsort (sommesChampsZombies, 4, 2*sizeof(int), compareTab2D);
+
+    Terrain * pTerrain = getTerrain_sim(pSim);
+
+    char deplacementEffectue = 0;
+    int i = 3;
+    do{
+	switch (sommesChampsZombies[i][1]) {
+	case 0: {
+	    verifDeplacementBas_perso(pPerso, getTerrain_sim(pSim));
+	    deplacementEffectue = deplacementBas_perso(pPerso, pTerrain);
+	    i--;
+	    break;
+	}
+
+	case 1: {
+	    verifDeplacementHaut_perso(pPerso, getTerrain_sim(pSim));
+	    deplacementEffectue = deplacementHaut_perso(pPerso, pTerrain);
+	    i--;
+	    break;
+	}
+
+	case 2: {
+	    verifDeplacementGauche_perso(pPerso, getTerrain_sim(pSim));
+	    deplacementEffectue = deplacementGauche_perso(pPerso, pTerrain);
+	    i--;
+	    break;
+	}
+
+	case 3: {
+	    verifDeplacementDroite_perso(pPerso, getTerrain_sim(pSim));
+	    deplacementEffectue = deplacementDroite_perso(pPerso, pTerrain);
+	    i--;
+	    break;
+	}
+	    
+	default:
+	    i--;
+	    break;
+	}
+    } while(!deplacementEffectue && i >= 0);
+}
+
+void deplacementIntelPolicier(Perso * pPerso, Simulation * pSim){
+    Coordonnees * coordPerso = getCoordonneesPerso_perso(pPerso);
+
+    int sommesChampsZombies[4][2]; //bas, haut, gauche, droite - stocke l'id dans la 2eme case
+
+    for (int i = 0; i < 4; i++) { //initialisation des champs
+	sommesChampsZombies[i][0] = 0;
+    }
+    
+    caseDeplacement * caseBas = getCaseBasByCoord(coordPerso, getTerrain_sim(pSim));
+
+    sommesChampsZombies[0][1] = 0;
+    for (int i = 0; i < getNbZombies_sim(pSim); i++) {
+      sommesChampsZombies[0][0] += (int)getChamp(ZOMBIE, i, caseBas);
+    }
+
+    sommesChampsZombies[1][1] = 1;
+    caseDeplacement * caseHaut = getCaseHautByCoord(coordPerso, getTerrain_sim(pSim));
+    for (int i = 0; i < getNbZombies_sim(pSim); i++) {
+      sommesChampsZombies[1][0] += (int)getChamp(ZOMBIE, i, caseHaut);
+    }
+
+    sommesChampsZombies[2][1] = 2;
+    caseDeplacement * caseGauche = getCaseGaucheByCoord(coordPerso, getTerrain_sim(pSim));
+    for (int i = 0; i < getNbZombies_sim(pSim); i++) {
+      sommesChampsZombies[2][0] += (int)getChamp(ZOMBIE, i, caseGauche);
+    }
+
+    sommesChampsZombies[3][1] = 3;
+    caseDeplacement * caseDroite = getCaseDroiteByCoord(coordPerso, getTerrain_sim(pSim));
+    for (int i = 0; i < getNbZombies_sim(pSim); i++) {
+      sommesChampsZombies[3][0] += (int)getChamp(ZOMBIE, i, caseDroite);
+    }
+
+    qsort (sommesChampsZombies, 4, 2*sizeof(int), compareTab2D);
+
+    Terrain * pTerrain = getTerrain_sim(pSim);
+
+    char deplacementEffectue = 0;
+    int i = 0;
+    do{
+	switch (sommesChampsZombies[i][1]) {
+	case 0: {
+	    verifDeplacementBas_perso(pPerso, getTerrain_sim(pSim));
+	    deplacementEffectue = deplacementBas_perso(pPerso, pTerrain);
+	    i++;
+	    break;
+	}
+
+	case 1: {
+	    verifDeplacementHaut_perso(pPerso, getTerrain_sim(pSim));
+	    deplacementEffectue = deplacementHaut_perso(pPerso, pTerrain);
+	    i++;
+	    break;
+	}
+
+	case 2: {
+	    verifDeplacementGauche_perso(pPerso, getTerrain_sim(pSim));
+	    deplacementEffectue = deplacementGauche_perso(pPerso, pTerrain);
+	    i++;
+	    break;
+	}
+
+	case 3: {
+	    verifDeplacementDroite_perso(pPerso, getTerrain_sim(pSim));
+	    deplacementEffectue = deplacementDroite_perso(pPerso, pTerrain);
+	    i++;
+	    break;
+	}
+	    
+	default:
+	    i++;
+ 	    break;
 	}
     } while(!deplacementEffectue && i < 4);
 }
