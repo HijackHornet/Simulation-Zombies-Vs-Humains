@@ -12,7 +12,7 @@ Perso * getPersoCase(caseDeplacement * caseDep){
     return caseDep -> persoCase;
 }
 
-void setEnvCase(caseDeplacement * caseDep, enum env valeurEnv){
+void setEnvCase(caseDeplacement * caseDep, enum env valeurEnv) {
     caseDep -> envCase = valeurEnv;
 }
 

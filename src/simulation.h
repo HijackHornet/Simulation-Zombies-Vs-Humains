@@ -62,10 +62,6 @@ void deplacerZombies_sim(Simulation * pSim);
 
 void deplacementIntelZombies_sim(Simulation * pSim);
 
-void deplacementIntelCitoyens_sim(Simulation * pSim);
-
-void deplacementIntelPoliciers_sim(Simulation * pSim);
-
 void deplacementIntelPersos(Simulation * pSim);
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -83,10 +79,6 @@ void tirs(Simulation * pSim);
 void propagerChampsPersos(Simulation * pSim);
 
 void deplacementIntelZombie(Perso * pPerso, Simulation * pSim);
-
-void deplacementIntelCitoyen(Perso * pPerso, Simulation * pSim);
-
-void deplacementIntelPolicier(Perso * pPerso, Simulation * pSim);
 
 ///////////////////////////////////////////////////////////////////////////////
 //TEST/////////////////////////////////////////////////////////////////////////
