@@ -3,12 +3,19 @@
 SDL_Window *screen;
 SDL_Renderer *renderer;
 
+////////////////////////////////////////////////////////////////////
+//ACCESSEUR  ///////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////
 
-SDL_Renderer *getrenderer(void)
+SDL_Renderer *getrenderer()
 {
     return renderer;
 }
 
+
+////////////////////////////////////////////////////////////////////
+//INITIALISATION ET LIBERATION  ////////////////////////////////////
+////////////////////////////////////////////////////////////////////
 
 void init(char *title)
 {
@@ -19,10 +26,8 @@ void init(char *title)
                                   SCREEN_WIDTH, SCREEN_HEIGHT,
                                   SDL_WINDOW_SHOWN);
 
-    //On crée un renderer pour la SDL et on active la synchro verticale : VSYNC
     renderer = SDL_CreateRenderer(screen, -1, SDL_RENDERER_PRESENTVSYNC);
 
-    // Si on n'y arrive pas, on quitte en enregistrant l'erreur dans stdout.txt
     if (screen == NULL || renderer == NULL)
     {
         printf("Impossible d'initialiser le mode écran à %d x %d: %s\n", SCREEN_WIDTH,
@@ -49,10 +54,8 @@ void initEditeur(char *title)
                                   FULLSCREEN_WIDTH, FULLSCREEN_HEIGHT,
                                   SDL_WINDOW_FULLSCREEN);
 
-    //On crée un renderer pour la SDL et on active la synchro verticale : VSYNC
     renderer = SDL_CreateRenderer(screen, -1, SDL_RENDERER_PRESENTVSYNC);
 
-    // Si on n'y arrive pas, on quitte en enregistrant l'erreur dans stdout.txt
     if (screen == NULL || renderer == NULL)
     {
         printf("Impossible d'initialiser le mode écran à %d x %d: %s\n", FULLSCREEN_WIDTH,
@@ -71,17 +74,12 @@ void initEditeur(char *title)
 
 }
 
-
-
 void cleanup()
 {
-
-    //On fait le ménage et on remet les pointeurs à NULL
     SDL_DestroyRenderer(renderer);
     renderer = NULL;
     SDL_DestroyWindow(screen);
     screen = NULL;
 
-    //On quitte la SDL
     SDL_Quit();
 }
