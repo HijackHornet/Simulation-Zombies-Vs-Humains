@@ -3,20 +3,26 @@
 
 #include "simulation_SDL2.h"
 
+
+
+////////////////////////////////////////////////////////////////////
+//INPUTS  //////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////
+
 void EventClavier(){
     SDL_Event event;
     while ( SDL_PollEvent(&event) )
     {
         switch(event.type)
     {
-        case SDL_WINDOWEVENT: // Événement de la fenêtre
-            if ( event.window.event == SDL_WINDOWEVENT_CLOSE ) // Fermeture de la fenêtre
+        case SDL_WINDOWEVENT: 
+            if ( event.window.event == SDL_WINDOWEVENT_CLOSE ) 
             {
                 exit(0);
             }
             break;
         case SDL_KEYDOWN:
-            if ( event.key.keysym.sym == SDLK_ESCAPE ) // C'est la touche Échap
+            if ( event.key.keysym.sym == SDLK_ESCAPE ) 
             {
                 exit(0);
 
@@ -32,14 +38,14 @@ void EventClavierEditeur(Terrain * pTerrain){
     {
         switch(event.type)
     {
-        case SDL_WINDOWEVENT: // Événement de la fenêtre
-            if ( event.window.event == SDL_WINDOWEVENT_CLOSE ) // Fermeture de la fenêtre
+        case SDL_WINDOWEVENT:
+            if ( event.window.event == SDL_WINDOWEVENT_CLOSE ) 
             {
                 exit(0);
             }
             break;
         case SDL_KEYDOWN:
-            if ( event.key.keysym.sym == SDLK_ESCAPE ) // C'est la touche Échap
+            if ( event.key.keysym.sym == SDLK_ESCAPE )
             {
                 exit(0);
 
@@ -75,22 +81,24 @@ void EventClavierEditeur(Terrain * pTerrain){
 
 }
 
+
+
+////////////////////////////////////////////////////////////////////
+//EXECUTIONS////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////
+
 void lancerSimulationSDL2 (Simulation * pSim){
 
         unsigned int frameLimit = SDL_GetTicks() + 16;
-    int go;
-    // Initialisation de la SDL
+    int loopCondition;
     init("Simulation Humains VS Zombie - Par Leo et Tristan");
-    // Appelle la fonction cleanup à la fin du programme
     atexit(cleanup);
 
-    go = 1;
+    loopCondition = 1;
 
-    // Boucle infinie, principale, du jeu
-    while (go == 1)
+    while (loopCondition == 1)
     {
 
-        //On dessine tout
         EventClavier();
         propagerChampsPersos(pSim);
         contaminations(pSim);
@@ -100,7 +108,6 @@ void lancerSimulationSDL2 (Simulation * pSim){
         deplacementIntelPoliciers_sim(pSim);
         affichageFenetre(pSim);
 
-        // Gestion des 60 fps (1000ms/60 = 16.6 -> 16
         delay(frameLimit);
         frameLimit = SDL_GetTicks() + 16;
     }
@@ -109,35 +116,27 @@ void lancerSimulationSDL2 (Simulation * pSim){
 void lancerSimulationSDL2Editeur (){
 
         unsigned int frameLimit = SDL_GetTicks() + 16;
-    int go;
-    // Initialisation de la SDL
+    int loopCondition;
     initEditeur("Editeur de Maps");
-    // Appelle la fonction cleanup à la fin du programme
     atexit(cleanup);
 
-    go = 1;
+    loopCondition = 1;
 
     Terrain * TerrainEdit;
     TerrainEdit = terrainCreer_terr(15,15,"LeNom");
 
-    // Boucle infinie, principale, du jeu
-    while (go == 1)
+    while (loopCondition == 1)
     {
 
 
         EventClavierEditeur(TerrainEdit);
-        //On dessine tout
         affichageFenetreEditeur(TerrainEdit);
 
 
         SDL_RenderPresent(getrenderer());
-
-        // Délai pour laisser respirer le proc
         SDL_Delay(DELAYREFRESH);
         SDL_RenderClear(getrenderer());
-        printf("h");
 
-        // Gestion des 60 fps (1000ms/60 = 16.6 -> 16
         delay(frameLimit);
         frameLimit = SDL_GetTicks() + 16;
     }
