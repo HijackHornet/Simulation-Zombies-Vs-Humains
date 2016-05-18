@@ -81,7 +81,7 @@ void policiersInit_sim(int nbPoliciers, Simulation * pSim){
 }
 
 void terrainInit_sim(char * nomFic, Simulation * pSim){
-    pSim -> pTerrain = (Terrain *)malloc(sizeof(Terrain));
+	pSim -> pTerrain = (Terrain *)malloc(sizeof(Terrain));
     
     pSim -> pTerrain = terrainLireFichier_terr(nomFic);
 }

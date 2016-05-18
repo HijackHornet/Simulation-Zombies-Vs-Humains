@@ -276,8 +276,14 @@ char humainADroite(Terrain * pTerrain, Coordonnees * coordZombie);
 /////////////////////////////////////////////////////////////////////////////
 //ENTREES-SORTIES////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
+/**
+	@brief Affiche la grille dans la console avec des caractère pour représenter les personnages et murs
+*/
 void afficherGrilleConsole(Terrain * pTerrain);
-
+/**
+	@brief Créer un fichier terrain à partir du pointeur vers terrain
+	@param pTerrain Pointeur vers le terrain qui serra enregistré dans un fichier
+*/
 void terrainCreerFichier_terr (Terrain * pTerrain);
 /**
 	@brief Li le fichier terrain de nom spécifié et le retourne par un pointeur
@@ -286,15 +292,16 @@ void terrainCreerFichier_terr (Terrain * pTerrain);
 */
 Terrain * terrainLireFichier_terr (char nomTerrain[MAX_CHAR_NOM_TERRAIN]);
 /**
-	@brief Teste le module coordonnees et ses fonctions
+	@brief Affiche la grille des champs dans la console avec des caractère pour représenter les représenter
 */
-
 void afficherChamps(Terrain * pTerrain);
 
 /////////////////////////////////////////////////////////////////////////////
 //CHAMPS/////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
-
+/**
+	@brief Initialisé la grille des champs à 0 avec des marqueurs
+*/
 void initialisationMarqueurs(Terrain * pTerrain);
 
 void propagationChamp(enum typePerso type, int idPerso, Coordonnees  * coordPerso, Terrain * pTerrain);
@@ -302,6 +309,9 @@ void propagationChamp(enum typePerso type, int idPerso, Coordonnees  * coordPers
 /////////////////////////////////////////////////////////////////////////////
 //NON REGRESSION/////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
+/**
+	@brief Fonctoin de test des fonction du module terrain
+*/
 void testFonctions_terr();
 
 #endif
