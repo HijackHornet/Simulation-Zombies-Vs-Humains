@@ -1,0 +1,14 @@
+Un readme.txt contenant au moins un manuel (compilation, exécution, règles du jeu, utilisation), la liste des fonctionnalités du programme et l'organisation de votre archive (à la racine de l'archive)
+
+Les exécutables (dans le répertoire bin, en debug et release)
+
+La documentation de votre projet (dans le répertoire doc) contenant au minimum
+La présentation (fichier PowerPoint ou pdf)
+Le diagramme des modules à jour (fichier image ou pdf)
+Le diagramme de Gantt (fichier image ou pdf)
+La documentation du code (dans le répertoire doc/html, générée par doxygen)
+
+
+Readme : instruction de compilation
+		fonctionalité editeur
+		
