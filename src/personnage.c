@@ -28,6 +28,10 @@ void setCoordPerso_perso(Coordonnees * coord, Perso * pPerso){
     pPerso -> coord = coord;
 }
 
+Coordonnees * getCoordPerso(Perso * pPerso){
+  return pPerso -> coord;
+}
+
 enum typePerso getTypePerso(Perso * pPerso){
     return pPerso -> type;
 }
@@ -78,8 +82,6 @@ void testFonctions_perso(){
     assert(getTypePerso(pPerso) == ZOMBIE && sontEgale_Coord(getCoordonneesPerso_perso(pPerso), coordPerso));
 
     testamentCoord(coordPerso);
-
-    testamentPerso(pPerso);
 
     printf("Execution du module coordonnees et de ses fonctions sans erreurs... \n");
 }

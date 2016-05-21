@@ -1,6 +1,8 @@
 #ifndef _SIMULATION
 #define _SIMULATION
 
+#include <glib.h>
+
 #include "terrain.h"
 #include "personnage.h"
 
@@ -9,9 +11,9 @@ typedef struct MSimulation{
     int nbZombies;
     int nbCitoyens;
     int nbPoliciers;
-    Perso *  zombies[500];
-    Perso * citoyens[500];
-    Perso * policiers[500];
+    GArray *  zombies;
+    GArray * citoyens;
+    GArray * policiers;
 } Simulation;
 
 ////////////////////////////////////////////////////////////////////
@@ -20,11 +22,11 @@ typedef struct MSimulation{
 
 Terrain * getTerrain_sim(Simulation * pSim);
 
-Perso ** getZombies_sim(Simulation * pSim);
+GArray * getZombies_sim(Simulation * pSim);
 
-Perso ** getCitoyens_sim(Simulation * pSim);
+GArray * getCitoyens_sim(Simulation * pSim);
 
-Perso ** getPoliciers_sim(Simulation * pSim);
+GArray * getPoliciers_sim(Simulation * pSim);
 
 int getNbZombies_sim(Simulation * pSim);
 
@@ -88,6 +90,8 @@ void deplacementIntelCitoyen(Perso * pPerso, Simulation * pSim);
 
 void deplacementIntelPolicier(Perso * pPerso, Simulation * pSim);
 
+void supprimerCitoyen(Perso * pCitoyen, Simulation * pSim);
+
 ///////////////////////////////////////////////////////////////////////////////
 //TEST/////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
@@ -98,5 +102,11 @@ void testFonctions_sim();
 //AUTRES////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////
 int compareTab2D(const void * a, const void * b);
+
+void ajouterPerso(Coordonnees * pCoord, enum typePerso type, Simulation * pSim);
+
+void contaminations(Simulation * pSim);
+
+void supprimerPerso(Perso * pPerso, Simulation * pSim);
 
 #endif

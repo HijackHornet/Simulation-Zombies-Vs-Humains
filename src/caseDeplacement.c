@@ -28,15 +28,18 @@ caseDeplacement * initCase(enum env envCase, Perso * pPerso){
 
     return caseDep;
 }
+/*
+void initChamps(int nbZombies, int nbPoliciers, int nbCitoyens, caseDeplacement * caseDep){
+  caseDep -> champZombies = (short *)malloc(sizeof(short)*(nbZombies + nbPoliciers + nbCitoyens));
+  caseDep -> champCitoyens = (short *)malloc(sizeof(short)*nbCitoyens);
+  caseDep -> champPoliciers = (short *)malloc(sizeof(short)*nbPoliciers);
+}
+*/
 
 void testamentCase(caseDeplacement * caseDep){
     free(caseDep);
 
     caseDep = NULL;
-}
-
-void setMarqueur(char valeur, caseDeplacement * caseDep){
-    caseDep -> marqueur = valeur;
 }
 
 unsigned short getChamp(enum typePerso type, int idPerso, caseDeplacement * caseDep){

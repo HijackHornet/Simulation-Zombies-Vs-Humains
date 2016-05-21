@@ -1,11 +1,16 @@
 #include <stdlib.h>
-#include "SDL2/simulation_SDL2.h"
+#include "simulation_gtk.h"
 #include <gtk/gtk.h>
 
 
 int main (int argc, char ** argv)
 {
+  srand(time(NULL));
 
+  startSdlMain();
+
+  //lanceSimulation("TerrainViergePourEditeur");
+  /*
     GtkBuilder      *builder;
     GtkWidget       *window;
 
@@ -23,7 +28,7 @@ int main (int argc, char ** argv)
     gtk_main();
 
 
-
+  */
     return 0;
 }
 

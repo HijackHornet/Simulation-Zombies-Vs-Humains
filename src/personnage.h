@@ -26,6 +26,8 @@ void setXPerso_perso(Perso * pPerso, int xPerso);
 
 void setYPerso_perso(Perso * pPerso, int yPerso);
 
+Coordonnees * getCoordPerso(Perso * pPerso);
+
 enum typePerso getTypePerso(Perso * pPerso);
 
 void setTypePerso_perso(enum typePerso type, Perso * pPerso);
@@ -33,8 +35,6 @@ void setTypePerso_perso(enum typePerso type, Perso * pPerso);
 void setCoordPerso_perso(Coordonnees * coord, Perso * pPerso);
 
 Perso * initPerso(Coordonnees * coord, enum typePerso typePerso, int idPerso);
-
-void testamentPerso(Perso * pPerso);
 
 void testFonctions_perso();
 

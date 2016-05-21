@@ -19,7 +19,6 @@ typedef struct McaseDeplacement{
     short champZombies[250];
     short champCitoyens[250];
     short champPoliciers[250];
-    char marqueur;
 } caseDeplacement;
 
 enum env getEnvCase(caseDeplacement * caseDep);
@@ -34,10 +33,10 @@ caseDeplacement * initCase(enum env envCase, Perso * pPerso);
 
 void testamentCase(caseDeplacement * caseDep);
 
-void setMarqueur(char valeur, caseDeplacement * caseDep);
-
 unsigned short getChamp(enum typePerso type, int idPerso, caseDeplacement * caseDep);
 
 void setChamp(unsigned short intensite, enum typePerso type, int idPerso, caseDeplacement * caseDep);
+
+void initChamps(int nbZombies, int nbCitoyens, int nbPoliciers, caseDeplacement * caseDep);
 
 #endif

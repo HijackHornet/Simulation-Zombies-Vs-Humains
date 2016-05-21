@@ -31,7 +31,7 @@
 typedef struct MTerrain{
     int dimX, dimY;
     char nomTerrain[MAX_CHAR_NOM_TERRAIN];
-    caseDeplacement grille[MAX_TAILLE_XY][MAX_TAILLE_XY];
+    caseDeplacement * grille;
 } Terrain;
 
 //////////////////////////////////////////////////////////////////////////////
@@ -205,5 +205,7 @@ void propagationChamp(enum typePerso type, int idPerso, Coordonnees  * coordPers
 //NON REGRESSION/////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
 void testFonctions_terr();
+
+void initChampsTerrain(int nbZombie, int nbCitoyens, int nbPoliciers, Terrain * pTerrain);
 
 #endif
