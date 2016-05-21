@@ -613,7 +613,7 @@ char zombieHG(Terrain * pTerrain, Coordonnees * coordZombie){
 Perso * zombieContamineHumain(Perso * pZombie, Terrain * pTerrain){
     Coordonnees * coordZombie = getCoordonneesPerso_perso(pZombie);
     Coordonnees coordHumain;
-    caseDeplacement * caseHumain;
+    caseDeplacement * caseHumain = NULL;
 
     Perso * pHumain = NULL;
 
@@ -738,6 +738,7 @@ void afficherGrilleConsole(Terrain * pTerrain){
 		    printf("P");
 		}
 	    }
+
 	    else{
 		if(getEnvCase(getGrilleByXY_terr(j, i, pTerrain)) == VIDE){
 		    printf(" ");

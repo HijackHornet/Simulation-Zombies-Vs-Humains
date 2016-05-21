@@ -149,7 +149,7 @@ void ajouterPerso(Coordonnees * pCoord, enum typePerso type, Simulation * pSim){
 
 void supprimerPerso(Perso * pPerso, Simulation * pSim){
   caseDeplacement * pCasePerso;
-  Coordonnees * pCoordPerso = getCoordPerso(pPerso);
+  Coordonnees * pCoordPerso;
   enum typePerso typePerso;
   int idPerso;
 
