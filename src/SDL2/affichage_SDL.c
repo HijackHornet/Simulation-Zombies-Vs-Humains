@@ -2,7 +2,6 @@
 
 void delay(unsigned int frameLimit)
 {
-    // Gestion des 60 fps (images/stories/seconde)
     unsigned int ticks = SDL_GetTicks();
 
     if (frameLimit < ticks)
@@ -24,7 +23,6 @@ SDL_Texture *loadImage(char *name)
 {
 
     /* Charge les images avec SDL Image dans une SDL_Surface */
-
     SDL_Surface *loadedImage = NULL;
     SDL_Texture *texture = NULL;
     loadedImage = IMG_Load(name);
@@ -92,7 +90,7 @@ void afficherParamFenetre(Simulation * pSim){
 
    SDL_RenderPresent(getrenderer());
 
-    // Délai pour laisser respirer le proc
+
     SDL_Delay(DELAYREFRESH);
     SDL_RenderClear(getrenderer());
 

@@ -51,11 +51,11 @@ void setDim_terr (int x, int y, Terrain * pTerrain);
 */
 void setNomTerrain_terr(char nom[MAX_CHAR_NOM_TERRAIN], Terrain * pTerrain);
 /**
-	@brief Edition de la grille du terrain au coordonnées X/Y
+	@brief Edition du type de la grille du terrain au coordonnées X/Y
 	@param x Valeur ou le point de la grille doit etre edité en X
 	@param y Valeur ou le point de la grille doit etre edité en Y
 	@param pTerrain Pointeur sur la structure Terrain a editer
-	@param valeur Carractere definissant ce que serra la case
+	@param caseDep Le type de case
 */
 void setGrilleByXY_terr (int x, int y, Terrain * pTerrain, caseDeplacement * caseDep);
 
@@ -78,39 +78,67 @@ int getDimY_terr(Terrain * pTerrain);
 */
 char * getNomTerrain_terr(Terrain * pTerrain);
 /**
-	@brief Recupere la valleur de la grille au point X/Y
+	@brief Recupere la case de deplacement de la grille au point X/Y
 	@param x Position en x a recuperer
-	@param y poisition en u a récuperer
+	@param y poisition en y a récuperer
 	@param pTerrain Pointeur sur la structure Terrain a editer
-	@return Le carractere de la grille en X/Y
+	@return Case de deplacement en XY
 */
 caseDeplacement * getGrilleByXY_terr (int x, int y,Terrain * pTerrain);
-
-
 /**
-	@brief Sert a remplir la grille de terrain avec un valeur par défaut
+	@brief Recupere la case de deplacement de la grille au coordonnées données
+	@param pCoord Coordonnée ou aller recuperer
 	@param pTerrain Pointeur sur la structure Terrain a editer
+	@return Case de deplacement au coordonnées
 */
-
-
-
 caseDeplacement * getGrilleByCoord_terr(Coordonnees * pCoord, Terrain * pTerrain);
-
+/**
+	@brief Change la case de deplacement de la grille au coordonnées données
+	@param pCoord Coordonnée ou aller recuperer
+	@param pTerrain Pointeur sur la structure Terrain a editer
+	@param caseDep Case de deplacement a placer au coordonnées
+*/
 void setGrilleByCoord_terr(Coordonnees * coord, Terrain * pTerrain, caseDeplacement * caseDep);
 
 Perso * creePersoTerrainRand(Terrain * pTerrain, enum typePerso type, int idPerso);
 
+/**
+	@brief Recupere la case de deplacement de la grille en dessous des coordonée
+	@param coord Coordonnée ou aller recuperer
+	@param pTerrain Pointeur sur la structure Terrain a editer
+	@return Case de deplacement en dessous
+*/
 caseDeplacement * getCaseBasByCoord(Coordonnees * coord, Terrain * pTerrain);
-
+/**
+	@brief Recupere la case de deplacement de la grille en haut des coordonée
+	@param coord Coordonnée ou aller recuperer
+	@param pTerrain Pointeur sur la structure Terrain a editer
+	@return Case de deplacement en haut
+*/
 caseDeplacement * getCaseHautByCoord(Coordonnees * coord, Terrain * pTerrain);
-
+/**
+	@brief Recupere la case de deplacement de la grille a gauche des coordonée
+	@param coord Coordonnée ou aller recuperer
+	@param pTerrain Pointeur sur la structure Terrain a editer
+	@return Case de deplacement a gauche
+*/
 caseDeplacement * getCaseGaucheByCoord(Coordonnees * coord, Terrain * pTerrain);
-
+/**
+	@brief Recupere la case de deplacement de la grille a droite des coordonée
+	@param coord Coordonnée ou aller recuperer
+	@param pTerrain Pointeur sur la structure Terrain a editer
+	@return Case de deplacement a droite
+*/
 caseDeplacement * getCaseDroiteByCoord(Coordonnees * coord, Terrain * pTerrain);
 
 ////////////////////////////////////////////////////////////////////////////
 //CREATION//////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////
+
+/**
+	@brief Initialise la grille d'un terrain
+	@param pTerrain Pointeur vers le terrain a initialiser
+*/
 void terrainInitGrille_terr (Terrain * pTerrain);
 /**
 	@brief Creer un terrain avec les dimension et le nom choisi et initialise sa grille en appelant TerrainInitGrille
@@ -121,37 +149,87 @@ void terrainInitGrille_terr (Terrain * pTerrain);
 */
 Terrain * terrainCreer_terr (int dimX, int dimY, char nomTerrain[MAX_CHAR_NOM_TERRAIN]);
 /**
-	@brief Sauvegarde le terrain pointé dans un fichier (.terrain)
-	@param pTerrain Pointeur sur la structure Terrain a sauvegarder
+	@brief Libere la mémoire occupé par un terrain
+	@param pTerrain Pointeur vers le terrain a liberer
 */
-
 void testamentTerrain_terr(Terrain * pTerrain);
 
 /////////////////////////////////////////////////////////////////////////////
 //TESTS SPECIFIQUES//////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
+/**
+	@brief Verifie si des coordonnées appartiennent au terrain
+	@param pTerrain Le terrain ou les coordonnées vont etre vérifiés
+	@param pCoord Les coordonnées a verifier
+	@return 1 si oui, 0 sinon, sous forme d'un caractere
+*/
 char estDansTerrain_terr(Terrain * pTerrain, Coordonnees * pCoord);
 
 /////////////////////////////////////////////////////////////////////////////
 //DEPLACEMENT PERSONNAGES////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
-
+/**
+	@brief Verifie si le personnage peut aller en haut
+	@param pPerso Pointeur vers le personnage dont les deplacement serront testé
+	@param pTerrain Le terrain ou les coordonnées vont etre vérifiés
+	@return 1 si oui, 0 sinon, sous forme d'un caractere
+*/
 char verifDeplacementHaut_perso(Perso * pPerso, Terrain * pTerrain);
-
+/**
+	@brief Verifie si le personnage peut aller en bas
+	@param pPerso Pointeur vers le personnage dont les deplacement serront testé
+	@param pTerrain Le terrain ou les coordonnées vont etre vérifiés
+	@return 1 si oui, 0 sinon, sous forme d'un caractere
+*/
 char verifDeplacementBas_perso(Perso * pPerso, Terrain * pTerrain);
-
+/**
+	@brief Verifie si le personnage peut aller a gauche
+	@param pPerso Pointeur vers le personnage dont les deplacement serront testé
+	@param pTerrain Le terrain ou les coordonnées vont etre vérifiés
+	@return 1 si oui, 0 sinon, sous forme d'un caractere
+*/
 char verifDeplacementGauche_perso(Perso * pPerso, Terrain * pTerrain);
-
+/**
+	@brief Verifie si le personnage peut aller a droite
+	@param pPerso Pointeur vers le personnage dont les deplacement serront testé
+	@param pTerrain Le terrain ou les coordonnées vont etre vérifiés
+	@return 1 si oui, 0 sinon, sous forme d'un caractere
+*/
 char verifDeplacementDroite_perso(Perso * pPerso, Terrain * pTerrain);
-
+/**
+	@brief Deplace le personnage vers le haut (test avant qu'il peut etre deplacé dans ce sens)
+	@param pPerso Pointeur vers le personnage dont les deplacement serront testé
+	@param pTerrain Le terrain ou les coordonnées vont etre vérifiés
+	@return 1 si le personnage a été deplacé, 0 sinon, sous forme d'un caractere
+*/
 char deplacementHaut_perso(Perso * pPerso, Terrain * pTerrain);
-
+/**
+	@brief Deplace le personnage vers le bas (test avant qu'il peut etre deplacé dans ce sens)
+	@param pPerso Pointeur vers le personnage dont les deplacement serront testé
+	@param pTerrain Le terrain ou les coordonnées vont etre vérifiés
+	@return 1 si le personnage a été deplacé, 0 sinon, sous forme d'un caractere
+*/
 char deplacementBas_perso(Perso * pPerso, Terrain * pTerrain);
-
+/**
+	@brief Deplace le personnage vers la gauche (test avant qu'il peut etre deplacé dans ce sens)
+	@param pPerso Pointeur vers le personnage dont les deplacement serront testé
+	@param pTerrain Le terrain ou les coordonnées vont etre vérifiés
+	@return 1 si le personnage a été deplacé, 0 sinon, sous forme d'un caractere
+*/
 char deplacementGauche_perso(Perso * pPerso, Terrain * pTerrain);
-
+/**
+	@brief Deplace le personnage vers la droite (test avant qu'il peut etre deplacé dans ce sens)
+	@param pPerso Pointeur vers le personnage dont les deplacement serront testé
+	@param pTerrain Le terrain ou les coordonnées vont etre vérifiés
+	@return 1 si le personnage a été deplacé, 0 sinon, sous forme d'un caractere
+*/
 char deplacementDroite_perso(Perso * pPerso, Terrain * pTerrain);
-
+/**
+	@brief Deplace le personnage dans une direction aléatoire (test avant qu'il peut etre deplacé dans ce sens)
+	@param pPerso Pointeur vers le personnage dont les deplacement serront testé
+	@param pTerrain Le terrain ou les coordonnées vont etre vérifiés
+	@return 1 si le personnage a été deplacé, 0 sinon, sous forme d'un caractere
+*/
 char deplacementAleatoire_perso(Perso * pPerso, Terrain * pTerrain);
 
 /////////////////////////////////////////////////////////////////////////////
@@ -165,21 +243,47 @@ Perso * policierTueZombie(Perso * pPolicier, Terrain * pTerrain);
 /////////////////////////////////////////////////////////////////////////////
 //SPECIFIQUE ZOMBIE//////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
-
+/**
+	@brief Verifie si le personnage en haut est un humain
+	@param pTerrain Le terrain ou les coordonnées vont etre vérifiés
+	@param coordZombie coordonnées du zombie qui va regarder si un humain se trouve a proximité
+	@return 1 si oui, 0 sinon, sous forme d'un caractere
+*/
 char humainEnHaut(Terrain * pTerrain, Coordonnees * coordZombie);
-
+/**
+	@brief Verifie si le personnage en bas est un humain
+	@param pTerrain Le terrain ou les coordonnées vont etre vérifiés
+	@param coordZombie coordonnées du zombie qui va regarder si un humain se trouve a proximité
+	@return 1 si oui, 0 sinon, sous forme d'un caractere
+*/
 char humainEnBas(Terrain * pTerrain, Coordonnees * coordZombie);
-
+/**
+	@brief Verifie si le personnage a gauche est un humain
+	@param pTerrain Le terrain ou les coordonnées vont etre vérifiés
+	@param coordZombie coordonnées du zombie qui va regarder si un humain se trouve a proximité
+	@return 1 si oui, 0 sinon, sous forme d'un caractere
+*/
 char humainAGauche(Terrain * pTerrain, Coordonnees * coordZombie);
-
+/**
+	@brief Verifie si le personnage a droite est un humain
+	@param pTerrain Le terrain ou les coordonnées vont etre vérifiés
+	@param coordZombie coordonnées du zombie qui va regarder si un humain se trouve a proximité
+	@return 1 si oui, 0 sinon, sous forme d'un caractere
+*/
 char humainADroite(Terrain * pTerrain, Coordonnees * coordZombie);
 
 
 /////////////////////////////////////////////////////////////////////////////
 //ENTREES-SORTIES////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
+/**
+	@brief Affiche la grille dans la console avec des caractère pour représenter les personnages et murs
+*/
 void afficherGrilleConsole(Terrain * pTerrain);
-
+/**
+	@brief Créer un fichier terrain à partir du pointeur vers terrain
+	@param pTerrain Pointeur vers le terrain qui serra enregistré dans un fichier
+*/
 void terrainCreerFichier_terr (Terrain * pTerrain);
 /**
 	@brief Li le fichier terrain de nom spécifié et le retourne par un pointeur
@@ -188,15 +292,16 @@ void terrainCreerFichier_terr (Terrain * pTerrain);
 */
 Terrain * terrainLireFichier_terr (char nomTerrain[MAX_CHAR_NOM_TERRAIN]);
 /**
-	@brief Teste le module coordonnees et ses fonctions
+	@brief Affiche la grille des champs dans la console avec des caractère pour représenter les représenter
 */
-
 void afficherChamps(Terrain * pTerrain);
 
 /////////////////////////////////////////////////////////////////////////////
 //CHAMPS/////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
-
+/**
+	@brief Initialisé la grille des champs à 0 avec des marqueurs
+*/
 void initialisationMarqueurs(Terrain * pTerrain);
 
 void propagationChamp(enum typePerso type, int idPerso, Coordonnees  * coordPerso, Terrain * pTerrain);
@@ -204,6 +309,9 @@ void propagationChamp(enum typePerso type, int idPerso, Coordonnees  * coordPers
 /////////////////////////////////////////////////////////////////////////////
 //NON REGRESSION/////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
+/**
+	@brief Fonctoin de test des fonction du module terrain
+*/
 void testFonctions_terr();
 
 void initChampsTerrain(int nbZombie, int nbCitoyens, int nbPoliciers, Terrain * pTerrain);

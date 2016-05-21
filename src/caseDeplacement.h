@@ -21,16 +21,45 @@ typedef struct McaseDeplacement{
     short champPoliciers[250];
 } caseDeplacement;
 
+////////////////////////////////////////////////////////////////////////////
+//ACCESSEURS////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+
+/**
+	@brief Recupère le type de case d'une case de deplacement
+	@param caseDep Pointeur sur la case de déplacement à étudier
+	@return Le type de case
+*/
 enum env getEnvCase(caseDeplacement * caseDep);
-
+/**
+	@brief Recupère le personnage sur la case de déplacement
+	@param caseDep Pointeur sur la case de déplacement à étudier
+	@return Pointeur vers le personnage sur la case de déplacement
+*/
 Perso * getPersoCase(caseDeplacement * caseDep);
-
+/**
+	@brief Modifie le type de case d'une case de deplacement
+	@param caseDep Pointeur sur la case de déplacement à étudier
+	@param valeurEnv Le type de case
+*/
 void setEnvCase(caseDeplacement * caseDep, enum env valeurEnv);
-
+/**
+	@brief Modifie le personnage sur la case de déplacement
+	@param caseDep Pointeur sur la case de déplacement à étudier
+	@param pPerso Pointeur vers le personnage a mettre sur la case de déplacement
+*/
 void setPersoCase(caseDeplacement * caseDep, Perso * pPerso);
-
+/**
+	@brief Crée et initialise une case de deplacement avec un type de case et un personnage dessus
+	@param envCase Type de case
+	@param pPerso Pointeur vers un personnage
+	@return Pointeur vers cette case de deplacement
+*/
 caseDeplacement * initCase(enum env envCase, Perso * pPerso);
-
+/**
+	@brief Détruit et libère une case de deplacement
+	@param caseDep Pointeur vers la case a detruire et liberer
+*/
 void testamentCase(caseDeplacement * caseDep);
 
 unsigned short getChamp(enum typePerso type, int idPerso, caseDeplacement * caseDep);
