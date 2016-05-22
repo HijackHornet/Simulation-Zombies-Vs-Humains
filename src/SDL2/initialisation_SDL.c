@@ -17,21 +17,24 @@ SDL_Renderer *getrenderer()
 //INITIALISATION ET LIBERATION  ////////////////////////////////////
 ////////////////////////////////////////////////////////////////////
 
-void init(char *title)
+void init(char *title,Simulation * pSim)
 {
+    int screenheight, screenwidth;
+    screenheight = getDimY_terr(getTerrain_sim(pSim)) * 50 *RENDERERSCALE;
+    screenwidth = getDimX_terr(getTerrain_sim(pSim)) * 50 *RENDERERSCALE;
 
     screen = SDL_CreateWindow(title,
                                   SDL_WINDOWPOS_CENTERED,
                                   SDL_WINDOWPOS_CENTERED,
-                                  SCREEN_WIDTH, SCREEN_HEIGHT,
+                                  screenwidth, screenheight,
                                   SDL_WINDOW_SHOWN);
 
     renderer = SDL_CreateRenderer(screen, -1, SDL_RENDERER_PRESENTVSYNC);
 
     if (screen == NULL || renderer == NULL)
     {
-        printf("Impossible d'initialiser le mode écran à %d x %d: %s\n", SCREEN_WIDTH,
-                                                                    SCREEN_HEIGHT, SDL_GetError());
+        printf("Impossible d'initialiser le mode écran à %d x %d: %s\n", screenwidth,
+                                                                    screenheight, SDL_GetError());
         exit(1);
     }
     SDL_RenderSetScale(renderer,RENDERERSCALE,RENDERERSCALE);
@@ -45,24 +48,26 @@ void init(char *title)
     }
 
 }
-void initEditeur(char *title)
+void initEditeur(char *title, Terrain * pTerrain)
 {
-
+    int screenheight, screenwidth;
+    screenheight = getDimY_terr(pTerrain) * 50 *RENDERERSCALE;
+    screenwidth = getDimX_terr(pTerrain) * 50 *RENDERERSCALE;
     screen = SDL_CreateWindow(title,
                                   SDL_WINDOWPOS_CENTERED,
                                   SDL_WINDOWPOS_CENTERED,
-                                  FULLSCREEN_WIDTH, FULLSCREEN_HEIGHT,
-                                  SDL_WINDOW_FULLSCREEN);
+                                  screenwidth, screenheight,
+                                  SDL_WINDOW_SHOWN);
 
     renderer = SDL_CreateRenderer(screen, -1, SDL_RENDERER_PRESENTVSYNC);
 
     if (screen == NULL || renderer == NULL)
     {
-        printf("Impossible d'initialiser le mode écran à %d x %d: %s\n", FULLSCREEN_WIDTH,
-                                                                    FULLSCREEN_HEIGHT, SDL_GetError());
+        printf("Impossible d'initialiser le mode écran à %d x %d: %s\n", screenwidth,
+                                                                    screenheight, SDL_GetError());
         exit(1);
     }
-    SDL_RenderSetScale(renderer,FULLSCREEN_RENDERERSCALE,FULLSCREEN_RENDERERSCALE);
+    SDL_RenderSetScale(renderer,RENDERERSCALE,RENDERERSCALE);
 
     //Initialisation du chargement des images png avec SDL_Image 2
     int imgFlags = IMG_INIT_PNG;

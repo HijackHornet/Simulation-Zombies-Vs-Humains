@@ -103,13 +103,16 @@ void affichageFenetre(Simulation *pSim)
     SDL_Texture *fond;
     SDL_Texture *murText;
 
+    int screenheight, screenwidth;
+    screenheight = getDimY_terr(getTerrain_sim(pSim)) * 50 *RENDERERSCALE;
+    screenwidth = getDimX_terr(getTerrain_sim(pSim)) * 50 *RENDERERSCALE;
 
     fond = loadImage("../data/Graphics/Case.png");
     murText = loadImage("../data/Graphics/Mur.png");
     int i,j;
     i=0; j=0;
-    while(i<SCREEN_WIDTH*(1/RENDERERSCALE)){
-            while(j<SCREEN_HEIGHT*(1/RENDERERSCALE)){
+    while(i<screenwidth*(1/RENDERERSCALE)){
+            while(j<screenheight*(1/RENDERERSCALE)){
                 drawImage(fond,i,j);
                 j=j+50;
             }
