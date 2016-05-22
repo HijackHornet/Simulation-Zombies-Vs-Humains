@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['dimx',['dimX',['../struct_m_terrain.html#a3cf61195a3a0edf72814c77ca01cda13',1,'MTerrain']]],
-  ['dimy',['dimY',['../struct_m_terrain.html#a3f6e0986f72cebf6150840bc2e6d89d2',1,'MTerrain']]]
+  ['citoyens',['citoyens',['../struct_m_simulation.html#a4bdf86de3045e02f4c1828498cf6c973',1,'MSimulation']]],
+  ['coord',['coord',['../struct_m_perso.html#a825b51abf06a992115019d263c27dfc3',1,'MPerso']]]
 ];

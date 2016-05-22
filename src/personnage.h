@@ -11,9 +11,17 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-
+/** Les différents type de personnages */
 enum typePerso {POLICIER, ZOMBIE, CITOYEN};
-
+/** @struct MPerso
+ *  @brief Structure definissant un personnage et ses attributs
+ *  @var MPerso::id
+ *	id D'un personnage servant à l'identifier
+ *	@var MPerso::coord
+ *	Coordonnées associé à se personnage
+ *	@var MPerso::type
+ *	Type du personnage zombie,citoyen ou humain
+ */
 typedef struct MPerso {
     int id;
     Coordonnees * coord;

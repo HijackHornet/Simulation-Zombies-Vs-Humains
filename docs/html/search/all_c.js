@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['terrain',['terrain',['../structterrain.html',1,'']]],
   ['terrain_2eh',['terrain.h',['../terrain_8h.html',1,'']]],
   ['terraincreer_5fterr',['terrainCreer_terr',['../terrain_8h.html#a18be630674285fc320507f21282be35f',1,'terrain.c']]],
   ['terraincreerfichier_5fterr',['terrainCreerFichier_terr',['../terrain_8h.html#a17ccc33cd46082886eb3225e45bcb509',1,'terrain.c']]],
@@ -15,5 +14,7 @@ var searchData=
   ['testfonctions_5fperso',['testFonctions_perso',['../personnage_8h.html#a722d5ef48f2f08ac15e1a4ab7dfdfe87',1,'personnage.c']]],
   ['testfonctions_5fsim',['testFonctions_sim',['../simulation_8h.html#a8c84b81dbfbacce2c792705198ee9f71',1,'simulation.c']]],
   ['testfonctions_5fterr',['testFonctions_terr',['../terrain_8h.html#ae671405a2cab0685307937720369b63f',1,'terrain.c']]],
-  ['tirs',['tirs',['../simulation_8h.html#abf7873243ac6158bd5dfac2dc3b376b1',1,'simulation.c']]]
+  ['tirs',['tirs',['../simulation_8h.html#abf7873243ac6158bd5dfac2dc3b376b1',1,'simulation.c']]],
+  ['type',['type',['../struct_m_perso.html#a7aead736a07eaf25623ad7bfa1f0ee2d',1,'MPerso']]],
+  ['typeperso',['typePerso',['../personnage_8h.html#a3f6a2951aa3d5d428dd6d61e74db0d75',1,'personnage.h']]]
 ];

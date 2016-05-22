@@ -10,7 +10,23 @@
 #include "terrain.h"
 #include "personnage.h"
 
-
+/** @struct MSimulation
+ *	@brief Structure definissant une simulation et ses attributs
+ *	@var MSimulation::pTerrain
+ *	Pointeur vers un terrain associé à la simulation
+ *	@var MSimulation::nbZombies
+ *	Nombres de Zombies
+ *	@var MSimulation::nbCitoyens
+ *	Nombre de citoyens
+ *	@var MSimulation::nbPoliciers
+ *	Nombre de policiers
+ *	@var MSimulation::zombies
+ *	Tableau des zombies
+ *	@var MSimulation::citoyens
+ *	Tableau des citoyens
+ *	@var MSimulation::policiers
+ *	Tableau des policiers
+ */
 typedef struct MSimulation{
     Terrain * pTerrain;
     int nbZombies;
@@ -92,7 +108,7 @@ void citoyensInit_sim(int nbCitoyens, Simulation * pSim);
 void policiersInit_sim(int nbPoliciers, Simulation * pSim);
 /**
 	@brief Initialise la simulation avec le fichier de nom spécifié
-	@param nomFich Chaine de caractère de nom du fichier
+	@param nomFic Chaine de caractère de nom du fichier
 	@param pSim La simulation a initialiser
 */
 void terrainInit_sim(char * nomFic, Simulation * pSim);
@@ -102,7 +118,7 @@ void terrainInit_sim(char * nomFic, Simulation * pSim);
 	@param nbZombies Nombres de zombies a initialiser dans la Simulation
 	@param nbCitoyens Nombres de Citoyens a initialiser dans la Simulation
 	@param nbPoliciers Nombres de Policiers a initialiser dans la Simulation
-	@param nomFich Chaine de caractère de nom du fichier
+	@param nomFic Chaine de caractère de nom du fichier
 */
 void initSimulation_sim(Simulation * pSim, int nbZombies, int nbCitoyens, int nbPoliciers, char * nomFic);
 /**
@@ -110,7 +126,7 @@ void initSimulation_sim(Simulation * pSim, int nbZombies, int nbCitoyens, int nb
 	@param nbZombies Nombres de zombies a creer dans la Simulation
 	@param nbCitoyens Nombres de Citoyens a creer dans la Simulation
 	@param nbPoliciers Nombres de Policiers a creer dans la Simulation
-	@param nomFich Chaine de caractère de nom du fichier
+	@param nomFic Chaine de caractère de nom du fichier
 	@return pSim Pointeur vers la Simulation crée
 */
 Simulation * creerSimulation_sim(int nbZombies, int nbCitoyens, int nbPoliciers, char * nomFic);

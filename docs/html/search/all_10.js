@@ -12,5 +12,6 @@ var searchData=
   ['zombieenhaut',['zombieEnHaut',['../terrain_8h.html#a001f60dfb98bf19a3868269a3a8d4128',1,'terrain.c']]],
   ['zombiehd',['zombieHD',['../terrain_8h.html#ac83836d426c8c3f520114923a555a9bb',1,'terrain.c']]],
   ['zombiehg',['zombieHG',['../terrain_8h.html#a620533e1f0789251d879b67d9cef829e',1,'terrain.c']]],
+  ['zombies',['zombies',['../struct_m_simulation.html#ae385693d911120f393dc3c21d0043619',1,'MSimulation']]],
   ['zombiesinit_5fsim',['zombiesInit_sim',['../simulation_8h.html#a44bfaa453f2d4a9cf897235adf4e0c9c',1,'simulation.c']]]
 ];

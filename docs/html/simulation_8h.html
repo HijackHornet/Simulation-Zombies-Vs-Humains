@@ -105,6 +105,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_m_simulation.html">MSimulation</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure definissant une simulation et ses attributs.  <a href="struct_m_simulation.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
@@ -207,7 +208,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="simu
 int&#160;</td><td class="memItemRight" valign="bottom"><b>compareTab2D</b> (const void *a, const void *b)</td></tr>
 <tr class="separator:a14a4e9bf4982b1fdd2b26a6f82d24fc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4fc35a43279496971fef75d940492f7b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4fc35a43279496971fef75d940492f7b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>ajouterPerso</b> (<a class="el" href="struct_mcoordonnees.html">Coordonnees</a> *pCoord, enum typePerso type, <a class="el" href="struct_m_simulation.html">Simulation</a> *pSim)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ajouterPerso</b> (<a class="el" href="struct_m_coordonnees.html">Coordonnees</a> *pCoord, enum <a class="el" href="personnage_8h.html#a3f6a2951aa3d5d428dd6d61e74db0d75">typePerso</a> type, <a class="el" href="struct_m_simulation.html">Simulation</a> *pSim)</td></tr>
 <tr class="separator:a4fc35a43279496971fef75d940492f7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ed5368338ff9e0871bb0c816135971a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0ed5368338ff9e0871bb0c816135971a"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>supprimerPerso</b> (<a class="el" href="struct_m_perso.html">Perso</a> *pPerso, <a class="el" href="struct_m_simulation.html">Simulation</a> *pSim)</td></tr>
@@ -317,7 +318,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>supprimerPerso</b> (<
     <tr><td class="paramname">nbZombies</td><td>Nombres de zombies a creer dans la Simulation </td></tr>
     <tr><td class="paramname">nbCitoyens</td><td>Nombres de Citoyens a creer dans la Simulation </td></tr>
     <tr><td class="paramname">nbPoliciers</td><td>Nombres de Policiers a creer dans la Simulation </td></tr>
-    <tr><td class="paramname">nomFich</td><td>Chaine de caractère de nom du fichier </td></tr>
+    <tr><td class="paramname">nomFic</td><td>Chaine de caractère de nom du fichier </td></tr>
   </table>
   </dd>
 </dl>
@@ -846,7 +847,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>supprimerPerso</b> (<
     <tr><td class="paramname">nbZombies</td><td>Nombres de zombies a initialiser dans la Simulation </td></tr>
     <tr><td class="paramname">nbCitoyens</td><td>Nombres de Citoyens a initialiser dans la Simulation </td></tr>
     <tr><td class="paramname">nbPoliciers</td><td>Nombres de Policiers a initialiser dans la Simulation </td></tr>
-    <tr><td class="paramname">nomFich</td><td>Chaine de caractère de nom du fichier </td></tr>
+    <tr><td class="paramname">nomFic</td><td>Chaine de caractère de nom du fichier </td></tr>
   </table>
   </dd>
 </dl>
@@ -939,7 +940,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>supprimerPerso</b> (<
 <p>Initialise la simulation avec le fichier de nom spécifié </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">nomFich</td><td>Chaine de caractère de nom du fichier </td></tr>
+    <tr><td class="paramname">nomFic</td><td>Chaine de caractère de nom du fichier </td></tr>
     <tr><td class="paramname">pSim</td><td>La simulation a initialiser </td></tr>
   </table>
   </dd>

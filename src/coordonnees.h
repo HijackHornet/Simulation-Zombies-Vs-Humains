@@ -7,14 +7,14 @@
 #define _COORDONNEES
 
 
-/** @struct Coordonnes
+/** @struct MCoordonnes
  *  @brief Structure definissant des coordonnees en deux dimension (pour des entitées)
- *  @var coordonnees::xCoord
+ *  @var MCoordonnees::xCoord
  *  Position sur l'axe des X
-  * @var coordonnees::yCoord
+  * @var MCoordonnees::yCoord
  *  Position sur l'axe des Y
  */
-typedef struct Mcoordonnees{
+typedef struct MCoordonnees{
     int xCoord;
     int yCoord;
 } Coordonnees;
