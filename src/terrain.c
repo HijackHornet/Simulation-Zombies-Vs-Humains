@@ -5,25 +5,37 @@
 
 #include "terrain.h"
 
+
 //////////////////////////////////////////////////////////////////////////////
 //ACCESSEURS//////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
 
 void setDim_terr (int x, int y, Terrain * pTerrain){
+    assert(x>0);
+    assert(y>0);
+    assert(pTerrain!= NULL);
+
     pTerrain->dimX = x;
     pTerrain->dimY = y;
 }
 
 void setNomTerrain_terr(char * nom, Terrain * pTerrain){
+    assert(pTerrain!= NULL);
     assert(strlen(nom)<MAX_CHAR_NOM_TERRAIN);
+
     strcpy(pTerrain->nomTerrain, nom);
 }
 
 void setGrilleByCoord_terr(Coordonnees * coord, Terrain * pTerrain, caseDeplacement * caseDep){
+    assert(pTerrain!= NULL);
+    assert(coord!=NULL);
+
     setGrilleByXY_terr(getXCoord_Coord(coord), getYCoord_Coord(coord), pTerrain, caseDep);
 }
 
 void setGrilleByXY_terr (int x, int y, Terrain * pTerrain, caseDeplacement * caseDep){
+    assert(pTerrain!= NULL);
+
   (pTerrain->grille)[y*getDimX_terr(pTerrain) + x] = *caseDep;
 }
 
@@ -32,14 +44,24 @@ int getDimX_terr(Terrain * pTerrain){
 }
 
 int getDimY_terr(Terrain * pTerrain){
+    assert(pTerrain!= NULL);
+
     return pTerrain->dimY;
 }
 
 char * getNomTerrain_terr(Terrain * pTerrain){
+    assert(pTerrain!= NULL);
+
     return pTerrain->nomTerrain;
 }
 
 caseDeplacement * getGrilleByXY_terr (int x, int y,Terrain * pTerrain){
+    assert(x>=0);
+    assert(y>=0);
+    assert(x<=getDimX_terr(pTerrain));
+    assert(y<=getDimY_terr(pTerrain));
+    assert(pTerrain!= NULL);
+
     return &((pTerrain->grille)[y*getDimX_terr(pTerrain) + x]);
 }
 
@@ -110,7 +132,7 @@ Perso * creePersoTerrainRand(Terrain * pTerrain, enum typePerso type, int idPers
 
 void terrainInitGrille_terr (Terrain * pTerrain){
   pTerrain -> grille = (caseDeplacement *)malloc(getDimX_terr(pTerrain)*getDimY_terr(pTerrain)*sizeof(caseDeplacement));
-  
+
     caseDeplacement X;
     setPersoCase(&X, NULL);
     setEnvCase(&X, VIDE);
@@ -141,7 +163,7 @@ void initChampsTerrain(int nbZombies, int nbPoliciers, int nbCitoyens, Terrain *
   int dimY = getDimY_terr(pTerrain);
 
   caseDeplacement * caseDep;
-  
+
   for(int i = 0; i < nbCasesTerrain; i++){
     caseDep = &(pTerrain -> grille)[i];
     initChamps(nbZombies, nbPoliciers, nbCitoyens, caseDep);
@@ -711,7 +733,7 @@ Perso * policierTueZombie(Perso * pPolicier, Terrain * pTerrain){
       coordZombie = getCoordCaseHGByCoord_terr(coordPolicier);
       caseZombie = getGrilleByCoord_terr(&coordZombie, pTerrain);
     }
-    
+
 
     if(caseZombie != NULL){
 	pZombie = getPersoCase(caseZombie);
