@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Simulation Humains Vs Zombies: MTerrain Struct Reference</title>
+<title>Simulation Humains Vs Zombies: MCaseDeplacement Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -85,83 +85,98 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
-<div class="title">MTerrain Struct Reference</div>  </div>
+<div class="title">MCaseDeplacement Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Structure definissant un terrain et ses dimensions.  
- <a href="struct_m_terrain.html#details">More...</a></p>
+<p>Structure definissant les cases de déplacement (champs d'influences et environement)  
+ <a href="struct_m_case_deplacement.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="terrain_8h_source.html">terrain.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="case_deplacement_8h_source.html">caseDeplacement.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:a3cf61195a3a0edf72814c77ca01cda13"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_m_terrain.html#a3cf61195a3a0edf72814c77ca01cda13">dimX</a></td></tr>
-<tr class="separator:a3cf61195a3a0edf72814c77ca01cda13"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f6e0986f72cebf6150840bc2e6d89d2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_m_terrain.html#a3f6e0986f72cebf6150840bc2e6d89d2">dimY</a></td></tr>
-<tr class="separator:a3f6e0986f72cebf6150840bc2e6d89d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace560da00ff351704ae86204aba2fe04"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_m_terrain.html#ace560da00ff351704ae86204aba2fe04">nomTerrain</a> [MAX_CHAR_NOM_TERRAIN]</td></tr>
-<tr class="separator:ace560da00ff351704ae86204aba2fe04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ab5953682dc97c8ae694c6399427ec0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_m_case_deplacement.html">caseDeplacement</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_m_terrain.html#a1ab5953682dc97c8ae694c6399427ec0">grille</a></td></tr>
-<tr class="separator:a1ab5953682dc97c8ae694c6399427ec0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab477f2108318417299be4c6c7cbcc999"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="case_deplacement_8h.html#af9a4f51a2aa1485342c48472a9124d83">env</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_m_case_deplacement.html#ab477f2108318417299be4c6c7cbcc999">envCase</a></td></tr>
+<tr class="separator:ab477f2108318417299be4c6c7cbcc999"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f29b37f2e70b1bb475c943ad61b9944"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="struct_m_perso.html">MPerso</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_m_case_deplacement.html#a1f29b37f2e70b1bb475c943ad61b9944">persoCase</a></td></tr>
+<tr class="separator:a1f29b37f2e70b1bb475c943ad61b9944"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82b0ec6625c81d8f82dfb0299c50a329"><td class="memItemLeft" align="right" valign="top">short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_m_case_deplacement.html#a82b0ec6625c81d8f82dfb0299c50a329">champZombies</a> [250]</td></tr>
+<tr class="separator:a82b0ec6625c81d8f82dfb0299c50a329"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8223843f25065236d10aa2869482981a"><td class="memItemLeft" align="right" valign="top">short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_m_case_deplacement.html#a8223843f25065236d10aa2869482981a">champCitoyens</a> [250]</td></tr>
+<tr class="separator:a8223843f25065236d10aa2869482981a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8d6fb8de33cc9fc1bbdb74be5b11f2e"><td class="memItemLeft" align="right" valign="top">short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_m_case_deplacement.html#ab8d6fb8de33cc9fc1bbdb74be5b11f2e">champPoliciers</a> [250]</td></tr>
+<tr class="separator:ab8d6fb8de33cc9fc1bbdb74be5b11f2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Structure definissant un terrain et ses dimensions. </p>
+<div class="textblock"><p>Structure definissant les cases de déplacement (champs d'influences et environement) </p>
 </div><h2 class="groupheader">Field Documentation</h2>
-<a class="anchor" id="a3cf61195a3a0edf72814c77ca01cda13"></a>
+<a class="anchor" id="a8223843f25065236d10aa2869482981a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">dimX</td>
+          <td class="memname">champCitoyens[250]</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Largeur du terrain </p>
+<p>EUHHHHH JE COMPREND PAS </p>
 
 </div>
 </div>
-<a class="anchor" id="a3f6e0986f72cebf6150840bc2e6d89d2"></a>
+<a class="anchor" id="ab8d6fb8de33cc9fc1bbdb74be5b11f2e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">dimY</td>
+          <td class="memname">champPoliciers[250]</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Hauteur du terrain </p>
+<p>EUHHHHH JE COMPREND PAS </p>
 
 </div>
 </div>
-<a class="anchor" id="a1ab5953682dc97c8ae694c6399427ec0"></a>
+<a class="anchor" id="a82b0ec6625c81d8f82dfb0299c50a329"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">grille</td>
+          <td class="memname">champZombies[250]</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Grille a deux dimension de carractere definisant la grille du terrain (sol / mur) </p>
+<p>EUHHHHH JE COMPREND PAS </p>
 
 </div>
 </div>
-<a class="anchor" id="ace560da00ff351704ae86204aba2fe04"></a>
+<a class="anchor" id="ab477f2108318417299be4c6c7cbcc999"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">nomTerrain</td>
+          <td class="memname">envCase</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Nom du Terrain en chaine de carractere limité a 101 carracteres </p>
+<p>Type de case, mur ou sol </p>
+
+</div>
+</div>
+<a class="anchor" id="a1f29b37f2e70b1bb475c943ad61b9944"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">persoCase</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Pointeur vers un eventuel personnage sur la case </p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>C:/Users/Tristan Rivière/Desktop/Git/Simulation-Zombies-Vs-Humains/src/<a class="el" href="terrain_8h_source.html">terrain.h</a></li>
+<li>C:/Users/Tristan Rivière/Desktop/Git/Simulation-Zombies-Vs-Humains/src/<a class="el" href="case_deplacement_8h_source.html">caseDeplacement.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
