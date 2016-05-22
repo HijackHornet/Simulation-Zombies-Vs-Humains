@@ -10,10 +10,22 @@
 #include "coordonnees.h"
 #include "personnage.h"
 
-
+/** env défini soit un mur soit le sol (vide) */
 enum env {VIDE, MUR};
-
-typedef struct McaseDeplacement{
+/** @struct MCaseDeplacement
+ *  @brief Structure definissant les cases de déplacement (champs d'influences et environement)
+ *  @var MCaseDeplacement::envCase
+ *  Type de case, mur ou sol
+ *	@var MCaseDeplacement::persoCase
+ *  Pointeur vers un eventuel personnage sur la case
+ *	@var MCaseDeplacement::champZombies[250]
+ *  EUHHHHH JE COMPREND PAS
+ *	@var MCaseDeplacement::champCitoyens[250]
+ *  EUHHHHH JE COMPREND PAS
+ *	@var MCaseDeplacement::champPoliciers[250]
+ *  EUHHHHH JE COMPREND PAS
+ */
+typedef struct MCaseDeplacement{
     enum env envCase;
     struct MPerso * persoCase;
     short champZombies[250];

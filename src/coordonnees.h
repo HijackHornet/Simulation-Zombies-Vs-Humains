@@ -7,7 +7,7 @@
 #define _COORDONNEES
 
 
-/** @struct MCoordonnes
+/** @struct MCoordonnees
  *  @brief Structure definissant des coordonnees en deux dimension (pour des entitées)
  *  @var MCoordonnees::xCoord
  *  Position sur l'axe des X
