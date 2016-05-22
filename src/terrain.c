@@ -15,7 +15,6 @@ void setDim_terr (int x, int y, Terrain * pTerrain){
 }
 
 void setNomTerrain_terr(char * nom, Terrain * pTerrain){
-    assert(strlen(nom)<MAX_CHAR_NOM_TERRAIN);
     strcpy(pTerrain->nomTerrain, nom);
 }
 
@@ -789,11 +788,7 @@ void terrainCreerFichier_terr (Terrain * pTerrain){
 Terrain * terrainLireFichier_terr (char * nomTerrain){
     FILE * pFichier;
 
-    char cheminFichier[MAX_CHAR_NOM_TERRAIN + 16] = "../data/"; //16 correspond à la taille de la chaine d'accees
-    strcat(cheminFichier, nomTerrain);
-    strcat(cheminFichier, ".terrain");
-
-    pFichier = fopen(cheminFichier,"r");
+    pFichier = fopen(nomTerrain,"r");
 
     assert(pFichier != NULL);
 

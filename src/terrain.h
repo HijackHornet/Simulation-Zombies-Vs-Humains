@@ -14,7 +14,7 @@
 #include "caseDeplacement.h"
 #include "coordonnees.h"
 
-#define MAX_CHAR_NOM_TERRAIN 101
+#define MAX_CHAR_NOM_TERRAIN 500
 #define MAX_TAILLE_XY 500
 
 /** @struct terrain

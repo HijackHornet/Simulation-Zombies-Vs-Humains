@@ -2,52 +2,37 @@
 <!-- Generated with glade 3.20.0 -->
 <interface>
   <requires lib="gtk+" version="3.20"/>
-  <object class="GtkAdjustment" id="adjustment1">
-    <property name="upper">100</property>
+  <object class="GtkAdjustment" id="ajustementPolicier">
+    <property name="lower">1</property>
+    <property name="upper">125</property>
+    <property name="value">50</property>
     <property name="step_increment">1</property>
     <property name="page_increment">10</property>
   </object>
-  <object class="GtkAdjustment" id="adjustment2">
-    <property name="upper">100</property>
+  <object class="GtkAdjustment" id="ajustementPoliciers">
+    <property name="lower">1</property>
+    <property name="upper">125</property>
+    <property name="value">5</property>
     <property name="step_increment">1</property>
     <property name="page_increment">10</property>
   </object>
-  <object class="GtkAdjustment" id="adjustment3">
-    <property name="upper">100</property>
-    <property name="step_increment">1</property>
-    <property name="page_increment">10</property>
-  </object>
-  <object class="GtkAdjustment" id="adjustment4">
-    <property name="upper">100</property>
+  <object class="GtkAdjustment" id="ajustementZombies">
+    <property name="lower">1</property>
+    <property name="upper">125</property>
+    <property name="value">20</property>
     <property name="step_increment">1</property>
     <property name="page_increment">10</property>
   </object>
   <object class="GtkWindow" id="window_main">
     <property name="can_focus">False</property>
+    <property name="border_width">6</property>
+    <property name="title" translatable="yes">Simulation humains vs Zombies - Menu principal</property>
+    <signal name="destroy" handler="gtk_main_quit" swapped="no"/>
     <child>
       <object class="GtkBox">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="orientation">vertical</property>
-        <child>
-          <object class="GtkMenuBar">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <child>
-              <object class="GtkMenuItem">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="label" translatable="yes">À propos</property>
-                <property name="use_underline">True</property>
-              </object>
-            </child>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">True</property>
-            <property name="position">0</property>
-          </packing>
-        </child>
         <child>
           <object class="GtkBox">
             <property name="visible">True</property>
@@ -67,15 +52,15 @@
               </packing>
             </child>
             <child>
-              <object class="GtkFileChooserButton" id="filechooserbutton1">
+              <object class="GtkFileChooserButton" id="selecteurFichierSimulation">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="margin_left">10</property>
                 <property name="margin_right">10</property>
                 <property name="margin_top">25</property>
+                <property name="create_folders">False</property>
                 <property name="preview_widget_active">False</property>
                 <property name="title" translatable="yes">filechooserbutton1</property>
-                <signal name="file-set" handler="boutton_fichier_cliquee" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -133,12 +118,12 @@
               </packing>
             </child>
             <child>
-              <object class="GtkSpinButton">
+              <object class="GtkSpinButton" id="selecteurNbZombies">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="margin_right">10</property>
-                <property name="max_width_chars">2</property>
-                <property name="adjustment">adjustment1</property>
+                <property name="max_width_chars">3</property>
+                <property name="adjustment">ajustementZombies</property>
                 <property name="numeric">True</property>
                 <property name="value">20</property>
               </object>
@@ -148,13 +133,14 @@
               </packing>
             </child>
             <child>
-              <object class="GtkSpinButton">
+              <object class="GtkSpinButton" id="selecteurNbPoliciers">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="margin_right">10</property>
-                <property name="adjustment">adjustment2</property>
+                <property name="max_width_chars">3</property>
+                <property name="adjustment">ajustementPoliciers</property>
                 <property name="numeric">True</property>
-                <property name="value">20</property>
+                <property name="value">5</property>
               </object>
               <packing>
                 <property name="left_attach">1</property>
@@ -162,13 +148,14 @@
               </packing>
             </child>
             <child>
-              <object class="GtkSpinButton">
+              <object class="GtkSpinButton" id="selecteurNbCitoyens">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="margin_right">10</property>
-                <property name="adjustment">adjustment3</property>
+                <property name="max_width_chars">3</property>
+                <property name="adjustment">ajustementPolicier</property>
                 <property name="numeric">True</property>
-                <property name="value">20</property>
+                <property name="value">50</property>
               </object>
               <packing>
                 <property name="left_attach">1</property>
@@ -183,7 +170,7 @@
           </packing>
         </child>
         <child>
-          <object class="GtkButton" id="Launch">
+          <object class="GtkButton" id="lancementSimulation">
             <property name="label" translatable="yes">Lancez la simulation</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
@@ -194,7 +181,7 @@
             <property name="margin_bottom">40</property>
             <property name="hexpand">True</property>
             <property name="vexpand">True</property>
-            <signal name="clicked" handler="boutton_launch_cliquee" swapped="no"/>
+            <signal name="clicked" handler="bouton_lancement" swapped="no"/>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -221,8 +208,11 @@
               <object class="GtkSpinButton">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
+                <property name="margin_left">10</property>
+                <property name="margin_right">5</property>
+                <property name="margin_top">8</property>
+                <property name="margin_bottom">8</property>
                 <property name="progress_pulse_step">1</property>
-                <property name="adjustment">adjustment4</property>
                 <property name="numeric">True</property>
                 <property name="value">50</property>
               </object>
@@ -235,6 +225,10 @@
               <object class="GtkSpinButton">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
+                <property name="margin_left">5</property>
+                <property name="margin_right">5</property>
+                <property name="margin_top">8</property>
+                <property name="margin_bottom">8</property>
                 <property name="numeric">True</property>
                 <property name="value">60</property>
               </object>
@@ -244,7 +238,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkFileChooserButton">
+              <object class="GtkFileChooserButton" id="selecteurFichierEditeur">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="action">save</property>
@@ -262,9 +256,10 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <property name="margin_right">10</property>
+                <property name="margin_left">5</property>
+                <property name="margin_top">8</property>
                 <property name="margin_bottom">8</property>
-                <signal name="clicked" handler="boutton_editor_cliquee" swapped="no"/>
+                <signal name="clicked" handler="bouton_editeur" swapped="no"/>
               </object>
               <packing>
                 <property name="left_attach">3</property>

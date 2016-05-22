@@ -3,11 +3,25 @@
 
 #include "simulation.h"
 #include "SDL2/simulation_SDL2.h"
+
+/* Main data structure definition */
+typedef struct _ChData ChData;
+struct _ChData
+{
+  /* Widgets */
+  GtkWidget *window_main;  /* Main application window */
+  GtkFileChooser *selecteurFichierSimulation;
+  GtkSpinButton *selecteurNbZombies;
+  GtkSpinButton *selecteurNbPoliciers;
+  GtkSpinButton *selecteurNbCitoyens;
+
+  gchar * fichierALire;
+};
+
 /**
    @brief Lance les fonction Sdl afin de lancer la simulation avec les paramètres données
 */
-void startSdlMain(int nbZombies, int nbPoliciers, int nbCitoyens);
-void startGTK(int argc, char *argv[]);
+void startGtkMain(int argc, char ** argv);
 /**
    @brief Ouvre l'éditeur de maps en appelant les fontions sdl adaptés
 */
