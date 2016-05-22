@@ -142,7 +142,7 @@ void lancerSimulationSDL2Editeur(char * cheminFichier, int dimX, int dimY){
       SDL_RenderClear(getrenderer());
 
       delay(frameLimit);
-      frameLimit = SDL_GetTicks() + 16;
+      frameLimit = SDL_GetTicks();
     }
 }
 

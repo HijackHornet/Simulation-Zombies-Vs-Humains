@@ -817,7 +817,8 @@ Terrain * terrainLireFichier_terr (char * nomTerrain){
 
     Terrain * pTerrain = NULL;
     int dimX, dimY;
-    fscanf(pFichier,"%d %d\n", &dimX, &dimY);
+    fscanf(pFichier,"%d %d", &dimX, &dimY);
+    getc(pFichier);
     pTerrain = terrainCreer_terr(dimX, dimY, nomTerrain);
 
     assert(pTerrain != NULL);
@@ -826,7 +827,7 @@ Terrain * terrainLireFichier_terr (char * nomTerrain){
     char caseFichier;
     for(int i = dimY - 1; i >= 0; i--){
 	for(int j = 0; j < dimX; j++){
-            fscanf(pFichier,"%c", &caseFichier);
+	  caseFichier = getc(pFichier);
 
             if(caseFichier==' '){
                 setEnvCase(&caseVide,VIDE);
@@ -840,7 +841,7 @@ Terrain * terrainLireFichier_terr (char * nomTerrain){
                 setGrilleByXY_terr(j,i,pTerrain,&caseVide);
             }
 	}
-	fscanf(pFichier,"\n");
+        getc(pFichier);
     }
 
     fclose(pFichier);
