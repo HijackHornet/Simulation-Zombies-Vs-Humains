@@ -34,55 +34,55 @@ void EventClavier(){
     }
 
 }
+
+
 void EventClavierEditeur(Terrain * pTerrain){
-    SDL_Event event;
-    int screenheight, screenwidth;
+  SDL_Event event;
+  int screenheight, screenwidth;
 
-    screenheight = getDimY_terr(pTerrain) * 50 *RENDERERSCALE;
-    screenwidth = getDimX_terr(pTerrain) * 50 *RENDERERSCALE;
-    while ( SDL_PollEvent(&event) )
+  screenheight = getDimY_terr(pTerrain) * 50 *RENDERERSCALE;
+  screenwidth = getDimX_terr(pTerrain) * 50 *RENDERERSCALE;
+  while ( SDL_PollEvent(&event) )
     {
-        switch(event.type)
-    {
+      switch(event.type)
+	{
         case SDL_WINDOWEVENT:
-            if ( event.window.event == SDL_WINDOWEVENT_CLOSE )
+	  if ( event.window.event == SDL_WINDOWEVENT_CLOSE )
             {
-                exit(0);
+	      exit(0);
             }
-            break;
+	  break;
         case SDL_KEYDOWN:
-            if ( event.key.keysym.sym == SDLK_ESCAPE )
+	  if ( event.key.keysym.sym == SDLK_ESCAPE )
             {
-                exit(0);
+	      exit(0);
 
             }
 
-            if (event.key.keysym.sym == SDLK_s) {
-
-                exit(0);
-
-            }
-            break;
-        case SDL_MOUSEBUTTONUP:
-            {int x,y;
-            caseDeplacement * caseDep;
+	  if (event.key.keysym.sym == SDLK_s) {
+	    exit(0);
+	  }
+	  break;
+        case SDL_MOUSEBUTTONUP:{
+	  int x,y;
+	  caseDeplacement * caseDep;
 
 
-            SDL_GetMouseState(&x,&y);
-            x=(x/(50*RENDERERSCALE));
-            y=(y/(50*RENDERERSCALE));
-            caseDep = getGrilleByXY_terr(x,(getDimY_terr(pTerrain)-y-1),pTerrain);
-            if(getEnvCase(getGrilleByXY_terr(x, (getDimY_terr(pTerrain)-y-1), pTerrain)) == MUR){
-                setEnvCase(caseDep, VIDE);
-                setGrilleByXY_terr (x,(getDimY_terr(pTerrain)-y-1),pTerrain,caseDep);
-            }
-            else{
-                setEnvCase(caseDep, MUR);
-                setGrilleByXY_terr (x,(getDimY_terr(pTerrain)-y-1),pTerrain,caseDep);
-            }
-            break;
-            }
-    }
+	  SDL_GetMouseState(&x,&y);
+	  x=(x/(50*RENDERERSCALE));
+	  y=(y/(50*RENDERERSCALE));
+	  caseDep = getGrilleByXY_terr(x,(getDimY_terr(pTerrain)-y-1),pTerrain);
+	  if(getEnvCase(getGrilleByXY_terr(x, (getDimY_terr(pTerrain)-y-1), pTerrain)) == MUR){
+	    setEnvCase(caseDep, VIDE);
+	    setGrilleByXY_terr (x,(getDimY_terr(pTerrain)-y-1),pTerrain,caseDep);
+	  }
+	  else{
+	    setEnvCase(caseDep, MUR);
+	    setGrilleByXY_terr (x,(getDimY_terr(pTerrain)-y-1),pTerrain,caseDep);
+	  }
+	  break;
+	}
+	}
     }
 
 }
@@ -121,34 +121,28 @@ void lancerSimulationSDL2 (Simulation * pSim){
 }
 
 
-void lancerSimulationSDL2Editeur (){
+void lancerSimulationSDL2Editeur(char * cheminFichier, int dimX, int dimY){
 
-        unsigned int frameLimit = SDL_GetTicks() + 16;
-    int loopCondition;
-    atexit(cleanup);
-    loopCondition = 1;
+  unsigned int frameLimit = SDL_GetTicks() + 16;
+  int loopCondition;
+  atexit(cleanup);
+  loopCondition = 1;
 
-    Terrain * TerrainEdit;
-    TerrainEdit = terrainCreer_terr(15,15,"LeNom");
+  Terrain * TerrainEdit;
+  TerrainEdit = terrainCreer_terr(dimX, dimY, cheminFichier);
 
-
-    initEditeur("Editeur de Maps",TerrainEdit);
-    while (loopCondition == 1)
+  initEditeur("Editeur de cartes", TerrainEdit);
+  while(loopCondition == 1)
     {
+      EventClavierEditeur(TerrainEdit);
+      affichageFenetreEditeur(TerrainEdit);
 
+      SDL_RenderPresent(getrenderer());
+      SDL_Delay(DELAYREFRESH);
+      SDL_RenderClear(getrenderer());
 
-        EventClavierEditeur(TerrainEdit);
-        affichageFenetreEditeur(TerrainEdit);
-
-
-        SDL_RenderPresent(getrenderer());
-        SDL_Delay(DELAYREFRESH);
-        SDL_RenderClear(getrenderer());
-
-        delay(frameLimit);
-        frameLimit = SDL_GetTicks() + 16;
+      delay(frameLimit);
+      frameLimit = SDL_GetTicks() + 16;
     }
-
-
 }
 

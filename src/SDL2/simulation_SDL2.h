@@ -32,4 +32,4 @@ void lancerSimulationSDL2 (Simulation * pSim);
 /**
 	@brief Fait tourner les fonction de l'éditeur de niveau et lance les fonctions d'affichage de celui-ci
 */
-void lancerSimulationSDL2Editeur();
+void lancerSimulationSDL2Editeur(char * cheminFichier, int dimX, int dimY);

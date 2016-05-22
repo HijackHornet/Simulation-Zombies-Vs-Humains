@@ -18,6 +18,10 @@ struct _ChData
   GtkSpinButton *selecteurNbZombies;
   GtkSpinButton *selecteurNbPoliciers;
   GtkSpinButton *selecteurNbCitoyens;
+  GtkFileChooser *selecteurDossierEditeur;
+  GtkEntry *selecteurFichierEditeur;
+  GtkSpinButton *selecteurDimXEditeur;
+  GtkSpinButton *selecteurDimYEditeur;
 
   gchar * fichierALire;
 };

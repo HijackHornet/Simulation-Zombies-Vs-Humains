@@ -16,6 +16,10 @@ void startGtkMain(int argc, char ** argv){
   (data -> selecteurNbZombies) = (GtkSpinButton *)gtk_builder_get_object(builder, "selecteurNbZombies");
   (data -> selecteurNbPoliciers) = (GtkSpinButton *)gtk_builder_get_object(builder, "selecteurNbPoliciers");
   (data -> selecteurNbCitoyens) = (GtkSpinButton *)gtk_builder_get_object(builder, "selecteurNbCitoyens");
+  (data -> selecteurDossierEditeur) = (GtkFileChooser *)gtk_builder_get_object(builder, "selecteurDossierEditeur");
+  (data -> selecteurFichierEditeur) = (GtkEntry *)gtk_builder_get_object(builder, "selecteurNomFichier");
+  (data -> selecteurDimXEditeur) = (GtkSpinButton *)gtk_builder_get_object(builder, "selecteurDimX");
+  (data -> selecteurDimYEditeur) = (GtkSpinButton *)gtk_builder_get_object(builder, "selecteurDimY");
   
   gtk_builder_connect_signals(builder, data);
 
@@ -44,5 +48,16 @@ G_MODULE_EXPORT gboolean bouton_lancement(GtkButton * button, ChData *data)
 
 G_MODULE_EXPORT gboolean bouton_editeur(GtkButton * button, ChData *data)
 {
+  const char * filename = (const char *)gtk_entry_get_text(data -> selecteurFichierEditeur);
+  char * folder = (char *)gtk_file_chooser_get_filename(data -> selecteurDossierEditeur);
+  
+  int dimX = (int)gtk_spin_button_get_value(data -> selecteurDimXEditeur);
+  int dimY = (int)gtk_spin_button_get_value(data -> selecteurDimYEditeur);
+
+  if(filename && folder){
+    strcat(folder, filename);
+    lancerSimulationSDL2Editeur(folder, dimX, dimY);
+  }
+  
   return FALSE;
 }

@@ -2,6 +2,20 @@
 <!-- Generated with glade 3.20.0 -->
 <interface>
   <requires lib="gtk+" version="3.20"/>
+  <object class="GtkAdjustment" id="ajustementDimX">
+    <property name="lower">5</property>
+    <property name="upper">100</property>
+    <property name="value">50</property>
+    <property name="step_increment">10</property>
+    <property name="page_increment">10</property>
+  </object>
+  <object class="GtkAdjustment" id="ajustementDimY">
+    <property name="lower">5</property>
+    <property name="upper">100</property>
+    <property name="value">50</property>
+    <property name="step_increment">10</property>
+    <property name="page_increment">10</property>
+  </object>
   <object class="GtkAdjustment" id="ajustementPolicier">
     <property name="lower">1</property>
     <property name="upper">125</property>
@@ -23,6 +37,9 @@
     <property name="step_increment">1</property>
     <property name="page_increment">10</property>
   </object>
+  <object class="GtkEntryBuffer" id="entrybuffer1">
+    <property name="max_length">200</property>
+  </object>
   <object class="GtkWindow" id="window_main">
     <property name="can_focus">False</property>
     <property name="border_width">6</property>
@@ -43,7 +60,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="margin_top">25</property>
-                <property name="label" translatable="yes">Choix de la map</property>
+                <property name="label" translatable="yes">Menu principal</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -171,7 +188,7 @@
         </child>
         <child>
           <object class="GtkButton" id="lancementSimulation">
-            <property name="label" translatable="yes">Lancez la simulation</property>
+            <property name="label" translatable="yes">Lancer la simulation</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
@@ -194,63 +211,6 @@
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <child>
-              <object class="GtkLabel">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="label" translatable="yes">X/Y</property>
-              </object>
-              <packing>
-                <property name="left_attach">0</property>
-                <property name="top_attach">1</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkSpinButton">
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="margin_left">10</property>
-                <property name="margin_right">5</property>
-                <property name="margin_top">8</property>
-                <property name="margin_bottom">8</property>
-                <property name="progress_pulse_step">1</property>
-                <property name="numeric">True</property>
-                <property name="value">50</property>
-              </object>
-              <packing>
-                <property name="left_attach">1</property>
-                <property name="top_attach">1</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkSpinButton">
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="margin_left">5</property>
-                <property name="margin_right">5</property>
-                <property name="margin_top">8</property>
-                <property name="margin_bottom">8</property>
-                <property name="numeric">True</property>
-                <property name="value">60</property>
-              </object>
-              <packing>
-                <property name="left_attach">2</property>
-                <property name="top_attach">1</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkFileChooserButton" id="selecteurFichierEditeur">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="action">save</property>
-                <property name="title" translatable="yes"/>
-              </object>
-              <packing>
-                <property name="left_attach">0</property>
-                <property name="top_attach">0</property>
-                <property name="width">4</property>
-              </packing>
-            </child>
-            <child>
               <object class="GtkButton">
                 <property name="label" translatable="yes">Ouvrir L'Editeur De Map</property>
                 <property name="visible">True</property>
@@ -263,7 +223,93 @@
               </object>
               <packing>
                 <property name="left_attach">3</property>
+                <property name="top_attach">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkSpinButton" id="selecteurDimY">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="margin_left">5</property>
+                <property name="margin_right">5</property>
+                <property name="margin_top">8</property>
+                <property name="margin_bottom">8</property>
+                <property name="adjustment">ajustementDimY</property>
+                <property name="numeric">True</property>
+                <property name="value">50</property>
+              </object>
+              <packing>
+                <property name="left_attach">2</property>
+                <property name="top_attach">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkSpinButton" id="selecteurDimX">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="margin_left">10</property>
+                <property name="margin_right">5</property>
+                <property name="margin_top">8</property>
+                <property name="margin_bottom">8</property>
+                <property name="progress_pulse_step">1</property>
+                <property name="adjustment">ajustementDimX</property>
+                <property name="numeric">True</property>
+                <property name="value">50</property>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">X/Y</property>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkFileChooserButton" id="selecteurDossierEditeur">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="action">select-folder</property>
+                <property name="do_overwrite_confirmation">True</property>
+                <property name="title" translatable="yes"/>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
                 <property name="top_attach">1</property>
+                <property name="width">4</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEntry" id="selecteurNomFichier">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="margin_bottom">5</property>
+                <property name="buffer">entrybuffer1</property>
+              </object>
+              <packing>
+                <property name="left_attach">2</property>
+                <property name="top_attach">0</property>
+                <property name="width">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="margin_bottom">6</property>
+                <property name="label" translatable="yes">Nom du terrain :</property>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">0</property>
+                <property name="width">2</property>
               </packing>
             </child>
           </object>
