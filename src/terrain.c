@@ -49,10 +49,11 @@ char * getNomTerrain_terr(Terrain * pTerrain){
 }
 
 caseDeplacement * getGrilleByXY_terr (int x, int y,Terrain * pTerrain){
-    assert(x>=0);
+  /*assert(x>=0);
     assert(y>=0);
-    assert(x<=getDimX_terr(pTerrain));
-    assert(y<=getDimY_terr(pTerrain));
+    assert(x<getDimX_terr(pTerrain));
+    assert(y<getDimY_terr(pTerrain));
+  */
     assert(pTerrain!= NULL);
 
     return &((pTerrain->grille)[y*getDimX_terr(pTerrain) + x]);
