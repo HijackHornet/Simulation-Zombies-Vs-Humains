@@ -117,6 +117,17 @@ Perso * creePersoTerrainRand(Terrain * pTerrain, enum typePerso type, int idPers
 
     return pZombie;
 }
+void terrainAjoutMurTour(Terrain * pTerrain){
+    int dimx,dimy;
+    dimx=getDimX_terr(pTerrain);
+    dimy=getDimY_terr(pTerrain);
+    for(int i=0; i<=dimx;i++){
+        setEnvCase(getGrilleByXY_terr(i,0,pTerrain),MUR);
+        setEnvCase(getGrilleByXY_terr(i,dimy,pTerrain),MUR);
+    }
+
+
+}
 
 
 /////////////////////////////////////////////////////////////////////////////

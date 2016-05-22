@@ -383,7 +383,11 @@ Terrain * terrainLireFichier_terr (char nomTerrain[MAX_CHAR_NOM_TERRAIN]);
 	@brief Affiche la grille des champs dans la console avec des caractère pour représenter les représenter
 */
 void afficherChamps(Terrain * pTerrain);
-
+/**
+    @brief Ajoute des mur sur les bord du terrain
+    @param pTerrain Pointeur vers le terrain
+*/
+void terrainAjoutMurTour(Terrain * pTerrain);
 /////////////////////////////////////////////////////////////////////////////
 //CHAMPS/////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
