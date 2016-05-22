@@ -780,13 +780,8 @@ void afficherGrilleConsole(Terrain * pTerrain){
 }
 
 
-void terrainCreerFichier_terr (Terrain * pTerrain){
+void terrainCreerFichier_terr (Terrain * pTerrain, char * cheminFichier){
     FILE * pFichier;
-
-    char cheminFichier[MAX_CHAR_NOM_TERRAIN + 16] = "../data/"; //16 correspond à la taille de la chaine d'accees
-
-    strcat(cheminFichier, getNomTerrain_terr(pTerrain));
-    strcat(cheminFichier, ".terrain");
 
     pFichier = fopen(cheminFichier,"w");
 
