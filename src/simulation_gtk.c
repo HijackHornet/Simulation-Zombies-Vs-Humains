@@ -54,8 +54,11 @@ G_MODULE_EXPORT gboolean bouton_editeur(GtkButton * button, ChData *data)
   int dimX = (int)gtk_spin_button_get_value(data -> selecteurDimXEditeur);
   int dimY = (int)gtk_spin_button_get_value(data -> selecteurDimYEditeur);
 
-  if(filename && folder){
+  if(strlen(filename) && folder){
+    strcat(folder, "/");
     strcat(folder, filename);
+    strcat(folder, ".terrain");
+    printf("%s", folder);
     lancerSimulationSDL2Editeur(folder, dimX, dimY);
   }
   

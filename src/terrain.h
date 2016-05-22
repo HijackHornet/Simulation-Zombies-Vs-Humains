@@ -372,7 +372,7 @@ void afficherGrilleConsole(Terrain * pTerrain);
 	@brief Créer un fichier terrain à partir du pointeur vers terrain
 	@param pTerrain Pointeur vers le terrain qui serra enregistré dans un fichier
 */
-void terrainCreerFichier_terr (Terrain * pTerrain);
+void terrainCreerFichier_terr (Terrain * pTerrain, char * cheminFichier);
 /**
 	@brief Li le fichier terrain de nom spécifié et le retourne par un pointeur
 	@param nomTerrain Nom du fichier terrain à lire

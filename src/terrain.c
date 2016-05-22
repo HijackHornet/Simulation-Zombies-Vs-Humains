@@ -888,7 +888,7 @@ void testFonctions_terr(){
     //char * nomFicLecture = "FichierTestLecture";
 
     pFichierEcritureTest = terrainCreer_terr (20, 15, nomFicEcriture);
-    terrainCreerFichier_terr(pFichierEcritureTest);
+    terrainCreerFichier_terr(pFichierEcritureTest, nomFicEcriture);
 
     //pFichierLectureTest = terrainLireFichier_terr(nomFicLecture);
     //afficherGrilleConsole(pFichierLectureTest);

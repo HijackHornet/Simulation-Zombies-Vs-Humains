@@ -17,8 +17,7 @@ void EventClavier();
 /**
 	@brief Fontion de gestion des Input pour la fenetre de l'éditeur
 */
-void EventClavierEditeur(Terrain * pTerrain);
-
+void EventClavierEditeur(Terrain * pTerrain, char * nomTerrain);
 
 ////////////////////////////////////////////////////////////////////
 //EXECUTIONS////////////////////////////////////////////////////////

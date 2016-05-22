@@ -36,7 +36,7 @@ void EventClavier(){
 }
 
 
-void EventClavierEditeur(Terrain * pTerrain){
+void EventClavierEditeur(Terrain * pTerrain, char * nomTerrain){
   SDL_Event event;
   int screenheight, screenwidth;
 
@@ -56,10 +56,10 @@ void EventClavierEditeur(Terrain * pTerrain){
 	  if ( event.key.keysym.sym == SDLK_ESCAPE )
             {
 	      exit(0);
-
             }
 
 	  if (event.key.keysym.sym == SDLK_s) {
+	    terrainCreerFichier_terr(pTerrain, nomTerrain);
 	    exit(0);
 	  }
 	  break;
@@ -134,7 +134,7 @@ void lancerSimulationSDL2Editeur(char * cheminFichier, int dimX, int dimY){
   initEditeur("Editeur de cartes", TerrainEdit);
   while(loopCondition == 1)
     {
-      EventClavierEditeur(TerrainEdit);
+      EventClavierEditeur(TerrainEdit, cheminFichier);
       affichageFenetreEditeur(TerrainEdit);
 
       SDL_RenderPresent(getrenderer());
