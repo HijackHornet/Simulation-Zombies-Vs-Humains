@@ -1,9 +1,10 @@
 var searchData=
 [
-  ['setdim_5fterr',['setDim_terr',['../terrain_8c.html#aa4dcb232d424b858d3f01f4951d411d4',1,'setDim_terr(int x, int y, Terrain *pTerrain):&#160;terrain.c'],['../terrain_8h.html#aa4dcb232d424b858d3f01f4951d411d4',1,'setDim_terr(int x, int y, Terrain *pTerrain):&#160;terrain.c']]],
-  ['setenvcase',['setEnvCase',['../case_deplacement_8h.html#ae8e30c64ef13ca4415261740b05df8bc',1,'caseDeplacement.c']]],
-  ['setgrillebycoord_5fterr',['setGrilleByCoord_terr',['../terrain_8c.html#a97c9cc766e38342e3425653e89b6f46c',1,'setGrilleByCoord_terr(Coordonnees *coord, Terrain *pTerrain, caseDeplacement *caseDep):&#160;terrain.c'],['../terrain_8h.html#a97c9cc766e38342e3425653e89b6f46c',1,'setGrilleByCoord_terr(Coordonnees *coord, Terrain *pTerrain, caseDeplacement *caseDep):&#160;terrain.c']]],
-  ['setgrillebyxy_5fterr',['setGrilleByXY_terr',['../terrain_8c.html#ad15a1365737240775ff8425378834fd6',1,'setGrilleByXY_terr(int x, int y, Terrain *pTerrain, caseDeplacement *caseDep):&#160;terrain.c'],['../terrain_8h.html#ad15a1365737240775ff8425378834fd6',1,'setGrilleByXY_terr(int x, int y, Terrain *pTerrain, caseDeplacement *caseDep):&#160;terrain.c']]],
-  ['setnomterrain_5fterr',['setNomTerrain_terr',['../terrain_8h.html#a80e61da510c086c125dd51ae23c518ff',1,'terrain.h']]],
-  ['setpersocase',['setPersoCase',['../case_deplacement_8h.html#aa078affbe215089b4230383ffab78e58',1,'caseDeplacement.c']]]
+  ['init',['init',['../initialisation___s_d_l_8h.html#acce1a8c22dcc885898abedabfcd63ac9',1,'initialisation_SDL.c']]],
+  ['initcase',['initCase',['../case_deplacement_8h.html#a7ef31ff562e58ed644b58bc85dac2534',1,'caseDeplacement.c']]],
+  ['initcoordonnees_5fcoord',['initCoordonnees_coord',['../coordonnees_8h.html#aefad4fcb9d51c146999a9b0ee90e6b62',1,'coordonnees.c']]],
+  ['initediteur',['initEditeur',['../initialisation___s_d_l_8h.html#a3b0c2b5ffb97c7f0aa294d96306ef3f5',1,'initialisation_SDL.c']]],
+  ['initialisationmarqueurs',['initialisationMarqueurs',['../terrain_8h.html#aa4fd8914490a8a95ff9e96de4b4cd6c4',1,'terrain.h']]],
+  ['initperso',['initPerso',['../personnage_8h.html#a9eb78388d72512725aae96f9ccd0ba53',1,'personnage.c']]],
+  ['initsimulation_5fsim',['initSimulation_sim',['../simulation_8h.html#a14f3cc9f6446c3f212a49d054d358394',1,'simulation.c']]]
 ];

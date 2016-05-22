@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['initcase',['initCase',['../case_deplacement_8h.html#a7ef31ff562e58ed644b58bc85dac2534',1,'caseDeplacement.c']]],
-  ['initialisationmarqueurs',['initialisationMarqueurs',['../terrain_8h.html#aa4fd8914490a8a95ff9e96de4b4cd6c4',1,'terrain.h']]]
+  ['humainadroite',['humainADroite',['../terrain_8h.html#a5f78f92ecac28d78ffd95ba3e04b272d',1,'terrain.c']]],
+  ['humainagauche',['humainAGauche',['../terrain_8h.html#aa81fd0c9d275c8f8feb23f1400f43e43',1,'terrain.c']]],
+  ['humainenbas',['humainEnBas',['../terrain_8h.html#a50df7bb2b9b06787410c5c3c18c26c7e',1,'terrain.c']]],
+  ['humainenhaut',['humainEnHaut',['../terrain_8h.html#ae6548343b2ab3ffd042731aeee925261',1,'terrain.c']]]
 ];

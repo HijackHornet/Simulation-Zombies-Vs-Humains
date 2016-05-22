@@ -1,3 +1,7 @@
+ï»¿/**
+   @file affichage_SDL.h
+   @brief  DÃ©finit les fonctions d'affichage SDL
+*/
 #include <SDL.h>
 #include <SDL_image.h>
 
@@ -7,20 +11,20 @@
 void delay(unsigned int frameLimit);
 SDL_Texture *loadImage(char *name);
 /**
-	@brief Dessine la SDL_Texture au coordonée XY
+	@brief Dessine la SDL_Texture au coordonÃ©e XY
 	@param image Pointeur vers la SDL_texture a dessiner
-	@param x Coordonnées en X ou dessiner
-	@param y Coordonnées en Y ou dessiner
+	@param x CoordonnÃ©es en X ou dessiner
+	@param y CoordonnÃ©es en Y ou dessiner
 */
 void drawImage(SDL_Texture *image, int x, int y); 
 /**
 	@brief Dessine les personnage de la simulation sur la fenetre
-	@param pSim Pointeur vers la simulation à afficher
+	@param pSim Pointeur vers la simulation Ã  afficher
 */
 void afficherParamFenetre(Simulation * pSim);
 /**
 	@brief Dessine le terrain de la simulation sur la fenetre
-	@param pSim Pointeur vers la simulation à afficher
+	@param pSim Pointeur vers la simulation Ã  afficher
 */
 void affichageFenetre(Simulation * pSim);
 /**

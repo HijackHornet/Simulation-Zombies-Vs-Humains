@@ -1,3 +1,7 @@
+ï»¿/**
+   @file initialisation_SDL.h
+   @brief  DÃ©finit les fonction pour l'initialisation de SDL
+*/
 #include <SDL.h>
 #include <SDL_image.h>
 #include "../simulation.h"
@@ -9,8 +13,8 @@
 //ACCESSEUR  ///////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////
 /**
-	@brief Recupère le renderer actuellement utilisé
-	@return Pointeur vers le SDL_Renderer utilisé
+	@brief RecupÃ¨re le renderer actuellement utilisÃ©
+	@return Pointeur vers le SDL_Renderer utilisÃ©
 */
 SDL_Renderer *getrenderer();
 
@@ -20,15 +24,15 @@ SDL_Renderer *getrenderer();
 ////////////////////////////////////////////////////////////////////
 
 /**
-	@brief Initilialise une fenetre avec le nom donné et les dimension définie dans le define pour la fenetre de simulation
-	@param title Chaine de caractères du nom de la fenetre a initiliser
+	@brief Initilialise une fenetre avec le nom donnÃ© et les dimension dÃ©finie dans le define pour la fenetre de simulation
+	@param title Chaine de caractÃ¨res du nom de la fenetre a initiliser
 	@param pSim Pointeur vers la simulation
 */
 void init(char *title,Simulation * pSim);
 /**
-	@brief Initilialise une fenetre avec le nom donné et les dimension définie dans le define pour la fenetre de l'editeur
-	@param title Chaine de caractères du nom de la fenetre a initiliser
-	@param pTerrain Pointeur vers le terrain à afficher
+	@brief Initilialise une fenetre avec le nom donnÃ© et les dimension dÃ©finie dans le define pour la fenetre de l'editeur
+	@param title Chaine de caractÃ¨res du nom de la fenetre a initiliser
+	@param pTerrain Pointeur vers le terrain Ã  afficher
 */
 void initEditeur(char *title, Terrain * pTerrain);
 /**
