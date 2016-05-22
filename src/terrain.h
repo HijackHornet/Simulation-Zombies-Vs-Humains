@@ -17,15 +17,15 @@
 #define MAX_CHAR_NOM_TERRAIN 500
 #define MAX_TAILLE_XY 500
 
-/** @struct terrain
+/** @struct MTerrain
  *  @brief Structure definissant un terrain et ses dimensions
- *  @var Terrain::dimX
+ *  @var MTerrain::dimX
  *  Largeur du terrain
- *  @var Terrain::dimY
+ *  @var MTerrain::dimY
  *  Hauteur du terrain
- *	@var Terrain::nomTerrain
+ *	@var MTerrain::nomTerrain
  *	Nom du Terrain en chaine de carractere limité a 101 carracteres
- *	@var Terrain::grille
+ *	@var MTerrain::grille
  *	Grille a deux dimension de carractere definisant la grille du terrain (sol / mur)
  */
 typedef struct MTerrain{
@@ -94,7 +94,7 @@ caseDeplacement * getGrilleByXY_terr (int x, int y,Terrain * pTerrain);
 caseDeplacement * getGrilleByCoord_terr(Coordonnees * pCoord, Terrain * pTerrain);
 /**
 	@brief Change la case de deplacement de la grille au coordonnées données
-	@param pCoord Coordonnée ou aller recuperer
+	@param coord Coordonnée ou aller recuperer
 	@param pTerrain Pointeur sur la structure Terrain a editer
 	@param caseDep Case de deplacement a placer au coordonnées
 */
@@ -241,8 +241,96 @@ Perso * zombieContamineHumain(Perso * pZombie, Terrain * pTerrain);
 Perso * policierTueZombie(Perso * pPolicier, Terrain * pTerrain);
 
 /////////////////////////////////////////////////////////////////////////////
-//SPECIFIQUE ZOMBIE//////////////////////////////////////////////////////////
+//SPECIFIQUE POLICIER////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
+/**
+	@brief Regarde si un zombie se trouve sur la se situant (lire libelé de la fonction) des coordonnées.
+	@param pTerrain Pointeur vers le terrain
+	@param coordZombie Pointeur vers les coordonnées a comparer
+	@return 0 si non, 1 si oui, sous forme d'un caratère.
+*/
+char zombieEnHaut(Terrain * pTerrain, Coordonnees * coordZombie);
+/**
+	@brief Regarde si un zombie se trouve sur la se situant (lire libelé de la fonction) des coordonnées.
+	@param pTerrain Pointeur vers le terrain
+	@param coordZombie Pointeur vers les coordonnées a comparer
+	@return 0 si non, 1 si oui, sous forme d'un caratère.
+*/
+char zombieEnBas(Terrain * pTerrain, Coordonnees * coordZombie);
+/**
+	@brief Regarde si un zombie se trouve sur la se situant (lire libelé de la fonction) des coordonnées.
+	@param pTerrain Pointeur vers le terrain
+	@param coordZombie Pointeur vers les coordonnées a comparer
+	@return 0 si non, 1 si oui, sous forme d'un caratère.
+*/
+char zombieAGauche(Terrain * pTerrain, Coordonnees * coordZombie);
+/**
+	@brief Regarde si un zombie se trouve sur la se situant (lire libelé de la fonction) des coordonnées.
+	@param pTerrain Pointeur vers le terrain
+	@param coordZombie Pointeur vers les coordonnées a comparer
+	@return 0 si non, 1 si oui, sous forme d'un caratère.
+*/
+char zombieADroite(Terrain * pTerrain, Coordonnees * coordZombie);
+/**
+	@brief Regarde si un zombie se trouve sur la se situant (lire libelé de la fonction) des coordonnées.
+	@param pTerrain Pointeur vers le terrain
+	@param coordZombie Pointeur vers les coordonnées a comparer
+	@return 0 si non, 1 si oui, sous forme d'un caratère.
+*/
+char zombieEn2Haut(Terrain * pTerrain, Coordonnees * coordZombie);
+/**
+	@brief Regarde si un zombie se trouve sur la se situant (lire libelé de la fonction) des coordonnées.
+	@param pTerrain Pointeur vers le terrain
+	@param coordZombie Pointeur vers les coordonnées a comparer
+	@return 0 si non, 1 si oui, sous forme d'un caratère.
+*/
+char zombieEn2Bas(Terrain * pTerrain, Coordonnees * coordZombie);
+/**
+	@brief Regarde si un zombie se trouve sur la se situant (lire libelé de la fonction) des coordonnées.
+	@param pTerrain Pointeur vers le terrain
+	@param coordZombie Pointeur vers les coordonnées a comparer
+	@return 0 si non, 1 si oui, sous forme d'un caratère.
+*/
+char zombieA2Gauche(Terrain * pTerrain, Coordonnees * coordZombie);
+/**
+	@brief Regarde si un zombie se trouve sur la se situant (lire libelé de la fonction) des coordonnées.
+	@param pTerrain Pointeur vers le terrain
+	@param coordZombie Pointeur vers les coordonnées a comparer
+	@return 0 si non, 1 si oui, sous forme d'un caratère.
+*/
+char zombieA2Droite(Terrain * pTerrain, Coordonnees * coordZombie);
+/**
+	@brief Regarde si un zombie se trouve sur la se situant (lire libelé de la fonction) des coordonnées.
+	@param pTerrain Pointeur vers le terrain
+	@param coordZombie Pointeur vers les coordonnées a comparer
+	@return 0 si non, 1 si oui, sous forme d'un caratère.
+*/
+char zombieHD(Terrain * pTerrain, Coordonnees * coordZombie);
+/**
+	@brief Regarde si un zombie se trouve sur la se situant (lire libelé de la fonction) des coordonnées.
+	@param pTerrain Pointeur vers le terrain
+	@param coordZombie Pointeur vers les coordonnées a comparer
+	@return 0 si non, 1 si oui, sous forme d'un caratère.
+*/
+char zombieBD(Terrain * pTerrain, Coordonnees * coordZombie);
+/**
+	@brief Regarde si un zombie se trouve sur la se situant (lire libelé de la fonction) des coordonnées.
+	@param pTerrain Pointeur vers le terrain
+	@param coordZombie Pointeur vers les coordonnées a comparer
+	@return 0 si non, 1 si oui, sous forme d'un caratère.
+*/
+char zombieBG(Terrain * pTerrain, Coordonnees * coordZombie);
+/**
+	@brief Regarde si un zombie se trouve sur la se situant (lire libelé de la fonction) des coordonnées.
+	@param pTerrain Pointeur vers le terrain
+	@param coordZombie Pointeur vers les coordonnées a comparer
+	@return 0 si non, 1 si oui, sous forme d'un caratère.
+*/
+char zombieHG(Terrain * pTerrain, Coordonnees * coordZombie);
+/////////////////////////////////////////////////////////////////////////////
+//SPECIFIQUE ZOMBIES/////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+
 /**
 	@brief Verifie si le personnage en haut est un humain
 	@param pTerrain Le terrain ou les coordonnées vont etre vérifiés

@@ -18,6 +18,7 @@ void EventClavier(){
 	{
         case SDL_WINDOWEVENT: 
 	  if ( event.window.event == SDL_WINDOWEVENT_CLOSE ) 
+
             {
 	      exit(0);
             }
@@ -35,12 +36,16 @@ void EventClavier(){
 }
 void EventClavierEditeur(Terrain * pTerrain){
     SDL_Event event;
+    int screenheight, screenwidth;
+
+    screenheight = getDimY_terr(pTerrain) * 50 *RENDERERSCALE;
+    screenwidth = getDimX_terr(pTerrain) * 50 *RENDERERSCALE;
     while ( SDL_PollEvent(&event) )
     {
         switch(event.type)
     {
         case SDL_WINDOWEVENT:
-            if ( event.window.event == SDL_WINDOWEVENT_CLOSE ) 
+            if ( event.window.event == SDL_WINDOWEVENT_CLOSE )
             {
                 exit(0);
             }
@@ -64,8 +69,8 @@ void EventClavierEditeur(Terrain * pTerrain){
 
 
             SDL_GetMouseState(&x,&y);
-            x=(x/(50*FULLSCREEN_RENDERERSCALE));
-            y=(y/(50*FULLSCREEN_RENDERERSCALE));
+            x=(x/(50*RENDERERSCALE));
+            y=(y/(50*RENDERERSCALE));
             caseDep = getGrilleByXY_terr(x,(getDimY_terr(pTerrain)-y-1),pTerrain);
             if(getEnvCase(getGrilleByXY_terr(x, (getDimY_terr(pTerrain)-y-1), pTerrain)) == MUR){
                 setEnvCase(caseDep, VIDE);
@@ -88,7 +93,7 @@ void lancerSimulationSDL2 (Simulation * pSim){
   int nbZombies, nbPoliciers, nbCitoyens;
   
   // Initialisation de la SDL
-  init("Simulation Humains VS Zombie");
+  init("Simulation Humains VS Zombie",pSim);
   // Appelle la fonction cleanup à la fin du programme
   atexit(cleanup);
 
@@ -120,14 +125,14 @@ void lancerSimulationSDL2Editeur (){
 
         unsigned int frameLimit = SDL_GetTicks() + 16;
     int loopCondition;
-    initEditeur("Editeur de Maps");
     atexit(cleanup);
-
     loopCondition = 1;
 
     Terrain * TerrainEdit;
     TerrainEdit = terrainCreer_terr(15,15,"LeNom");
 
+
+    initEditeur("Editeur de Maps",TerrainEdit);
     while (loopCondition == 1)
     {
 

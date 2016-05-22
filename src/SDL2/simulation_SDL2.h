@@ -1,3 +1,7 @@
+ï»¿/**
+   @file simulation_SDL2.h
+   @brief  DÃ©finit les boucles de de la simulation sous SDL
+*/
 #include "../simulation.h"
 #include "initialisation_SDL.h"
 #include "affichage_SDL.h"
@@ -11,7 +15,7 @@
 */
 void EventClavier();
 /**
-	@brief Fontion de gestion des Input pour la fenetre de l'éditeur
+	@brief Fontion de gestion des Input pour la fenetre de l'Ã©diteur
 */
 void EventClavierEditeur(Terrain * pTerrain);
 
@@ -22,10 +26,10 @@ void EventClavierEditeur(Terrain * pTerrain);
 
 /**
 	@brief Fait tourner toutes les phases de la simulation et lance les fontions d'affichage
-	@param pSim Pointeur vers la simulation à lancer dans Sdl
+	@param pSim Pointeur vers la simulation Ã  lancer dans Sdl
 */
 void lancerSimulationSDL2 (Simulation * pSim);
 /**
-	@brief Fait tourner les fonction de l'éditeur de niveau et lance les fonctions d'affichage de celui-ci
+	@brief Fait tourner les fonction de l'Ã©diteur de niveau et lance les fonctions d'affichage de celui-ci
 */
 void lancerSimulationSDL2Editeur();

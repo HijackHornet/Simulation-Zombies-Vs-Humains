@@ -1,3 +1,7 @@
+Ôªø/**
+   @file simulation.h
+   @brief  D√©finit la simulation, ses parametres et ses accesseurs
+*/
 #ifndef _SIMULATION
 #define _SIMULATION
 
@@ -6,7 +10,23 @@
 #include "terrain.h"
 #include "personnage.h"
 
-
+/** @struct MSimulation
+ *	@brief Structure definissant une simulation et ses attributs
+ *	@var MSimulation::pTerrain
+ *	Pointeur vers un terrain associ√© √† la simulation
+ *	@var MSimulation::nbZombies
+ *	Nombres de Zombies
+ *	@var MSimulation::nbCitoyens
+ *	Nombre de citoyens
+ *	@var MSimulation::nbPoliciers
+ *	Nombre de policiers
+ *	@var MSimulation::zombies
+ *	Tableau des zombies
+ *	@var MSimulation::citoyens
+ *	Tableau des citoyens
+ *	@var MSimulation::policiers
+ *	Tableau des policiers
+ */
 typedef struct MSimulation{
     Terrain * pTerrain;
     int nbZombies;
@@ -21,46 +41,46 @@ typedef struct MSimulation{
 //ACCESSEURS////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////
 /**
-	@brief RecupËre le terrain associÈ ‡ une Simulation
-	@param pSim La simulation a Ètudier
-	@return Pointeur vers le terrain rÈcupÈrÈ
+	@brief Recup√®re le terrain associ√© √† une Simulation
+	@param pSim La simulation a √©tudier
+	@return Pointeur vers le terrain r√©cup√©r√©
 */
 Terrain * getTerrain_sim(Simulation * pSim);
 
 /**
-	@brief RecupËre la grille de zombie associÈ ‡ une Simulation
-	@param pSim La simulation a Ètudier
+	@brief Recup√®re la grille de zombie associ√© √† une Simulation
+	@param pSim La simulation a √©tudier
 	@return Pointeur vers la grille de zombies
 */
 GArray * getZombies_sim(Simulation * pSim);
 /**
-	@brief RecupËre la grille de Citoyens associÈ ‡ une Simulation
-	@param pSim La simulation a Ètudier
+	@brief Recup√®re la grille de Citoyens associ√© √† une Simulation
+	@param pSim La simulation a √©tudier
 	@return Pointeur vers la grille de Citoyens
 */
 GArray * getCitoyens_sim(Simulation * pSim);
 /**
-	@brief RecupËre la grille de Policiers associÈ ‡ une Simulation
-	@param pSim La simulation a Ètudier
+	@brief Recup√®re la grille de Policiers associ√© √† une Simulation
+	@param pSim La simulation a √©tudier
 	@return Pointeur vers la grille de Policiers
 */
 GArray * getPoliciers_sim(Simulation * pSim);
 /**
-	@brief RecupËre le nombre de zombie associÈ ‡ une Simulation
-	@param pSim La simulation a Ètudier
+	@brief Recup√®re le nombre de zombie associ√© √† une Simulation
+	@param pSim La simulation a √©tudier
 	@return Entier  du nombre de zombie dans la Simulation
 */
 
 int getNbZombies_sim(Simulation * pSim);
 /**
-	@brief RecupËre le nombre de Citoyens associÈ ‡ une Simulation
-	@param pSim La simulation a Ètudier
+	@brief Recup√®re le nombre de Citoyens associ√© √† une Simulation
+	@param pSim La simulation a √©tudier
 	@return Entier  du nombre de Citoyens dans la Simulation
 */
 int getNbCitoyens_sim(Simulation * pSim);
 /**
-	@brief RecupËre le nombre de Policiers associÈ ‡ une Simulation
-	@param pSim La simulation a Ètudier
+	@brief Recup√®re le nombre de Policiers associ√© √† une Simulation
+	@param pSim La simulation a √©tudier
 	@return Entier  du nombre de Policiers dans la Simulation
 */
 int getNbPoliciers_sim(Simulation * pSim);
@@ -87,27 +107,27 @@ void citoyensInit_sim(int nbCitoyens, Simulation * pSim);
 */
 void policiersInit_sim(int nbPoliciers, Simulation * pSim);
 /**
-	@brief Initialise la simulation avec le fichier de nom spÈcifiÈ
-	@param nomFich Chaine de caractËre de nom du fichier
+	@brief Initialise la simulation avec le fichier de nom sp√©cifi√©
+	@param nomFic Chaine de caract√®re de nom du fichier
 	@param pSim La simulation a initialiser
 */
 void terrainInit_sim(char * nomFic, Simulation * pSim);
 /**
-	@brief Initialise la simulation avec le fichier de nom spÈcifiÈ, le nombre de zombies, de citoyens et de policier, en appelant les fonctions spÈcifiques
+	@brief Initialise la simulation avec le fichier de nom sp√©cifi√©, le nombre de zombies, de citoyens et de policier, en appelant les fonctions sp√©cifiques
 	@param pSim La simulation a initialiser
 	@param nbZombies Nombres de zombies a initialiser dans la Simulation
 	@param nbCitoyens Nombres de Citoyens a initialiser dans la Simulation
 	@param nbPoliciers Nombres de Policiers a initialiser dans la Simulation
-	@param nomFich Chaine de caractËre de nom du fichier
+	@param nomFic Chaine de caract√®re de nom du fichier
 */
 void initSimulation_sim(Simulation * pSim, int nbZombies, int nbCitoyens, int nbPoliciers, char * nomFic);
 /**
-	@brief Creer la simulation avec le fichier de nom spÈcifiÈ, le nombre de zombies, de citoyens et de policier, en appelant les fonctions spÈcifiques, et l'initialise
+	@brief Creer la simulation avec le fichier de nom sp√©cifi√©, le nombre de zombies, de citoyens et de policier, en appelant les fonctions sp√©cifiques, et l'initialise
 	@param nbZombies Nombres de zombies a creer dans la Simulation
 	@param nbCitoyens Nombres de Citoyens a creer dans la Simulation
 	@param nbPoliciers Nombres de Policiers a creer dans la Simulation
-	@param nomFich Chaine de caractËre de nom du fichier
-	@return pSim Pointeur vers la Simulation crÈe
+	@param nomFic Chaine de caract√®re de nom du fichier
+	@return pSim Pointeur vers la Simulation cr√©e
 */
 Simulation * creerSimulation_sim(int nbZombies, int nbCitoyens, int nbPoliciers, char * nomFic);
 
@@ -115,43 +135,43 @@ Simulation * creerSimulation_sim(int nbZombies, int nbCitoyens, int nbPoliciers,
 //EXECUTION////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 /**
-	@brief Executes les deplacement des policiers de maniËre alÈatoire
-	@param pSim La simulation dans laquelle tout est effectuÈ
+	@brief Executes les deplacement des policiers de mani√®re al√©atoire
+	@param pSim La simulation dans laquelle tout est effectu√©
 */
 void deplacerPoliciers_sim(Simulation * pSim);
 /**
-	@brief Executes les deplacement des Citoyens de maniËre alÈatoire
-	@param pSim La simulation dans laquelle tout est effectuÈ
+	@brief Executes les deplacement des Citoyens de mani√®re al√©atoire
+	@param pSim La simulation dans laquelle tout est effectu√©
 */
 void deplacerCitoyens_sim(Simulation * pSim);
 /**
-	@brief Executes les deplacement des Zombies de maniËre alÈatoire
-	@param pSim La simulation dans laquelle tout est effectuÈ
+	@brief Executes les deplacement des Zombies de mani√®re al√©atoire
+	@param pSim La simulation dans laquelle tout est effectu√©
 */
 void deplacerZombies_sim(Simulation * pSim);
 /**
-	@brief Executes les deplacement des personnages de maniËre alÈatoire
-	@param pSim La simulation dans laquelle tout est effectuÈ
+	@brief Executes les deplacement des personnages de mani√®re al√©atoire
+	@param pSim La simulation dans laquelle tout est effectu√©
 */
 void deplacerPerso_sim(Simulation * pSim);
 /**
-	@brief Executes les deplacement des zombies de maniËre intelligente et en regard des champs
-	@param pSim La simulation dans laquelle tout est effectuÈ
+	@brief Executes les deplacement des zombies de mani√®re intelligente et en regard des champs
+	@param pSim La simulation dans laquelle tout est effectu√©
 */
 void deplacementIntelZombies_sim(Simulation * pSim);
 /**
-	@brief Executes les deplacement des Citoyens de maniËre intelligente et en regard des champs
-	@param pSim La simulation dans laquelle tout est effectuÈ
+	@brief Executes les deplacement des Citoyens de mani√®re intelligente et en regard des champs
+	@param pSim La simulation dans laquelle tout est effectu√©
 */
 void deplacementIntelCitoyens_sim(Simulation * pSim);
 /**
-	@brief Executes les deplacement des Policiers de maniËre intelligente et en regard des champs
-	@param pSim La simulation dans laquelle tout est effectuÈ
+	@brief Executes les deplacement des Policiers de mani√®re intelligente et en regard des champs
+	@param pSim La simulation dans laquelle tout est effectu√©
 */
 void deplacementIntelPoliciers_sim(Simulation * pSim);
 /**
-	@brief Executes les deplacement des personnages de maniËre intelligente et en regard des champs
-	@param pSim La simulation dans laquelle tout est effectuÈ
+	@brief Executes les deplacement des personnages de mani√®re intelligente et en regard des champs
+	@param pSim La simulation dans laquelle tout est effectu√©
 */
 void deplacementIntelPersos(Simulation * pSim);
 
@@ -160,12 +180,12 @@ void deplacementIntelPersos(Simulation * pSim);
 ///////////////////////////////////////////////////////////////////////////////
 /**
 	@brief Executes les instruction de contamination des policier et citoyens par les zombies
-	@param pSim La simulation dans laquelle tout est effectuÈ
+	@param pSim La simulation dans laquelle tout est effectu√©
 */
 void contaminations(Simulation * pSim);
 /**
 	@brief Executes les instruction de tirs des policiers sur les zombies
-	@param pSim La simulation dans laquelle tout est effectuÈ
+	@param pSim La simulation dans laquelle tout est effectu√©
 */
 void tirs(Simulation * pSim);
 
@@ -174,25 +194,25 @@ void tirs(Simulation * pSim);
 ////////////////////////////////////////////////////////////////////////////
 /**
 	@brief Propage les champs des personnages dans la simulation
-	@param pSim La simulation dans laquelle tout est effectuÈ
+	@param pSim La simulation dans laquelle tout est effectu√©
 */
 void propagerChampsPersos(Simulation * pSim);
 /**
 	@brief Executes les instruction de deplacement intteligent d'un Zombie
-	@param pPerso Pointeur vers l'entitÈ qui va etre dÈplacÈ intelligement
-	@param pSim La simulation dans laquelle tout est effectuÈ
+	@param pPerso Pointeur vers l'entit√© qui va etre d√©plac√© intelligement
+	@param pSim La simulation dans laquelle tout est effectu√©
 */
 void deplacementIntelZombie(Perso * pPerso, Simulation * pSim);
 /**
 	@brief Executes les instruction de deplacement intteligent d'un Citoyen
-	@param pPerso Pointeur vers l'entitÈ qui va etre dÈplacÈ intelligement
-	@param pSim La simulation dans laquelle tout est effectuÈ
+	@param pPerso Pointeur vers l'entit√© qui va etre d√©plac√© intelligement
+	@param pSim La simulation dans laquelle tout est effectu√©
 */
 void deplacementIntelCitoyen(Perso * pPerso, Simulation * pSim);
 /**
 	@brief Executes les instruction de deplacement intteligent d'un Policier
-	@param pPerso Pointeur vers l'entitÈ qui va etre dÈplacÈ intelligement
-	@param pSim La simulation dans laquelle tout est effectuÈ
+	@param pPerso Pointeur vers l'entit√© qui va etre d√©plac√© intelligement
+	@param pSim La simulation dans laquelle tout est effectu√©
 */
 void deplacementIntelPolicier(Perso * pPerso, Simulation * pSim);
 

@@ -1,3 +1,7 @@
+/**
+   @file simulation_ncurses.h
+   @brief  Définit les fonction appelant à la librairie nCurses
+*/
 #ifndef _NCURSES
 #define _NCURSES
 

@@ -1,3 +1,7 @@
+ï»¿/**
+   @file personnage.h
+   @brief  DÃ©finit les type de personnage et leurs accesseurs
+*/
 #ifndef PERSONNAGE_H
 #define PERSONNAGE_H
 
@@ -7,9 +11,17 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-
+/** Les diffÃ©rents type de personnages */
 enum typePerso {POLICIER, ZOMBIE, CITOYEN};
-
+/** @struct MPerso
+ *  @brief Structure definissant un personnage et ses attributs
+ *  @var MPerso::id
+ *	id D'un personnage servant Ã  l'identifier
+ *	@var MPerso::coord
+ *	CoordonnÃ©es associÃ© Ã  se personnage
+ *	@var MPerso::type
+ *	Type du personnage zombie,citoyen ou humain
+ */
 typedef struct MPerso {
     int id;
     Coordonnees * coord;
@@ -21,33 +33,33 @@ typedef struct MPerso {
 ////////////////////////////////////////////////////////////////////////////
 
 /**
-	@brief Retourne des coordonnées d'un personnage
-	@param pPerso Personnage dont on veut les coordonnées
-	@return Un pointeur vers les coordonnées du personnage
+	@brief Retourne des coordonnÃ©es d'un personnage
+	@param pPerso Personnage dont on veut les coordonnÃ©es
+	@return Un pointeur vers les coordonnÃ©es du personnage
 */
 Coordonnees * getCoordonneesPerso_perso(Perso * pPerso);
 /**
-	@brief Retourne les coordonnées  X d'un personnage
-	@param pPerso Personnage dont on veut les coordonnées
-	@return Un entier des coordonnées en X
+	@brief Retourne les coordonnÃ©es  X d'un personnage
+	@param pPerso Personnage dont on veut les coordonnÃ©es
+	@return Un entier des coordonnÃ©es en X
 */
 int getXPerso_perso(Perso * pPerso);
 /**
-	@brief Retourne les coordonnées  Y d'un personnage
-	@param pPerso Personnage dont on veut les coordonnées
-	@return Un entier des coordonnées en Y
+	@brief Retourne les coordonnÃ©es  Y d'un personnage
+	@param pPerso Personnage dont on veut les coordonnÃ©es
+	@return Un entier des coordonnÃ©es en Y
 */
 int getYPerso_perso(Perso * pPerso);
 /**
-	@brief Change les coordonnées  X d'un personnage
-	@param pPerso Personnage dont on veut changer les coordonnées
-	@param xPerso Un entier des coordonnées en X à changer
+	@brief Change les coordonnÃ©es  X d'un personnage
+	@param pPerso Personnage dont on veut changer les coordonnÃ©es
+	@param xPerso Un entier des coordonnÃ©es en X Ã  changer
 */
 void setXPerso_perso(Perso * pPerso, int xPerso);
 /**
-	@brief Change les coordonnées  Y d'un personnage
-	@param pPerso Personnage dont on veut changer les coordonnées
-	@param yPerso Un entier des coordonnées en Y à changer
+	@brief Change les coordonnÃ©es  Y d'un personnage
+	@param pPerso Personnage dont on veut changer les coordonnÃ©es
+	@param yPerso Un entier des coordonnÃ©es en Y Ã  changer
 */
 void setYPerso_perso(Perso * pPerso, int yPerso);
 
@@ -66,19 +78,19 @@ enum typePerso getTypePerso(Perso * pPerso);
 */
 void setTypePerso_perso(enum typePerso type, Perso * pPerso);
 /**
-	@brief Change les coordonnées d'un personnage
-	@param coord Pointeur vers des coordonnées
-	@param pPerso Personnage dont on veut changer les coordonnées
+	@brief Change les coordonnÃ©es d'un personnage
+	@param coord Pointeur vers des coordonnÃ©es
+	@param pPerso Personnage dont on veut changer les coordonnÃ©es
 */
 void setCoordPerso_perso(Coordonnees * coord, Perso * pPerso);
 /**
-	@brief Retourne l'Id d'un personnage pointé
+	@brief Retourne l'Id d'un personnage pointÃ©
 	@param pPerso Le personnage dont on veut l'ID
 	@return L'ID sous forme d'entier
 */
 int getIdPerso(Perso * pPerso);
 /**
-	@brief Change l'Id d'un personnage pointé
+	@brief Change l'Id d'un personnage pointÃ©
 	@param L'ID sous forme d'entier
 	@param pPerso Le personnage dont on veut l'ID
 */
@@ -89,17 +101,17 @@ void setIdPerso(int idPerso, Perso * pPerso);
 //CREATION PERSO////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////
 /**
-	@brief Créer et initialise un personnage et renvoie un pointeur vers lui
-	@param coord Pointeur vers les coordonnées du personnage a creer
+	@brief CrÃ©er et initialise un personnage et renvoie un pointeur vers lui
+	@param coord Pointeur vers les coordonnÃ©es du personnage a creer
 	@param type Type du personnage
 	@param idPerso L'ID du personnage a creer
-	@return Pointeur vers le personnage crée
+	@return Pointeur vers le personnage crÃ©e
 	
 */
 Perso * initPerso(Coordonnees * coord, enum typePerso typePerso, int idPerso);
 /**
-	@brief Detruit le personnage pointé et libère la mémoire
-	@param pPerso Pointeur vers le personnage a détruire et liberer
+	@brief Detruit le personnage pointÃ© et libÃ¨re la mÃ©moire
+	@param pPerso Pointeur vers le personnage a dÃ©truire et liberer
 */
 void testamentPerso(Perso * pPerso);
 

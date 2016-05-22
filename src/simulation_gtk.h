@@ -1,3 +1,7 @@
+ï»¿/**
+   @file simulation_gtk.h
+   @brief  DÃ©finit les fonction appelant Ã  la librairie gtk
+*/
 #include <stdlib.h>
 #include <gtk/gtk.h>
 
@@ -19,10 +23,10 @@ struct _ChData
 };
 
 /**
-   @brief Lance les fonction Sdl afin de lancer la simulation avec les paramètres données
+   @brief Lance les fonction Sdl afin de lancer la simulation avec les paramÃ¨tres donnÃ©es
 */
 void startGtkMain(int argc, char ** argv);
 /**
-   @brief Ouvre l'éditeur de maps en appelant les fontions sdl adaptés
+   @brief Ouvre l'Ã©diteur de maps en appelant les fontions sdl adaptÃ©s
 */
 void startSdlEditeurMain();
