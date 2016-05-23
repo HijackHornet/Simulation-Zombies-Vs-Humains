@@ -1,21 +1,8 @@
 var searchData=
 [
-  ['deplacementaleatoire_5fperso',['deplacementAleatoire_perso',['../terrain_8h.html#a50e099874470bb6e68cbd44c68807aa5',1,'terrain.c']]],
-  ['deplacementbas_5fperso',['deplacementBas_perso',['../terrain_8h.html#a124dcf1c540a5e9f8987153c5629777b',1,'terrain.c']]],
-  ['deplacementdroite_5fperso',['deplacementDroite_perso',['../terrain_8h.html#a385bedef7127b250811ce7f0218c66e3',1,'terrain.c']]],
-  ['deplacementgauche_5fperso',['deplacementGauche_perso',['../terrain_8h.html#a8c6c0b998f096f10a0ccad25a136b465',1,'terrain.c']]],
-  ['deplacementhaut_5fperso',['deplacementHaut_perso',['../terrain_8h.html#ae09dc2657a465436713dc79a500fbbfd',1,'terrain.c']]],
-  ['deplacementintelcitoyen',['deplacementIntelCitoyen',['../simulation_8h.html#a119206545d9d380e685a18c9987d3856',1,'simulation.c']]],
-  ['deplacementintelcitoyens_5fsim',['deplacementIntelCitoyens_sim',['../simulation_8h.html#acc4f40dd69c6516a19a38e065ee3395f',1,'simulation.c']]],
-  ['deplacementintelpersos',['deplacementIntelPersos',['../simulation_8h.html#a1d3c4e9b6d1357086a629825e3d062cf',1,'simulation.h']]],
-  ['deplacementintelpolicier',['deplacementIntelPolicier',['../simulation_8h.html#abd1af38115336e38d41f0c42123a2024',1,'simulation.c']]],
-  ['deplacementintelpoliciers_5fsim',['deplacementIntelPoliciers_sim',['../simulation_8h.html#ab4c303981dc0289a2b211ba3e24ccf55',1,'simulation.c']]],
-  ['deplacementintelzombie',['deplacementIntelZombie',['../simulation_8h.html#ac61d3c90dafcff499c3ec3d8095c88bb',1,'simulation.c']]],
-  ['deplacementintelzombies_5fsim',['deplacementIntelZombies_sim',['../simulation_8h.html#a99cf798b51aeb7a2828941fb096a9766',1,'simulation.c']]],
-  ['deplacercitoyens_5fsim',['deplacerCitoyens_sim',['../simulation_8h.html#a7be1f8001d8bc5edb63625a8fa8df70a',1,'simulation.c']]],
-  ['deplacerperso_5fsim',['deplacerPerso_sim',['../simulation_8h.html#ad1f35ce5f9b80c161777a7e3b8cdee5a',1,'simulation.c']]],
-  ['deplacerpoliciers_5fsim',['deplacerPoliciers_sim',['../simulation_8h.html#af61e27b9f0b0a9c55a56f3af37f90f74',1,'simulation.c']]],
-  ['deplacerzombies_5fsim',['deplacerZombies_sim',['../simulation_8h.html#a71d0dfc00495ee18d6a263e93a5cf8dd',1,'simulation.c']]],
-  ['distanceentredeuxcoordonnees_5fcoord',['distanceEntreDeuxCoordonnees_Coord',['../coordonnees_8h.html#a9998f186814b9ab3328e5483f97160b6',1,'coordonnees.c']]],
-  ['drawimage',['drawImage',['../affichage___s_d_l_8h.html#a832a32567dcf778898e4bed9b109e612',1,'affichage_SDL.c']]]
+  ['citoyensinit_5fsim',['citoyensInit_sim',['../simulation_8c.html#aaa2bef8ef03449698a1c49f75e8f96bd',1,'citoyensInit_sim(int nbCitoyens, Simulation *pSim):&#160;simulation.c'],['../simulation_8h.html#aaa2bef8ef03449698a1c49f75e8f96bd',1,'citoyensInit_sim(int nbCitoyens, Simulation *pSim):&#160;simulation.c']]],
+  ['comparetab2d',['compareTab2D',['../simulation_8c.html#a14a4e9bf4982b1fdd2b26a6f82d24fc0',1,'compareTab2D(const void *a, const void *b):&#160;simulation.c'],['../simulation_8h.html#a14a4e9bf4982b1fdd2b26a6f82d24fc0',1,'compareTab2D(const void *a, const void *b):&#160;simulation.c']]],
+  ['contaminations',['contaminations',['../simulation_8c.html#a8e9f7110fca5097ac2e3b0c5b37549af',1,'contaminations(Simulation *pSim):&#160;simulation.c'],['../simulation_8h.html#a8e9f7110fca5097ac2e3b0c5b37549af',1,'contaminations(Simulation *pSim):&#160;simulation.c']]],
+  ['creepersoterrainrand',['creePersoTerrainRand',['../terrain_8c.html#ae5f55773094ee4c234974d40b3287856',1,'creePersoTerrainRand(Terrain *pTerrain, enum typePerso type, int idPerso):&#160;terrain.c'],['../terrain_8h.html#ae5f55773094ee4c234974d40b3287856',1,'creePersoTerrainRand(Terrain *pTerrain, enum typePerso type, int idPerso):&#160;terrain.c']]],
+  ['creersimulation_5fsim',['creerSimulation_sim',['../simulation_8c.html#adb815f5c273f29d5e514c2120816a4bd',1,'creerSimulation_sim(int nbZombies, int nbPoliciers, int nbCitoyens, char *nomFic):&#160;simulation.c'],['../simulation_8h.html#a66f239a8233da55d5a38fba5853809f5',1,'creerSimulation_sim(int nbZombies, int nbCitoyens, int nbPoliciers, char *nomFic):&#160;simulation.c']]]
 ];

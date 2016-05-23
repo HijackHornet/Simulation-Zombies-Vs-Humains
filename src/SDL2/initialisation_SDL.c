@@ -85,4 +85,6 @@ void cleanup()
     renderer = NULL;
     SDL_DestroyWindow(screen);
     screen = NULL;
+
+    SDL_Quit();
 }

@@ -1,0 +1,549 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>Simulation Humain Vs Zombies: Référence du fichier src/personnage.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Simulation Humain Vs Zombies
+   &#160;<span id="projectnumber">1</span>
+   </div>
+   <div id="projectbrief">Utilisation de champs d&#39;influence dans une simulation</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier personnage.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="personnage_8h_source.html">personnage.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de personnage.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="personnage_8c__incl.png" border="0" usemap="#src_2personnage_8c" alt=""/></div>
+<map name="src_2personnage_8c" id="src_2personnage_8c">
+<area shape="rect" id="node2" href="personnage_8h.html" title="Définit les type de personnage et leurs accesseurs. " alt="" coords="161,80,261,107"/>
+<area shape="rect" id="node3" href="coordonnees_8h.html" title="Définit les coordonnées atomiques du terrain et ses accesseurs. " alt="" coords="157,155,264,181"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a19cfc938b3ee58f313b87e7ca4b62be2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="coordonnees_8h.html#a79929cdfee7bd985a5e4e25276bb3ba9">Coordonnees</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="personnage_8c.html#a19cfc938b3ee58f313b87e7ca4b62be2">getCoordonneesPerso_perso</a> (<a class="el" href="personnage_8h.html#abd5c92a453bbf273f753b3f5b99da9e7">Perso</a> *pPerso)</td></tr>
+<tr class="memdesc:a19cfc938b3ee58f313b87e7ca4b62be2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne des coordonnées d'un personnage.  <a href="#a19cfc938b3ee58f313b87e7ca4b62be2">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a19cfc938b3ee58f313b87e7ca4b62be2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec9bc09498be7dab178baa5015d97abf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="personnage_8c.html#aec9bc09498be7dab178baa5015d97abf">getXPerso_perso</a> (<a class="el" href="personnage_8h.html#abd5c92a453bbf273f753b3f5b99da9e7">Perso</a> *pPerso)</td></tr>
+<tr class="memdesc:aec9bc09498be7dab178baa5015d97abf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne les coordonnées X d'un personnage.  <a href="#aec9bc09498be7dab178baa5015d97abf">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aec9bc09498be7dab178baa5015d97abf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa17a9866dddc2dd8a206364b2b0bcd41"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="personnage_8c.html#aa17a9866dddc2dd8a206364b2b0bcd41">getYPerso_perso</a> (<a class="el" href="personnage_8h.html#abd5c92a453bbf273f753b3f5b99da9e7">Perso</a> *pPerso)</td></tr>
+<tr class="memdesc:aa17a9866dddc2dd8a206364b2b0bcd41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne les coordonnées Y d'un personnage.  <a href="#aa17a9866dddc2dd8a206364b2b0bcd41">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aa17a9866dddc2dd8a206364b2b0bcd41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68b73c56985831aa9167f26278763b1f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="personnage_8c.html#a68b73c56985831aa9167f26278763b1f">setXPerso_perso</a> (<a class="el" href="personnage_8h.html#abd5c92a453bbf273f753b3f5b99da9e7">Perso</a> *pPerso, int xPerso)</td></tr>
+<tr class="memdesc:a68b73c56985831aa9167f26278763b1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change les coordonnées X d'un personnage.  <a href="#a68b73c56985831aa9167f26278763b1f">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a68b73c56985831aa9167f26278763b1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac36bed180c16d77128a18f79fe4afe8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="personnage_8c.html#ac36bed180c16d77128a18f79fe4afe8d">setYPerso_perso</a> (<a class="el" href="personnage_8h.html#abd5c92a453bbf273f753b3f5b99da9e7">Perso</a> *pPerso, int yPerso)</td></tr>
+<tr class="memdesc:ac36bed180c16d77128a18f79fe4afe8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change les coordonnées Y d'un personnage.  <a href="#ac36bed180c16d77128a18f79fe4afe8d">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ac36bed180c16d77128a18f79fe4afe8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae63f654e86384c7504b289a5e43a0965"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="personnage_8c.html#ae63f654e86384c7504b289a5e43a0965">setCoordPerso_perso</a> (<a class="el" href="coordonnees_8h.html#a79929cdfee7bd985a5e4e25276bb3ba9">Coordonnees</a> *pCoord, <a class="el" href="personnage_8h.html#abd5c92a453bbf273f753b3f5b99da9e7">Perso</a> *pPerso)</td></tr>
+<tr class="memdesc:ae63f654e86384c7504b289a5e43a0965"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change les coordonnées d'un personnage.  <a href="#ae63f654e86384c7504b289a5e43a0965">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ae63f654e86384c7504b289a5e43a0965"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa60f8b12745fc87c9010193290c11ef7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="coordonnees_8h.html#a79929cdfee7bd985a5e4e25276bb3ba9">Coordonnees</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="personnage_8c.html#aa60f8b12745fc87c9010193290c11ef7">getCoordPerso</a> (<a class="el" href="personnage_8h.html#abd5c92a453bbf273f753b3f5b99da9e7">Perso</a> *pPerso)</td></tr>
+<tr class="separator:aa60f8b12745fc87c9010193290c11ef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab151e74efaf41694e0ae80d45645b4ae"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="personnage_8h.html#a3f6a2951aa3d5d428dd6d61e74db0d75">typePerso</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="personnage_8c.html#ab151e74efaf41694e0ae80d45645b4ae">getTypePerso</a> (<a class="el" href="personnage_8h.html#abd5c92a453bbf273f753b3f5b99da9e7">Perso</a> *pPerso)</td></tr>
+<tr class="memdesc:ab151e74efaf41694e0ae80d45645b4ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le type de personnage d'un perso.  <a href="#ab151e74efaf41694e0ae80d45645b4ae">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ab151e74efaf41694e0ae80d45645b4ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bc61d5d213ad2c82a9c6486bb3b6d09"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="personnage_8c.html#a1bc61d5d213ad2c82a9c6486bb3b6d09">setTypePerso_perso</a> (enum <a class="el" href="personnage_8h.html#a3f6a2951aa3d5d428dd6d61e74db0d75">typePerso</a> <a class="el" href="personnage_8h.html#a3f6a2951aa3d5d428dd6d61e74db0d75">typePerso</a>, <a class="el" href="personnage_8h.html#abd5c92a453bbf273f753b3f5b99da9e7">Perso</a> *pPerso)</td></tr>
+<tr class="separator:a1bc61d5d213ad2c82a9c6486bb3b6d09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ccbdbc540ff48c9bee4e9df01c9e721"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="personnage_8c.html#a7ccbdbc540ff48c9bee4e9df01c9e721">setIdPerso</a> (int idPerso, <a class="el" href="personnage_8h.html#abd5c92a453bbf273f753b3f5b99da9e7">Perso</a> *pPerso)</td></tr>
+<tr class="memdesc:a7ccbdbc540ff48c9bee4e9df01c9e721"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change l'Id d'un personnage pointé  <a href="#a7ccbdbc540ff48c9bee4e9df01c9e721">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a7ccbdbc540ff48c9bee4e9df01c9e721"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52435b6bd9906c613c5de660462639c4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="personnage_8c.html#a52435b6bd9906c613c5de660462639c4">getIdPerso</a> (<a class="el" href="personnage_8h.html#abd5c92a453bbf273f753b3f5b99da9e7">Perso</a> *pPerso)</td></tr>
+<tr class="memdesc:a52435b6bd9906c613c5de660462639c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne l'Id d'un personnage pointé  <a href="#a52435b6bd9906c613c5de660462639c4">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a52435b6bd9906c613c5de660462639c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c7e7effb953fc825ebbe3ed5d362732"><td class="memItemLeft" align="right" valign="top"><a class="el" href="personnage_8h.html#abd5c92a453bbf273f753b3f5b99da9e7">Perso</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="personnage_8c.html#a7c7e7effb953fc825ebbe3ed5d362732">initPerso</a> (<a class="el" href="coordonnees_8h.html#a79929cdfee7bd985a5e4e25276bb3ba9">Coordonnees</a> *pCoord, enum <a class="el" href="personnage_8h.html#a3f6a2951aa3d5d428dd6d61e74db0d75">typePerso</a> <a class="el" href="personnage_8h.html#a3f6a2951aa3d5d428dd6d61e74db0d75">typePerso</a>, int idPerso)</td></tr>
+<tr class="memdesc:a7c7e7effb953fc825ebbe3ed5d362732"><td class="mdescLeft">&#160;</td><td class="mdescRight">Créer et initialise un personnage et renvoie un pointeur vers lui.  <a href="#a7c7e7effb953fc825ebbe3ed5d362732">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a7c7e7effb953fc825ebbe3ed5d362732"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f2cd16139f8de72e55cd99849fea56d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="personnage_8c.html#a2f2cd16139f8de72e55cd99849fea56d">testamentPerso</a> (<a class="el" href="personnage_8h.html#abd5c92a453bbf273f753b3f5b99da9e7">Perso</a> *pPerso)</td></tr>
+<tr class="memdesc:a2f2cd16139f8de72e55cd99849fea56d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detruit le personnage pointé et libère la mémoire.  <a href="#a2f2cd16139f8de72e55cd99849fea56d">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a2f2cd16139f8de72e55cd99849fea56d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a722d5ef48f2f08ac15e1a4ab7dfdfe87"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="personnage_8c.html#a722d5ef48f2f08ac15e1a4ab7dfdfe87">testFonctions_perso</a> ()</td></tr>
+<tr class="memdesc:a722d5ef48f2f08ac15e1a4ab7dfdfe87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fontion de test des fonctions du module Personnage.  <a href="#a722d5ef48f2f08ac15e1a4ab7dfdfe87">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a722d5ef48f2f08ac15e1a4ab7dfdfe87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a class="anchor" id="a19cfc938b3ee58f313b87e7ca4b62be2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="coordonnees_8h.html#a79929cdfee7bd985a5e4e25276bb3ba9">Coordonnees</a>* getCoordonneesPerso_perso </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="personnage_8h.html#abd5c92a453bbf273f753b3f5b99da9e7">Perso</a> *&#160;</td>
+          <td class="paramname"><em>pPerso</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retourne des coordonnées d'un personnage. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pPerso</td><td>Personnage dont on veut les coordonnées </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Un pointeur vers les coordonnées du personnage </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa60f8b12745fc87c9010193290c11ef7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="coordonnees_8h.html#a79929cdfee7bd985a5e4e25276bb3ba9">Coordonnees</a>* getCoordPerso </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="personnage_8h.html#abd5c92a453bbf273f753b3f5b99da9e7">Perso</a> *&#160;</td>
+          <td class="paramname"><em>pPerso</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a52435b6bd9906c613c5de660462639c4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getIdPerso </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="personnage_8h.html#abd5c92a453bbf273f753b3f5b99da9e7">Perso</a> *&#160;</td>
+          <td class="paramname"><em>pPerso</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retourne l'Id d'un personnage pointé </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pPerso</td><td>Le personnage dont on veut l'ID </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>L'ID sous forme d'entier </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab151e74efaf41694e0ae80d45645b4ae"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="personnage_8h.html#a3f6a2951aa3d5d428dd6d61e74db0d75">typePerso</a> getTypePerso </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="personnage_8h.html#abd5c92a453bbf273f753b3f5b99da9e7">Perso</a> *&#160;</td>
+          <td class="paramname"><em>pPerso</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retourne le type de personnage d'un perso. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pPerso</td><td>Personnage dont on veut le type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Un enum qui dit le type du perso (zombie, citoyen, policier) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aec9bc09498be7dab178baa5015d97abf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getXPerso_perso </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="personnage_8h.html#abd5c92a453bbf273f753b3f5b99da9e7">Perso</a> *&#160;</td>
+          <td class="paramname"><em>pPerso</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retourne les coordonnées X d'un personnage. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pPerso</td><td>Personnage dont on veut les coordonnées </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Un entier des coordonnées en X </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa17a9866dddc2dd8a206364b2b0bcd41"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getYPerso_perso </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="personnage_8h.html#abd5c92a453bbf273f753b3f5b99da9e7">Perso</a> *&#160;</td>
+          <td class="paramname"><em>pPerso</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retourne les coordonnées Y d'un personnage. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pPerso</td><td>Personnage dont on veut les coordonnées </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Un entier des coordonnées en Y </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a7c7e7effb953fc825ebbe3ed5d362732"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="personnage_8h.html#abd5c92a453bbf273f753b3f5b99da9e7">Perso</a>* initPerso </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="coordonnees_8h.html#a79929cdfee7bd985a5e4e25276bb3ba9">Coordonnees</a> *&#160;</td>
+          <td class="paramname"><em>pCoord</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">enum <a class="el" href="personnage_8h.html#a3f6a2951aa3d5d428dd6d61e74db0d75">typePerso</a>&#160;</td>
+          <td class="paramname"><em>typePerso</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>idPerso</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Créer et initialise un personnage et renvoie un pointeur vers lui. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pCoord</td><td>Pointeur vers les coordonnées du personnage a creer </td></tr>
+    <tr><td class="paramname">type</td><td>Type du personnage </td></tr>
+    <tr><td class="paramname">idPerso</td><td>L'ID du personnage a creer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Pointeur vers le personnage créé </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae63f654e86384c7504b289a5e43a0965"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setCoordPerso_perso </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="coordonnees_8h.html#a79929cdfee7bd985a5e4e25276bb3ba9">Coordonnees</a> *&#160;</td>
+          <td class="paramname"><em>pCoord</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="personnage_8h.html#abd5c92a453bbf273f753b3f5b99da9e7">Perso</a> *&#160;</td>
+          <td class="paramname"><em>pPerso</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Change les coordonnées d'un personnage. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pCoord</td><td>Pointeur vers des coordonnées </td></tr>
+    <tr><td class="paramname">pPerso</td><td>Personnage dont on veut changer les coordonnées </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a7ccbdbc540ff48c9bee4e9df01c9e721"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setIdPerso </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>idPerso</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="personnage_8h.html#abd5c92a453bbf273f753b3f5b99da9e7">Perso</a> *&#160;</td>
+          <td class="paramname"><em>pPerso</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Change l'Id d'un personnage pointé </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">L'ID</td><td>sous forme d'entier </td></tr>
+    <tr><td class="paramname">pPerso</td><td>Le personnage dont on veut l'ID </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a1bc61d5d213ad2c82a9c6486bb3b6d09"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setTypePerso_perso </td>
+          <td>(</td>
+          <td class="paramtype">enum <a class="el" href="personnage_8h.html#a3f6a2951aa3d5d428dd6d61e74db0d75">typePerso</a> <a class="el" href="personnage_8h.html#a3f6a2951aa3d5d428dd6d61e74db0d75">typePerso</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="personnage_8h.html#abd5c92a453bbf273f753b3f5b99da9e7">Perso</a> *&#160;</td>
+          <td class="paramname"><em>pPerso</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a68b73c56985831aa9167f26278763b1f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setXPerso_perso </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="personnage_8h.html#abd5c92a453bbf273f753b3f5b99da9e7">Perso</a> *&#160;</td>
+          <td class="paramname"><em>pPerso</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>xPerso</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Change les coordonnées X d'un personnage. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pPerso</td><td>Personnage dont on veut changer les coordonnées </td></tr>
+    <tr><td class="paramname">xPerso</td><td>Un entier des coordonnées en X à changer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ac36bed180c16d77128a18f79fe4afe8d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setYPerso_perso </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="personnage_8h.html#abd5c92a453bbf273f753b3f5b99da9e7">Perso</a> *&#160;</td>
+          <td class="paramname"><em>pPerso</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>yPerso</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Change les coordonnées Y d'un personnage. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pPerso</td><td>Personnage dont on veut changer les coordonnées </td></tr>
+    <tr><td class="paramname">yPerso</td><td>Un entier des coordonnées en Y à changer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a2f2cd16139f8de72e55cd99849fea56d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void testamentPerso </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="personnage_8h.html#abd5c92a453bbf273f753b3f5b99da9e7">Perso</a> *&#160;</td>
+          <td class="paramname"><em>pPerso</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Detruit le personnage pointé et libère la mémoire. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pPerso</td><td>Pointeur vers le personnage a détruire et liberer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a722d5ef48f2f08ac15e1a4ab7dfdfe87"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void testFonctions_perso </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fontion de test des fonctions du module Personnage. </p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Lundi 23 Mai 2016 11:38:10 pour Simulation Humain Vs Zombies par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

@@ -1,6 +1,6 @@
 #include "simulation_ncurses.h"
 
-void lanceSimulation(char * nomFic){
+void lancerSimulationNcurses(char * nomFic){
     srand(time(NULL));
     
     Simulation * pSim = creerSimulation_sim(50, 50, 0, nomFic);
@@ -62,17 +62,17 @@ void boucleSimulation(Simulation * pSim){
 	afficheGrille(pSim);
 	sleep(1);	
 	contaminations(pSim);
-	//afficheGrille(pSim);
-	//sleep(1);
-	//tirs(pSim);
-	//afficheGrille(pSim);
-	//sleep(1);
+	afficheGrille(pSim);
+	sleep(1);
+	tirs(pSim);
+	afficheGrille(pSim);
+	sleep(1);
 	propagerChampsPersos(pSim);
-	//afficherChamps(pSim -> pTerrain);
+	afficherChamps(pSim -> pTerrain);
 	sleep(1);
 	deplacementIntelZombies_sim(pSim);
-	//deplacerCitoyens_sim(pSim);
-	//deplacerPoliciers_sim(pSim);
+	deplacerCitoyens_sim(pSim);
+	deplacerPoliciers_sim(pSim);
 	
     }
 }

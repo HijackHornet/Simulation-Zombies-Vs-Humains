@@ -11,7 +11,7 @@
 
 #include "simulation.h"
 
-void lanceSimulation(char * nomFic);
+void lancerSimulationNcurses(char * nomFic);
 
 void afficheGrille(Simulation * pSim);
 

@@ -6,12 +6,16 @@
 #ifndef _COORDONNEES
 #define _COORDONNEES
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <assert.h>
 
 /** @struct MCoordonnees
  *  @brief Structure definissant des coordonnees en deux dimension (pour des entitées)
  *  @var MCoordonnees::xCoord
  *  Position sur l'axe des X
-  * @var MCoordonnees::yCoord
+ *  @var MCoordonnees::yCoord
  *  Position sur l'axe des Y
  */
 typedef struct MCoordonnees{
@@ -23,6 +27,7 @@ typedef struct MCoordonnees{
 ///////////////////////////////////////////////////////////////////////
 //ACCESSEURS///////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////
+
 /**
 	@brief Edition de xCoord dans la structure
 	@param x Valeur sur l'axe des x
@@ -87,25 +92,25 @@ Coordonnees getCoordCaseHautByXY_terr(int x, int y);
 	@param coord Pointeur sur les coordonnées de reference
 	@return Les coordonnées de la case en dessous
 */
-Coordonnees getCoordCaseBasByCoord_terr(Coordonnees * coord);
+Coordonnees getCoordCaseBasByCoord_terr(Coordonnees * pCoord);
 /**
 	@brief Retourne des coordonnées de la case en haut d'une structure de coordonnée
 	@param coord Pointeur sur les coordonnées de reference
 	@return Les coordonnées de la case en haut
 */
-Coordonnees getCoordCaseHautByCoord_terr(Coordonnees * coord);
+Coordonnees getCoordCaseHautByCoord_terr(Coordonnees * pCoord);
 /**
 	@brief Retourne des coordonnées de la case à gauche d'une structure de coordonnée
 	@param coord Pointeur sur les coordonnées de reference
 	@return Les coordonnées de la case à gauche
 */
-Coordonnees getCoordCaseGaucheByCoord_terr(Coordonnees * coord);
+Coordonnees getCoordCaseGaucheByCoord_terr(Coordonnees * pCoord);
 /**
 	@brief Retourne des coordonnées de la case à droite d'une structure de coordonnée
 	@param coord Pointeur sur les coordonnées de reference
 	@return Les coordonnées de la case à droite
 */
-Coordonnees getCoordCaseDroiteByCoord_terr(Coordonnees * coord);
+Coordonnees getCoordCaseDroiteByCoord_terr(Coordonnees * pCoord);
 /**
 	@brief Retourne des coordonnées de la 2eme case à droite des coordonnées X/Y
 	@param x La coordonnées en X
@@ -167,53 +172,54 @@ Coordonnees getCoordCaseHGByXY_terr(int x, int y);
 	@param coord Pointeur vers les coordonnées de référence
 	@return Les coordonnées de la 2eme case en bas
 */
-Coordonnees getCoordCase2BasByCoord_terr(Coordonnees * coord);
+Coordonnees getCoordCase2BasByCoord_terr(Coordonnees * pCoord);
 /**
 	@brief Retourne des coordonnées de la 2eme case à droite à partir de coordonnées
 	@param coord Pointeur vers les coordonnées de référence
 	@return Les coordonnées de la 2eme case à droite
 */
-Coordonnees getCoordCase2DroiteByCoord_terr(Coordonnees * coord);
+Coordonnees getCoordCase2DroiteByCoord_terr(Coordonnees * pCoord);
 /**
 	@brief Retourne des coordonnées de la 2eme case à gauche à partir de coordonnées
 	@param coord Pointeur vers les coordonnées de référence
 	@return Les coordonnées de la 2eme case à gauche
 */
-Coordonnees getCoordCase2GaucheByCoord_terr(Coordonnees * coord);
+Coordonnees getCoordCase2GaucheByCoord_terr(Coordonnees * pCoord);
 /**
 	@brief Retourne des coordonnées de la 2eme case en haut à partir de coordonnées
 	@param coord Pointeur vers les coordonnées de référence
 	@return Les coordonnées de la 2eme case en haut
 */
-Coordonnees getCoordCase2HautByCoord_terr(Coordonnees * coord);
+Coordonnees getCoordCase2HautByCoord_terr(Coordonnees * pCoord);
 /**
 	@brief Retourne des coordonnées de la case en haut à droite à partir de coordonnées
 	@param coord Pointeur vers les coordonnées de référence
 	@return Les coordonnées de la 2eme case en haut à droite
 */
-Coordonnees getCoordCaseHDByCoord_terr(Coordonnees * coord);
+Coordonnees getCoordCaseHDByCoord_terr(Coordonnees * pCoord);
 /**
 	@brief Retourne des coordonnées de la case en bas à droite à partir de coordonnées
 	@param coord Pointeur vers les coordonnées de référence
 	@return Les coordonnées de la 2eme case en bas à droite
 */
-Coordonnees getCoordCaseBDByCoord_terr(Coordonnees * coord);
+Coordonnees getCoordCaseBDByCoord_terr(Coordonnees * pCoord);
 /**
 	@brief Retourne des coordonnées de la case en bas à gauche à partir de coordonnées
 	@param coord Pointeur vers les coordonnées de référence
 	@return Les coordonnées de la 2eme case en bas à gauche
 */
-Coordonnees getCoordCaseBGByCoord_terr(Coordonnees * coord);
+Coordonnees getCoordCaseBGByCoord_terr(Coordonnees * pCoord);
 /**
 	@brief Retourne des coordonnées de la case en haut à gauche à partir de coordonnées
 	@param coord Pointeur vers les coordonnées de référence
 	@return Les coordonnées de la 2eme case en haut à gauche
 */
-Coordonnees getCoordCaseHGByCoord_terr(Coordonnees * coord);
+Coordonnees getCoordCaseHGByCoord_terr(Coordonnees * pCoord);
 
 /////////////////////////////////////////////////////////////////////////
 //INITIALISATIONS-TESTAMENTS/////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
+
 /**
 	@brief Crée et initialise des coordonnées avec les valeur XY
 	@param x Entier de valeur de X
@@ -225,18 +231,19 @@ Coordonnees * initCoordonnees_coord(int x, int y);
 	@brief Détruit et libère des coordonnées
 	@param coord Les coordonnées a liberer et détruire
 */
-void testamentCoord(Coordonnees * coord);
+void testamentCoord(Coordonnees * pCoord);
 
 /////////////////////////////////////////////////////////////////////////
 //CALCULS////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
+
 /**
 	@brief Retourne la distance entre deux Coordonnees
 	@param coord1 Coordonnees de la premier entitée
 	@param coord2 Coordonnees de la seconde entitée
 	@return float représentant la distance entre ses deux coordonnées
 */
-float distanceEntreDeuxCoordonnees_Coord (Coordonnees * coord1, Coordonnees * coord2);
+float distanceEntreDeuxCoordonnees_Coord (Coordonnees * pCoord1, Coordonnees * pCoord2);
 
 /**
 	@brief Vérifie si deux Coordonnees donné sont identiques.
@@ -244,7 +251,7 @@ float distanceEntreDeuxCoordonnees_Coord (Coordonnees * coord1, Coordonnees * co
 	@param coord2 Coordonnees de la seconde entitée
 	@return Retourne 1 si elles sont identique, 0 sinon
 */
-int sontEgale_Coord (Coordonnees * coord1, Coordonnees * coord2);
+int sontEgale_Coord (Coordonnees * pCoord1, Coordonnees * pCoord2);
 
 ///////////////////////////////////////////////////////////////////////////
 //NON REGRESSION///////////////////////////////////////////////////////////

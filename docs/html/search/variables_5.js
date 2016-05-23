@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['nbcitoyens',['nbCitoyens',['../struct_m_simulation.html#a667ef5a8b70cdeb814cf151759a0a000',1,'MSimulation']]],
-  ['nbpoliciers',['nbPoliciers',['../struct_m_simulation.html#aea9ee33f212286e91336d34c10b061d5',1,'MSimulation']]],
-  ['nbzombies',['nbZombies',['../struct_m_simulation.html#af5c6ab065e72a41ffb935dea57a50e58',1,'MSimulation']]],
-  ['nomterrain',['nomTerrain',['../struct_m_terrain.html#ace560da00ff351704ae86204aba2fe04',1,'MTerrain']]]
+  ['nbcitoyens',['nbCitoyens',['../structMSimulation.html#a9bbc6c7c49600206282cfa0e906bd502',1,'MSimulation']]],
+  ['nbpoliciers',['nbPoliciers',['../structMSimulation.html#a36feaca3afcb2dca6023254639ce545c',1,'MSimulation']]],
+  ['nbzombies',['nbZombies',['../structMSimulation.html#a2be6307fb9eeb91c0292e363e61e0c1a',1,'MSimulation']]],
+  ['nomterrain',['nomTerrain',['../structMTerrain.html#a948d5d38016eed56187a94028e34f5e4',1,'MTerrain']]]
 ];

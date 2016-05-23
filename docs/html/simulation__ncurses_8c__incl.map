@@ -1,0 +1,8 @@
+<map id="src/simulation_ncurses.c" name="src/simulation_ncurses.c">
+<area shape="rect" id="node2" href="$simulation__ncurses_8h.html" title="Définit les fonction appelant à la librairie nCurses. " alt="" coords="119,80,264,107"/>
+<area shape="rect" id="node6" href="$simulation_8h.html" title="Définit la simulation, ses parametres et ses accesseurs. " alt="" coords="297,155,389,181"/>
+<area shape="rect" id="node8" href="$terrain_8h.html" title="Définit les fonctions et les structures du terrain. " alt="" coords="585,229,654,256"/>
+<area shape="rect" id="node17" href="$personnage_8h.html" title="Définit les type de personnage et leurs accesseurs. " alt="" coords="433,379,533,405"/>
+<area shape="rect" id="node14" href="$caseDeplacement_8h.html" title="Définit une case sur lesquels les personnages vont pouvoir se déplacer. " alt="" coords="381,304,519,331"/>
+<area shape="rect" id="node15" href="$coordonnees_8h.html" title="Définit les coordonnées atomiques du terrain et ses accesseurs. " alt="" coords="571,453,678,480"/>
+</map>

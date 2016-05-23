@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['humainadroite',['humainADroite',['../terrain_8h.html#a5f78f92ecac28d78ffd95ba3e04b272d',1,'terrain.c']]],
-  ['humainagauche',['humainAGauche',['../terrain_8h.html#aa81fd0c9d275c8f8feb23f1400f43e43',1,'terrain.c']]],
-  ['humainenbas',['humainEnBas',['../terrain_8h.html#a50df7bb2b9b06787410c5c3c18c26c7e',1,'terrain.c']]],
-  ['humainenhaut',['humainEnHaut',['../terrain_8h.html#ae6548343b2ab3ffd042731aeee925261',1,'terrain.c']]]
+  ['env',['env',['../caseDeplacement_8h.html#af9a4f51a2aa1485342c48472a9124d83',1,'env():&#160;caseDeplacement.h'],['../caseDeplacement_8h.html#a107472c8543a9f7036d3afb3bfc7c97e',1,'env():&#160;caseDeplacement.h']]],
+  ['envcase',['envCase',['../structMCaseDeplacement.html#a39fe908c7afa0eb210c77d12bb96a99e',1,'MCaseDeplacement']]],
+  ['estdansterrain_5fterr',['estDansTerrain_terr',['../terrain_8c.html#a97c090e1c8063d66314f3be8b159e2cd',1,'estDansTerrain_terr(Terrain *pTerrain, Coordonnees *pCoord):&#160;terrain.c'],['../terrain_8h.html#a97c090e1c8063d66314f3be8b159e2cd',1,'estDansTerrain_terr(Terrain *pTerrain, Coordonnees *pCoord):&#160;terrain.c']]]
 ];

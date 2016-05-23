@@ -1,0 +1,234 @@
+\hypertarget{caseDeplacement_8h}{}\section{Référence du fichier src/case\+Deplacement.h}
+\label{caseDeplacement_8h}\index{src/case\+Deplacement.\+h@{src/case\+Deplacement.\+h}}
+
+
+Définit une case sur lesquels les personnages vont pouvoir se déplacer.  
+
+
+{\ttfamily \#include \char`\"{}coordonnees.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}personnage.\+h\char`\"{}}\\*
+Graphe des dépendances par inclusion de case\+Deplacement.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{caseDeplacement_8h__incl}
+\end{center}
+\end{figure}
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{caseDeplacement_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structMCaseDeplacement}{M\+Case\+Deplacement}
+\begin{DoxyCompactList}\small\item\em Structure definissant les cases de déplacement (champs d\textquotesingle{}influences et environement) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Définitions de type}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \hyperlink{caseDeplacement_8h_af9a4f51a2aa1485342c48472a9124d83}{env} \hyperlink{caseDeplacement_8h_a107472c8543a9f7036d3afb3bfc7c97e}{env}
+\item 
+typedef struct \hyperlink{structMCaseDeplacement}{M\+Case\+Deplacement} \hyperlink{caseDeplacement_8h_aeab4f22b99f0db8b549dab4e46e3ead4}{case\+Deplacement}
+\end{DoxyCompactItemize}
+\subsection*{Énumérations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{caseDeplacement_8h_af9a4f51a2aa1485342c48472a9124d83}{env} \{ \hyperlink{caseDeplacement_8h_af9a4f51a2aa1485342c48472a9124d83ad4686f4f969d0e851d9170c09a89a837}{V\+I\+DE}, 
+\hyperlink{caseDeplacement_8h_af9a4f51a2aa1485342c48472a9124d83a4812eae6f742a8f18779779eeeffd570}{M\+UR}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{caseDeplacement_8h_af9a4f51a2aa1485342c48472a9124d83}{env} \hyperlink{caseDeplacement_8h_a3b6655cf83e6bc1c84ef1dd02f204e0b}{get\+Env\+Case} (\hyperlink{caseDeplacement_8h_aeab4f22b99f0db8b549dab4e46e3ead4}{case\+Deplacement} $\ast$p\+Case\+Dep)
+\begin{DoxyCompactList}\small\item\em Recupère le type de case d\textquotesingle{}une case de deplacement. \end{DoxyCompactList}\item 
+\hyperlink{personnage_8h_abd5c92a453bbf273f753b3f5b99da9e7}{Perso} $\ast$ \hyperlink{caseDeplacement_8h_a6b8c143eea4a9242b0f59a634c2f81b0}{get\+Perso\+Case} (\hyperlink{caseDeplacement_8h_aeab4f22b99f0db8b549dab4e46e3ead4}{case\+Deplacement} $\ast$p\+Case\+Dep)
+\begin{DoxyCompactList}\small\item\em Recupère le personnage sur la case de déplacement. \end{DoxyCompactList}\item 
+void \hyperlink{caseDeplacement_8h_ac9d21a1a61259ea3a3321fdec3661fea}{set\+Env\+Case} (\hyperlink{caseDeplacement_8h_aeab4f22b99f0db8b549dab4e46e3ead4}{case\+Deplacement} $\ast$p\+Case\+Dep, enum \hyperlink{caseDeplacement_8h_af9a4f51a2aa1485342c48472a9124d83}{env} valeur\+Env)
+\begin{DoxyCompactList}\small\item\em Modifie le type de case d\textquotesingle{}une case de deplacement. \end{DoxyCompactList}\item 
+void \hyperlink{caseDeplacement_8h_a2be2ab36936e9a5cb9fd2948353c7b12}{set\+Perso\+Case} (\hyperlink{caseDeplacement_8h_aeab4f22b99f0db8b549dab4e46e3ead4}{case\+Deplacement} $\ast$p\+Case\+Dep, \hyperlink{personnage_8h_abd5c92a453bbf273f753b3f5b99da9e7}{Perso} $\ast$p\+Perso)
+\begin{DoxyCompactList}\small\item\em Modifie le personnage sur la case de déplacement. \end{DoxyCompactList}\item 
+\hyperlink{caseDeplacement_8h_aeab4f22b99f0db8b549dab4e46e3ead4}{case\+Deplacement} $\ast$ \hyperlink{caseDeplacement_8h_a7ef31ff562e58ed644b58bc85dac2534}{init\+Case} (enum \hyperlink{caseDeplacement_8h_af9a4f51a2aa1485342c48472a9124d83}{env} env\+Case, \hyperlink{personnage_8h_abd5c92a453bbf273f753b3f5b99da9e7}{Perso} $\ast$p\+Perso)
+\begin{DoxyCompactList}\small\item\em Crée et initialise une case de deplacement avec un type de case et un personnage dessus. \end{DoxyCompactList}\item 
+unsigned short \hyperlink{caseDeplacement_8h_a271e610d4e5a86cabe14f2f9ae463442}{get\+Champ} (enum \hyperlink{personnage_8h_a3f6a2951aa3d5d428dd6d61e74db0d75}{type\+Perso} type, int id\+Perso, \hyperlink{caseDeplacement_8h_aeab4f22b99f0db8b549dab4e46e3ead4}{case\+Deplacement} $\ast$p\+Case\+Dep)
+\begin{DoxyCompactList}\small\item\em Récupère la valeur du champ du perso défini par son type et son id sur une case. \end{DoxyCompactList}\item 
+void \hyperlink{caseDeplacement_8h_a7b32586075b47b467bad6a2ab3bea8f6}{set\+Champ} (unsigned short intensite, enum \hyperlink{personnage_8h_a3f6a2951aa3d5d428dd6d61e74db0d75}{type\+Perso} type, int id\+Perso, \hyperlink{caseDeplacement_8h_aeab4f22b99f0db8b549dab4e46e3ead4}{case\+Deplacement} $\ast$p\+Case\+Dep)
+\begin{DoxyCompactList}\small\item\em Définit la valeur du champ du perso défini par son type et son id sur une case. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Définit une case sur lesquels les personnages vont pouvoir se déplacer. 
+
+
+
+\subsection{Documentation des définitions de type}
+\index{case\+Deplacement.\+h@{case\+Deplacement.\+h}!case\+Deplacement@{case\+Deplacement}}
+\index{case\+Deplacement@{case\+Deplacement}!case\+Deplacement.\+h@{case\+Deplacement.\+h}}
+\subsubsection[{\texorpdfstring{case\+Deplacement}{caseDeplacement}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf M\+Case\+Deplacement}  {\bf case\+Deplacement}}\hypertarget{caseDeplacement_8h_aeab4f22b99f0db8b549dab4e46e3ead4}{}\label{caseDeplacement_8h_aeab4f22b99f0db8b549dab4e46e3ead4}
+\index{case\+Deplacement.\+h@{case\+Deplacement.\+h}!env@{env}}
+\index{env@{env}!case\+Deplacement.\+h@{case\+Deplacement.\+h}}
+\subsubsection[{\texorpdfstring{env}{env}}]{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf env} {\bf env}}\hypertarget{caseDeplacement_8h_a107472c8543a9f7036d3afb3bfc7c97e}{}\label{caseDeplacement_8h_a107472c8543a9f7036d3afb3bfc7c97e}
+
+
+\subsection{Documentation du type de l\textquotesingle{}énumération}
+\index{case\+Deplacement.\+h@{case\+Deplacement.\+h}!env@{env}}
+\index{env@{env}!case\+Deplacement.\+h@{case\+Deplacement.\+h}}
+\subsubsection[{\texorpdfstring{env}{env}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf env}}\hypertarget{caseDeplacement_8h_af9a4f51a2aa1485342c48472a9124d83}{}\label{caseDeplacement_8h_af9a4f51a2aa1485342c48472a9124d83}
+env défini soit un mur soit le sol (vide) \begin{Desc}
+\item[Valeurs énumérées]\par
+\begin{description}
+\index{V\+I\+DE@{V\+I\+DE}!case\+Deplacement.\+h@{case\+Deplacement.\+h}}\index{case\+Deplacement.\+h@{case\+Deplacement.\+h}!V\+I\+DE@{V\+I\+DE}}\item[{\em 
+V\+I\+DE\hypertarget{caseDeplacement_8h_af9a4f51a2aa1485342c48472a9124d83ad4686f4f969d0e851d9170c09a89a837}{}\label{caseDeplacement_8h_af9a4f51a2aa1485342c48472a9124d83ad4686f4f969d0e851d9170c09a89a837}
+}]\index{M\+UR@{M\+UR}!case\+Deplacement.\+h@{case\+Deplacement.\+h}}\index{case\+Deplacement.\+h@{case\+Deplacement.\+h}!M\+UR@{M\+UR}}\item[{\em 
+M\+UR\hypertarget{caseDeplacement_8h_af9a4f51a2aa1485342c48472a9124d83a4812eae6f742a8f18779779eeeffd570}{}\label{caseDeplacement_8h_af9a4f51a2aa1485342c48472a9124d83a4812eae6f742a8f18779779eeeffd570}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Documentation des fonctions}
+\index{case\+Deplacement.\+h@{case\+Deplacement.\+h}!get\+Champ@{get\+Champ}}
+\index{get\+Champ@{get\+Champ}!case\+Deplacement.\+h@{case\+Deplacement.\+h}}
+\subsubsection[{\texorpdfstring{get\+Champ(enum type\+Perso type, int id\+Perso, case\+Deplacement $\ast$p\+Case\+Dep)}{getChamp(enum typePerso type, int idPerso, caseDeplacement *pCaseDep)}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short get\+Champ (
+\begin{DoxyParamCaption}
+\item[{enum {\bf type\+Perso}}]{type, }
+\item[{int}]{id\+Perso, }
+\item[{{\bf case\+Deplacement} $\ast$}]{p\+Case\+Dep}
+\end{DoxyParamCaption}
+)}\hypertarget{caseDeplacement_8h_a271e610d4e5a86cabe14f2f9ae463442}{}\label{caseDeplacement_8h_a271e610d4e5a86cabe14f2f9ae463442}
+
+
+Récupère la valeur du champ du perso défini par son type et son id sur une case. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em type} & Type du perso (Z\+O\+M\+B\+IE, P\+O\+L\+I\+C\+I\+ER, C\+I\+T\+O\+Y\+EN) \\
+\hline
+{\em id\+Perso} & Id du perso dont on veut connaitre le champ \\
+\hline
+{\em p\+Case\+Dep} & Pointeur vers la case a detruire et liberer \\
+\hline
+\end{DoxyParams}
+\index{case\+Deplacement.\+h@{case\+Deplacement.\+h}!get\+Env\+Case@{get\+Env\+Case}}
+\index{get\+Env\+Case@{get\+Env\+Case}!case\+Deplacement.\+h@{case\+Deplacement.\+h}}
+\subsubsection[{\texorpdfstring{get\+Env\+Case(case\+Deplacement $\ast$p\+Case\+Dep)}{getEnvCase(caseDeplacement *pCaseDep)}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf env} get\+Env\+Case (
+\begin{DoxyParamCaption}
+\item[{{\bf case\+Deplacement} $\ast$}]{p\+Case\+Dep}
+\end{DoxyParamCaption}
+)}\hypertarget{caseDeplacement_8h_a3b6655cf83e6bc1c84ef1dd02f204e0b}{}\label{caseDeplacement_8h_a3b6655cf83e6bc1c84ef1dd02f204e0b}
+
+
+Recupère le type de case d\textquotesingle{}une case de deplacement. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Case\+Dep} & Pointeur sur la case de déplacement à étudier \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Le type de case 
+\end{DoxyReturn}
+\index{case\+Deplacement.\+h@{case\+Deplacement.\+h}!get\+Perso\+Case@{get\+Perso\+Case}}
+\index{get\+Perso\+Case@{get\+Perso\+Case}!case\+Deplacement.\+h@{case\+Deplacement.\+h}}
+\subsubsection[{\texorpdfstring{get\+Perso\+Case(case\+Deplacement $\ast$p\+Case\+Dep)}{getPersoCase(caseDeplacement *pCaseDep)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Perso}$\ast$ get\+Perso\+Case (
+\begin{DoxyParamCaption}
+\item[{{\bf case\+Deplacement} $\ast$}]{p\+Case\+Dep}
+\end{DoxyParamCaption}
+)}\hypertarget{caseDeplacement_8h_a6b8c143eea4a9242b0f59a634c2f81b0}{}\label{caseDeplacement_8h_a6b8c143eea4a9242b0f59a634c2f81b0}
+
+
+Recupère le personnage sur la case de déplacement. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Case\+Dep} & Pointeur sur la case de déplacement à étudier \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Pointeur vers le personnage sur la case de déplacement 
+\end{DoxyReturn}
+\index{case\+Deplacement.\+h@{case\+Deplacement.\+h}!init\+Case@{init\+Case}}
+\index{init\+Case@{init\+Case}!case\+Deplacement.\+h@{case\+Deplacement.\+h}}
+\subsubsection[{\texorpdfstring{init\+Case(enum env env\+Case, Perso $\ast$p\+Perso)}{initCase(enum env envCase, Perso *pPerso)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf case\+Deplacement}$\ast$ init\+Case (
+\begin{DoxyParamCaption}
+\item[{enum {\bf env}}]{env\+Case, }
+\item[{{\bf Perso} $\ast$}]{p\+Perso}
+\end{DoxyParamCaption}
+)}\hypertarget{caseDeplacement_8h_a7ef31ff562e58ed644b58bc85dac2534}{}\label{caseDeplacement_8h_a7ef31ff562e58ed644b58bc85dac2534}
+
+
+Crée et initialise une case de deplacement avec un type de case et un personnage dessus. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em env\+Case} & Type de case \\
+\hline
+{\em p\+Perso} & Pointeur vers un personnage \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Pointeur vers cette case de deplacement 
+\end{DoxyReturn}
+\index{case\+Deplacement.\+h@{case\+Deplacement.\+h}!set\+Champ@{set\+Champ}}
+\index{set\+Champ@{set\+Champ}!case\+Deplacement.\+h@{case\+Deplacement.\+h}}
+\subsubsection[{\texorpdfstring{set\+Champ(unsigned short intensite, enum type\+Perso type, int id\+Perso, case\+Deplacement $\ast$p\+Case\+Dep)}{setChamp(unsigned short intensite, enum typePerso type, int idPerso, caseDeplacement *pCaseDep)}}]{\setlength{\rightskip}{0pt plus 5cm}void set\+Champ (
+\begin{DoxyParamCaption}
+\item[{unsigned short}]{intensite, }
+\item[{enum {\bf type\+Perso}}]{type, }
+\item[{int}]{id\+Perso, }
+\item[{{\bf case\+Deplacement} $\ast$}]{p\+Case\+Dep}
+\end{DoxyParamCaption}
+)}\hypertarget{caseDeplacement_8h_a7b32586075b47b467bad6a2ab3bea8f6}{}\label{caseDeplacement_8h_a7b32586075b47b467bad6a2ab3bea8f6}
+
+
+Définit la valeur du champ du perso défini par son type et son id sur une case. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em type} & Type du perso (Z\+O\+M\+B\+IE, P\+O\+L\+I\+C\+I\+ER, C\+I\+T\+O\+Y\+EN) \\
+\hline
+{\em id\+Perso} & Id du perso dont on veut connaitre le champ \\
+\hline
+{\em p\+Case\+Dep} & Pointeur vers la case a detruire et liberer \\
+\hline
+\end{DoxyParams}
+\index{case\+Deplacement.\+h@{case\+Deplacement.\+h}!set\+Env\+Case@{set\+Env\+Case}}
+\index{set\+Env\+Case@{set\+Env\+Case}!case\+Deplacement.\+h@{case\+Deplacement.\+h}}
+\subsubsection[{\texorpdfstring{set\+Env\+Case(case\+Deplacement $\ast$p\+Case\+Dep, enum env valeur\+Env)}{setEnvCase(caseDeplacement *pCaseDep, enum env valeurEnv)}}]{\setlength{\rightskip}{0pt plus 5cm}void set\+Env\+Case (
+\begin{DoxyParamCaption}
+\item[{{\bf case\+Deplacement} $\ast$}]{p\+Case\+Dep, }
+\item[{enum {\bf env}}]{valeur\+Env}
+\end{DoxyParamCaption}
+)}\hypertarget{caseDeplacement_8h_ac9d21a1a61259ea3a3321fdec3661fea}{}\label{caseDeplacement_8h_ac9d21a1a61259ea3a3321fdec3661fea}
+
+
+Modifie le type de case d\textquotesingle{}une case de deplacement. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Case\+Dep} & Pointeur sur la case de déplacement à étudier \\
+\hline
+{\em valeur\+Env} & Le type de case \\
+\hline
+\end{DoxyParams}
+\index{case\+Deplacement.\+h@{case\+Deplacement.\+h}!set\+Perso\+Case@{set\+Perso\+Case}}
+\index{set\+Perso\+Case@{set\+Perso\+Case}!case\+Deplacement.\+h@{case\+Deplacement.\+h}}
+\subsubsection[{\texorpdfstring{set\+Perso\+Case(case\+Deplacement $\ast$p\+Case\+Dep, Perso $\ast$p\+Perso)}{setPersoCase(caseDeplacement *pCaseDep, Perso *pPerso)}}]{\setlength{\rightskip}{0pt plus 5cm}void set\+Perso\+Case (
+\begin{DoxyParamCaption}
+\item[{{\bf case\+Deplacement} $\ast$}]{p\+Case\+Dep, }
+\item[{{\bf Perso} $\ast$}]{p\+Perso}
+\end{DoxyParamCaption}
+)}\hypertarget{caseDeplacement_8h_a2be2ab36936e9a5cb9fd2948353c7b12}{}\label{caseDeplacement_8h_a2be2ab36936e9a5cb9fd2948353c7b12}
+
+
+Modifie le personnage sur la case de déplacement. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Case\+Dep} & Pointeur sur la case de déplacement à étudier \\
+\hline
+{\em p\+Perso} & Pointeur vers le personnage a mettre sur la case de déplacement \\
+\hline
+\end{DoxyParams}

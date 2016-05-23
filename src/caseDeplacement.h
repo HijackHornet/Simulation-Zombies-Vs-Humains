@@ -12,6 +12,7 @@
 
 /** env défini soit un mur soit le sol (vide) */
 enum env {VIDE, MUR};
+typedef enum env env;
 /** @struct MCaseDeplacement
  *  @brief Structure definissant les cases de déplacement (champs d'influences et environement)
  *  @var MCaseDeplacement::envCase
@@ -19,18 +20,18 @@ enum env {VIDE, MUR};
  *	@var MCaseDeplacement::persoCase
  *  Pointeur vers un eventuel personnage sur la case
  *	@var MCaseDeplacement::champZombies[250]
- *  EUHHHHH JE COMPREND PAS
+ *  Champs des zombies présents sur le terrain en cette case
  *	@var MCaseDeplacement::champCitoyens[250]
- *  EUHHHHH JE COMPREND PAS
+ *  Champs des citoyens présents sur le terrain en cette case
  *	@var MCaseDeplacement::champPoliciers[250]
- *  EUHHHHH JE COMPREND PAS
- */
+ *  Champs des policiers présents sur le terrain en cette case
+ **/
 typedef struct MCaseDeplacement{
-    enum env envCase;
+    env envCase;
     struct MPerso * persoCase;
-    short champZombies[250];
-    short champCitoyens[250];
-    short champPoliciers[250];
+    unsigned short champZombies[250];
+    unsigned short champCitoyens[250];
+    unsigned short champPoliciers[250];
 } caseDeplacement;
 
 ////////////////////////////////////////////////////////////////////////////
@@ -39,28 +40,28 @@ typedef struct MCaseDeplacement{
 
 /**
 	@brief Recupère le type de case d'une case de deplacement
-	@param caseDep Pointeur sur la case de déplacement à étudier
+	@param pCaseDep Pointeur sur la case de déplacement à étudier
 	@return Le type de case
 */
-enum env getEnvCase(caseDeplacement * caseDep);
+enum env getEnvCase(caseDeplacement * pCaseDep);
 /**
 	@brief Recupère le personnage sur la case de déplacement
-	@param caseDep Pointeur sur la case de déplacement à étudier
+	@param pCaseDep Pointeur sur la case de déplacement à étudier
 	@return Pointeur vers le personnage sur la case de déplacement
 */
-Perso * getPersoCase(caseDeplacement * caseDep);
+Perso * getPersoCase(caseDeplacement * pCaseDep);
 /**
 	@brief Modifie le type de case d'une case de deplacement
-	@param caseDep Pointeur sur la case de déplacement à étudier
+	@param pCaseDep Pointeur sur la case de déplacement à étudier
 	@param valeurEnv Le type de case
 */
-void setEnvCase(caseDeplacement * caseDep, enum env valeurEnv);
+void setEnvCase(caseDeplacement * pCaseDep, enum env valeurEnv);
 /**
 	@brief Modifie le personnage sur la case de déplacement
-	@param caseDep Pointeur sur la case de déplacement à étudier
+	@param pCaseDep Pointeur sur la case de déplacement à étudier
 	@param pPerso Pointeur vers le personnage a mettre sur la case de déplacement
 */
-void setPersoCase(caseDeplacement * caseDep, Perso * pPerso);
+void setPersoCase(caseDeplacement * pCaseDep, Perso * pPerso);
 /**
 	@brief Crée et initialise une case de deplacement avec un type de case et un personnage dessus
 	@param envCase Type de case
@@ -69,15 +70,22 @@ void setPersoCase(caseDeplacement * caseDep, Perso * pPerso);
 */
 caseDeplacement * initCase(enum env envCase, Perso * pPerso);
 /**
-	@brief Détruit et libère une case de deplacement
-	@param caseDep Pointeur vers la case a detruire et liberer
+	@brief Récupère la valeur du champ du perso défini par son type et son id sur une case
+	@param type Type du perso (ZOMBIE, POLICIER, CITOYEN)
+	@param idPerso Id du perso dont on veut connaitre le champ
+	@param pCaseDep Pointeur vers la case a detruire et liberer
 */
-void testamentCase(caseDeplacement * caseDep);
+unsigned short getChamp(enum typePerso type, int idPerso, caseDeplacement * pCaseDep);
 
-unsigned short getChamp(enum typePerso type, int idPerso, caseDeplacement * caseDep);
+/**
+	@brief Définit la valeur du champ du perso défini par son type et son id sur une case
+	@param type Type du perso (ZOMBIE, POLICIER, CITOYEN)
+	@param idPerso Id du perso dont on veut connaitre le champ
+	@param pCaseDep Pointeur vers la case a detruire et liberer
+*/
+void setChamp(unsigned short intensite, enum typePerso type, int idPerso, caseDeplacement * pCaseDep);
 
-void setChamp(unsigned short intensite, enum typePerso type, int idPerso, caseDeplacement * caseDep);
 
-void initChamps(int nbZombies, int nbCitoyens, int nbPoliciers, caseDeplacement * caseDep);
+//void initChamps(int nbZombies, int nbCitoyens, int nbPoliciers, caseDeplacement * caseDep);
 
 #endif

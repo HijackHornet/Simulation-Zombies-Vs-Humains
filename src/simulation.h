@@ -40,6 +40,7 @@ typedef struct MSimulation{
 ////////////////////////////////////////////////////////////////////
 //ACCESSEURS////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////
+
 /**
 	@brief Recupère le terrain associé à une Simulation
 	@param pSim La simulation a étudier
@@ -88,6 +89,7 @@ int getNbPoliciers_sim(Simulation * pSim);
 ////////////////////////////////////////////////////////////////////
 //CREATION-INITALISATION////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////
+
 /**
 	@brief Initialise la simulation avec un nombre de zombies
 	@param nbZombies Nombres de zombies a initialiser dans la Simulation
@@ -134,6 +136,7 @@ Simulation * creerSimulation_sim(int nbZombies, int nbCitoyens, int nbPoliciers,
 ///////////////////////////////////////////////////////////////////////////////
 //EXECUTION////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
+
 /**
 	@brief Executes les deplacement des policiers de manière aléatoire
 	@param pSim La simulation dans laquelle tout est effectué
@@ -178,6 +181,22 @@ void deplacementIntelPersos(Simulation * pSim);
 ///////////////////////////////////////////////////////////////////////////////
 //INTERACTIONS/////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
+
+/**
+	@brief Ajoute un perso à la simulation et au terrain, selon son type
+	@param pCoord Coordonnées du personnage sur le terrain
+	@param type Type du perso (ZOMBIE, POLICIER, CITOYEN)
+	@param pSim Pointeur sur la simulation
+*/
+void ajouterPerso(Coordonnees * pCoord, enum typePerso type, Simulation * pSim);
+
+/**
+	@brief Supprime un perso de la simulation et de la case à laquelle il est affecté. Ne libère les coordonnées affectées
+	@param pPerso Personnage à supprimer de la simulation
+	@param pSim La simulation dans laquelle tout est effectué
+*/
+void supprimerPerso(Perso * pPerso, Simulation * pSim);
+
 /**
 	@brief Executes les instruction de contamination des policier et citoyens par les zombies
 	@param pSim La simulation dans laquelle tout est effectué
@@ -192,6 +211,7 @@ void tirs(Simulation * pSim);
 ////////////////////////////////////////////////////////////////////////////
 //CHAMPS////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////
+
 /**
 	@brief Propage les champs des personnages dans la simulation
 	@param pSim La simulation dans laquelle tout est effectué
@@ -216,8 +236,6 @@ void deplacementIntelCitoyen(Perso * pPerso, Simulation * pSim);
 */
 void deplacementIntelPolicier(Perso * pPerso, Simulation * pSim);
 
-void supprimerCitoyen(Perso * pCitoyen, Simulation * pSim);
-
 ///////////////////////////////////////////////////////////////////////////////
 //TEST/////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
@@ -229,12 +247,12 @@ void testFonctions_sim();
 ////////////////////////////////////////////////////////////////////////////
 //AUTRES////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////
+
+/**
+	@brief Fonction à appeler avec qsort pour trier un tableau 2D en lignes par rapport à la première case
+	@param a Pointeur sur une case du tableau
+	@param b Pointeur sur une case du tableau
+*/
 int compareTab2D(const void * a, const void * b);
-
-void ajouterPerso(Coordonnees * pCoord, enum typePerso type, Simulation * pSim);
-
-void contaminations(Simulation * pSim);
-
-void supprimerPerso(Perso * pPerso, Simulation * pSim);
 
 #endif

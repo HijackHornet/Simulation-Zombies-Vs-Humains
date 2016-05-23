@@ -1,0 +1,7 @@
+<map id="src/simulation_ncurses.h" name="src/simulation_ncurses.h">
+<area shape="rect" id="node5" href="$simulation_8h.html" title="Définit la simulation, ses parametres et ses accesseurs. " alt="" coords="297,80,389,107"/>
+<area shape="rect" id="node7" href="$terrain_8h.html" title="Définit les fonctions et les structures du terrain. " alt="" coords="585,155,654,181"/>
+<area shape="rect" id="node16" href="$personnage_8h.html" title="Définit les type de personnage et leurs accesseurs. " alt="" coords="433,304,533,331"/>
+<area shape="rect" id="node13" href="$caseDeplacement_8h.html" title="Définit une case sur lesquels les personnages vont pouvoir se déplacer. " alt="" coords="381,229,519,256"/>
+<area shape="rect" id="node14" href="$coordonnees_8h.html" title="Définit les coordonnées atomiques du terrain et ses accesseurs. " alt="" coords="571,379,678,405"/>
+</map>

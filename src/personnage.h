@@ -24,7 +24,7 @@ enum typePerso {POLICIER, ZOMBIE, CITOYEN};
  */
 typedef struct MPerso {
     int id;
-    Coordonnees * coord;
+    Coordonnees * pCoord;
     enum typePerso type;
 } Perso;
 
@@ -79,10 +79,10 @@ enum typePerso getTypePerso(Perso * pPerso);
 void setTypePerso_perso(enum typePerso type, Perso * pPerso);
 /**
 	@brief Change les coordonnées d'un personnage
-	@param coord Pointeur vers des coordonnées
+	@param pCoord Pointeur vers des coordonnées
 	@param pPerso Personnage dont on veut changer les coordonnées
 */
-void setCoordPerso_perso(Coordonnees * coord, Perso * pPerso);
+void setCoordPerso_perso(Coordonnees * pCoord, Perso * pPerso);
 /**
 	@brief Retourne l'Id d'un personnage pointé
 	@param pPerso Le personnage dont on veut l'ID
@@ -100,15 +100,16 @@ void setIdPerso(int idPerso, Perso * pPerso);
 ////////////////////////////////////////////////////////////////////////////
 //CREATION PERSO////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////
+
 /**
 	@brief Créer et initialise un personnage et renvoie un pointeur vers lui
-	@param coord Pointeur vers les coordonnées du personnage a creer
+	@param pCoord Pointeur vers les coordonnées du personnage a creer
 	@param type Type du personnage
 	@param idPerso L'ID du personnage a creer
-	@return Pointeur vers le personnage crée
+	@return Pointeur vers le personnage créé
 	
 */
-Perso * initPerso(Coordonnees * coord, enum typePerso typePerso, int idPerso);
+Perso * initPerso(Coordonnees * pCoord, enum typePerso typePerso, int idPerso);
 /**
 	@brief Detruit le personnage pointé et libère la mémoire
 	@param pPerso Pointeur vers le personnage a détruire et liberer
@@ -118,6 +119,7 @@ void testamentPerso(Perso * pPerso);
 ////////////////////////////////////////////////////////////////////////////
 //NON REGRESSION////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////
+
 /**
 	@brief Fontion de test des fonctions du module Personnage
 */

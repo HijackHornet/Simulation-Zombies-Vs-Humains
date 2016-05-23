@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['citoyensinit_5fsim',['citoyensInit_sim',['../simulation_8h.html#aaa2bef8ef03449698a1c49f75e8f96bd',1,'simulation.c']]],
-  ['cleanup',['cleanup',['../initialisation___s_d_l_8h.html#a4b66d5e31b5dc18b314c8a68163263bd',1,'initialisation_SDL.c']]],
-  ['contaminations',['contaminations',['../simulation_8h.html#a8e9f7110fca5097ac2e3b0c5b37549af',1,'simulation.c']]],
-  ['creersimulation_5fsim',['creerSimulation_sim',['../simulation_8h.html#a66f239a8233da55d5a38fba5853809f5',1,'simulation.c']]]
+  ['bouclesimulation',['boucleSimulation',['../simulation__ncurses_8c.html#ae05374caba800b8819342b3006aacbfc',1,'boucleSimulation(Simulation *pSim):&#160;simulation_ncurses.c'],['../simulation__ncurses_8h.html#ae05374caba800b8819342b3006aacbfc',1,'boucleSimulation(Simulation *pSim):&#160;simulation_ncurses.c']]],
+  ['bouton_5fediteur',['bouton_editeur',['../simulation__gtk_8c.html#ac4c391d3b013604c3c0cd650c2c3bfc6',1,'simulation_gtk.c']]],
+  ['bouton_5flancement',['bouton_lancement',['../simulation__gtk_8c.html#a1339d01047fd730504f9c50db102f205',1,'simulation_gtk.c']]]
 ];

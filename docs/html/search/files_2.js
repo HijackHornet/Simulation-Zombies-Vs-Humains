@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['initialisation_5fsdl_2eh',['initialisation_SDL.h',['../initialisation___s_d_l_8h.html',1,'']]]
+  ['personnage_2ec',['personnage.c',['../personnage_8c.html',1,'']]],
+  ['personnage_2eh',['personnage.h',['../personnage_8h.html',1,'']]]
 ];

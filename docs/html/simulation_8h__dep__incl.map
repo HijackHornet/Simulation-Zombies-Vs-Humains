@@ -1,0 +1,8 @@
+<map id="src/simulation.h" name="src/simulation.h">
+<area shape="rect" id="node2" href="$simulation__gtk_8h.html" title="Définit les fonction appelant à la librairie gtk. " alt="" coords="44,80,183,107"/>
+<area shape="rect" id="node5" href="$simulation_8c.html" title="src/simulation.c" alt="" coords="207,80,321,107"/>
+<area shape="rect" id="node6" href="$simulation__ncurses_8h.html" title="Définit les fonction appelant à la librairie nCurses. " alt="" coords="346,80,513,107"/>
+<area shape="rect" id="node3" href="$main_8c.html" title="src/main.c" alt="" coords="5,155,88,181"/>
+<area shape="rect" id="node4" href="$simulation__gtk_8c.html" title="src/simulation_gtk.c" alt="" coords="112,155,251,181"/>
+<area shape="rect" id="node7" href="$simulation__ncurses_8c.html" title="src/simulation_ncurses.c" alt="" coords="346,155,513,181"/>
+</map>

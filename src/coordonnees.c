@@ -1,8 +1,4 @@
 #include "coordonnees.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-#include <assert.h>
 
 ///////////////////////////////////////////////////////////////////////
 //ACCESSEURS///////////////////////////////////////////////////////////
@@ -80,53 +76,53 @@ Coordonnees getCoordCaseHGByXY_terr(int x, int y){
   return (Coordonnees){x - 1, y + 1};
 }
 
-Coordonnees getCoordCaseBasByCoord_terr(Coordonnees * coord){
-    return getCoordCaseBasByXY_terr(getXCoord_Coord(coord), getYCoord_Coord(coord));
+Coordonnees getCoordCaseBasByCoord_terr(Coordonnees * pCoord){
+    return getCoordCaseBasByXY_terr(getXCoord_Coord(pCoord), getYCoord_Coord(pCoord));
 }
 
-Coordonnees getCoordCaseHautByCoord_terr(Coordonnees * coord){
-    return getCoordCaseHautByXY_terr(getXCoord_Coord(coord), getYCoord_Coord(coord));
+Coordonnees getCoordCaseHautByCoord_terr(Coordonnees * pCoord){
+    return getCoordCaseHautByXY_terr(getXCoord_Coord(pCoord), getYCoord_Coord(pCoord));
 }
 
-Coordonnees getCoordCaseDroiteByCoord_terr(Coordonnees * coord){
-    return getCoordCaseDroiteByXY_terr(getXCoord_Coord(coord), getYCoord_Coord(coord));
+Coordonnees getCoordCaseDroiteByCoord_terr(Coordonnees * pCoord){
+    return getCoordCaseDroiteByXY_terr(getXCoord_Coord(pCoord), getYCoord_Coord(pCoord));
 }
 
-Coordonnees getCoordCaseGaucheByCoord_terr(Coordonnees * coord){
-    return getCoordCaseGaucheByXY_terr(getXCoord_Coord(coord), getYCoord_Coord(coord));
+Coordonnees getCoordCaseGaucheByCoord_terr(Coordonnees * pCoord){
+    return getCoordCaseGaucheByXY_terr(getXCoord_Coord(pCoord), getYCoord_Coord(pCoord));
 }
 
-Coordonnees getCoordCase2BasByCoord_terr(Coordonnees * coord){
-    return getCoordCase2BasByXY_terr(getXCoord_Coord(coord), getYCoord_Coord(coord));
+Coordonnees getCoordCase2BasByCoord_terr(Coordonnees * pCoord){
+    return getCoordCase2BasByXY_terr(getXCoord_Coord(pCoord), getYCoord_Coord(pCoord));
 }
 
-Coordonnees getCoordCase2HautByCoord_terr(Coordonnees * coord){
-    return getCoordCase2HautByXY_terr(getXCoord_Coord(coord), getYCoord_Coord(coord));
+Coordonnees getCoordCase2HautByCoord_terr(Coordonnees * pCoord){
+    return getCoordCase2HautByXY_terr(getXCoord_Coord(pCoord), getYCoord_Coord(pCoord));
 }
 
-Coordonnees getCoordCase2DroiteByCoord_terr(Coordonnees * coord){
-    return getCoordCase2DroiteByXY_terr(getXCoord_Coord(coord), getYCoord_Coord(coord));
+Coordonnees getCoordCase2DroiteByCoord_terr(Coordonnees * pCoord){
+    return getCoordCase2DroiteByXY_terr(getXCoord_Coord(pCoord), getYCoord_Coord(pCoord));
 }
 
-Coordonnees getCoordCase2GaucheByCoord_terr(Coordonnees * coord){
-    return getCoordCase2GaucheByXY_terr(getXCoord_Coord(coord), getYCoord_Coord(coord));
+Coordonnees getCoordCase2GaucheByCoord_terr(Coordonnees * pCoord){
+    return getCoordCase2GaucheByXY_terr(getXCoord_Coord(pCoord), getYCoord_Coord(pCoord));
 }
 
 
-Coordonnees getCoordCaseHDByCoord_terr(Coordonnees * coord){
-  return getCoordCaseHDByXY_terr(getXCoord_Coord(coord), getYCoord_Coord(coord));
+Coordonnees getCoordCaseHDByCoord_terr(Coordonnees * pCoord){
+  return getCoordCaseHDByXY_terr(getXCoord_Coord(pCoord), getYCoord_Coord(pCoord));
 }
 
-Coordonnees getCoordCaseBDByCoord_terr(Coordonnees * coord){
-  return getCoordCaseBDByXY_terr(getXCoord_Coord(coord), getYCoord_Coord(coord));
+Coordonnees getCoordCaseBDByCoord_terr(Coordonnees * pCoord){
+  return getCoordCaseBDByXY_terr(getXCoord_Coord(pCoord), getYCoord_Coord(pCoord));
 }
 
-Coordonnees getCoordCaseBGByCoord_terr(Coordonnees * coord){
-  return getCoordCaseBGByXY_terr(getXCoord_Coord(coord), getYCoord_Coord(coord));
+Coordonnees getCoordCaseBGByCoord_terr(Coordonnees * pCoord){
+  return getCoordCaseBGByXY_terr(getXCoord_Coord(pCoord), getYCoord_Coord(pCoord));
 }
 
-Coordonnees getCoordCaseHGByCoord_terr(Coordonnees * coord){
-  return getCoordCaseHGByXY_terr(getXCoord_Coord(coord), getYCoord_Coord(coord));
+Coordonnees getCoordCaseHGByCoord_terr(Coordonnees * pCoord){
+  return getCoordCaseHGByXY_terr(getXCoord_Coord(pCoord), getYCoord_Coord(pCoord));
 }
 
 
@@ -144,27 +140,27 @@ Coordonnees * initCoordonnees_coord(int x, int y){
     return pCoord;
 }
 
-void testamentCoord(Coordonnees * coord){
-    free(coord);
+void testamentCoord(Coordonnees * pCoord){
+    free(pCoord);
 
-    coord = NULL;
+    pCoord = NULL;
 }
 
 /////////////////////////////////////////////////////////////////////////
 //CALCULS////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
 
-float distanceEntreDeuxCoordonnees_Coord (Coordonnees * coord1, Coordonnees * coord2){
-	return (float) (sqrt(pow((double)((coord1->xCoord)-(coord2->xCoord)),2)+pow((double)((coord1->yCoord)-(coord2->yCoord)),2)));
+float distanceEntreDeuxCoordonnees_Coord (Coordonnees * pCoord1, Coordonnees * pCoord2){
+	return (float) (sqrt(pow((double)((pCoord1->xCoord)-(pCoord2->xCoord)),2)+pow((double)((pCoord1->yCoord)-(pCoord2->yCoord)),2)));
 }
 
-int sontEgale_Coord (Coordonnees * coord1, Coordonnees * coord2){
+int sontEgale_Coord (Coordonnees * pCoord1, Coordonnees * pCoord2){
 	int x1, x2, y1, y2;
 
-	x1 = getXCoord_Coord(coord1);
-	x2 = getXCoord_Coord(coord2);
-	y1 = getYCoord_Coord(coord1);
-	y2 = getYCoord_Coord(coord2);
+	x1 = getXCoord_Coord(pCoord1);
+	x2 = getXCoord_Coord(pCoord2);
+	y1 = getYCoord_Coord(pCoord1);
+	y2 = getYCoord_Coord(pCoord2);
 
 
 	if((x1==x2)&&(y1==y2)){

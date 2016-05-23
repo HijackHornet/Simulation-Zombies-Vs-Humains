@@ -1,20 +1,16 @@
 var searchData=
 [
-  ['terrain_2eh',['terrain.h',['../terrain_8h.html',1,'']]],
-  ['terraincreer_5fterr',['terrainCreer_terr',['../terrain_8h.html#a18be630674285fc320507f21282be35f',1,'terrain.c']]],
-  ['terraincreerfichier_5fterr',['terrainCreerFichier_terr',['../terrain_8h.html#a17ccc33cd46082886eb3225e45bcb509',1,'terrain.c']]],
-  ['terraininit_5fsim',['terrainInit_sim',['../simulation_8h.html#a4099b743564c53f0a937d6d78c48e6e7',1,'simulation.c']]],
-  ['terraininitgrille_5fterr',['terrainInitGrille_terr',['../terrain_8h.html#a3983dae49e4000872233e7d83205a247',1,'terrain.c']]],
-  ['terrainlirefichier_5fterr',['terrainLireFichier_terr',['../terrain_8h.html#a76d8dc10ec3f222a4b87ce2d53cbc0ae',1,'terrain.h']]],
-  ['testamentcase',['testamentCase',['../case_deplacement_8h.html#ae8dd0ca56ce6c60c91d32a739e9d471d',1,'caseDeplacement.c']]],
-  ['testamentcoord',['testamentCoord',['../coordonnees_8h.html#a7c6afba44ed956444b7036a5f371e436',1,'coordonnees.c']]],
-  ['testamentperso',['testamentPerso',['../personnage_8h.html#a2f2cd16139f8de72e55cd99849fea56d',1,'personnage.c']]],
-  ['testamentterrain_5fterr',['testamentTerrain_terr',['../terrain_8h.html#adcec4a15a3bf0455ad742bdcd940f2cb',1,'terrain.c']]],
-  ['testfonctions_5fcoord',['testFonctions_Coord',['../coordonnees_8h.html#abe42b4ebb96328b33c08361965c79512',1,'coordonnees.c']]],
-  ['testfonctions_5fperso',['testFonctions_perso',['../personnage_8h.html#a722d5ef48f2f08ac15e1a4ab7dfdfe87',1,'personnage.c']]],
-  ['testfonctions_5fsim',['testFonctions_sim',['../simulation_8h.html#a8c84b81dbfbacce2c792705198ee9f71',1,'simulation.c']]],
-  ['testfonctions_5fterr',['testFonctions_terr',['../terrain_8h.html#ae671405a2cab0685307937720369b63f',1,'terrain.c']]],
-  ['tirs',['tirs',['../simulation_8h.html#abf7873243ac6158bd5dfac2dc3b376b1',1,'simulation.c']]],
-  ['type',['type',['../struct_m_perso.html#a7aead736a07eaf25623ad7bfa1f0ee2d',1,'MPerso']]],
-  ['typeperso',['typePerso',['../personnage_8h.html#a3f6a2951aa3d5d428dd6d61e74db0d75',1,'personnage.h']]]
+  ['pcoord',['pCoord',['../structMPerso.html#aa1a6adaf74d536a913f11ed632ddb8d1',1,'MPerso']]],
+  ['perso',['Perso',['../personnage_8h.html#abd5c92a453bbf273f753b3f5b99da9e7',1,'personnage.h']]],
+  ['persocase',['persoCase',['../structMCaseDeplacement.html#a4c1dce63d49728610cc667865d0661e2',1,'MCaseDeplacement']]],
+  ['personnage_2ec',['personnage.c',['../personnage_8c.html',1,'']]],
+  ['personnage_2eh',['personnage.h',['../personnage_8h.html',1,'']]],
+  ['placepersobycoord',['placePersoByCoord',['../terrain_8c.html#af7944caa30120319f283d3818ce1b346',1,'terrain.c']]],
+  ['policier',['POLICIER',['../personnage_8h.html#a3f6a2951aa3d5d428dd6d61e74db0d75a1db595a33d341b53fbd208d9cce5d0fc',1,'personnage.h']]],
+  ['policiers',['policiers',['../structMSimulation.html#a8281fb3df339f2006ce172e9de7d6910',1,'MSimulation']]],
+  ['policiersinit_5fsim',['policiersInit_sim',['../simulation_8c.html#a846fbbc98362da744d48198158e2d347',1,'policiersInit_sim(int nbPoliciers, Simulation *pSim):&#160;simulation.c'],['../simulation_8h.html#a846fbbc98362da744d48198158e2d347',1,'policiersInit_sim(int nbPoliciers, Simulation *pSim):&#160;simulation.c']]],
+  ['policiertuezombie',['policierTueZombie',['../terrain_8c.html#ad4312194338f3849221a0ae93372b974',1,'policierTueZombie(Perso *pPolicier, Terrain *pTerrain):&#160;terrain.c'],['../terrain_8h.html#ad4312194338f3849221a0ae93372b974',1,'policierTueZombie(Perso *pPolicier, Terrain *pTerrain):&#160;terrain.c']]],
+  ['propagationchamp',['propagationChamp',['../terrain_8c.html#af32214c124513367869c101ca6576bac',1,'propagationChamp(enum typePerso type, int idPerso, Coordonnees *coordPerso, Terrain *pTerrain):&#160;terrain.c'],['../terrain_8h.html#af32214c124513367869c101ca6576bac',1,'propagationChamp(enum typePerso type, int idPerso, Coordonnees *coordPerso, Terrain *pTerrain):&#160;terrain.c']]],
+  ['propagerchampspersos',['propagerChampsPersos',['../simulation_8c.html#aec9f9a901b4ea316a48612d15e772dfc',1,'propagerChampsPersos(Simulation *pSim):&#160;simulation.c'],['../simulation_8h.html#aec9f9a901b4ea316a48612d15e772dfc',1,'propagerChampsPersos(Simulation *pSim):&#160;simulation.c']]],
+  ['pterrain',['pTerrain',['../structMSimulation.html#aefc18c24eb2ab2f1224ff2063114122b',1,'MSimulation']]]
 ];
