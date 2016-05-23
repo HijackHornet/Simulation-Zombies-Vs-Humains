@@ -16,14 +16,14 @@ void EventClavier(){
     {
       switch(event.type)
 	{
-        case SDL_WINDOWEVENT: 
-	  if ( event.window.event == SDL_WINDOWEVENT_CLOSE ) 
+        case SDL_WINDOWEVENT:
+	  if ( event.window.event == SDL_WINDOWEVENT_CLOSE )
             {
 	      exit(0);
             }
 	  break;
         case SDL_KEYDOWN:
-	  if ( event.key.keysym.sym == SDLK_ESCAPE ) 
+	  if ( event.key.keysym.sym == SDLK_ESCAPE )
             {
 	      exit(0);
             }
@@ -36,7 +36,7 @@ void EventClavier(){
 
 void EventClavierEditeur(Terrain * pTerrain, char * cheminFichier){
   SDL_Event event;
-  
+
   while ( SDL_PollEvent(&event) )
     {
       switch(event.type)
@@ -86,16 +86,13 @@ void lancerSimulationSDL2 (Simulation * pSim){
 
   unsigned int frameLimit = SDL_GetTicks() + 16;
   int nbZombies, nbPoliciers, nbCitoyens;
-  
-  // Initialisation de la SDL
+
+
   init("Simulation Humains VS Zombie",pSim);
-  // Appelle la fonction cleanup à la fin du programme
   atexit(cleanup);
 
-  // Boucle infinie, principale, du jeu
   do
     {
-      //On dessine tout
       EventClavier();
       propagerChampsPersos(pSim);
       contaminations(pSim);
@@ -108,7 +105,7 @@ void lancerSimulationSDL2 (Simulation * pSim){
       // Gestion des 60 fps (1000ms/60 = 16.6 -> 16)
       delay(frameLimit);
       frameLimit = SDL_GetTicks() + 16;
-      
+
       nbZombies = getNbZombies_sim(pSim);
       nbCitoyens = getNbCitoyens_sim(pSim);
       nbPoliciers = getNbPoliciers_sim(pSim);
