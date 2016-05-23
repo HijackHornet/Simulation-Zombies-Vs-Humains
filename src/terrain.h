@@ -393,10 +393,6 @@ void terrainAjoutMurTour(Terrain * pTerrain);
 /////////////////////////////////////////////////////////////////////////////
 //CHAMPS/////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
-/**
-	@brief Initialisé la grille des champs à 0 avec des marqueurs
-*/
-void initialisationMarqueurs(Terrain * pTerrain);
 
 void propagationChamp(enum typePerso type, int idPerso, Coordonnees  * coordPerso, Terrain * pTerrain);
 
@@ -407,7 +403,5 @@ void propagationChamp(enum typePerso type, int idPerso, Coordonnees  * coordPers
 	@brief Fonctoin de test des fonction du module terrain
 */
 void testFonctions_terr();
-
-void initChampsTerrain(int nbZombie, int nbCitoyens, int nbPoliciers, Terrain * pTerrain);
 
 #endif

@@ -32,6 +32,17 @@ src			  : Dossier des fichier C et des entetes
 obj			  : Dossier des fichier compilés .o
 bin			  : Dossier comportant l'executable du projet
 
+
+////////////////////////////////////////////////////////////////
+//COMPILATION///////////////////////////////////////////////
+////////////////////////////////////////////////////////
+La compilation se fait avec l'outil make. La compilation se fait en ligne de commande en entrant la commande :
+   make
+Une version debug et une version release stockées dans bin/ sont alors créées.
+Pour générer la documentation, entrer la commande :
+   make doxygen
+La documentation est alors stockée dans doc/html
+
 ////////////////////////////////////////////////////////////////
 //EXECUTION/////////////////////////////////////////////////
 ////////////////////////////////////////////////////////
