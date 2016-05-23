@@ -1,6 +1,0 @@
-<map id="src/simulation.h" name="src/simulation.h">
-<area shape="rect" id="node3" href="$terrain_8h.html" title="Définit les fonctions et les structures du terrain. " alt="" coords="337,80,407,107"/>
-<area shape="rect" id="node12" href="$personnage_8h.html" title="Définit les type de personnage et leurs accesseurs. " alt="" coords="186,229,286,256"/>
-<area shape="rect" id="node9" href="$caseDeplacement_8h.html" title="Définit une case sur lesquels les personnages vont pouvoir se déplacer. " alt="" coords="133,155,272,181"/>
-<area shape="rect" id="node10" href="$coordonnees_8h.html" title="Définit les coordonnées atomiques du terrain et ses accesseurs. " alt="" coords="324,304,431,331"/>
-</map>

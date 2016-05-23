@@ -1,6 +1,6 @@
 # Simulation-Zombies-Vs-Humains #
 Par Leo Gigandon & Tristan Rivière
-
+LIF7
 ////////////////////////////////////////////////////////////////
 //DESCRIPTION PROJET////////////////////////////////////////
 ////////////////////////////////////////////////////////
@@ -18,7 +18,10 @@ Simutation :
 	Initialisation : Le nombre d'entité de chaque type que vous avez choisi se placent aléatoirement sur la carte en respectant contraintes des murs.
 	Comportement visible : Il n'y a que deux issue possible, soit les zombies élimines tout les policier et ils ont alors gagné, soit les policier élimines tout les zombies.
 	On constate que les citoyens se déplacent le plus près des bord extèrieur du terrain car les zombies se situent généralement au milieu. On arrive alors dans une position d'équilibre car les champs d'influencent forment une cuvette et les zombie ne savent pas dans quel direction aller car il sont entouré de toutes part. C'est une démonstration du fonctionement des champs d'influence, bien que l'on constate donc que leur application ne se pretent pas bien à notre mecanisme de jeu.
-
+Editeur :
+	Commandes : Touche echap pour quitter sans sauvegarder, Touche S pour sauvegarder la map et quitter.
+	Initialisation : Choix du dossier de sauvegarde et du nom du fichier. On choisi aussi la taille de la map à créer.
+	Fonctionalitées : A chaque clique sur un case, on tranforme le sol en mur ou le mur en sol.
 ////////////////////////////////////////////////////////////////
 //ORGANISATION DES DOSSIER//////////////////////////////////
 ////////////////////////////////////////////////////////

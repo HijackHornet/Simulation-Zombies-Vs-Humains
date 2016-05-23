@@ -1,5 +1,0 @@
-<map id="src/terrain.h" name="src/terrain.h">
-<area shape="rect" id="node7" href="$caseDeplacement_8h.html" title="Définit une case sur lesquels les personnages vont pouvoir se déplacer. " alt="" coords="196,80,335,107"/>
-<area shape="rect" id="node8" href="$coordonnees_8h.html" title="Définit les coordonnées atomiques du terrain et ses accesseurs. " alt="" coords="73,229,180,256"/>
-<area shape="rect" id="node10" href="$personnage_8h.html" title="Définit les type de personnage et leurs accesseurs. " alt="" coords="215,155,315,181"/>
-</map>

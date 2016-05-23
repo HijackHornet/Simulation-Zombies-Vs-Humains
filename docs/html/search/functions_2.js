@@ -1,9 +1,0 @@
-var searchData=
-[
-  ['citoyensinit_5fsim',['citoyensInit_sim',['../simulation_8c.html#aaa2bef8ef03449698a1c49f75e8f96bd',1,'citoyensInit_sim(int nbCitoyens, Simulation *pSim):&#160;simulation.c'],['../simulation_8h.html#aaa2bef8ef03449698a1c49f75e8f96bd',1,'citoyensInit_sim(int nbCitoyens, Simulation *pSim):&#160;simulation.c']]],
-  ['cleanup',['cleanup',['../initialisation__SDL_8c.html#a4b66d5e31b5dc18b314c8a68163263bd',1,'cleanup():&#160;initialisation_SDL.c'],['../initialisation__SDL_8h.html#a4b66d5e31b5dc18b314c8a68163263bd',1,'cleanup():&#160;initialisation_SDL.c']]],
-  ['comparetab2d',['compareTab2D',['../simulation_8c.html#a14a4e9bf4982b1fdd2b26a6f82d24fc0',1,'compareTab2D(const void *a, const void *b):&#160;simulation.c'],['../simulation_8h.html#a14a4e9bf4982b1fdd2b26a6f82d24fc0',1,'compareTab2D(const void *a, const void *b):&#160;simulation.c']]],
-  ['contaminations',['contaminations',['../simulation_8c.html#a8e9f7110fca5097ac2e3b0c5b37549af',1,'contaminations(Simulation *pSim):&#160;simulation.c'],['../simulation_8h.html#a8e9f7110fca5097ac2e3b0c5b37549af',1,'contaminations(Simulation *pSim):&#160;simulation.c']]],
-  ['creepersoterrainrand',['creePersoTerrainRand',['../terrain_8c.html#ae5f55773094ee4c234974d40b3287856',1,'creePersoTerrainRand(Terrain *pTerrain, enum typePerso type, int idPerso):&#160;terrain.c'],['../terrain_8h.html#ae5f55773094ee4c234974d40b3287856',1,'creePersoTerrainRand(Terrain *pTerrain, enum typePerso type, int idPerso):&#160;terrain.c']]],
-  ['creersimulation_5fsim',['creerSimulation_sim',['../simulation_8c.html#adb815f5c273f29d5e514c2120816a4bd',1,'creerSimulation_sim(int nbZombies, int nbPoliciers, int nbCitoyens, char *nomFic):&#160;simulation.c'],['../simulation_8h.html#a66f239a8233da55d5a38fba5853809f5',1,'creerSimulation_sim(int nbZombies, int nbCitoyens, int nbPoliciers, char *nomFic):&#160;simulation.c']]]
-];
