@@ -145,7 +145,7 @@ clean_release:
 	rm -rf $(OBJDIR_RELEASE)/src/SDL2
 
 doxygen:
-	doxygen docs/Doxyfile
+	doxygen doc/Doxyfile
 
 .PHONY: before_debug after_debug clean_debug before_release after_release clean_release
 

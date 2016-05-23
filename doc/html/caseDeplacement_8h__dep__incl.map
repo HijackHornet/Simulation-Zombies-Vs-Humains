@@ -1,12 +1,18 @@
 <map id="src/caseDeplacement.h" name="src/caseDeplacement.h">
-<area shape="rect" id="node2" href="$caseDeplacement_8c.html" title="src/caseDeplacement.c" alt="" coords="99,80,259,107"/>
-<area shape="rect" id="node3" href="$terrain_8h.html" title="Définit les fonctions et les structures du terrain. " alt="" coords="283,80,373,107"/>
-<area shape="rect" id="node4" href="$simulation_8h.html" title="Définit la simulation, ses parametres et ses accesseurs. " alt="" coords="207,155,321,181"/>
-<area shape="rect" id="node11" href="$terrain_8c.html" title="src/terrain.c" alt="" coords="345,155,436,181"/>
-<area shape="rect" id="node5" href="$simulation__gtk_8h.html" title="Définit les fonction appelant à la librairie gtk. " alt="" coords="44,229,183,256"/>
-<area shape="rect" id="node8" href="$simulation_8c.html" title="src/simulation.c" alt="" coords="207,229,321,256"/>
-<area shape="rect" id="node9" href="$simulation__ncurses_8h.html" title="Définit les fonction appelant à la librairie nCurses. " alt="" coords="346,229,513,256"/>
-<area shape="rect" id="node6" href="$main_8c.html" title="src/main.c" alt="" coords="5,304,88,331"/>
-<area shape="rect" id="node7" href="$simulation__gtk_8c.html" title="src/simulation_gtk.c" alt="" coords="112,304,251,331"/>
-<area shape="rect" id="node10" href="$simulation__ncurses_8c.html" title="src/simulation_ncurses.c" alt="" coords="346,304,513,331"/>
+<area shape="rect" id="node2" href="$caseDeplacement_8c.html" title="src/caseDeplacement.c" alt="" coords="275,80,435,107"/>
+<area shape="rect" id="node3" href="$terrain_8h.html" title="Définit les fonctions et les structures du terrain. " alt="" coords="459,80,549,107"/>
+<area shape="rect" id="node4" href="$simulation_8h.html" title="Définit la simulation, ses parametres et ses accesseurs. " alt="" coords="383,155,497,181"/>
+<area shape="rect" id="node17" href="$terrain_8c.html" title="src/terrain.c" alt="" coords="521,155,612,181"/>
+<area shape="rect" id="node5" href="$simulation__gtk_8h.html" title="Définit les fonction appelant à la librairie gtk. " alt="" coords="44,505,183,531"/>
+<area shape="rect" id="node8" href="$simulation__SDL2_8h.html" title="Définit les boucles de de la simulation sous SDL. " alt="" coords="98,408,238,449"/>
+<area shape="rect" id="node9" href="$simulation__SDL2_8c.html" title="src/SDL2/simulation\l_SDL2.c" alt="" coords="341,497,481,539"/>
+<area shape="rect" id="node10" href="$initialisation__SDL_8h.html" title="Définit les fonction pour l&#39;initialisation de SDL. " alt="" coords="227,229,376,271"/>
+<area shape="rect" id="node11" href="$affichage__SDL_8h.html" title="Définit les fonctions d&#39;affichage SDL. " alt="" coords="373,319,507,360"/>
+<area shape="rect" id="node14" href="$simulation_8c.html" title="src/simulation.c" alt="" coords="583,237,697,263"/>
+<area shape="rect" id="node15" href="$simulation__ncurses_8h.html" title="Définit les fonction appelant à la librairie nCurses. " alt="" coords="722,237,889,263"/>
+<area shape="rect" id="node6" href="$main_8c.html" title="src/main.c" alt="" coords="5,587,88,613"/>
+<area shape="rect" id="node7" href="$simulation__gtk_8c.html" title="src/simulation_gtk.c" alt="" coords="112,587,251,613"/>
+<area shape="rect" id="node13" href="$initialisation__SDL_8c.html" title="src/SDL2/initialisation\l_SDL.c" alt="" coords="199,319,348,360"/>
+<area shape="rect" id="node12" href="$affichage__SDL_8c.html" title="src/SDL2/affichage\l_SDL.c" alt="" coords="373,408,507,449"/>
+<area shape="rect" id="node16" href="$simulation__ncurses_8c.html" title="src/simulation_ncurses.c" alt="" coords="722,326,889,353"/>
 </map>

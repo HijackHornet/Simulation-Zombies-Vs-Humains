@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['delay',['delay',['../affichage__SDL_8c.html#a278a2ffbb995f7837d4970a4d7435b63',1,'delay(unsigned int frameLimit):&#160;affichage_SDL.c'],['../affichage__SDL_8h.html#a278a2ffbb995f7837d4970a4d7435b63',1,'delay(unsigned int frameLimit):&#160;affichage_SDL.c']]],
+  ['delayrefresh',['DELAYREFRESH',['../initialisation__SDL_8h.html#ac256520bdfa378b81535036531b70079',1,'initialisation_SDL.h']]],
   ['deplacementaleatoire_5fperso',['deplacementAleatoire_perso',['../terrain_8c.html#a50e099874470bb6e68cbd44c68807aa5',1,'deplacementAleatoire_perso(Perso *pPerso, Terrain *pTerrain):&#160;terrain.c'],['../terrain_8h.html#a50e099874470bb6e68cbd44c68807aa5',1,'deplacementAleatoire_perso(Perso *pPerso, Terrain *pTerrain):&#160;terrain.c']]],
   ['deplacementbas_5fperso',['deplacementBas_perso',['../terrain_8c.html#a124dcf1c540a5e9f8987153c5629777b',1,'deplacementBas_perso(Perso *pPerso, Terrain *pTerrain):&#160;terrain.c'],['../terrain_8h.html#a124dcf1c540a5e9f8987153c5629777b',1,'deplacementBas_perso(Perso *pPerso, Terrain *pTerrain):&#160;terrain.c']]],
   ['deplacementdroite_5fperso',['deplacementDroite_perso',['../terrain_8c.html#a385bedef7127b250811ce7f0218c66e3',1,'deplacementDroite_perso(Perso *pPerso, Terrain *pTerrain):&#160;terrain.c'],['../terrain_8h.html#a385bedef7127b250811ce7f0218c66e3',1,'deplacementDroite_perso(Perso *pPerso, Terrain *pTerrain):&#160;terrain.c']]],
@@ -18,5 +20,6 @@ var searchData=
   ['deplacerzombies_5fsim',['deplacerZombies_sim',['../simulation_8c.html#a71d0dfc00495ee18d6a263e93a5cf8dd',1,'deplacerZombies_sim(Simulation *pSim):&#160;simulation.c'],['../simulation_8h.html#a71d0dfc00495ee18d6a263e93a5cf8dd',1,'deplacerZombies_sim(Simulation *pSim):&#160;simulation.c']]],
   ['dimx',['dimX',['../structMTerrain.html#ae6f66d485448ae93c427e0586d6b12aa',1,'MTerrain']]],
   ['dimy',['dimY',['../structMTerrain.html#a638d309791fdf84d0267d75702bbab50',1,'MTerrain']]],
-  ['distanceentredeuxcoordonnees_5fcoord',['distanceEntreDeuxCoordonnees_Coord',['../coordonnees_8c.html#ad691c01633ef08dc8831d0544ce01d40',1,'distanceEntreDeuxCoordonnees_Coord(Coordonnees *pCoord1, Coordonnees *pCoord2):&#160;coordonnees.c'],['../coordonnees_8h.html#ad691c01633ef08dc8831d0544ce01d40',1,'distanceEntreDeuxCoordonnees_Coord(Coordonnees *pCoord1, Coordonnees *pCoord2):&#160;coordonnees.c']]]
+  ['distanceentredeuxcoordonnees_5fcoord',['distanceEntreDeuxCoordonnees_Coord',['../coordonnees_8c.html#ad691c01633ef08dc8831d0544ce01d40',1,'distanceEntreDeuxCoordonnees_Coord(Coordonnees *pCoord1, Coordonnees *pCoord2):&#160;coordonnees.c'],['../coordonnees_8h.html#ad691c01633ef08dc8831d0544ce01d40',1,'distanceEntreDeuxCoordonnees_Coord(Coordonnees *pCoord1, Coordonnees *pCoord2):&#160;coordonnees.c']]],
+  ['drawimage',['drawImage',['../affichage__SDL_8c.html#a832a32567dcf778898e4bed9b109e612',1,'drawImage(SDL_Texture *image, int x, int y):&#160;affichage_SDL.c'],['../affichage__SDL_8h.html#a832a32567dcf778898e4bed9b109e612',1,'drawImage(SDL_Texture *image, int x, int y):&#160;affichage_SDL.c']]]
 ];
