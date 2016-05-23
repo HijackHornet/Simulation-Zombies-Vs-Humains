@@ -59,15 +59,15 @@ Perso * initPerso(Coordonnees * pCoord, enum typePerso typePerso, int idPerso){
   setCoordPerso_perso(pCoord, pPerso);
   setTypePerso_perso(typePerso, pPerso);
   setIdPerso(idPerso, pPerso);
-    
+
   return pPerso;
 }
 
 void testamentPerso(Perso * pPerso){
   testamentCoord(getCoordPerso(pPerso));
-    
+
   free(pPerso);
-    
+
   pPerso = NULL;
 }
 ////////////////////////////////////////////////////////////////////////////
@@ -75,15 +75,15 @@ void testamentPerso(Perso * pPerso){
 ////////////////////////////////////////////////////////////////////////////
 
 void testFonctions_perso(){
-  Perso * pPerso = NULL;
-
+    /*
   Coordonnees * coordPerso = initCoordonnees_coord(3, 4);
 
-  pPerso = initPerso(coordPerso, ZOMBIE, 0);
+  Perso * pPerso = initPerso(coordPerso, ZOMBIE, 0);
 
   assert(getTypePerso(pPerso) == ZOMBIE && sontEgale_Coord(getCoordonneesPerso_perso(pPerso), coordPerso));
 
   testamentCoord(coordPerso);
 
   printf("Execution du module coordonnees et de ses fonctions sans erreurs... \n");
+  */
 }

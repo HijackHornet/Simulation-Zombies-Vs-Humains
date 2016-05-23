@@ -1,0 +1,80 @@
+\hypertarget{simulation__SDL2_8c}{}\section{Référence du fichier src/\+S\+D\+L2/simulation\+\_\+\+S\+D\+L2.c}
+\label{simulation__SDL2_8c}\index{src/\+S\+D\+L2/simulation\+\_\+\+S\+D\+L2.\+c@{src/\+S\+D\+L2/simulation\+\_\+\+S\+D\+L2.\+c}}
+{\ttfamily \#include $<$S\+D\+L2/\+S\+D\+L.\+h$>$}\\*
+{\ttfamily \#include $<$S\+D\+L2/\+S\+D\+L\+\_\+image.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}simulation\+\_\+\+S\+D\+L2.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../simulation.\+h\char`\"{}}\\*
+Graphe des dépendances par inclusion de simulation\+\_\+\+S\+D\+L2.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{simulation__SDL2_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{simulation__SDL2_8c_afb9c967cdbed3a77a072a322bbe24a43}{Event\+Clavier} ()
+\begin{DoxyCompactList}\small\item\em Fontion de gestion des Input pour la fenetre de simulation. \end{DoxyCompactList}\item 
+void \hyperlink{simulation__SDL2_8c_ad5241980dc477033cd5263958a76b266}{Event\+Clavier\+Editeur} (\hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain, char $\ast$chemin\+Fichier)
+\begin{DoxyCompactList}\small\item\em Fontion de gestion des Input pour la fenetre de l\textquotesingle{}éditeur. \end{DoxyCompactList}\item 
+void \hyperlink{simulation__SDL2_8c_abcc16ac75e4df54756c479fcc310d641}{lancer\+Simulation\+S\+D\+L2} (\hyperlink{simulation_8h_a1ab3bf4791ab776bb4bd460dcce3e8d7}{Simulation} $\ast$p\+Sim)
+\begin{DoxyCompactList}\small\item\em Fait tourner toutes les phases de la simulation et lance les fontions d\textquotesingle{}affichage. \end{DoxyCompactList}\item 
+void \hyperlink{simulation__SDL2_8c_ac0a9bd316d37dcf65866c261d2d7a970}{lancer\+Simulation\+S\+D\+L2\+Editeur} (char $\ast$chemin\+Fichier, int dimX, int dimY)
+\begin{DoxyCompactList}\small\item\em Fait tourner les fonction de l\textquotesingle{}éditeur de niveau et lance les fonctions d\textquotesingle{}affichage de celui-\/ci. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Documentation des fonctions}
+\index{simulation\+\_\+\+S\+D\+L2.\+c@{simulation\+\_\+\+S\+D\+L2.\+c}!Event\+Clavier@{Event\+Clavier}}
+\index{Event\+Clavier@{Event\+Clavier}!simulation\+\_\+\+S\+D\+L2.\+c@{simulation\+\_\+\+S\+D\+L2.\+c}}
+\subsubsection[{\texorpdfstring{Event\+Clavier()}{EventClavier()}}]{\setlength{\rightskip}{0pt plus 5cm}void Event\+Clavier (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{simulation__SDL2_8c_afb9c967cdbed3a77a072a322bbe24a43}{}\label{simulation__SDL2_8c_afb9c967cdbed3a77a072a322bbe24a43}
+
+
+Fontion de gestion des Input pour la fenetre de simulation. 
+
+\index{simulation\+\_\+\+S\+D\+L2.\+c@{simulation\+\_\+\+S\+D\+L2.\+c}!Event\+Clavier\+Editeur@{Event\+Clavier\+Editeur}}
+\index{Event\+Clavier\+Editeur@{Event\+Clavier\+Editeur}!simulation\+\_\+\+S\+D\+L2.\+c@{simulation\+\_\+\+S\+D\+L2.\+c}}
+\subsubsection[{\texorpdfstring{Event\+Clavier\+Editeur(\+Terrain $\ast$p\+Terrain, char $\ast$chemin\+Fichier)}{EventClavierEditeur(Terrain *pTerrain, char *cheminFichier)}}]{\setlength{\rightskip}{0pt plus 5cm}void Event\+Clavier\+Editeur (
+\begin{DoxyParamCaption}
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain, }
+\item[{char $\ast$}]{chemin\+Fichier}
+\end{DoxyParamCaption}
+)}\hypertarget{simulation__SDL2_8c_ad5241980dc477033cd5263958a76b266}{}\label{simulation__SDL2_8c_ad5241980dc477033cd5263958a76b266}
+
+
+Fontion de gestion des Input pour la fenetre de l\textquotesingle{}éditeur. 
+
+\index{simulation\+\_\+\+S\+D\+L2.\+c@{simulation\+\_\+\+S\+D\+L2.\+c}!lancer\+Simulation\+S\+D\+L2@{lancer\+Simulation\+S\+D\+L2}}
+\index{lancer\+Simulation\+S\+D\+L2@{lancer\+Simulation\+S\+D\+L2}!simulation\+\_\+\+S\+D\+L2.\+c@{simulation\+\_\+\+S\+D\+L2.\+c}}
+\subsubsection[{\texorpdfstring{lancer\+Simulation\+S\+D\+L2(\+Simulation $\ast$p\+Sim)}{lancerSimulationSDL2(Simulation *pSim)}}]{\setlength{\rightskip}{0pt plus 5cm}void lancer\+Simulation\+S\+D\+L2 (
+\begin{DoxyParamCaption}
+\item[{{\bf Simulation} $\ast$}]{p\+Sim}
+\end{DoxyParamCaption}
+)}\hypertarget{simulation__SDL2_8c_abcc16ac75e4df54756c479fcc310d641}{}\label{simulation__SDL2_8c_abcc16ac75e4df54756c479fcc310d641}
+
+
+Fait tourner toutes les phases de la simulation et lance les fontions d\textquotesingle{}affichage. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Sim} & Pointeur vers la simulation à lancer dans Sdl \\
+\hline
+\end{DoxyParams}
+\index{simulation\+\_\+\+S\+D\+L2.\+c@{simulation\+\_\+\+S\+D\+L2.\+c}!lancer\+Simulation\+S\+D\+L2\+Editeur@{lancer\+Simulation\+S\+D\+L2\+Editeur}}
+\index{lancer\+Simulation\+S\+D\+L2\+Editeur@{lancer\+Simulation\+S\+D\+L2\+Editeur}!simulation\+\_\+\+S\+D\+L2.\+c@{simulation\+\_\+\+S\+D\+L2.\+c}}
+\subsubsection[{\texorpdfstring{lancer\+Simulation\+S\+D\+L2\+Editeur(char $\ast$chemin\+Fichier, int dim\+X, int dim\+Y)}{lancerSimulationSDL2Editeur(char *cheminFichier, int dimX, int dimY)}}]{\setlength{\rightskip}{0pt plus 5cm}void lancer\+Simulation\+S\+D\+L2\+Editeur (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{chemin\+Fichier, }
+\item[{int}]{dimX, }
+\item[{int}]{dimY}
+\end{DoxyParamCaption}
+)}\hypertarget{simulation__SDL2_8c_ac0a9bd316d37dcf65866c261d2d7a970}{}\label{simulation__SDL2_8c_ac0a9bd316d37dcf65866c261d2d7a970}
+
+
+Fait tourner les fonction de l\textquotesingle{}éditeur de niveau et lance les fonctions d\textquotesingle{}affichage de celui-\/ci. 
+

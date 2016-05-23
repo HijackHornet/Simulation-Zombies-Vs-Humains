@@ -10,6 +10,7 @@ var searchData=
   ['citoyen',['CITOYEN',['../personnage_8h.html#a3f6a2951aa3d5d428dd6d61e74db0d75aea28a2bbfeeafa3a7de5daa12914e76b',1,'personnage.h']]],
   ['citoyens',['citoyens',['../structMSimulation.html#a3468065bed2a665bd316109c5a3b6480',1,'MSimulation']]],
   ['citoyensinit_5fsim',['citoyensInit_sim',['../simulation_8c.html#aaa2bef8ef03449698a1c49f75e8f96bd',1,'citoyensInit_sim(int nbCitoyens, Simulation *pSim):&#160;simulation.c'],['../simulation_8h.html#aaa2bef8ef03449698a1c49f75e8f96bd',1,'citoyensInit_sim(int nbCitoyens, Simulation *pSim):&#160;simulation.c']]],
+  ['cleanup',['cleanup',['../initialisation__SDL_8c.html#a4b66d5e31b5dc18b314c8a68163263bd',1,'cleanup():&#160;initialisation_SDL.c'],['../initialisation__SDL_8h.html#a4b66d5e31b5dc18b314c8a68163263bd',1,'cleanup():&#160;initialisation_SDL.c']]],
   ['comparetab2d',['compareTab2D',['../simulation_8c.html#a14a4e9bf4982b1fdd2b26a6f82d24fc0',1,'compareTab2D(const void *a, const void *b):&#160;simulation.c'],['../simulation_8h.html#a14a4e9bf4982b1fdd2b26a6f82d24fc0',1,'compareTab2D(const void *a, const void *b):&#160;simulation.c']]],
   ['contaminations',['contaminations',['../simulation_8c.html#a8e9f7110fca5097ac2e3b0c5b37549af',1,'contaminations(Simulation *pSim):&#160;simulation.c'],['../simulation_8h.html#a8e9f7110fca5097ac2e3b0c5b37549af',1,'contaminations(Simulation *pSim):&#160;simulation.c']]],
   ['coordonnees',['Coordonnees',['../coordonnees_8h.html#a79929cdfee7bd985a5e4e25276bb3ba9',1,'coordonnees.h']]],

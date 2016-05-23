@@ -1,0 +1,8 @@
+<map id="src/SDL2/affichage_SDL.h" name="src/SDL2/affichage_SDL.h">
+<area shape="rect" id="node2" href="$simulation__SDL2_8h.html" title="Définit les boucles de de la simulation sous SDL. " alt="" coords="125,95,265,136"/>
+<area shape="rect" id="node7" href="$affichage__SDL_8c.html" title="src/SDL2/affichage\l_SDL.c" alt="" coords="289,95,423,136"/>
+<area shape="rect" id="node3" href="$simulation__gtk_8h.html" title="Définit les fonction appelant à la librairie gtk. " alt="" coords="44,191,183,218"/>
+<area shape="rect" id="node6" href="$simulation__SDL2_8c.html" title="src/SDL2/simulation\l_SDL2.c" alt="" coords="207,184,347,225"/>
+<area shape="rect" id="node4" href="$main_8c.html" title="src/main.c" alt="" coords="5,273,88,300"/>
+<area shape="rect" id="node5" href="$simulation__gtk_8c.html" title="src/simulation_gtk.c" alt="" coords="112,273,251,300"/>
+</map>

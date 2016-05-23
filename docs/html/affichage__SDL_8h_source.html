@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>Simulation Humain Vs Zombies:  Fichier source de src/SDL2/affichage_SDL.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Simulation Humain Vs Zombies
+   &#160;<span id="projectnumber">1</span>
+   </div>
+   <div id="projectbrief">Utilisation de champs d&#39;influence dans une simulation</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_81dd1a6a05e56d0162c9f72ece8cd7e2.html">SDL2</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">affichage_SDL.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="affichage__SDL_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;SDL.h&gt;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;SDL_image.h&gt;</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;../simulation.h&quot;</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="initialisation__SDL_8h.html">initialisation_SDL.h</a>&quot;</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keywordtype">void</span> <a class="code" href="affichage__SDL_8h.html#a278a2ffbb995f7837d4970a4d7435b63">delay</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> frameLimit);</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;SDL_Texture *<a class="code" href="affichage__SDL_8h.html#af3652d2a65ac26a4ec6170f48d9e12d8">loadImage</a>(<span class="keywordtype">char</span> *name);</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keywordtype">void</span> <a class="code" href="affichage__SDL_8h.html#a832a32567dcf778898e4bed9b109e612">drawImage</a>(SDL_Texture *image, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y); </div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keywordtype">void</span> <a class="code" href="affichage__SDL_8h.html#a28eeadba58aaabe839e3467ce440a67c">afficherParamFenetre</a>(<a class="code" href="structMSimulation.html">Simulation</a> * pSim);</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">void</span> <a class="code" href="affichage__SDL_8h.html#a5c7272305c3e40540b846a7068612441">affichageFenetre</a>(<a class="code" href="structMSimulation.html">Simulation</a> * pSim);</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keywordtype">void</span> <a class="code" href="affichage__SDL_8h.html#aefd5d93398affc282898e4e087e37eee">affichageFenetreEditeur</a>();</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div><div class="ttc" id="affichage__SDL_8h_html_aefd5d93398affc282898e4e087e37eee"><div class="ttname"><a href="affichage__SDL_8h.html#aefd5d93398affc282898e4e087e37eee">affichageFenetreEditeur</a></div><div class="ttdeci">void affichageFenetreEditeur()</div><div class="ttdoc">Dessine le terrain vierge pour l&amp;#39;editeur sur la fenetre. </div></div>
+<div class="ttc" id="affichage__SDL_8h_html_a28eeadba58aaabe839e3467ce440a67c"><div class="ttname"><a href="affichage__SDL_8h.html#a28eeadba58aaabe839e3467ce440a67c">afficherParamFenetre</a></div><div class="ttdeci">void afficherParamFenetre(Simulation *pSim)</div><div class="ttdoc">Dessine les personnage de la simulation sur la fenetre. </div><div class="ttdef"><b>Definition:</b> affichage_SDL.c:60</div></div>
+<div class="ttc" id="affichage__SDL_8h_html_a278a2ffbb995f7837d4970a4d7435b63"><div class="ttname"><a href="affichage__SDL_8h.html#a278a2ffbb995f7837d4970a4d7435b63">delay</a></div><div class="ttdeci">void delay(unsigned int frameLimit)</div><div class="ttdef"><b>Definition:</b> affichage_SDL.c:3</div></div>
+<div class="ttc" id="affichage__SDL_8h_html_af3652d2a65ac26a4ec6170f48d9e12d8"><div class="ttname"><a href="affichage__SDL_8h.html#af3652d2a65ac26a4ec6170f48d9e12d8">loadImage</a></div><div class="ttdeci">SDL_Texture * loadImage(char *name)</div><div class="ttdef"><b>Definition:</b> affichage_SDL.c:22</div></div>
+<div class="ttc" id="structMSimulation_html"><div class="ttname"><a href="structMSimulation.html">MSimulation</a></div><div class="ttdoc">Structure definissant une simulation et ses attributs. </div><div class="ttdef"><b>Definition:</b> simulation.h:30</div></div>
+<div class="ttc" id="initialisation__SDL_8h_html"><div class="ttname"><a href="initialisation__SDL_8h.html">initialisation_SDL.h</a></div><div class="ttdoc">Définit les fonction pour l&amp;#39;initialisation de SDL. </div></div>
+<div class="ttc" id="affichage__SDL_8h_html_a832a32567dcf778898e4bed9b109e612"><div class="ttname"><a href="affichage__SDL_8h.html#a832a32567dcf778898e4bed9b109e612">drawImage</a></div><div class="ttdeci">void drawImage(SDL_Texture *image, int x, int y)</div><div class="ttdoc">Dessine la SDL_Texture au coordonée XY. </div><div class="ttdef"><b>Definition:</b> affichage_SDL.c:46</div></div>
+<div class="ttc" id="affichage__SDL_8h_html_a5c7272305c3e40540b846a7068612441"><div class="ttname"><a href="affichage__SDL_8h.html#a5c7272305c3e40540b846a7068612441">affichageFenetre</a></div><div class="ttdeci">void affichageFenetre(Simulation *pSim)</div><div class="ttdoc">Dessine le terrain de la simulation sur la fenetre. </div><div class="ttdef"><b>Definition:</b> affichage_SDL.c:99</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Lundi 23 Mai 2016 12:03:32 pour Simulation Humain Vs Zombies par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

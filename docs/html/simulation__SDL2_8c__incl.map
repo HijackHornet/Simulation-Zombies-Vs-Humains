@@ -1,0 +1,10 @@
+<map id="src/SDL2/simulation_SDL2.c" name="src/SDL2/simulation_SDL2.c">
+<area shape="rect" id="node4" href="$simulation__SDL2_8h.html" title="Définit les boucles de de la simulation sous SDL. " alt="" coords="363,95,495,121"/>
+<area shape="rect" id="node5" href="$simulation_8h.html" title="Définit la simulation, ses parametres et ses accesseurs. " alt="" coords="311,319,415,345"/>
+<area shape="rect" id="node18" href="$initialisation__SDL_8h.html" title="Définit les fonction pour l&#39;initialisation de SDL. " alt="" coords="491,244,626,271"/>
+<area shape="rect" id="node21" href="$affichage__SDL_8h.html" title="Définit les fonctions d&#39;affichage SDL. " alt="" coords="394,169,513,196"/>
+<area shape="rect" id="node7" href="$terrain_8h.html" title="Définit les fonctions et les structures du terrain. " alt="" coords="604,393,673,420"/>
+<area shape="rect" id="node16" href="$personnage_8h.html" title="Définit les type de personnage et leurs accesseurs. " alt="" coords="453,543,553,569"/>
+<area shape="rect" id="node13" href="$caseDeplacement_8h.html" title="Définit une case sur lesquels les personnages vont pouvoir se déplacer. " alt="" coords="400,468,539,495"/>
+<area shape="rect" id="node14" href="$coordonnees_8h.html" title="Définit les coordonnées atomiques du terrain et ses accesseurs. " alt="" coords="591,617,697,644"/>
+</map>

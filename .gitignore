@@ -36,6 +36,12 @@
 *~
 #*
 
+# Codeblocks
+*.cbp
+*.cscope_file_list
+*.depend
+*.layout
+
 # GTAG files
 GPATH
 GRTAGS

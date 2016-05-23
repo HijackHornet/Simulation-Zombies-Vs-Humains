@@ -1,0 +1,104 @@
+\hypertarget{affichage__SDL_8c}{}\section{Référence du fichier src/\+S\+D\+L2/affichage\+\_\+\+S\+DL.c}
+\label{affichage__SDL_8c}\index{src/\+S\+D\+L2/affichage\+\_\+\+S\+D\+L.\+c@{src/\+S\+D\+L2/affichage\+\_\+\+S\+D\+L.\+c}}
+{\ttfamily \#include \char`\"{}affichage\+\_\+\+S\+D\+L.\+h\char`\"{}}\\*
+Graphe des dépendances par inclusion de affichage\+\_\+\+S\+D\+L.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{affichage__SDL_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{affichage__SDL_8c_a278a2ffbb995f7837d4970a4d7435b63}{delay} (unsigned int frame\+Limit)
+\item 
+S\+D\+L\+\_\+\+Texture $\ast$ \hyperlink{affichage__SDL_8c_af3652d2a65ac26a4ec6170f48d9e12d8}{load\+Image} (char $\ast$name)
+\item 
+void \hyperlink{affichage__SDL_8c_a832a32567dcf778898e4bed9b109e612}{draw\+Image} (S\+D\+L\+\_\+\+Texture $\ast$image, int x, int y)
+\begin{DoxyCompactList}\small\item\em Dessine la S\+D\+L\+\_\+\+Texture au coordonée XY. \end{DoxyCompactList}\item 
+void \hyperlink{affichage__SDL_8c_a28eeadba58aaabe839e3467ce440a67c}{afficher\+Param\+Fenetre} (\hyperlink{simulation_8h_a1ab3bf4791ab776bb4bd460dcce3e8d7}{Simulation} $\ast$p\+Sim)
+\begin{DoxyCompactList}\small\item\em Dessine les personnage de la simulation sur la fenetre. \end{DoxyCompactList}\item 
+void \hyperlink{affichage__SDL_8c_a5c7272305c3e40540b846a7068612441}{affichage\+Fenetre} (\hyperlink{simulation_8h_a1ab3bf4791ab776bb4bd460dcce3e8d7}{Simulation} $\ast$p\+Sim)
+\begin{DoxyCompactList}\small\item\em Dessine le terrain de la simulation sur la fenetre. \end{DoxyCompactList}\item 
+void \hyperlink{affichage__SDL_8c_a06abdddfa81b0a2919a398fad146857b}{affichage\+Fenetre\+Editeur} (\hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain)
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentation des fonctions}
+\index{affichage\+\_\+\+S\+D\+L.\+c@{affichage\+\_\+\+S\+D\+L.\+c}!affichage\+Fenetre@{affichage\+Fenetre}}
+\index{affichage\+Fenetre@{affichage\+Fenetre}!affichage\+\_\+\+S\+D\+L.\+c@{affichage\+\_\+\+S\+D\+L.\+c}}
+\subsubsection[{\texorpdfstring{affichage\+Fenetre(\+Simulation $\ast$p\+Sim)}{affichageFenetre(Simulation *pSim)}}]{\setlength{\rightskip}{0pt plus 5cm}void affichage\+Fenetre (
+\begin{DoxyParamCaption}
+\item[{{\bf Simulation} $\ast$}]{p\+Sim}
+\end{DoxyParamCaption}
+)}\hypertarget{affichage__SDL_8c_a5c7272305c3e40540b846a7068612441}{}\label{affichage__SDL_8c_a5c7272305c3e40540b846a7068612441}
+
+
+Dessine le terrain de la simulation sur la fenetre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Sim} & Pointeur vers la simulation à afficher \\
+\hline
+\end{DoxyParams}
+\index{affichage\+\_\+\+S\+D\+L.\+c@{affichage\+\_\+\+S\+D\+L.\+c}!affichage\+Fenetre\+Editeur@{affichage\+Fenetre\+Editeur}}
+\index{affichage\+Fenetre\+Editeur@{affichage\+Fenetre\+Editeur}!affichage\+\_\+\+S\+D\+L.\+c@{affichage\+\_\+\+S\+D\+L.\+c}}
+\subsubsection[{\texorpdfstring{affichage\+Fenetre\+Editeur(\+Terrain $\ast$p\+Terrain)}{affichageFenetreEditeur(Terrain *pTerrain)}}]{\setlength{\rightskip}{0pt plus 5cm}void affichage\+Fenetre\+Editeur (
+\begin{DoxyParamCaption}
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain}
+\end{DoxyParamCaption}
+)}\hypertarget{affichage__SDL_8c_a06abdddfa81b0a2919a398fad146857b}{}\label{affichage__SDL_8c_a06abdddfa81b0a2919a398fad146857b}
+\index{affichage\+\_\+\+S\+D\+L.\+c@{affichage\+\_\+\+S\+D\+L.\+c}!afficher\+Param\+Fenetre@{afficher\+Param\+Fenetre}}
+\index{afficher\+Param\+Fenetre@{afficher\+Param\+Fenetre}!affichage\+\_\+\+S\+D\+L.\+c@{affichage\+\_\+\+S\+D\+L.\+c}}
+\subsubsection[{\texorpdfstring{afficher\+Param\+Fenetre(\+Simulation $\ast$p\+Sim)}{afficherParamFenetre(Simulation *pSim)}}]{\setlength{\rightskip}{0pt plus 5cm}void afficher\+Param\+Fenetre (
+\begin{DoxyParamCaption}
+\item[{{\bf Simulation} $\ast$}]{p\+Sim}
+\end{DoxyParamCaption}
+)}\hypertarget{affichage__SDL_8c_a28eeadba58aaabe839e3467ce440a67c}{}\label{affichage__SDL_8c_a28eeadba58aaabe839e3467ce440a67c}
+
+
+Dessine les personnage de la simulation sur la fenetre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Sim} & Pointeur vers la simulation à afficher \\
+\hline
+\end{DoxyParams}
+\index{affichage\+\_\+\+S\+D\+L.\+c@{affichage\+\_\+\+S\+D\+L.\+c}!delay@{delay}}
+\index{delay@{delay}!affichage\+\_\+\+S\+D\+L.\+c@{affichage\+\_\+\+S\+D\+L.\+c}}
+\subsubsection[{\texorpdfstring{delay(unsigned int frame\+Limit)}{delay(unsigned int frameLimit)}}]{\setlength{\rightskip}{0pt plus 5cm}void delay (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{frame\+Limit}
+\end{DoxyParamCaption}
+)}\hypertarget{affichage__SDL_8c_a278a2ffbb995f7837d4970a4d7435b63}{}\label{affichage__SDL_8c_a278a2ffbb995f7837d4970a4d7435b63}
+\index{affichage\+\_\+\+S\+D\+L.\+c@{affichage\+\_\+\+S\+D\+L.\+c}!draw\+Image@{draw\+Image}}
+\index{draw\+Image@{draw\+Image}!affichage\+\_\+\+S\+D\+L.\+c@{affichage\+\_\+\+S\+D\+L.\+c}}
+\subsubsection[{\texorpdfstring{draw\+Image(\+S\+D\+L\+\_\+\+Texture $\ast$image, int x, int y)}{drawImage(SDL_Texture *image, int x, int y)}}]{\setlength{\rightskip}{0pt plus 5cm}void draw\+Image (
+\begin{DoxyParamCaption}
+\item[{S\+D\+L\+\_\+\+Texture $\ast$}]{image, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{affichage__SDL_8c_a832a32567dcf778898e4bed9b109e612}{}\label{affichage__SDL_8c_a832a32567dcf778898e4bed9b109e612}
+
+
+Dessine la S\+D\+L\+\_\+\+Texture au coordonée XY. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em image} & Pointeur vers la S\+D\+L\+\_\+texture a dessiner \\
+\hline
+{\em x} & Coordonnées en X ou dessiner \\
+\hline
+{\em y} & Coordonnées en Y ou dessiner \\
+\hline
+\end{DoxyParams}
+\index{affichage\+\_\+\+S\+D\+L.\+c@{affichage\+\_\+\+S\+D\+L.\+c}!load\+Image@{load\+Image}}
+\index{load\+Image@{load\+Image}!affichage\+\_\+\+S\+D\+L.\+c@{affichage\+\_\+\+S\+D\+L.\+c}}
+\subsubsection[{\texorpdfstring{load\+Image(char $\ast$name)}{loadImage(char *name)}}]{\setlength{\rightskip}{0pt plus 5cm}S\+D\+L\+\_\+\+Texture$\ast$ load\+Image (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}\hypertarget{affichage__SDL_8c_af3652d2a65ac26a4ec6170f48d9e12d8}{}\label{affichage__SDL_8c_af3652d2a65ac26a4ec6170f48d9e12d8}
