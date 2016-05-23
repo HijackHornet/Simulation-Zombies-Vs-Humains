@@ -808,10 +808,10 @@ void terrainCreerFichier_terr (Terrain * pTerrain, char * cheminFichier){
     fclose(pFichier);
 }
 
-Terrain * terrainLireFichier_terr (char * nomTerrain){
+Terrain * terrainLireFichier_terr (char * cheminFichier){
     FILE * pFichier;
 
-    pFichier = fopen(nomTerrain,"r");
+    pFichier = fopen(cheminFichier,"r");
 
     assert(pFichier != NULL);
 
@@ -819,7 +819,7 @@ Terrain * terrainLireFichier_terr (char * nomTerrain){
     int dimX, dimY;
     fscanf(pFichier,"%d %d", &dimX, &dimY);
     getc(pFichier);
-    pTerrain = terrainCreer_terr(dimX, dimY, nomTerrain);
+    pTerrain = terrainCreer_terr(dimX, dimY, cheminFichier);
 
     assert(pTerrain != NULL);
 

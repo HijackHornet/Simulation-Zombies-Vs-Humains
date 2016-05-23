@@ -13,11 +13,12 @@
 #include <stdio.h>
 /** Les différents type de personnages */
 enum typePerso {POLICIER, ZOMBIE, CITOYEN};
+
 /** @struct MPerso
  *  @brief Structure definissant un personnage et ses attributs
  *  @var MPerso::id
  *	id D'un personnage servant à l'identifier
- *	@var MPerso::coord
+ *	@var MPerso::pCoord
  *	Coordonnées associé à se personnage
  *	@var MPerso::type
  *	Type du personnage zombie,citoyen ou humain
@@ -91,7 +92,7 @@ void setCoordPerso_perso(Coordonnees * pCoord, Perso * pPerso);
 int getIdPerso(Perso * pPerso);
 /**
 	@brief Change l'Id d'un personnage pointé
-	@param L'ID sous forme d'entier
+	@param idPerso L'ID sous forme d'entier
 	@param pPerso Le personnage dont on veut l'ID
 */
 void setIdPerso(int idPerso, Perso * pPerso);
@@ -109,7 +110,7 @@ void setIdPerso(int idPerso, Perso * pPerso);
 	@return Pointeur vers le personnage créé
 	
 */
-Perso * initPerso(Coordonnees * pCoord, enum typePerso typePerso, int idPerso);
+Perso * initPerso(Coordonnees * pCoord, enum typePerso type, int idPerso);
 /**
 	@brief Detruit le personnage pointé et libère la mémoire
 	@param pPerso Pointeur vers le personnage a détruire et liberer

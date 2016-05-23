@@ -42,8 +42,8 @@ void setXCoord_Coord(int x, Coordonnees * pCoord);
 void setYCoord_Coord(int y, Coordonnees * pCoord);
 /**
 	@brief Edition de xCoord et de yCoord dans la structure
-	@param xCoord Valeur sur l'axe des x
-	@param yCoord Valeur sur l'axe des y
+	@param x Valeur sur l'axe des x
+	@param y Valeur sur l'axe des y
 	@param pCoord Pointeur sur la structure Coordonnees à editer
 */
 void setXYCoord_Coord (int x, int y, Coordonnees * pCoord);
@@ -89,25 +89,25 @@ Coordonnees getCoordCaseGaucheByXY_terr(int x, int y);
 Coordonnees getCoordCaseHautByXY_terr(int x, int y);
 /**
 	@brief Retourne des coordonnées de la case en dessous d'une structure de coordonnée
-	@param coord Pointeur sur les coordonnées de reference
+	@param pCoord Pointeur sur les coordonnées de reference
 	@return Les coordonnées de la case en dessous
 */
 Coordonnees getCoordCaseBasByCoord_terr(Coordonnees * pCoord);
 /**
 	@brief Retourne des coordonnées de la case en haut d'une structure de coordonnée
-	@param coord Pointeur sur les coordonnées de reference
+	@param pCoord Pointeur sur les coordonnées de reference
 	@return Les coordonnées de la case en haut
 */
 Coordonnees getCoordCaseHautByCoord_terr(Coordonnees * pCoord);
 /**
 	@brief Retourne des coordonnées de la case à gauche d'une structure de coordonnée
-	@param coord Pointeur sur les coordonnées de reference
+	@param pCoord Pointeur sur les coordonnées de reference
 	@return Les coordonnées de la case à gauche
 */
 Coordonnees getCoordCaseGaucheByCoord_terr(Coordonnees * pCoord);
 /**
 	@brief Retourne des coordonnées de la case à droite d'une structure de coordonnée
-	@param coord Pointeur sur les coordonnées de reference
+	@param pCoord Pointeur sur les coordonnées de reference
 	@return Les coordonnées de la case à droite
 */
 Coordonnees getCoordCaseDroiteByCoord_terr(Coordonnees * pCoord);
@@ -169,49 +169,49 @@ Coordonnees getCoordCaseBGByXY_terr(int x, int y);
 Coordonnees getCoordCaseHGByXY_terr(int x, int y);
 /**
 	@brief Retourne des coordonnées de la 2eme case en bas à partir de coordonnées
-	@param coord Pointeur vers les coordonnées de référence
+	@param pCoord Pointeur vers les coordonnées de référence
 	@return Les coordonnées de la 2eme case en bas
 */
 Coordonnees getCoordCase2BasByCoord_terr(Coordonnees * pCoord);
 /**
 	@brief Retourne des coordonnées de la 2eme case à droite à partir de coordonnées
-	@param coord Pointeur vers les coordonnées de référence
+	@param pCoord Pointeur vers les coordonnées de référence
 	@return Les coordonnées de la 2eme case à droite
 */
 Coordonnees getCoordCase2DroiteByCoord_terr(Coordonnees * pCoord);
 /**
 	@brief Retourne des coordonnées de la 2eme case à gauche à partir de coordonnées
-	@param coord Pointeur vers les coordonnées de référence
+	@param pCoord Pointeur vers les coordonnées de référence
 	@return Les coordonnées de la 2eme case à gauche
 */
 Coordonnees getCoordCase2GaucheByCoord_terr(Coordonnees * pCoord);
 /**
 	@brief Retourne des coordonnées de la 2eme case en haut à partir de coordonnées
-	@param coord Pointeur vers les coordonnées de référence
+	@param pCoord Pointeur vers les coordonnées de référence
 	@return Les coordonnées de la 2eme case en haut
 */
 Coordonnees getCoordCase2HautByCoord_terr(Coordonnees * pCoord);
 /**
 	@brief Retourne des coordonnées de la case en haut à droite à partir de coordonnées
-	@param coord Pointeur vers les coordonnées de référence
+	@param pCoord Pointeur vers les coordonnées de référence
 	@return Les coordonnées de la 2eme case en haut à droite
 */
 Coordonnees getCoordCaseHDByCoord_terr(Coordonnees * pCoord);
 /**
 	@brief Retourne des coordonnées de la case en bas à droite à partir de coordonnées
-	@param coord Pointeur vers les coordonnées de référence
+	@param pCoord Pointeur vers les coordonnées de référence
 	@return Les coordonnées de la 2eme case en bas à droite
 */
 Coordonnees getCoordCaseBDByCoord_terr(Coordonnees * pCoord);
 /**
 	@brief Retourne des coordonnées de la case en bas à gauche à partir de coordonnées
-	@param coord Pointeur vers les coordonnées de référence
+	@param pCoord Pointeur vers les coordonnées de référence
 	@return Les coordonnées de la 2eme case en bas à gauche
 */
 Coordonnees getCoordCaseBGByCoord_terr(Coordonnees * pCoord);
 /**
 	@brief Retourne des coordonnées de la case en haut à gauche à partir de coordonnées
-	@param coord Pointeur vers les coordonnées de référence
+	@param pCoord Pointeur vers les coordonnées de référence
 	@return Les coordonnées de la 2eme case en haut à gauche
 */
 Coordonnees getCoordCaseHGByCoord_terr(Coordonnees * pCoord);
@@ -229,7 +229,7 @@ Coordonnees getCoordCaseHGByCoord_terr(Coordonnees * pCoord);
 Coordonnees * initCoordonnees_coord(int x, int y);
 /**
 	@brief Détruit et libère des coordonnées
-	@param coord Les coordonnées a liberer et détruire
+	@param pCoord Les coordonnées a liberer et détruire
 */
 void testamentCoord(Coordonnees * pCoord);
 
@@ -239,16 +239,16 @@ void testamentCoord(Coordonnees * pCoord);
 
 /**
 	@brief Retourne la distance entre deux Coordonnees
-	@param coord1 Coordonnees de la premier entitée
-	@param coord2 Coordonnees de la seconde entitée
+	@param pCoord1 Coordonnees de la premier entitée
+	@param pCoord2 Coordonnees de la seconde entitée
 	@return float représentant la distance entre ses deux coordonnées
 */
 float distanceEntreDeuxCoordonnees_Coord (Coordonnees * pCoord1, Coordonnees * pCoord2);
 
 /**
 	@brief Vérifie si deux Coordonnees donné sont identiques.
-	@param coord1 Coordonnees de la premier entitée
-	@param coord2 Coordonnees de la seconde entitée
+	@param pCoord1 Coordonnees de la premier entitée
+	@param pCoord2 Coordonnees de la seconde entitée
 	@return Retourne 1 si elles sont identique, 0 sinon
 */
 int sontEgale_Coord (Coordonnees * pCoord1, Coordonnees * pCoord2);

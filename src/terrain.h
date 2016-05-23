@@ -364,6 +364,7 @@ char humainADroite(Terrain * pTerrain, Coordonnees * coordZombie);
 /////////////////////////////////////////////////////////////////////////////
 //ENTREES-SORTIES////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
+
 /**
 	@brief Affiche la grille dans la console avec des caractère pour représenter les personnages et murs
 */
@@ -371,14 +372,15 @@ void afficherGrilleConsole(Terrain * pTerrain);
 /**
 	@brief Créer un fichier terrain à partir du pointeur vers terrain
 	@param pTerrain Pointeur vers le terrain qui serra enregistré dans un fichier
+	@param cheminFichier Nom du fichier terrain à lire
 */
 void terrainCreerFichier_terr (Terrain * pTerrain, char * cheminFichier);
 /**
-	@brief Li le fichier terrain de nom spécifié et le retourne par un pointeur
-	@param nomTerrain Nom du fichier terrain à lire
+	@brief Lit le fichier terrain de nom spécifié et le retourne par un pointeur
+	@param cheminFichier Chemin où enregistrer le fichier
 	@return Pointeur vers la structure lu dans le fichier
 */
-Terrain * terrainLireFichier_terr (char nomTerrain[MAX_CHAR_NOM_TERRAIN]);
+Terrain * terrainLireFichier_terr (char * cheminFichier);
 /**
 	@brief Affiche la grille des champs dans la console avec des caractère pour représenter les représenter
 */

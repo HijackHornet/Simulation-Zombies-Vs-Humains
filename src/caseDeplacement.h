@@ -25,7 +25,7 @@ typedef enum env env;
  *  Champs des citoyens présents sur le terrain en cette case
  *	@var MCaseDeplacement::champPoliciers[250]
  *  Champs des policiers présents sur le terrain en cette case
- **/
+ */
 typedef struct MCaseDeplacement{
     env envCase;
     struct MPerso * persoCase;
@@ -79,6 +79,7 @@ unsigned short getChamp(enum typePerso type, int idPerso, caseDeplacement * pCas
 
 /**
 	@brief Définit la valeur du champ du perso défini par son type et son id sur une case
+	@param intensite La valeur du champs en pCaseDep
 	@param type Type du perso (ZOMBIE, POLICIER, CITOYEN)
 	@param idPerso Id du perso dont on veut connaitre le champ
 	@param pCaseDep Pointeur vers la case a detruire et liberer

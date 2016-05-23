@@ -1,0 +1,1180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>Simulation Humain Vs Zombies: Référence du fichier src/simulation.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Simulation Humain Vs Zombies
+   &#160;<span id="projectnumber">1</span>
+   </div>
+   <div id="projectbrief">Utilisation de champs d&#39;influence dans une simulation</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#typedef-members">Définitions de type</a> &#124;
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier simulation.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Définit la simulation, ses parametres et ses accesseurs.  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &lt;glib.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="terrain_8h_source.html">terrain.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="personnage_8h_source.html">personnage.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de simulation.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="simulation_8h__incl.png" border="0" usemap="#src_2simulation_8h" alt=""/></div>
+<map name="src_2simulation_8h" id="src_2simulation_8h">
+<area shape="rect" id="node3" href="terrain_8h.html" title="Définit les fonctions et les structures du terrain. " alt="" coords="337,80,407,107"/>
+<area shape="rect" id="node12" href="personnage_8h.html" title="Définit les type de personnage et leurs accesseurs. " alt="" coords="186,229,286,256"/>
+<area shape="rect" id="node9" href="caseDeplacement_8h.html" title="Définit une case sur lesquels les personnages vont pouvoir se déplacer. " alt="" coords="133,155,272,181"/>
+<area shape="rect" id="node10" href="coordonnees_8h.html" title="Définit les coordonnées atomiques du terrain et ses accesseurs. " alt="" coords="324,304,431,331"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier :</div>
+<div class="dyncontent">
+<div class="center"><img src="simulation_8h__dep__incl.png" border="0" usemap="#src_2simulation_8hdep" alt=""/></div>
+<map name="src_2simulation_8hdep" id="src_2simulation_8hdep">
+<area shape="rect" id="node2" href="simulation__gtk_8h.html" title="Définit les fonction appelant à la librairie gtk. " alt="" coords="44,80,183,107"/>
+<area shape="rect" id="node5" href="simulation_8c.html" title="src/simulation.c" alt="" coords="207,80,321,107"/>
+<area shape="rect" id="node6" href="simulation__ncurses_8h.html" title="Définit les fonction appelant à la librairie nCurses. " alt="" coords="346,80,513,107"/>
+<area shape="rect" id="node3" href="main_8c.html" title="src/main.c" alt="" coords="5,155,88,181"/>
+<area shape="rect" id="node4" href="simulation__gtk_8c.html" title="src/simulation_gtk.c" alt="" coords="112,155,251,181"/>
+<area shape="rect" id="node7" href="simulation__ncurses_8c.html" title="src/simulation_ncurses.c" alt="" coords="346,155,513,181"/>
+</map>
+</div>
+</div>
+<p><a href="simulation_8h_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMSimulation.html">MSimulation</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure definissant une simulation et ses attributs.  <a href="structMSimulation.html#details">Plus de détails...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Définitions de type</h2></td></tr>
+<tr class="memitem:a1ab3bf4791ab776bb4bd460dcce3e8d7"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structMSimulation.html">MSimulation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a></td></tr>
+<tr class="separator:a1ab3bf4791ab776bb4bd460dcce3e8d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a7514376cebf0812d1c64d138766810d5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="terrain_8h.html#a11bbfdc6f8212f3246205cc0e7134136">Terrain</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="simulation_8h.html#a7514376cebf0812d1c64d138766810d5">getTerrain_sim</a> (<a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *pSim)</td></tr>
+<tr class="memdesc:a7514376cebf0812d1c64d138766810d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recupère le terrain associé à une Simulation.  <a href="#a7514376cebf0812d1c64d138766810d5">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a7514376cebf0812d1c64d138766810d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba7706e2cab7f8e20c98eaf6269fbdd8"><td class="memItemLeft" align="right" valign="top">GArray *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="simulation_8h.html#aba7706e2cab7f8e20c98eaf6269fbdd8">getZombies_sim</a> (<a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *pSim)</td></tr>
+<tr class="memdesc:aba7706e2cab7f8e20c98eaf6269fbdd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recupère la grille de zombie associé à une Simulation.  <a href="#aba7706e2cab7f8e20c98eaf6269fbdd8">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aba7706e2cab7f8e20c98eaf6269fbdd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99b58cb2a89463b72b621aae2cc5c956"><td class="memItemLeft" align="right" valign="top">GArray *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="simulation_8h.html#a99b58cb2a89463b72b621aae2cc5c956">getCitoyens_sim</a> (<a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *pSim)</td></tr>
+<tr class="memdesc:a99b58cb2a89463b72b621aae2cc5c956"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recupère la grille de Citoyens associé à une Simulation.  <a href="#a99b58cb2a89463b72b621aae2cc5c956">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a99b58cb2a89463b72b621aae2cc5c956"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99c022a1fc4be8ea72049ed8548867cd"><td class="memItemLeft" align="right" valign="top">GArray *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="simulation_8h.html#a99c022a1fc4be8ea72049ed8548867cd">getPoliciers_sim</a> (<a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *pSim)</td></tr>
+<tr class="memdesc:a99c022a1fc4be8ea72049ed8548867cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recupère la grille de Policiers associé à une Simulation.  <a href="#a99c022a1fc4be8ea72049ed8548867cd">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a99c022a1fc4be8ea72049ed8548867cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c69cabd6bffbe631bd22d1d56e680a4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="simulation_8h.html#a7c69cabd6bffbe631bd22d1d56e680a4">getNbZombies_sim</a> (<a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *pSim)</td></tr>
+<tr class="memdesc:a7c69cabd6bffbe631bd22d1d56e680a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recupère le nombre de zombie associé à une Simulation.  <a href="#a7c69cabd6bffbe631bd22d1d56e680a4">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a7c69cabd6bffbe631bd22d1d56e680a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c811803ecb03ac907db8c2d5aa75c4a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="simulation_8h.html#a9c811803ecb03ac907db8c2d5aa75c4a">getNbCitoyens_sim</a> (<a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *pSim)</td></tr>
+<tr class="memdesc:a9c811803ecb03ac907db8c2d5aa75c4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recupère le nombre de Citoyens associé à une Simulation.  <a href="#a9c811803ecb03ac907db8c2d5aa75c4a">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a9c811803ecb03ac907db8c2d5aa75c4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71bd9dc4548a25fcaa7059e72e0850d2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="simulation_8h.html#a71bd9dc4548a25fcaa7059e72e0850d2">getNbPoliciers_sim</a> (<a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *pSim)</td></tr>
+<tr class="memdesc:a71bd9dc4548a25fcaa7059e72e0850d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recupère le nombre de Policiers associé à une Simulation.  <a href="#a71bd9dc4548a25fcaa7059e72e0850d2">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a71bd9dc4548a25fcaa7059e72e0850d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44bfaa453f2d4a9cf897235adf4e0c9c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="simulation_8h.html#a44bfaa453f2d4a9cf897235adf4e0c9c">zombiesInit_sim</a> (int nbZombies, <a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *pSim)</td></tr>
+<tr class="memdesc:a44bfaa453f2d4a9cf897235adf4e0c9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise la simulation avec un nombre de zombies.  <a href="#a44bfaa453f2d4a9cf897235adf4e0c9c">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a44bfaa453f2d4a9cf897235adf4e0c9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa2bef8ef03449698a1c49f75e8f96bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="simulation_8h.html#aaa2bef8ef03449698a1c49f75e8f96bd">citoyensInit_sim</a> (int nbCitoyens, <a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *pSim)</td></tr>
+<tr class="memdesc:aaa2bef8ef03449698a1c49f75e8f96bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise la simulation avec un nombre de Citoyens.  <a href="#aaa2bef8ef03449698a1c49f75e8f96bd">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aaa2bef8ef03449698a1c49f75e8f96bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a846fbbc98362da744d48198158e2d347"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="simulation_8h.html#a846fbbc98362da744d48198158e2d347">policiersInit_sim</a> (int nbPoliciers, <a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *pSim)</td></tr>
+<tr class="memdesc:a846fbbc98362da744d48198158e2d347"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise la simulation avec un nombre de Policier.  <a href="#a846fbbc98362da744d48198158e2d347">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a846fbbc98362da744d48198158e2d347"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4099b743564c53f0a937d6d78c48e6e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="simulation_8h.html#a4099b743564c53f0a937d6d78c48e6e7">terrainInit_sim</a> (char *nomFic, <a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *pSim)</td></tr>
+<tr class="memdesc:a4099b743564c53f0a937d6d78c48e6e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise la simulation avec le fichier de nom spécifié  <a href="#a4099b743564c53f0a937d6d78c48e6e7">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a4099b743564c53f0a937d6d78c48e6e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14f3cc9f6446c3f212a49d054d358394"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="simulation_8h.html#a14f3cc9f6446c3f212a49d054d358394">initSimulation_sim</a> (<a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *pSim, int nbZombies, int nbCitoyens, int nbPoliciers, char *nomFic)</td></tr>
+<tr class="memdesc:a14f3cc9f6446c3f212a49d054d358394"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise la simulation avec le fichier de nom spécifié, le nombre de zombies, de citoyens et de policier, en appelant les fonctions spécifiques.  <a href="#a14f3cc9f6446c3f212a49d054d358394">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a14f3cc9f6446c3f212a49d054d358394"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66f239a8233da55d5a38fba5853809f5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="simulation_8h.html#a66f239a8233da55d5a38fba5853809f5">creerSimulation_sim</a> (int nbZombies, int nbCitoyens, int nbPoliciers, char *nomFic)</td></tr>
+<tr class="memdesc:a66f239a8233da55d5a38fba5853809f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creer la simulation avec le fichier de nom spécifié, le nombre de zombies, de citoyens et de policier, en appelant les fonctions spécifiques, et l'initialise.  <a href="#a66f239a8233da55d5a38fba5853809f5">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a66f239a8233da55d5a38fba5853809f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af61e27b9f0b0a9c55a56f3af37f90f74"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="simulation_8h.html#af61e27b9f0b0a9c55a56f3af37f90f74">deplacerPoliciers_sim</a> (<a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *pSim)</td></tr>
+<tr class="memdesc:af61e27b9f0b0a9c55a56f3af37f90f74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes les deplacement des policiers de manière aléatoire.  <a href="#af61e27b9f0b0a9c55a56f3af37f90f74">Plus de détails...</a><br /></td></tr>
+<tr class="separator:af61e27b9f0b0a9c55a56f3af37f90f74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7be1f8001d8bc5edb63625a8fa8df70a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="simulation_8h.html#a7be1f8001d8bc5edb63625a8fa8df70a">deplacerCitoyens_sim</a> (<a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *pSim)</td></tr>
+<tr class="memdesc:a7be1f8001d8bc5edb63625a8fa8df70a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes les deplacement des Citoyens de manière aléatoire.  <a href="#a7be1f8001d8bc5edb63625a8fa8df70a">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a7be1f8001d8bc5edb63625a8fa8df70a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71d0dfc00495ee18d6a263e93a5cf8dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="simulation_8h.html#a71d0dfc00495ee18d6a263e93a5cf8dd">deplacerZombies_sim</a> (<a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *pSim)</td></tr>
+<tr class="memdesc:a71d0dfc00495ee18d6a263e93a5cf8dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes les deplacement des Zombies de manière aléatoire.  <a href="#a71d0dfc00495ee18d6a263e93a5cf8dd">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a71d0dfc00495ee18d6a263e93a5cf8dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1f35ce5f9b80c161777a7e3b8cdee5a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="simulation_8h.html#ad1f35ce5f9b80c161777a7e3b8cdee5a">deplacerPerso_sim</a> (<a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *pSim)</td></tr>
+<tr class="memdesc:ad1f35ce5f9b80c161777a7e3b8cdee5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes les deplacement des personnages de manière aléatoire.  <a href="#ad1f35ce5f9b80c161777a7e3b8cdee5a">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ad1f35ce5f9b80c161777a7e3b8cdee5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99cf798b51aeb7a2828941fb096a9766"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="simulation_8h.html#a99cf798b51aeb7a2828941fb096a9766">deplacementIntelZombies_sim</a> (<a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *pSim)</td></tr>
+<tr class="memdesc:a99cf798b51aeb7a2828941fb096a9766"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes les deplacement des zombies de manière intelligente et en regard des champs.  <a href="#a99cf798b51aeb7a2828941fb096a9766">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a99cf798b51aeb7a2828941fb096a9766"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc4f40dd69c6516a19a38e065ee3395f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="simulation_8h.html#acc4f40dd69c6516a19a38e065ee3395f">deplacementIntelCitoyens_sim</a> (<a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *pSim)</td></tr>
+<tr class="memdesc:acc4f40dd69c6516a19a38e065ee3395f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes les deplacement des Citoyens de manière intelligente et en regard des champs.  <a href="#acc4f40dd69c6516a19a38e065ee3395f">Plus de détails...</a><br /></td></tr>
+<tr class="separator:acc4f40dd69c6516a19a38e065ee3395f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4c303981dc0289a2b211ba3e24ccf55"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="simulation_8h.html#ab4c303981dc0289a2b211ba3e24ccf55">deplacementIntelPoliciers_sim</a> (<a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *pSim)</td></tr>
+<tr class="memdesc:ab4c303981dc0289a2b211ba3e24ccf55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes les deplacement des Policiers de manière intelligente et en regard des champs.  <a href="#ab4c303981dc0289a2b211ba3e24ccf55">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ab4c303981dc0289a2b211ba3e24ccf55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d3c4e9b6d1357086a629825e3d062cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="simulation_8h.html#a1d3c4e9b6d1357086a629825e3d062cf">deplacementIntelPersos</a> (<a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *pSim)</td></tr>
+<tr class="memdesc:a1d3c4e9b6d1357086a629825e3d062cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes les deplacement des personnages de manière intelligente et en regard des champs.  <a href="#a1d3c4e9b6d1357086a629825e3d062cf">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a1d3c4e9b6d1357086a629825e3d062cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fc35a43279496971fef75d940492f7b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="simulation_8h.html#a4fc35a43279496971fef75d940492f7b">ajouterPerso</a> (<a class="el" href="coordonnees_8h.html#a79929cdfee7bd985a5e4e25276bb3ba9">Coordonnees</a> *pCoord, enum <a class="el" href="personnage_8h.html#a3f6a2951aa3d5d428dd6d61e74db0d75">typePerso</a> type, <a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *pSim)</td></tr>
+<tr class="memdesc:a4fc35a43279496971fef75d940492f7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute un perso à la simulation et au terrain, selon son type.  <a href="#a4fc35a43279496971fef75d940492f7b">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a4fc35a43279496971fef75d940492f7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ed5368338ff9e0871bb0c816135971a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="simulation_8h.html#a0ed5368338ff9e0871bb0c816135971a">supprimerPerso</a> (<a class="el" href="personnage_8h.html#abd5c92a453bbf273f753b3f5b99da9e7">Perso</a> *pPerso, <a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *pSim)</td></tr>
+<tr class="memdesc:a0ed5368338ff9e0871bb0c816135971a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Supprime un perso de la simulation et de la case à laquelle il est affecté. Ne libère les coordonnées affectées.  <a href="#a0ed5368338ff9e0871bb0c816135971a">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a0ed5368338ff9e0871bb0c816135971a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e9f7110fca5097ac2e3b0c5b37549af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="simulation_8h.html#a8e9f7110fca5097ac2e3b0c5b37549af">contaminations</a> (<a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *pSim)</td></tr>
+<tr class="memdesc:a8e9f7110fca5097ac2e3b0c5b37549af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes les instruction de contamination des policier et citoyens par les zombies.  <a href="#a8e9f7110fca5097ac2e3b0c5b37549af">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a8e9f7110fca5097ac2e3b0c5b37549af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf7873243ac6158bd5dfac2dc3b376b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="simulation_8h.html#abf7873243ac6158bd5dfac2dc3b376b1">tirs</a> (<a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *pSim)</td></tr>
+<tr class="memdesc:abf7873243ac6158bd5dfac2dc3b376b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes les instruction de tirs des policiers sur les zombies.  <a href="#abf7873243ac6158bd5dfac2dc3b376b1">Plus de détails...</a><br /></td></tr>
+<tr class="separator:abf7873243ac6158bd5dfac2dc3b376b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec9f9a901b4ea316a48612d15e772dfc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="simulation_8h.html#aec9f9a901b4ea316a48612d15e772dfc">propagerChampsPersos</a> (<a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *pSim)</td></tr>
+<tr class="memdesc:aec9f9a901b4ea316a48612d15e772dfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Propage les champs des personnages dans la simulation.  <a href="#aec9f9a901b4ea316a48612d15e772dfc">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aec9f9a901b4ea316a48612d15e772dfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac61d3c90dafcff499c3ec3d8095c88bb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="simulation_8h.html#ac61d3c90dafcff499c3ec3d8095c88bb">deplacementIntelZombie</a> (<a class="el" href="personnage_8h.html#abd5c92a453bbf273f753b3f5b99da9e7">Perso</a> *pPerso, <a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *pSim)</td></tr>
+<tr class="memdesc:ac61d3c90dafcff499c3ec3d8095c88bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes les instruction de deplacement intteligent d'un Zombie.  <a href="#ac61d3c90dafcff499c3ec3d8095c88bb">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ac61d3c90dafcff499c3ec3d8095c88bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a119206545d9d380e685a18c9987d3856"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="simulation_8h.html#a119206545d9d380e685a18c9987d3856">deplacementIntelCitoyen</a> (<a class="el" href="personnage_8h.html#abd5c92a453bbf273f753b3f5b99da9e7">Perso</a> *pPerso, <a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *pSim)</td></tr>
+<tr class="memdesc:a119206545d9d380e685a18c9987d3856"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes les instruction de deplacement intteligent d'un Citoyen.  <a href="#a119206545d9d380e685a18c9987d3856">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a119206545d9d380e685a18c9987d3856"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd1af38115336e38d41f0c42123a2024"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="simulation_8h.html#abd1af38115336e38d41f0c42123a2024">deplacementIntelPolicier</a> (<a class="el" href="personnage_8h.html#abd5c92a453bbf273f753b3f5b99da9e7">Perso</a> *pPerso, <a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *pSim)</td></tr>
+<tr class="memdesc:abd1af38115336e38d41f0c42123a2024"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes les instruction de deplacement intteligent d'un Policier.  <a href="#abd1af38115336e38d41f0c42123a2024">Plus de détails...</a><br /></td></tr>
+<tr class="separator:abd1af38115336e38d41f0c42123a2024"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c84b81dbfbacce2c792705198ee9f71"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="simulation_8h.html#a8c84b81dbfbacce2c792705198ee9f71">testFonctions_sim</a> ()</td></tr>
+<tr class="memdesc:a8c84b81dbfbacce2c792705198ee9f71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Focntions de test des fonctions du module Simulation.  <a href="#a8c84b81dbfbacce2c792705198ee9f71">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a8c84b81dbfbacce2c792705198ee9f71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14a4e9bf4982b1fdd2b26a6f82d24fc0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="simulation_8h.html#a14a4e9bf4982b1fdd2b26a6f82d24fc0">compareTab2D</a> (const void *a, const void *b)</td></tr>
+<tr class="memdesc:a14a4e9bf4982b1fdd2b26a6f82d24fc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction à appeler avec qsort pour trier un tableau 2D en lignes par rapport à la première case.  <a href="#a14a4e9bf4982b1fdd2b26a6f82d24fc0">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a14a4e9bf4982b1fdd2b26a6f82d24fc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Définit la simulation, ses parametres et ses accesseurs. </p>
+</div><h2 class="groupheader">Documentation des définitions de type</h2>
+<a class="anchor" id="a1ab3bf4791ab776bb4bd460dcce3e8d7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structMSimulation.html">MSimulation</a>  <a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a class="anchor" id="a4fc35a43279496971fef75d940492f7b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ajouterPerso </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="coordonnees_8h.html#a79929cdfee7bd985a5e4e25276bb3ba9">Coordonnees</a> *&#160;</td>
+          <td class="paramname"><em>pCoord</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">enum <a class="el" href="personnage_8h.html#a3f6a2951aa3d5d428dd6d61e74db0d75">typePerso</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *&#160;</td>
+          <td class="paramname"><em>pSim</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ajoute un perso à la simulation et au terrain, selon son type. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pCoord</td><td>Coordonnées du personnage sur le terrain </td></tr>
+    <tr><td class="paramname">type</td><td>Type du perso (ZOMBIE, POLICIER, CITOYEN) </td></tr>
+    <tr><td class="paramname">pSim</td><td>Pointeur sur la simulation </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aaa2bef8ef03449698a1c49f75e8f96bd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void citoyensInit_sim </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nbCitoyens</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *&#160;</td>
+          <td class="paramname"><em>pSim</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialise la simulation avec un nombre de Citoyens. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nbCitoyens</td><td>Nombres de Citoyens a initialiser dans la Simulation </td></tr>
+    <tr><td class="paramname">pSim</td><td>La simulation a initialiser </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a14a4e9bf4982b1fdd2b26a6f82d24fc0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int compareTab2D </td>
+          <td>(</td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction à appeler avec qsort pour trier un tableau 2D en lignes par rapport à la première case. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>Pointeur sur une case du tableau </td></tr>
+    <tr><td class="paramname">b</td><td>Pointeur sur une case du tableau </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a8e9f7110fca5097ac2e3b0c5b37549af"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void contaminations </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *&#160;</td>
+          <td class="paramname"><em>pSim</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Executes les instruction de contamination des policier et citoyens par les zombies. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pSim</td><td>La simulation dans laquelle tout est effectué </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a66f239a8233da55d5a38fba5853809f5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a>* creerSimulation_sim </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nbZombies</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nbCitoyens</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nbPoliciers</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>nomFic</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creer la simulation avec le fichier de nom spécifié, le nombre de zombies, de citoyens et de policier, en appelant les fonctions spécifiques, et l'initialise. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nbZombies</td><td>Nombres de zombies a creer dans la Simulation </td></tr>
+    <tr><td class="paramname">nbCitoyens</td><td>Nombres de Citoyens a creer dans la Simulation </td></tr>
+    <tr><td class="paramname">nbPoliciers</td><td>Nombres de Policiers a creer dans la Simulation </td></tr>
+    <tr><td class="paramname">nomFic</td><td>Chaine de caractère de nom du fichier </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>pSim Pointeur vers la Simulation crée </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a119206545d9d380e685a18c9987d3856"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void deplacementIntelCitoyen </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="personnage_8h.html#abd5c92a453bbf273f753b3f5b99da9e7">Perso</a> *&#160;</td>
+          <td class="paramname"><em>pPerso</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *&#160;</td>
+          <td class="paramname"><em>pSim</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Executes les instruction de deplacement intteligent d'un Citoyen. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pPerso</td><td>Pointeur vers l'entité qui va etre déplacé intelligement </td></tr>
+    <tr><td class="paramname">pSim</td><td>La simulation dans laquelle tout est effectué </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="acc4f40dd69c6516a19a38e065ee3395f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void deplacementIntelCitoyens_sim </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *&#160;</td>
+          <td class="paramname"><em>pSim</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Executes les deplacement des Citoyens de manière intelligente et en regard des champs. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pSim</td><td>La simulation dans laquelle tout est effectué </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a1d3c4e9b6d1357086a629825e3d062cf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void deplacementIntelPersos </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *&#160;</td>
+          <td class="paramname"><em>pSim</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Executes les deplacement des personnages de manière intelligente et en regard des champs. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pSim</td><td>La simulation dans laquelle tout est effectué </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="abd1af38115336e38d41f0c42123a2024"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void deplacementIntelPolicier </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="personnage_8h.html#abd5c92a453bbf273f753b3f5b99da9e7">Perso</a> *&#160;</td>
+          <td class="paramname"><em>pPerso</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *&#160;</td>
+          <td class="paramname"><em>pSim</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Executes les instruction de deplacement intteligent d'un Policier. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pPerso</td><td>Pointeur vers l'entité qui va etre déplacé intelligement </td></tr>
+    <tr><td class="paramname">pSim</td><td>La simulation dans laquelle tout est effectué </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ab4c303981dc0289a2b211ba3e24ccf55"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void deplacementIntelPoliciers_sim </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *&#160;</td>
+          <td class="paramname"><em>pSim</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Executes les deplacement des Policiers de manière intelligente et en regard des champs. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pSim</td><td>La simulation dans laquelle tout est effectué </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ac61d3c90dafcff499c3ec3d8095c88bb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void deplacementIntelZombie </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="personnage_8h.html#abd5c92a453bbf273f753b3f5b99da9e7">Perso</a> *&#160;</td>
+          <td class="paramname"><em>pPerso</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *&#160;</td>
+          <td class="paramname"><em>pSim</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Executes les instruction de deplacement intteligent d'un Zombie. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pPerso</td><td>Pointeur vers l'entité qui va etre déplacé intelligement </td></tr>
+    <tr><td class="paramname">pSim</td><td>La simulation dans laquelle tout est effectué </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a99cf798b51aeb7a2828941fb096a9766"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void deplacementIntelZombies_sim </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *&#160;</td>
+          <td class="paramname"><em>pSim</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Executes les deplacement des zombies de manière intelligente et en regard des champs. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pSim</td><td>La simulation dans laquelle tout est effectué </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a7be1f8001d8bc5edb63625a8fa8df70a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void deplacerCitoyens_sim </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *&#160;</td>
+          <td class="paramname"><em>pSim</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Executes les deplacement des Citoyens de manière aléatoire. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pSim</td><td>La simulation dans laquelle tout est effectué </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ad1f35ce5f9b80c161777a7e3b8cdee5a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void deplacerPerso_sim </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *&#160;</td>
+          <td class="paramname"><em>pSim</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Executes les deplacement des personnages de manière aléatoire. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pSim</td><td>La simulation dans laquelle tout est effectué </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="af61e27b9f0b0a9c55a56f3af37f90f74"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void deplacerPoliciers_sim </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *&#160;</td>
+          <td class="paramname"><em>pSim</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Executes les deplacement des policiers de manière aléatoire. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pSim</td><td>La simulation dans laquelle tout est effectué </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a71d0dfc00495ee18d6a263e93a5cf8dd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void deplacerZombies_sim </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *&#160;</td>
+          <td class="paramname"><em>pSim</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Executes les deplacement des Zombies de manière aléatoire. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pSim</td><td>La simulation dans laquelle tout est effectué </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a99b58cb2a89463b72b621aae2cc5c956"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GArray* getCitoyens_sim </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *&#160;</td>
+          <td class="paramname"><em>pSim</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Recupère la grille de Citoyens associé à une Simulation. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pSim</td><td>La simulation a étudier </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Pointeur vers la grille de Citoyens </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9c811803ecb03ac907db8c2d5aa75c4a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getNbCitoyens_sim </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *&#160;</td>
+          <td class="paramname"><em>pSim</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Recupère le nombre de Citoyens associé à une Simulation. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pSim</td><td>La simulation a étudier </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Entier du nombre de Citoyens dans la Simulation </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a71bd9dc4548a25fcaa7059e72e0850d2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getNbPoliciers_sim </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *&#160;</td>
+          <td class="paramname"><em>pSim</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Recupère le nombre de Policiers associé à une Simulation. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pSim</td><td>La simulation a étudier </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Entier du nombre de Policiers dans la Simulation </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a7c69cabd6bffbe631bd22d1d56e680a4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getNbZombies_sim </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *&#160;</td>
+          <td class="paramname"><em>pSim</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Recupère le nombre de zombie associé à une Simulation. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pSim</td><td>La simulation a étudier </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Entier du nombre de zombie dans la Simulation </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a99c022a1fc4be8ea72049ed8548867cd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GArray* getPoliciers_sim </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *&#160;</td>
+          <td class="paramname"><em>pSim</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Recupère la grille de Policiers associé à une Simulation. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pSim</td><td>La simulation a étudier </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Pointeur vers la grille de Policiers </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a7514376cebf0812d1c64d138766810d5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="terrain_8h.html#a11bbfdc6f8212f3246205cc0e7134136">Terrain</a>* getTerrain_sim </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *&#160;</td>
+          <td class="paramname"><em>pSim</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Recupère le terrain associé à une Simulation. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pSim</td><td>La simulation a étudier </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Pointeur vers le terrain récupéré </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aba7706e2cab7f8e20c98eaf6269fbdd8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GArray* getZombies_sim </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *&#160;</td>
+          <td class="paramname"><em>pSim</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Recupère la grille de zombie associé à une Simulation. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pSim</td><td>La simulation a étudier </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Pointeur vers la grille de zombies </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a14f3cc9f6446c3f212a49d054d358394"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initSimulation_sim </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *&#160;</td>
+          <td class="paramname"><em>pSim</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nbZombies</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nbCitoyens</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nbPoliciers</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>nomFic</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialise la simulation avec le fichier de nom spécifié, le nombre de zombies, de citoyens et de policier, en appelant les fonctions spécifiques. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pSim</td><td>La simulation a initialiser </td></tr>
+    <tr><td class="paramname">nbZombies</td><td>Nombres de zombies a initialiser dans la Simulation </td></tr>
+    <tr><td class="paramname">nbCitoyens</td><td>Nombres de Citoyens a initialiser dans la Simulation </td></tr>
+    <tr><td class="paramname">nbPoliciers</td><td>Nombres de Policiers a initialiser dans la Simulation </td></tr>
+    <tr><td class="paramname">nomFic</td><td>Chaine de caractère de nom du fichier </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a846fbbc98362da744d48198158e2d347"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void policiersInit_sim </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nbPoliciers</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *&#160;</td>
+          <td class="paramname"><em>pSim</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialise la simulation avec un nombre de Policier. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nbPoliciers</td><td>Nombres de Policiers a initialiser dans la Simulation </td></tr>
+    <tr><td class="paramname">pSim</td><td>La simulation a initialiser </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aec9f9a901b4ea316a48612d15e772dfc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void propagerChampsPersos </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *&#160;</td>
+          <td class="paramname"><em>pSim</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Propage les champs des personnages dans la simulation. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pSim</td><td>La simulation dans laquelle tout est effectué </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a0ed5368338ff9e0871bb0c816135971a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void supprimerPerso </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="personnage_8h.html#abd5c92a453bbf273f753b3f5b99da9e7">Perso</a> *&#160;</td>
+          <td class="paramname"><em>pPerso</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *&#160;</td>
+          <td class="paramname"><em>pSim</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Supprime un perso de la simulation et de la case à laquelle il est affecté. Ne libère les coordonnées affectées. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pPerso</td><td>Personnage à supprimer de la simulation </td></tr>
+    <tr><td class="paramname">pSim</td><td>La simulation dans laquelle tout est effectué </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a4099b743564c53f0a937d6d78c48e6e7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void terrainInit_sim </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>nomFic</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *&#160;</td>
+          <td class="paramname"><em>pSim</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialise la simulation avec le fichier de nom spécifié </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nomFic</td><td>Chaine de caractère de nom du fichier </td></tr>
+    <tr><td class="paramname">pSim</td><td>La simulation a initialiser </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a8c84b81dbfbacce2c792705198ee9f71"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void testFonctions_sim </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Focntions de test des fonctions du module Simulation. </p>
+
+</div>
+</div>
+<a class="anchor" id="abf7873243ac6158bd5dfac2dc3b376b1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tirs </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *&#160;</td>
+          <td class="paramname"><em>pSim</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Executes les instruction de tirs des policiers sur les zombies. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pSim</td><td>La simulation dans laquelle tout est effectué </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a44bfaa453f2d4a9cf897235adf4e0c9c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zombiesInit_sim </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nbZombies</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="simulation_8h.html#a1ab3bf4791ab776bb4bd460dcce3e8d7">Simulation</a> *&#160;</td>
+          <td class="paramname"><em>pSim</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialise la simulation avec un nombre de zombies. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nbZombies</td><td>Nombres de zombies a initialiser dans la Simulation </td></tr>
+    <tr><td class="paramname">pSim</td><td>La simulation a initialiser </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Lundi 23 Mai 2016 14:36:53 pour Simulation Humain Vs Zombies par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>
