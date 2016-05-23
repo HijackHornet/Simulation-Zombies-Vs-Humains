@@ -18,7 +18,6 @@ void EventClavier(){
 	{
         case SDL_WINDOWEVENT: 
 	  if ( event.window.event == SDL_WINDOWEVENT_CLOSE ) 
-
             {
 	      exit(0);
             }
@@ -27,7 +26,6 @@ void EventClavier(){
 	  if ( event.key.keysym.sym == SDLK_ESCAPE ) 
             {
 	      exit(0);
-
             }
 	  break;
 	}
@@ -36,12 +34,9 @@ void EventClavier(){
 }
 
 
-void EventClavierEditeur(Terrain * pTerrain, char * nomTerrain){
+void EventClavierEditeur(Terrain * pTerrain, char * cheminFichier){
   SDL_Event event;
-  int screenheight, screenwidth;
-
-  screenheight = getDimY_terr(pTerrain) * 50 *RENDERERSCALE;
-  screenwidth = getDimX_terr(pTerrain) * 50 *RENDERERSCALE;
+  
   while ( SDL_PollEvent(&event) )
     {
       switch(event.type)
@@ -59,7 +54,7 @@ void EventClavierEditeur(Terrain * pTerrain, char * nomTerrain){
             }
 
 	  if (event.key.keysym.sym == SDLK_s) {
-	    terrainCreerFichier_terr(pTerrain, nomTerrain);
+	    terrainCreerFichier_terr(pTerrain, cheminFichier);
 	    exit(0);
 	  }
 	  break;
@@ -118,6 +113,13 @@ void lancerSimulationSDL2 (Simulation * pSim){
       nbCitoyens = getNbCitoyens_sim(pSim);
       nbPoliciers = getNbPoliciers_sim(pSim);
     } while(nbZombies > 0 && (nbCitoyens + nbPoliciers) > 0);
+
+  while(1){
+    EventClavier();
+    // Gestion des 60 fps (1000ms/60 = 16.6 -> 16)
+    delay(frameLimit);
+    frameLimit = SDL_GetTicks() + 16;
+  }
 }
 
 
