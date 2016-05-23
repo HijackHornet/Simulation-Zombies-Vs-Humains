@@ -1,0 +1,6 @@
+<map id="MSimulation" name="MSimulation">
+<area shape="rect" id="node2" href="$structMTerrain.html" title="Structure definissant un terrain et ses dimensions. " alt="" coords="39,273,113,300"/>
+<area shape="rect" id="node3" href="$structMCaseDeplacement.html" title="Structure definissant les cases de déplacement (champs d&#39;influences et environement) ..." alt="" coords="5,184,147,211"/>
+<area shape="rect" id="node4" href="$structMPerso.html" title="Structure definissant un personnage et ses attributs. " alt="" coords="43,95,109,121"/>
+<area shape="rect" id="node5" href="$structMCoordonnees.html" title="Structure definissant des coordonnees en deux dimension (pour des entitées) " alt="" coords="21,5,131,32"/>
+</map>

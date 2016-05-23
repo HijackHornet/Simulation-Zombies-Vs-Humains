@@ -1,0 +1,404 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>Simulation Humain Vs Zombies: Référence du fichier src/caseDeplacement.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Simulation Humain Vs Zombies
+   &#160;<span id="projectnumber">1</span>
+   </div>
+   <div id="projectbrief">Utilisation de champs d&#39;influence dans une simulation</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier caseDeplacement.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="caseDeplacement_8h_source.html">caseDeplacement.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de caseDeplacement.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="caseDeplacement_8c__incl.png" border="0" usemap="#src_2caseDeplacement_8c" alt=""/></div>
+<map name="src_2caseDeplacement_8c" id="src_2caseDeplacement_8c">
+<area shape="rect" id="node2" href="caseDeplacement_8h.html" title="Définit une case sur lesquels les personnages vont pouvoir se déplacer. " alt="" coords="111,80,249,107"/>
+<area shape="rect" id="node3" href="coordonnees_8h.html" title="Définit les coordonnées atomiques du terrain et ses accesseurs. " alt="" coords="72,229,179,256"/>
+<area shape="rect" id="node8" href="personnage_8h.html" title="Définit les type de personnage et leurs accesseurs. " alt="" coords="177,155,277,181"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a3b6655cf83e6bc1c84ef1dd02f204e0b"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="caseDeplacement_8h.html#af9a4f51a2aa1485342c48472a9124d83">env</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="caseDeplacement_8c.html#a3b6655cf83e6bc1c84ef1dd02f204e0b">getEnvCase</a> (<a class="el" href="caseDeplacement_8h.html#aeab4f22b99f0db8b549dab4e46e3ead4">caseDeplacement</a> *pCaseDep)</td></tr>
+<tr class="memdesc:a3b6655cf83e6bc1c84ef1dd02f204e0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recupère le type de case d'une case de deplacement.  <a href="#a3b6655cf83e6bc1c84ef1dd02f204e0b">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a3b6655cf83e6bc1c84ef1dd02f204e0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b8c143eea4a9242b0f59a634c2f81b0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="personnage_8h.html#abd5c92a453bbf273f753b3f5b99da9e7">Perso</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="caseDeplacement_8c.html#a6b8c143eea4a9242b0f59a634c2f81b0">getPersoCase</a> (<a class="el" href="caseDeplacement_8h.html#aeab4f22b99f0db8b549dab4e46e3ead4">caseDeplacement</a> *pCaseDep)</td></tr>
+<tr class="memdesc:a6b8c143eea4a9242b0f59a634c2f81b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recupère le personnage sur la case de déplacement.  <a href="#a6b8c143eea4a9242b0f59a634c2f81b0">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a6b8c143eea4a9242b0f59a634c2f81b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb53fe7469ac0c9441d4bb3959365a42"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="caseDeplacement_8c.html#abb53fe7469ac0c9441d4bb3959365a42">setEnvCase</a> (<a class="el" href="caseDeplacement_8h.html#aeab4f22b99f0db8b549dab4e46e3ead4">caseDeplacement</a> *pCaseDep, <a class="el" href="caseDeplacement_8h.html#af9a4f51a2aa1485342c48472a9124d83">env</a> valeurEnv)</td></tr>
+<tr class="memdesc:abb53fe7469ac0c9441d4bb3959365a42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifie le type de case d'une case de deplacement.  <a href="#abb53fe7469ac0c9441d4bb3959365a42">Plus de détails...</a><br /></td></tr>
+<tr class="separator:abb53fe7469ac0c9441d4bb3959365a42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2be2ab36936e9a5cb9fd2948353c7b12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="caseDeplacement_8c.html#a2be2ab36936e9a5cb9fd2948353c7b12">setPersoCase</a> (<a class="el" href="caseDeplacement_8h.html#aeab4f22b99f0db8b549dab4e46e3ead4">caseDeplacement</a> *pCaseDep, <a class="el" href="personnage_8h.html#abd5c92a453bbf273f753b3f5b99da9e7">Perso</a> *pPerso)</td></tr>
+<tr class="memdesc:a2be2ab36936e9a5cb9fd2948353c7b12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifie le personnage sur la case de déplacement.  <a href="#a2be2ab36936e9a5cb9fd2948353c7b12">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a2be2ab36936e9a5cb9fd2948353c7b12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a271e610d4e5a86cabe14f2f9ae463442"><td class="memItemLeft" align="right" valign="top">unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="caseDeplacement_8c.html#a271e610d4e5a86cabe14f2f9ae463442">getChamp</a> (enum <a class="el" href="personnage_8h.html#a3f6a2951aa3d5d428dd6d61e74db0d75">typePerso</a> type, int idPerso, <a class="el" href="caseDeplacement_8h.html#aeab4f22b99f0db8b549dab4e46e3ead4">caseDeplacement</a> *pCaseDep)</td></tr>
+<tr class="memdesc:a271e610d4e5a86cabe14f2f9ae463442"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère la valeur du champ du perso défini par son type et son id sur une case.  <a href="#a271e610d4e5a86cabe14f2f9ae463442">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a271e610d4e5a86cabe14f2f9ae463442"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8f191fd46363452d5e40a19326fefc5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="caseDeplacement_8c.html#ad8f191fd46363452d5e40a19326fefc5">setChamp</a> (unsigned short intensite, enum <a class="el" href="personnage_8h.html#a3f6a2951aa3d5d428dd6d61e74db0d75">typePerso</a> type, int idPerso, <a class="el" href="caseDeplacement_8h.html#aeab4f22b99f0db8b549dab4e46e3ead4">caseDeplacement</a> *caseDep)</td></tr>
+<tr class="memdesc:ad8f191fd46363452d5e40a19326fefc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définit la valeur du champ du perso défini par son type et son id sur une case.  <a href="#ad8f191fd46363452d5e40a19326fefc5">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ad8f191fd46363452d5e40a19326fefc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ef31ff562e58ed644b58bc85dac2534"><td class="memItemLeft" align="right" valign="top"><a class="el" href="caseDeplacement_8h.html#aeab4f22b99f0db8b549dab4e46e3ead4">caseDeplacement</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="caseDeplacement_8c.html#a7ef31ff562e58ed644b58bc85dac2534">initCase</a> (enum <a class="el" href="caseDeplacement_8h.html#af9a4f51a2aa1485342c48472a9124d83">env</a> envCase, <a class="el" href="personnage_8h.html#abd5c92a453bbf273f753b3f5b99da9e7">Perso</a> *pPerso)</td></tr>
+<tr class="memdesc:a7ef31ff562e58ed644b58bc85dac2534"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crée et initialise une case de deplacement avec un type de case et un personnage dessus.  <a href="#a7ef31ff562e58ed644b58bc85dac2534">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a7ef31ff562e58ed644b58bc85dac2534"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8dd0ca56ce6c60c91d32a739e9d471d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="caseDeplacement_8c.html#ae8dd0ca56ce6c60c91d32a739e9d471d">testamentCase</a> (<a class="el" href="caseDeplacement_8h.html#aeab4f22b99f0db8b549dab4e46e3ead4">caseDeplacement</a> *caseDep)</td></tr>
+<tr class="separator:ae8dd0ca56ce6c60c91d32a739e9d471d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a class="anchor" id="a271e610d4e5a86cabe14f2f9ae463442"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned short getChamp </td>
+          <td>(</td>
+          <td class="paramtype">enum <a class="el" href="personnage_8h.html#a3f6a2951aa3d5d428dd6d61e74db0d75">typePerso</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>idPerso</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="caseDeplacement_8h.html#aeab4f22b99f0db8b549dab4e46e3ead4">caseDeplacement</a> *&#160;</td>
+          <td class="paramname"><em>pCaseDep</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Récupère la valeur du champ du perso défini par son type et son id sur une case. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>Type du perso (ZOMBIE, POLICIER, CITOYEN) </td></tr>
+    <tr><td class="paramname">idPerso</td><td>Id du perso dont on veut connaitre le champ </td></tr>
+    <tr><td class="paramname">pCaseDep</td><td>Pointeur vers la case a detruire et liberer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a3b6655cf83e6bc1c84ef1dd02f204e0b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="caseDeplacement_8h.html#af9a4f51a2aa1485342c48472a9124d83">env</a> getEnvCase </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="caseDeplacement_8h.html#aeab4f22b99f0db8b549dab4e46e3ead4">caseDeplacement</a> *&#160;</td>
+          <td class="paramname"><em>pCaseDep</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Recupère le type de case d'une case de deplacement. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pCaseDep</td><td>Pointeur sur la case de déplacement à étudier </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Le type de case </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6b8c143eea4a9242b0f59a634c2f81b0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="personnage_8h.html#abd5c92a453bbf273f753b3f5b99da9e7">Perso</a>* getPersoCase </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="caseDeplacement_8h.html#aeab4f22b99f0db8b549dab4e46e3ead4">caseDeplacement</a> *&#160;</td>
+          <td class="paramname"><em>pCaseDep</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Recupère le personnage sur la case de déplacement. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pCaseDep</td><td>Pointeur sur la case de déplacement à étudier </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Pointeur vers le personnage sur la case de déplacement </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a7ef31ff562e58ed644b58bc85dac2534"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="caseDeplacement_8h.html#aeab4f22b99f0db8b549dab4e46e3ead4">caseDeplacement</a>* initCase </td>
+          <td>(</td>
+          <td class="paramtype">enum <a class="el" href="caseDeplacement_8h.html#af9a4f51a2aa1485342c48472a9124d83">env</a>&#160;</td>
+          <td class="paramname"><em>envCase</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="personnage_8h.html#abd5c92a453bbf273f753b3f5b99da9e7">Perso</a> *&#160;</td>
+          <td class="paramname"><em>pPerso</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Crée et initialise une case de deplacement avec un type de case et un personnage dessus. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">envCase</td><td>Type de case </td></tr>
+    <tr><td class="paramname">pPerso</td><td>Pointeur vers un personnage </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Pointeur vers cette case de deplacement </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad8f191fd46363452d5e40a19326fefc5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setChamp </td>
+          <td>(</td>
+          <td class="paramtype">unsigned short&#160;</td>
+          <td class="paramname"><em>intensite</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">enum <a class="el" href="personnage_8h.html#a3f6a2951aa3d5d428dd6d61e74db0d75">typePerso</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>idPerso</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="caseDeplacement_8h.html#aeab4f22b99f0db8b549dab4e46e3ead4">caseDeplacement</a> *&#160;</td>
+          <td class="paramname"><em>pCaseDep</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définit la valeur du champ du perso défini par son type et son id sur une case. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>Type du perso (ZOMBIE, POLICIER, CITOYEN) </td></tr>
+    <tr><td class="paramname">idPerso</td><td>Id du perso dont on veut connaitre le champ </td></tr>
+    <tr><td class="paramname">pCaseDep</td><td>Pointeur vers la case a detruire et liberer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="abb53fe7469ac0c9441d4bb3959365a42"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setEnvCase </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="caseDeplacement_8h.html#aeab4f22b99f0db8b549dab4e46e3ead4">caseDeplacement</a> *&#160;</td>
+          <td class="paramname"><em>pCaseDep</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">enum <a class="el" href="caseDeplacement_8h.html#af9a4f51a2aa1485342c48472a9124d83">env</a>&#160;</td>
+          <td class="paramname"><em>valeurEnv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Modifie le type de case d'une case de deplacement. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pCaseDep</td><td>Pointeur sur la case de déplacement à étudier </td></tr>
+    <tr><td class="paramname">valeurEnv</td><td>Le type de case </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a2be2ab36936e9a5cb9fd2948353c7b12"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setPersoCase </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="caseDeplacement_8h.html#aeab4f22b99f0db8b549dab4e46e3ead4">caseDeplacement</a> *&#160;</td>
+          <td class="paramname"><em>pCaseDep</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="personnage_8h.html#abd5c92a453bbf273f753b3f5b99da9e7">Perso</a> *&#160;</td>
+          <td class="paramname"><em>pPerso</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Modifie le personnage sur la case de déplacement. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pCaseDep</td><td>Pointeur sur la case de déplacement à étudier </td></tr>
+    <tr><td class="paramname">pPerso</td><td>Pointeur vers le personnage a mettre sur la case de déplacement </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ae8dd0ca56ce6c60c91d32a739e9d471d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void testamentCase </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="caseDeplacement_8h.html#aeab4f22b99f0db8b549dab4e46e3ead4">caseDeplacement</a> *&#160;</td>
+          <td class="paramname"><em>caseDep</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Lundi 23 Mai 2016 14:09:23 pour Simulation Humain Vs Zombies par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

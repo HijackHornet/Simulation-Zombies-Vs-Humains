@@ -1,0 +1,1138 @@
+\hypertarget{terrain_8c}{}\section{Référence du fichier src/terrain.c}
+\label{terrain_8c}\index{src/terrain.\+c@{src/terrain.\+c}}
+{\ttfamily \#include \char`\"{}terrain.\+h\char`\"{}}\\*
+Graphe des dépendances par inclusion de terrain.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{terrain_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{terrain_8c_aa4dcb232d424b858d3f01f4951d411d4}{set\+Dim\+\_\+terr} (int x, int y, \hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain)
+\begin{DoxyCompactList}\small\item\em Edition de X et de Y dans la structure. \end{DoxyCompactList}\item 
+void \hyperlink{terrain_8c_afd0cd33d4703b04455c6b118a3936e63}{set\+Nom\+Terrain\+\_\+terr} (char $\ast$nom, \hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain)
+\item 
+void \hyperlink{terrain_8c_a97c9cc766e38342e3425653e89b6f46c}{set\+Grille\+By\+Coord\+\_\+terr} (\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$coord, \hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain, \hyperlink{caseDeplacement_8h_aeab4f22b99f0db8b549dab4e46e3ead4}{case\+Deplacement} $\ast$case\+Dep)
+\begin{DoxyCompactList}\small\item\em Change la case de deplacement de la grille au coordonnées données. \end{DoxyCompactList}\item 
+void \hyperlink{terrain_8c_ad15a1365737240775ff8425378834fd6}{set\+Grille\+By\+X\+Y\+\_\+terr} (int x, int y, \hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain, \hyperlink{caseDeplacement_8h_aeab4f22b99f0db8b549dab4e46e3ead4}{case\+Deplacement} $\ast$case\+Dep)
+\begin{DoxyCompactList}\small\item\em Edition du type de la grille du terrain au coordonnées X/Y. \end{DoxyCompactList}\item 
+int \hyperlink{terrain_8c_a09bd83bff226b5e25af2e9dfb160260c}{get\+Dim\+X\+\_\+terr} (\hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain)
+\begin{DoxyCompactList}\small\item\em Recupère la dimension en X de la structure Terrain. \end{DoxyCompactList}\item 
+int \hyperlink{terrain_8c_a1fd39032dab5b6e3556883315a7868c5}{get\+Dim\+Y\+\_\+terr} (\hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain)
+\begin{DoxyCompactList}\small\item\em Recupère la dimension en Y de la structure Terrain. \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{terrain_8c_aa2d2d29116636980d1b3f9f0a7a85ae0}{get\+Nom\+Terrain\+\_\+terr} (\hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain)
+\begin{DoxyCompactList}\small\item\em Recupère le nom de la structure Terrain. \end{DoxyCompactList}\item 
+\hyperlink{caseDeplacement_8h_aeab4f22b99f0db8b549dab4e46e3ead4}{case\+Deplacement} $\ast$ \hyperlink{terrain_8c_a3b01a560ba891070ee62880f2739ea5b}{get\+Grille\+By\+X\+Y\+\_\+terr} (int x, int y, \hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain)
+\begin{DoxyCompactList}\small\item\em Recupere la case de deplacement de la grille au point X/Y. \end{DoxyCompactList}\item 
+\hyperlink{caseDeplacement_8h_aeab4f22b99f0db8b549dab4e46e3ead4}{case\+Deplacement} $\ast$ \hyperlink{terrain_8c_a16b89b3a3faa749c3fa4d6bf03791487}{get\+Grille\+By\+Coord\+\_\+terr} (\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$coord, \hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain)
+\begin{DoxyCompactList}\small\item\em Recupere la case de deplacement de la grille au coordonnées données. \end{DoxyCompactList}\item 
+\hyperlink{caseDeplacement_8h_aeab4f22b99f0db8b549dab4e46e3ead4}{case\+Deplacement} $\ast$ \hyperlink{terrain_8c_af1ce19edb047ad98f13eb599869cc462}{get\+Case\+Bas\+By\+Coord} (\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$coord, \hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain)
+\begin{DoxyCompactList}\small\item\em Recupere la case de deplacement de la grille en dessous des coordonée. \end{DoxyCompactList}\item 
+\hyperlink{caseDeplacement_8h_aeab4f22b99f0db8b549dab4e46e3ead4}{case\+Deplacement} $\ast$ \hyperlink{terrain_8c_a7fe6b65294f394be319ead817fd6ec1e}{get\+Case\+Haut\+By\+Coord} (\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$coord, \hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain)
+\begin{DoxyCompactList}\small\item\em Recupere la case de deplacement de la grille en haut des coordonée. \end{DoxyCompactList}\item 
+\hyperlink{caseDeplacement_8h_aeab4f22b99f0db8b549dab4e46e3ead4}{case\+Deplacement} $\ast$ \hyperlink{terrain_8c_ac71d16722a67e2a956f88e60e445efe6}{get\+Case\+Gauche\+By\+Coord} (\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$coord, \hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain)
+\begin{DoxyCompactList}\small\item\em Recupere la case de deplacement de la grille a gauche des coordonée. \end{DoxyCompactList}\item 
+\hyperlink{caseDeplacement_8h_aeab4f22b99f0db8b549dab4e46e3ead4}{case\+Deplacement} $\ast$ \hyperlink{terrain_8c_a454f9cef12a6b3be9691dff9ee195125}{get\+Case\+Droite\+By\+Coord} (\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$coord, \hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain)
+\begin{DoxyCompactList}\small\item\em Recupere la case de deplacement de la grille a droite des coordonée. \end{DoxyCompactList}\item 
+char \hyperlink{terrain_8c_af7944caa30120319f283d3818ce1b346}{place\+Perso\+By\+Coord} (\hyperlink{personnage_8h_abd5c92a453bbf273f753b3f5b99da9e7}{Perso} $\ast$p\+Perso, \hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$coord, \hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain)
+\item 
+\hyperlink{personnage_8h_abd5c92a453bbf273f753b3f5b99da9e7}{Perso} $\ast$ \hyperlink{terrain_8c_ae5f55773094ee4c234974d40b3287856}{cree\+Perso\+Terrain\+Rand} (\hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain, enum \hyperlink{personnage_8h_a3f6a2951aa3d5d428dd6d61e74db0d75}{type\+Perso} type, int id\+Perso)
+\item 
+void \hyperlink{terrain_8c_aad20d9f641c2045b6556280495340013}{terrain\+Ajout\+Mur\+Tour} (\hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain)
+\begin{DoxyCompactList}\small\item\em Ajoute des mur sur les bord du terrain. \end{DoxyCompactList}\item 
+void \hyperlink{terrain_8c_a3983dae49e4000872233e7d83205a247}{terrain\+Init\+Grille\+\_\+terr} (\hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain)
+\begin{DoxyCompactList}\small\item\em Initialise la grille d\textquotesingle{}un terrain. \end{DoxyCompactList}\item 
+\hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$ \hyperlink{terrain_8c_a18be630674285fc320507f21282be35f}{terrain\+Creer\+\_\+terr} (int dimX, int dimY, char nom\+Terrain\mbox{[}\hyperlink{terrain_8h_a5f41c70ea486e890717560da2605f309}{M\+A\+X\+\_\+\+C\+H\+A\+R\+\_\+\+N\+O\+M\+\_\+\+T\+E\+R\+R\+A\+IN}\mbox{]})
+\begin{DoxyCompactList}\small\item\em Creer un terrain avec les dimension et le nom choisi et initialise sa grille en appelant Terrain\+Init\+Grille. \end{DoxyCompactList}\item 
+void \hyperlink{terrain_8c_adcec4a15a3bf0455ad742bdcd940f2cb}{testament\+Terrain\+\_\+terr} (\hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain)
+\begin{DoxyCompactList}\small\item\em Libere la mémoire occupé par un terrain. \end{DoxyCompactList}\item 
+char \hyperlink{terrain_8c_a97c090e1c8063d66314f3be8b159e2cd}{est\+Dans\+Terrain\+\_\+terr} (\hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain, \hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$p\+Coord)
+\begin{DoxyCompactList}\small\item\em Verifie si des coordonnées appartiennent au terrain. \end{DoxyCompactList}\item 
+char \hyperlink{terrain_8c_a8d3c2c01aa89e785014ad2209d990c0a}{verif\+Deplacement\+Bas\+\_\+perso} (\hyperlink{personnage_8h_abd5c92a453bbf273f753b3f5b99da9e7}{Perso} $\ast$p\+Perso, \hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain)
+\begin{DoxyCompactList}\small\item\em Verifie si le personnage peut aller en bas. \end{DoxyCompactList}\item 
+char \hyperlink{terrain_8c_a9fba0242ab21d6632a379cd00ee20f0e}{verif\+Deplacement\+Haut\+\_\+perso} (\hyperlink{personnage_8h_abd5c92a453bbf273f753b3f5b99da9e7}{Perso} $\ast$p\+Perso, \hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain)
+\begin{DoxyCompactList}\small\item\em Verifie si le personnage peut aller en haut. \end{DoxyCompactList}\item 
+char \hyperlink{terrain_8c_ad8a0578b05cf7d184a2f7c69465cefea}{verif\+Deplacement\+Gauche\+\_\+perso} (\hyperlink{personnage_8h_abd5c92a453bbf273f753b3f5b99da9e7}{Perso} $\ast$p\+Perso, \hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain)
+\begin{DoxyCompactList}\small\item\em Verifie si le personnage peut aller a gauche. \end{DoxyCompactList}\item 
+char \hyperlink{terrain_8c_a0e34d630de41377283db24f865009ce7}{verif\+Deplacement\+Droite\+\_\+perso} (\hyperlink{personnage_8h_abd5c92a453bbf273f753b3f5b99da9e7}{Perso} $\ast$p\+Perso, \hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain)
+\begin{DoxyCompactList}\small\item\em Verifie si le personnage peut aller a droite. \end{DoxyCompactList}\item 
+char \hyperlink{terrain_8c_ae09dc2657a465436713dc79a500fbbfd}{deplacement\+Haut\+\_\+perso} (\hyperlink{personnage_8h_abd5c92a453bbf273f753b3f5b99da9e7}{Perso} $\ast$p\+Perso, \hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain)
+\begin{DoxyCompactList}\small\item\em Deplace le personnage vers le haut (test avant qu\textquotesingle{}il peut etre deplacé dans ce sens) \end{DoxyCompactList}\item 
+char \hyperlink{terrain_8c_a124dcf1c540a5e9f8987153c5629777b}{deplacement\+Bas\+\_\+perso} (\hyperlink{personnage_8h_abd5c92a453bbf273f753b3f5b99da9e7}{Perso} $\ast$p\+Perso, \hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain)
+\begin{DoxyCompactList}\small\item\em Deplace le personnage vers le bas (test avant qu\textquotesingle{}il peut etre deplacé dans ce sens) \end{DoxyCompactList}\item 
+char \hyperlink{terrain_8c_a8c6c0b998f096f10a0ccad25a136b465}{deplacement\+Gauche\+\_\+perso} (\hyperlink{personnage_8h_abd5c92a453bbf273f753b3f5b99da9e7}{Perso} $\ast$p\+Perso, \hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain)
+\begin{DoxyCompactList}\small\item\em Deplace le personnage vers la gauche (test avant qu\textquotesingle{}il peut etre deplacé dans ce sens) \end{DoxyCompactList}\item 
+char \hyperlink{terrain_8c_a385bedef7127b250811ce7f0218c66e3}{deplacement\+Droite\+\_\+perso} (\hyperlink{personnage_8h_abd5c92a453bbf273f753b3f5b99da9e7}{Perso} $\ast$p\+Perso, \hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain)
+\begin{DoxyCompactList}\small\item\em Deplace le personnage vers la droite (test avant qu\textquotesingle{}il peut etre deplacé dans ce sens) \end{DoxyCompactList}\item 
+char \hyperlink{terrain_8c_a50e099874470bb6e68cbd44c68807aa5}{deplacement\+Aleatoire\+\_\+perso} (\hyperlink{personnage_8h_abd5c92a453bbf273f753b3f5b99da9e7}{Perso} $\ast$p\+Perso, \hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain)
+\begin{DoxyCompactList}\small\item\em Deplace le personnage dans une direction aléatoire (test avant qu\textquotesingle{}il peut etre deplacé dans ce sens) \end{DoxyCompactList}\item 
+char \hyperlink{terrain_8c_ae6548343b2ab3ffd042731aeee925261}{humain\+En\+Haut} (\hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain, \hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$coord\+Zombie)
+\begin{DoxyCompactList}\small\item\em Verifie si le personnage en haut est un humain. \end{DoxyCompactList}\item 
+char \hyperlink{terrain_8c_a50df7bb2b9b06787410c5c3c18c26c7e}{humain\+En\+Bas} (\hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain, \hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$coord\+Zombie)
+\begin{DoxyCompactList}\small\item\em Verifie si le personnage en bas est un humain. \end{DoxyCompactList}\item 
+char \hyperlink{terrain_8c_aa81fd0c9d275c8f8feb23f1400f43e43}{humain\+A\+Gauche} (\hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain, \hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$coord\+Zombie)
+\begin{DoxyCompactList}\small\item\em Verifie si le personnage a gauche est un humain. \end{DoxyCompactList}\item 
+char \hyperlink{terrain_8c_a5f78f92ecac28d78ffd95ba3e04b272d}{humain\+A\+Droite} (\hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain, \hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$coord\+Zombie)
+\begin{DoxyCompactList}\small\item\em Verifie si le personnage a droite est un humain. \end{DoxyCompactList}\item 
+char \hyperlink{terrain_8c_a001f60dfb98bf19a3868269a3a8d4128}{zombie\+En\+Haut} (\hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain, \hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$coord\+Zombie)
+\begin{DoxyCompactList}\small\item\em Regarde si un zombie se trouve sur la se situant (lire libelé de la fonction) des coordonnées. \end{DoxyCompactList}\item 
+char \hyperlink{terrain_8c_ad4328106195808c5a5a40e869ad7a580}{zombie\+En\+Bas} (\hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain, \hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$coord\+Zombie)
+\begin{DoxyCompactList}\small\item\em Regarde si un zombie se trouve sur la se situant (lire libelé de la fonction) des coordonnées. \end{DoxyCompactList}\item 
+char \hyperlink{terrain_8c_af6ccfdc77c33d99a1ae6807aa7c8da8a}{zombie\+A\+Gauche} (\hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain, \hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$coord\+Zombie)
+\begin{DoxyCompactList}\small\item\em Regarde si un zombie se trouve sur la se situant (lire libelé de la fonction) des coordonnées. \end{DoxyCompactList}\item 
+char \hyperlink{terrain_8c_a26dc558207a13a9ee19f2c78d06bf807}{zombie\+A\+Droite} (\hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain, \hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$coord\+Zombie)
+\begin{DoxyCompactList}\small\item\em Regarde si un zombie se trouve sur la se situant (lire libelé de la fonction) des coordonnées. \end{DoxyCompactList}\item 
+char \hyperlink{terrain_8c_ad15a715cc6d4d24dbd1f1b0c5c724c41}{zombie\+En2\+Haut} (\hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain, \hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$coord\+Zombie)
+\begin{DoxyCompactList}\small\item\em Regarde si un zombie se trouve sur la se situant (lire libelé de la fonction) des coordonnées. \end{DoxyCompactList}\item 
+char \hyperlink{terrain_8c_aac1c61b2b5fb5333e2c71072597fe646}{zombie\+En2\+Bas} (\hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain, \hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$coord\+Zombie)
+\begin{DoxyCompactList}\small\item\em Regarde si un zombie se trouve sur la se situant (lire libelé de la fonction) des coordonnées. \end{DoxyCompactList}\item 
+char \hyperlink{terrain_8c_a789481a25a7883fa13a345b5cc86b618}{zombie\+A2\+Gauche} (\hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain, \hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$coord\+Zombie)
+\begin{DoxyCompactList}\small\item\em Regarde si un zombie se trouve sur la se situant (lire libelé de la fonction) des coordonnées. \end{DoxyCompactList}\item 
+char \hyperlink{terrain_8c_a97157bb01d1c0e7eed68d43459410dfc}{zombie\+A2\+Droite} (\hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain, \hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$coord\+Zombie)
+\begin{DoxyCompactList}\small\item\em Regarde si un zombie se trouve sur la se situant (lire libelé de la fonction) des coordonnées. \end{DoxyCompactList}\item 
+char \hyperlink{terrain_8c_ac83836d426c8c3f520114923a555a9bb}{zombie\+HD} (\hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain, \hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$coord\+Zombie)
+\begin{DoxyCompactList}\small\item\em Regarde si un zombie se trouve sur la se situant (lire libelé de la fonction) des coordonnées. \end{DoxyCompactList}\item 
+char \hyperlink{terrain_8c_abba9a396650e8815b0a0d8c093fbc352}{zombie\+BD} (\hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain, \hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$coord\+Zombie)
+\begin{DoxyCompactList}\small\item\em Regarde si un zombie se trouve sur la se situant (lire libelé de la fonction) des coordonnées. \end{DoxyCompactList}\item 
+char \hyperlink{terrain_8c_adc99a25c35fcd27644a47f14129e0278}{zombie\+BG} (\hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain, \hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$coord\+Zombie)
+\begin{DoxyCompactList}\small\item\em Regarde si un zombie se trouve sur la se situant (lire libelé de la fonction) des coordonnées. \end{DoxyCompactList}\item 
+char \hyperlink{terrain_8c_a620533e1f0789251d879b67d9cef829e}{zombie\+HG} (\hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain, \hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$coord\+Zombie)
+\begin{DoxyCompactList}\small\item\em Regarde si un zombie se trouve sur la se situant (lire libelé de la fonction) des coordonnées. \end{DoxyCompactList}\item 
+\hyperlink{personnage_8h_abd5c92a453bbf273f753b3f5b99da9e7}{Perso} $\ast$ \hyperlink{terrain_8c_aef0f8b09c8459770f8901c7f4bc93b6d}{zombie\+Contamine\+Humain} (\hyperlink{personnage_8h_abd5c92a453bbf273f753b3f5b99da9e7}{Perso} $\ast$p\+Zombie, \hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain)
+\item 
+\hyperlink{personnage_8h_abd5c92a453bbf273f753b3f5b99da9e7}{Perso} $\ast$ \hyperlink{terrain_8c_ad4312194338f3849221a0ae93372b974}{policier\+Tue\+Zombie} (\hyperlink{personnage_8h_abd5c92a453bbf273f753b3f5b99da9e7}{Perso} $\ast$p\+Policier, \hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain)
+\item 
+void \hyperlink{terrain_8c_aba7a3bbec5c24c999958be6699d8fc11}{afficher\+Grille\+Console} (\hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain)
+\begin{DoxyCompactList}\small\item\em Affiche la grille dans la console avec des caractère pour représenter les personnages et murs. \end{DoxyCompactList}\item 
+void \hyperlink{terrain_8c_ae74ede311bdc4b21f792dac31ba78834}{terrain\+Creer\+Fichier\+\_\+terr} (\hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain, char $\ast$chemin\+Fichier)
+\begin{DoxyCompactList}\small\item\em Créer un fichier terrain à partir du pointeur vers terrain. \end{DoxyCompactList}\item 
+\hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$ \hyperlink{terrain_8c_af5245ba401335426617e661a1fc0daee}{terrain\+Lire\+Fichier\+\_\+terr} (char $\ast$nom\+Terrain)
+\item 
+void \hyperlink{terrain_8c_a1ec738cacf8012e6e62410e31cd56d62}{afficher\+Champs} (\hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain)
+\begin{DoxyCompactList}\small\item\em Affiche la grille des champs dans la console avec des caractère pour représenter les représenter. \end{DoxyCompactList}\item 
+void \hyperlink{terrain_8c_af32214c124513367869c101ca6576bac}{propagation\+Champ} (enum \hyperlink{personnage_8h_a3f6a2951aa3d5d428dd6d61e74db0d75}{type\+Perso} type, int id\+Perso, \hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$coord\+Perso, \hyperlink{terrain_8h_a11bbfdc6f8212f3246205cc0e7134136}{Terrain} $\ast$p\+Terrain)
+\item 
+void \hyperlink{terrain_8c_ae671405a2cab0685307937720369b63f}{test\+Fonctions\+\_\+terr} ()
+\begin{DoxyCompactList}\small\item\em Fonctoin de test des fonction du module terrain. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Documentation des fonctions}
+\index{terrain.\+c@{terrain.\+c}!afficher\+Champs@{afficher\+Champs}}
+\index{afficher\+Champs@{afficher\+Champs}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{afficher\+Champs(\+Terrain $\ast$p\+Terrain)}{afficherChamps(Terrain *pTerrain)}}]{\setlength{\rightskip}{0pt plus 5cm}void afficher\+Champs (
+\begin{DoxyParamCaption}
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_a1ec738cacf8012e6e62410e31cd56d62}{}\label{terrain_8c_a1ec738cacf8012e6e62410e31cd56d62}
+
+
+Affiche la grille des champs dans la console avec des caractère pour représenter les représenter. 
+
+\index{terrain.\+c@{terrain.\+c}!afficher\+Grille\+Console@{afficher\+Grille\+Console}}
+\index{afficher\+Grille\+Console@{afficher\+Grille\+Console}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{afficher\+Grille\+Console(\+Terrain $\ast$p\+Terrain)}{afficherGrilleConsole(Terrain *pTerrain)}}]{\setlength{\rightskip}{0pt plus 5cm}void afficher\+Grille\+Console (
+\begin{DoxyParamCaption}
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_aba7a3bbec5c24c999958be6699d8fc11}{}\label{terrain_8c_aba7a3bbec5c24c999958be6699d8fc11}
+
+
+Affiche la grille dans la console avec des caractère pour représenter les personnages et murs. 
+
+\index{terrain.\+c@{terrain.\+c}!cree\+Perso\+Terrain\+Rand@{cree\+Perso\+Terrain\+Rand}}
+\index{cree\+Perso\+Terrain\+Rand@{cree\+Perso\+Terrain\+Rand}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{cree\+Perso\+Terrain\+Rand(\+Terrain $\ast$p\+Terrain, enum type\+Perso type, int id\+Perso)}{creePersoTerrainRand(Terrain *pTerrain, enum typePerso type, int idPerso)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Perso}$\ast$ cree\+Perso\+Terrain\+Rand (
+\begin{DoxyParamCaption}
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain, }
+\item[{enum {\bf type\+Perso}}]{type, }
+\item[{int}]{id\+Perso}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_ae5f55773094ee4c234974d40b3287856}{}\label{terrain_8c_ae5f55773094ee4c234974d40b3287856}
+\index{terrain.\+c@{terrain.\+c}!deplacement\+Aleatoire\+\_\+perso@{deplacement\+Aleatoire\+\_\+perso}}
+\index{deplacement\+Aleatoire\+\_\+perso@{deplacement\+Aleatoire\+\_\+perso}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{deplacement\+Aleatoire\+\_\+perso(\+Perso $\ast$p\+Perso, Terrain $\ast$p\+Terrain)}{deplacementAleatoire_perso(Perso *pPerso, Terrain *pTerrain)}}]{\setlength{\rightskip}{0pt plus 5cm}char deplacement\+Aleatoire\+\_\+perso (
+\begin{DoxyParamCaption}
+\item[{{\bf Perso} $\ast$}]{p\+Perso, }
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_a50e099874470bb6e68cbd44c68807aa5}{}\label{terrain_8c_a50e099874470bb6e68cbd44c68807aa5}
+
+
+Deplace le personnage dans une direction aléatoire (test avant qu\textquotesingle{}il peut etre deplacé dans ce sens) 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Perso} & Pointeur vers le personnage dont les deplacement serront testé \\
+\hline
+{\em p\+Terrain} & Le terrain ou les coordonnées vont etre vérifiés \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+1 si le personnage a été deplacé, 0 sinon, sous forme d\textquotesingle{}un caractere 
+\end{DoxyReturn}
+\index{terrain.\+c@{terrain.\+c}!deplacement\+Bas\+\_\+perso@{deplacement\+Bas\+\_\+perso}}
+\index{deplacement\+Bas\+\_\+perso@{deplacement\+Bas\+\_\+perso}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{deplacement\+Bas\+\_\+perso(\+Perso $\ast$p\+Perso, Terrain $\ast$p\+Terrain)}{deplacementBas_perso(Perso *pPerso, Terrain *pTerrain)}}]{\setlength{\rightskip}{0pt plus 5cm}char deplacement\+Bas\+\_\+perso (
+\begin{DoxyParamCaption}
+\item[{{\bf Perso} $\ast$}]{p\+Perso, }
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_a124dcf1c540a5e9f8987153c5629777b}{}\label{terrain_8c_a124dcf1c540a5e9f8987153c5629777b}
+
+
+Deplace le personnage vers le bas (test avant qu\textquotesingle{}il peut etre deplacé dans ce sens) 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Perso} & Pointeur vers le personnage dont les deplacement serront testé \\
+\hline
+{\em p\+Terrain} & Le terrain ou les coordonnées vont etre vérifiés \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+1 si le personnage a été deplacé, 0 sinon, sous forme d\textquotesingle{}un caractere 
+\end{DoxyReturn}
+\index{terrain.\+c@{terrain.\+c}!deplacement\+Droite\+\_\+perso@{deplacement\+Droite\+\_\+perso}}
+\index{deplacement\+Droite\+\_\+perso@{deplacement\+Droite\+\_\+perso}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{deplacement\+Droite\+\_\+perso(\+Perso $\ast$p\+Perso, Terrain $\ast$p\+Terrain)}{deplacementDroite_perso(Perso *pPerso, Terrain *pTerrain)}}]{\setlength{\rightskip}{0pt plus 5cm}char deplacement\+Droite\+\_\+perso (
+\begin{DoxyParamCaption}
+\item[{{\bf Perso} $\ast$}]{p\+Perso, }
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_a385bedef7127b250811ce7f0218c66e3}{}\label{terrain_8c_a385bedef7127b250811ce7f0218c66e3}
+
+
+Deplace le personnage vers la droite (test avant qu\textquotesingle{}il peut etre deplacé dans ce sens) 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Perso} & Pointeur vers le personnage dont les deplacement serront testé \\
+\hline
+{\em p\+Terrain} & Le terrain ou les coordonnées vont etre vérifiés \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+1 si le personnage a été deplacé, 0 sinon, sous forme d\textquotesingle{}un caractere 
+\end{DoxyReturn}
+\index{terrain.\+c@{terrain.\+c}!deplacement\+Gauche\+\_\+perso@{deplacement\+Gauche\+\_\+perso}}
+\index{deplacement\+Gauche\+\_\+perso@{deplacement\+Gauche\+\_\+perso}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{deplacement\+Gauche\+\_\+perso(\+Perso $\ast$p\+Perso, Terrain $\ast$p\+Terrain)}{deplacementGauche_perso(Perso *pPerso, Terrain *pTerrain)}}]{\setlength{\rightskip}{0pt plus 5cm}char deplacement\+Gauche\+\_\+perso (
+\begin{DoxyParamCaption}
+\item[{{\bf Perso} $\ast$}]{p\+Perso, }
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_a8c6c0b998f096f10a0ccad25a136b465}{}\label{terrain_8c_a8c6c0b998f096f10a0ccad25a136b465}
+
+
+Deplace le personnage vers la gauche (test avant qu\textquotesingle{}il peut etre deplacé dans ce sens) 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Perso} & Pointeur vers le personnage dont les deplacement serront testé \\
+\hline
+{\em p\+Terrain} & Le terrain ou les coordonnées vont etre vérifiés \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+1 si le personnage a été deplacé, 0 sinon, sous forme d\textquotesingle{}un caractere 
+\end{DoxyReturn}
+\index{terrain.\+c@{terrain.\+c}!deplacement\+Haut\+\_\+perso@{deplacement\+Haut\+\_\+perso}}
+\index{deplacement\+Haut\+\_\+perso@{deplacement\+Haut\+\_\+perso}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{deplacement\+Haut\+\_\+perso(\+Perso $\ast$p\+Perso, Terrain $\ast$p\+Terrain)}{deplacementHaut_perso(Perso *pPerso, Terrain *pTerrain)}}]{\setlength{\rightskip}{0pt plus 5cm}char deplacement\+Haut\+\_\+perso (
+\begin{DoxyParamCaption}
+\item[{{\bf Perso} $\ast$}]{p\+Perso, }
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_ae09dc2657a465436713dc79a500fbbfd}{}\label{terrain_8c_ae09dc2657a465436713dc79a500fbbfd}
+
+
+Deplace le personnage vers le haut (test avant qu\textquotesingle{}il peut etre deplacé dans ce sens) 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Perso} & Pointeur vers le personnage dont les deplacement serront testé \\
+\hline
+{\em p\+Terrain} & Le terrain ou les coordonnées vont etre vérifiés \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+1 si le personnage a été deplacé, 0 sinon, sous forme d\textquotesingle{}un caractere 
+\end{DoxyReturn}
+\index{terrain.\+c@{terrain.\+c}!est\+Dans\+Terrain\+\_\+terr@{est\+Dans\+Terrain\+\_\+terr}}
+\index{est\+Dans\+Terrain\+\_\+terr@{est\+Dans\+Terrain\+\_\+terr}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{est\+Dans\+Terrain\+\_\+terr(\+Terrain $\ast$p\+Terrain, Coordonnees $\ast$p\+Coord)}{estDansTerrain_terr(Terrain *pTerrain, Coordonnees *pCoord)}}]{\setlength{\rightskip}{0pt plus 5cm}char est\+Dans\+Terrain\+\_\+terr (
+\begin{DoxyParamCaption}
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain, }
+\item[{{\bf Coordonnees} $\ast$}]{p\+Coord}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_a97c090e1c8063d66314f3be8b159e2cd}{}\label{terrain_8c_a97c090e1c8063d66314f3be8b159e2cd}
+
+
+Verifie si des coordonnées appartiennent au terrain. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Terrain} & Le terrain ou les coordonnées vont etre vérifiés \\
+\hline
+{\em p\+Coord} & Les coordonnées a verifier \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+1 si oui, 0 sinon, sous forme d\textquotesingle{}un caractere 
+\end{DoxyReturn}
+\index{terrain.\+c@{terrain.\+c}!get\+Case\+Bas\+By\+Coord@{get\+Case\+Bas\+By\+Coord}}
+\index{get\+Case\+Bas\+By\+Coord@{get\+Case\+Bas\+By\+Coord}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{get\+Case\+Bas\+By\+Coord(\+Coordonnees $\ast$coord, Terrain $\ast$p\+Terrain)}{getCaseBasByCoord(Coordonnees *coord, Terrain *pTerrain)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf case\+Deplacement}$\ast$ get\+Case\+Bas\+By\+Coord (
+\begin{DoxyParamCaption}
+\item[{{\bf Coordonnees} $\ast$}]{coord, }
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_af1ce19edb047ad98f13eb599869cc462}{}\label{terrain_8c_af1ce19edb047ad98f13eb599869cc462}
+
+
+Recupere la case de deplacement de la grille en dessous des coordonée. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em coord} & Coordonnée ou aller recuperer \\
+\hline
+{\em p\+Terrain} & Pointeur sur la structure Terrain a editer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Case de deplacement en dessous 
+\end{DoxyReturn}
+\index{terrain.\+c@{terrain.\+c}!get\+Case\+Droite\+By\+Coord@{get\+Case\+Droite\+By\+Coord}}
+\index{get\+Case\+Droite\+By\+Coord@{get\+Case\+Droite\+By\+Coord}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{get\+Case\+Droite\+By\+Coord(\+Coordonnees $\ast$coord, Terrain $\ast$p\+Terrain)}{getCaseDroiteByCoord(Coordonnees *coord, Terrain *pTerrain)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf case\+Deplacement}$\ast$ get\+Case\+Droite\+By\+Coord (
+\begin{DoxyParamCaption}
+\item[{{\bf Coordonnees} $\ast$}]{coord, }
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_a454f9cef12a6b3be9691dff9ee195125}{}\label{terrain_8c_a454f9cef12a6b3be9691dff9ee195125}
+
+
+Recupere la case de deplacement de la grille a droite des coordonée. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em coord} & Coordonnée ou aller recuperer \\
+\hline
+{\em p\+Terrain} & Pointeur sur la structure Terrain a editer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Case de deplacement a droite 
+\end{DoxyReturn}
+\index{terrain.\+c@{terrain.\+c}!get\+Case\+Gauche\+By\+Coord@{get\+Case\+Gauche\+By\+Coord}}
+\index{get\+Case\+Gauche\+By\+Coord@{get\+Case\+Gauche\+By\+Coord}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{get\+Case\+Gauche\+By\+Coord(\+Coordonnees $\ast$coord, Terrain $\ast$p\+Terrain)}{getCaseGaucheByCoord(Coordonnees *coord, Terrain *pTerrain)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf case\+Deplacement}$\ast$ get\+Case\+Gauche\+By\+Coord (
+\begin{DoxyParamCaption}
+\item[{{\bf Coordonnees} $\ast$}]{coord, }
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_ac71d16722a67e2a956f88e60e445efe6}{}\label{terrain_8c_ac71d16722a67e2a956f88e60e445efe6}
+
+
+Recupere la case de deplacement de la grille a gauche des coordonée. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em coord} & Coordonnée ou aller recuperer \\
+\hline
+{\em p\+Terrain} & Pointeur sur la structure Terrain a editer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Case de deplacement a gauche 
+\end{DoxyReturn}
+\index{terrain.\+c@{terrain.\+c}!get\+Case\+Haut\+By\+Coord@{get\+Case\+Haut\+By\+Coord}}
+\index{get\+Case\+Haut\+By\+Coord@{get\+Case\+Haut\+By\+Coord}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{get\+Case\+Haut\+By\+Coord(\+Coordonnees $\ast$coord, Terrain $\ast$p\+Terrain)}{getCaseHautByCoord(Coordonnees *coord, Terrain *pTerrain)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf case\+Deplacement}$\ast$ get\+Case\+Haut\+By\+Coord (
+\begin{DoxyParamCaption}
+\item[{{\bf Coordonnees} $\ast$}]{coord, }
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_a7fe6b65294f394be319ead817fd6ec1e}{}\label{terrain_8c_a7fe6b65294f394be319ead817fd6ec1e}
+
+
+Recupere la case de deplacement de la grille en haut des coordonée. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em coord} & Coordonnée ou aller recuperer \\
+\hline
+{\em p\+Terrain} & Pointeur sur la structure Terrain a editer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Case de deplacement en haut 
+\end{DoxyReturn}
+\index{terrain.\+c@{terrain.\+c}!get\+Dim\+X\+\_\+terr@{get\+Dim\+X\+\_\+terr}}
+\index{get\+Dim\+X\+\_\+terr@{get\+Dim\+X\+\_\+terr}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{get\+Dim\+X\+\_\+terr(\+Terrain $\ast$p\+Terrain)}{getDimX_terr(Terrain *pTerrain)}}]{\setlength{\rightskip}{0pt plus 5cm}int get\+Dim\+X\+\_\+terr (
+\begin{DoxyParamCaption}
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_a09bd83bff226b5e25af2e9dfb160260c}{}\label{terrain_8c_a09bd83bff226b5e25af2e9dfb160260c}
+
+
+Recupère la dimension en X de la structure Terrain. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Terrain} & Pointeur sur la structure Terrain a lire \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Entier de la dimension en X du terrain 
+\end{DoxyReturn}
+\index{terrain.\+c@{terrain.\+c}!get\+Dim\+Y\+\_\+terr@{get\+Dim\+Y\+\_\+terr}}
+\index{get\+Dim\+Y\+\_\+terr@{get\+Dim\+Y\+\_\+terr}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{get\+Dim\+Y\+\_\+terr(\+Terrain $\ast$p\+Terrain)}{getDimY_terr(Terrain *pTerrain)}}]{\setlength{\rightskip}{0pt plus 5cm}int get\+Dim\+Y\+\_\+terr (
+\begin{DoxyParamCaption}
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_a1fd39032dab5b6e3556883315a7868c5}{}\label{terrain_8c_a1fd39032dab5b6e3556883315a7868c5}
+
+
+Recupère la dimension en Y de la structure Terrain. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Terrain} & Pointeur sur la structure Terrain a lire \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Entier de la dimension en Y du terrain 
+\end{DoxyReturn}
+\index{terrain.\+c@{terrain.\+c}!get\+Grille\+By\+Coord\+\_\+terr@{get\+Grille\+By\+Coord\+\_\+terr}}
+\index{get\+Grille\+By\+Coord\+\_\+terr@{get\+Grille\+By\+Coord\+\_\+terr}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{get\+Grille\+By\+Coord\+\_\+terr(\+Coordonnees $\ast$coord, Terrain $\ast$p\+Terrain)}{getGrilleByCoord_terr(Coordonnees *coord, Terrain *pTerrain)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf case\+Deplacement}$\ast$ get\+Grille\+By\+Coord\+\_\+terr (
+\begin{DoxyParamCaption}
+\item[{{\bf Coordonnees} $\ast$}]{p\+Coord, }
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_a16b89b3a3faa749c3fa4d6bf03791487}{}\label{terrain_8c_a16b89b3a3faa749c3fa4d6bf03791487}
+
+
+Recupere la case de deplacement de la grille au coordonnées données. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Coord} & Coordonnée ou aller recuperer \\
+\hline
+{\em p\+Terrain} & Pointeur sur la structure Terrain a editer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Case de deplacement au coordonnées 
+\end{DoxyReturn}
+\index{terrain.\+c@{terrain.\+c}!get\+Grille\+By\+X\+Y\+\_\+terr@{get\+Grille\+By\+X\+Y\+\_\+terr}}
+\index{get\+Grille\+By\+X\+Y\+\_\+terr@{get\+Grille\+By\+X\+Y\+\_\+terr}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{get\+Grille\+By\+X\+Y\+\_\+terr(int x, int y, Terrain $\ast$p\+Terrain)}{getGrilleByXY_terr(int x, int y, Terrain *pTerrain)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf case\+Deplacement}$\ast$ get\+Grille\+By\+X\+Y\+\_\+terr (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_a3b01a560ba891070ee62880f2739ea5b}{}\label{terrain_8c_a3b01a560ba891070ee62880f2739ea5b}
+
+
+Recupere la case de deplacement de la grille au point X/Y. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em x} & Position en x a recuperer \\
+\hline
+{\em y} & poisition en y a récuperer \\
+\hline
+{\em p\+Terrain} & Pointeur sur la structure Terrain a editer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Case de deplacement en XY 
+\end{DoxyReturn}
+\index{terrain.\+c@{terrain.\+c}!get\+Nom\+Terrain\+\_\+terr@{get\+Nom\+Terrain\+\_\+terr}}
+\index{get\+Nom\+Terrain\+\_\+terr@{get\+Nom\+Terrain\+\_\+terr}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{get\+Nom\+Terrain\+\_\+terr(\+Terrain $\ast$p\+Terrain)}{getNomTerrain_terr(Terrain *pTerrain)}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ get\+Nom\+Terrain\+\_\+terr (
+\begin{DoxyParamCaption}
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_aa2d2d29116636980d1b3f9f0a7a85ae0}{}\label{terrain_8c_aa2d2d29116636980d1b3f9f0a7a85ae0}
+
+
+Recupère le nom de la structure Terrain. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Terrain} & Pointeur sur la structure Terrain a lire \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Chaine de carractere du nom du terrain pointé 
+\end{DoxyReturn}
+\index{terrain.\+c@{terrain.\+c}!humain\+A\+Droite@{humain\+A\+Droite}}
+\index{humain\+A\+Droite@{humain\+A\+Droite}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{humain\+A\+Droite(\+Terrain $\ast$p\+Terrain, Coordonnees $\ast$coord\+Zombie)}{humainADroite(Terrain *pTerrain, Coordonnees *coordZombie)}}]{\setlength{\rightskip}{0pt plus 5cm}char humain\+A\+Droite (
+\begin{DoxyParamCaption}
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain, }
+\item[{{\bf Coordonnees} $\ast$}]{coord\+Zombie}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_a5f78f92ecac28d78ffd95ba3e04b272d}{}\label{terrain_8c_a5f78f92ecac28d78ffd95ba3e04b272d}
+
+
+Verifie si le personnage a droite est un humain. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Terrain} & Le terrain ou les coordonnées vont etre vérifiés \\
+\hline
+{\em coord\+Zombie} & coordonnées du zombie qui va regarder si un humain se trouve a proximité \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+1 si oui, 0 sinon, sous forme d\textquotesingle{}un caractere 
+\end{DoxyReturn}
+\index{terrain.\+c@{terrain.\+c}!humain\+A\+Gauche@{humain\+A\+Gauche}}
+\index{humain\+A\+Gauche@{humain\+A\+Gauche}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{humain\+A\+Gauche(\+Terrain $\ast$p\+Terrain, Coordonnees $\ast$coord\+Zombie)}{humainAGauche(Terrain *pTerrain, Coordonnees *coordZombie)}}]{\setlength{\rightskip}{0pt plus 5cm}char humain\+A\+Gauche (
+\begin{DoxyParamCaption}
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain, }
+\item[{{\bf Coordonnees} $\ast$}]{coord\+Zombie}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_aa81fd0c9d275c8f8feb23f1400f43e43}{}\label{terrain_8c_aa81fd0c9d275c8f8feb23f1400f43e43}
+
+
+Verifie si le personnage a gauche est un humain. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Terrain} & Le terrain ou les coordonnées vont etre vérifiés \\
+\hline
+{\em coord\+Zombie} & coordonnées du zombie qui va regarder si un humain se trouve a proximité \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+1 si oui, 0 sinon, sous forme d\textquotesingle{}un caractere 
+\end{DoxyReturn}
+\index{terrain.\+c@{terrain.\+c}!humain\+En\+Bas@{humain\+En\+Bas}}
+\index{humain\+En\+Bas@{humain\+En\+Bas}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{humain\+En\+Bas(\+Terrain $\ast$p\+Terrain, Coordonnees $\ast$coord\+Zombie)}{humainEnBas(Terrain *pTerrain, Coordonnees *coordZombie)}}]{\setlength{\rightskip}{0pt plus 5cm}char humain\+En\+Bas (
+\begin{DoxyParamCaption}
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain, }
+\item[{{\bf Coordonnees} $\ast$}]{coord\+Zombie}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_a50df7bb2b9b06787410c5c3c18c26c7e}{}\label{terrain_8c_a50df7bb2b9b06787410c5c3c18c26c7e}
+
+
+Verifie si le personnage en bas est un humain. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Terrain} & Le terrain ou les coordonnées vont etre vérifiés \\
+\hline
+{\em coord\+Zombie} & coordonnées du zombie qui va regarder si un humain se trouve a proximité \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+1 si oui, 0 sinon, sous forme d\textquotesingle{}un caractere 
+\end{DoxyReturn}
+\index{terrain.\+c@{terrain.\+c}!humain\+En\+Haut@{humain\+En\+Haut}}
+\index{humain\+En\+Haut@{humain\+En\+Haut}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{humain\+En\+Haut(\+Terrain $\ast$p\+Terrain, Coordonnees $\ast$coord\+Zombie)}{humainEnHaut(Terrain *pTerrain, Coordonnees *coordZombie)}}]{\setlength{\rightskip}{0pt plus 5cm}char humain\+En\+Haut (
+\begin{DoxyParamCaption}
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain, }
+\item[{{\bf Coordonnees} $\ast$}]{coord\+Zombie}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_ae6548343b2ab3ffd042731aeee925261}{}\label{terrain_8c_ae6548343b2ab3ffd042731aeee925261}
+
+
+Verifie si le personnage en haut est un humain. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Terrain} & Le terrain ou les coordonnées vont etre vérifiés \\
+\hline
+{\em coord\+Zombie} & coordonnées du zombie qui va regarder si un humain se trouve a proximité \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+1 si oui, 0 sinon, sous forme d\textquotesingle{}un caractere 
+\end{DoxyReturn}
+\index{terrain.\+c@{terrain.\+c}!place\+Perso\+By\+Coord@{place\+Perso\+By\+Coord}}
+\index{place\+Perso\+By\+Coord@{place\+Perso\+By\+Coord}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{place\+Perso\+By\+Coord(\+Perso $\ast$p\+Perso, Coordonnees $\ast$coord, Terrain $\ast$p\+Terrain)}{placePersoByCoord(Perso *pPerso, Coordonnees *coord, Terrain *pTerrain)}}]{\setlength{\rightskip}{0pt plus 5cm}char place\+Perso\+By\+Coord (
+\begin{DoxyParamCaption}
+\item[{{\bf Perso} $\ast$}]{p\+Perso, }
+\item[{{\bf Coordonnees} $\ast$}]{coord, }
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_af7944caa30120319f283d3818ce1b346}{}\label{terrain_8c_af7944caa30120319f283d3818ce1b346}
+\index{terrain.\+c@{terrain.\+c}!policier\+Tue\+Zombie@{policier\+Tue\+Zombie}}
+\index{policier\+Tue\+Zombie@{policier\+Tue\+Zombie}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{policier\+Tue\+Zombie(\+Perso $\ast$p\+Policier, Terrain $\ast$p\+Terrain)}{policierTueZombie(Perso *pPolicier, Terrain *pTerrain)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Perso}$\ast$ policier\+Tue\+Zombie (
+\begin{DoxyParamCaption}
+\item[{{\bf Perso} $\ast$}]{p\+Policier, }
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_ad4312194338f3849221a0ae93372b974}{}\label{terrain_8c_ad4312194338f3849221a0ae93372b974}
+\index{terrain.\+c@{terrain.\+c}!propagation\+Champ@{propagation\+Champ}}
+\index{propagation\+Champ@{propagation\+Champ}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{propagation\+Champ(enum type\+Perso type, int id\+Perso, Coordonnees $\ast$coord\+Perso, Terrain $\ast$p\+Terrain)}{propagationChamp(enum typePerso type, int idPerso, Coordonnees *coordPerso, Terrain *pTerrain)}}]{\setlength{\rightskip}{0pt plus 5cm}void propagation\+Champ (
+\begin{DoxyParamCaption}
+\item[{enum {\bf type\+Perso}}]{type, }
+\item[{int}]{id\+Perso, }
+\item[{{\bf Coordonnees} $\ast$}]{coord\+Perso, }
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_af32214c124513367869c101ca6576bac}{}\label{terrain_8c_af32214c124513367869c101ca6576bac}
+\index{terrain.\+c@{terrain.\+c}!set\+Dim\+\_\+terr@{set\+Dim\+\_\+terr}}
+\index{set\+Dim\+\_\+terr@{set\+Dim\+\_\+terr}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{set\+Dim\+\_\+terr(int x, int y, Terrain $\ast$p\+Terrain)}{setDim_terr(int x, int y, Terrain *pTerrain)}}]{\setlength{\rightskip}{0pt plus 5cm}void set\+Dim\+\_\+terr (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_aa4dcb232d424b858d3f01f4951d411d4}{}\label{terrain_8c_aa4dcb232d424b858d3f01f4951d411d4}
+
+
+Edition de X et de Y dans la structure. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em x} & Entier pour la largeur du terrain \\
+\hline
+{\em y} & Entier pour la hauteur du terrain \\
+\hline
+{\em p\+Terrain} & Pointeur sur la structure terrain a editer \\
+\hline
+\end{DoxyParams}
+\index{terrain.\+c@{terrain.\+c}!set\+Grille\+By\+Coord\+\_\+terr@{set\+Grille\+By\+Coord\+\_\+terr}}
+\index{set\+Grille\+By\+Coord\+\_\+terr@{set\+Grille\+By\+Coord\+\_\+terr}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{set\+Grille\+By\+Coord\+\_\+terr(\+Coordonnees $\ast$coord, Terrain $\ast$p\+Terrain, case\+Deplacement $\ast$case\+Dep)}{setGrilleByCoord_terr(Coordonnees *coord, Terrain *pTerrain, caseDeplacement *caseDep)}}]{\setlength{\rightskip}{0pt plus 5cm}void set\+Grille\+By\+Coord\+\_\+terr (
+\begin{DoxyParamCaption}
+\item[{{\bf Coordonnees} $\ast$}]{coord, }
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain, }
+\item[{{\bf case\+Deplacement} $\ast$}]{case\+Dep}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_a97c9cc766e38342e3425653e89b6f46c}{}\label{terrain_8c_a97c9cc766e38342e3425653e89b6f46c}
+
+
+Change la case de deplacement de la grille au coordonnées données. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em coord} & Coordonnée ou aller recuperer \\
+\hline
+{\em p\+Terrain} & Pointeur sur la structure Terrain a editer \\
+\hline
+{\em case\+Dep} & Case de deplacement a placer au coordonnées \\
+\hline
+\end{DoxyParams}
+\index{terrain.\+c@{terrain.\+c}!set\+Grille\+By\+X\+Y\+\_\+terr@{set\+Grille\+By\+X\+Y\+\_\+terr}}
+\index{set\+Grille\+By\+X\+Y\+\_\+terr@{set\+Grille\+By\+X\+Y\+\_\+terr}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{set\+Grille\+By\+X\+Y\+\_\+terr(int x, int y, Terrain $\ast$p\+Terrain, case\+Deplacement $\ast$case\+Dep)}{setGrilleByXY_terr(int x, int y, Terrain *pTerrain, caseDeplacement *caseDep)}}]{\setlength{\rightskip}{0pt plus 5cm}void set\+Grille\+By\+X\+Y\+\_\+terr (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain, }
+\item[{{\bf case\+Deplacement} $\ast$}]{case\+Dep}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_ad15a1365737240775ff8425378834fd6}{}\label{terrain_8c_ad15a1365737240775ff8425378834fd6}
+
+
+Edition du type de la grille du terrain au coordonnées X/Y. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em x} & Valeur ou le point de la grille doit etre edité en X \\
+\hline
+{\em y} & Valeur ou le point de la grille doit etre edité en Y \\
+\hline
+{\em p\+Terrain} & Pointeur sur la structure Terrain a editer \\
+\hline
+{\em case\+Dep} & Le type de case \\
+\hline
+\end{DoxyParams}
+\index{terrain.\+c@{terrain.\+c}!set\+Nom\+Terrain\+\_\+terr@{set\+Nom\+Terrain\+\_\+terr}}
+\index{set\+Nom\+Terrain\+\_\+terr@{set\+Nom\+Terrain\+\_\+terr}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{set\+Nom\+Terrain\+\_\+terr(char $\ast$nom, Terrain $\ast$p\+Terrain)}{setNomTerrain_terr(char *nom, Terrain *pTerrain)}}]{\setlength{\rightskip}{0pt plus 5cm}void set\+Nom\+Terrain\+\_\+terr (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{nom, }
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_afd0cd33d4703b04455c6b118a3936e63}{}\label{terrain_8c_afd0cd33d4703b04455c6b118a3936e63}
+\index{terrain.\+c@{terrain.\+c}!terrain\+Ajout\+Mur\+Tour@{terrain\+Ajout\+Mur\+Tour}}
+\index{terrain\+Ajout\+Mur\+Tour@{terrain\+Ajout\+Mur\+Tour}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{terrain\+Ajout\+Mur\+Tour(\+Terrain $\ast$p\+Terrain)}{terrainAjoutMurTour(Terrain *pTerrain)}}]{\setlength{\rightskip}{0pt plus 5cm}void terrain\+Ajout\+Mur\+Tour (
+\begin{DoxyParamCaption}
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_aad20d9f641c2045b6556280495340013}{}\label{terrain_8c_aad20d9f641c2045b6556280495340013}
+
+
+Ajoute des mur sur les bord du terrain. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Terrain} & Pointeur vers le terrain \\
+\hline
+\end{DoxyParams}
+\index{terrain.\+c@{terrain.\+c}!terrain\+Creer\+\_\+terr@{terrain\+Creer\+\_\+terr}}
+\index{terrain\+Creer\+\_\+terr@{terrain\+Creer\+\_\+terr}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{terrain\+Creer\+\_\+terr(int dim\+X, int dim\+Y, char nom\+Terrain[M\+A\+X\+\_\+\+C\+H\+A\+R\+\_\+\+N\+O\+M\+\_\+\+T\+E\+R\+R\+A\+IN])}{terrainCreer_terr(int dimX, int dimY, char nomTerrain[MAX_CHAR_NOM_TERRAIN])}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Terrain}$\ast$ terrain\+Creer\+\_\+terr (
+\begin{DoxyParamCaption}
+\item[{int}]{dimX, }
+\item[{int}]{dimY, }
+\item[{char}]{nom\+Terrain\mbox{[}\+M\+A\+X\+\_\+\+C\+H\+A\+R\+\_\+\+N\+O\+M\+\_\+\+T\+E\+R\+R\+A\+I\+N\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_a18be630674285fc320507f21282be35f}{}\label{terrain_8c_a18be630674285fc320507f21282be35f}
+
+
+Creer un terrain avec les dimension et le nom choisi et initialise sa grille en appelant Terrain\+Init\+Grille. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em dimX} & La largeur du terrain \\
+\hline
+{\em dimY} & La haueteur du terrain \\
+\hline
+{\em nom\+Terrain} & Nom du terrain a creer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Pointeur vers le terrain nouvellement creer 
+\end{DoxyReturn}
+\index{terrain.\+c@{terrain.\+c}!terrain\+Creer\+Fichier\+\_\+terr@{terrain\+Creer\+Fichier\+\_\+terr}}
+\index{terrain\+Creer\+Fichier\+\_\+terr@{terrain\+Creer\+Fichier\+\_\+terr}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{terrain\+Creer\+Fichier\+\_\+terr(\+Terrain $\ast$p\+Terrain, char $\ast$chemin\+Fichier)}{terrainCreerFichier_terr(Terrain *pTerrain, char *cheminFichier)}}]{\setlength{\rightskip}{0pt plus 5cm}void terrain\+Creer\+Fichier\+\_\+terr (
+\begin{DoxyParamCaption}
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain, }
+\item[{char $\ast$}]{chemin\+Fichier}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_ae74ede311bdc4b21f792dac31ba78834}{}\label{terrain_8c_ae74ede311bdc4b21f792dac31ba78834}
+
+
+Créer un fichier terrain à partir du pointeur vers terrain. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Terrain} & Pointeur vers le terrain qui serra enregistré dans un fichier \\
+\hline
+\end{DoxyParams}
+\index{terrain.\+c@{terrain.\+c}!terrain\+Init\+Grille\+\_\+terr@{terrain\+Init\+Grille\+\_\+terr}}
+\index{terrain\+Init\+Grille\+\_\+terr@{terrain\+Init\+Grille\+\_\+terr}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{terrain\+Init\+Grille\+\_\+terr(\+Terrain $\ast$p\+Terrain)}{terrainInitGrille_terr(Terrain *pTerrain)}}]{\setlength{\rightskip}{0pt plus 5cm}void terrain\+Init\+Grille\+\_\+terr (
+\begin{DoxyParamCaption}
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_a3983dae49e4000872233e7d83205a247}{}\label{terrain_8c_a3983dae49e4000872233e7d83205a247}
+
+
+Initialise la grille d\textquotesingle{}un terrain. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Terrain} & Pointeur vers le terrain a initialiser \\
+\hline
+\end{DoxyParams}
+\index{terrain.\+c@{terrain.\+c}!terrain\+Lire\+Fichier\+\_\+terr@{terrain\+Lire\+Fichier\+\_\+terr}}
+\index{terrain\+Lire\+Fichier\+\_\+terr@{terrain\+Lire\+Fichier\+\_\+terr}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{terrain\+Lire\+Fichier\+\_\+terr(char $\ast$nom\+Terrain)}{terrainLireFichier_terr(char *nomTerrain)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Terrain}$\ast$ terrain\+Lire\+Fichier\+\_\+terr (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{nom\+Terrain}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_af5245ba401335426617e661a1fc0daee}{}\label{terrain_8c_af5245ba401335426617e661a1fc0daee}
+\index{terrain.\+c@{terrain.\+c}!testament\+Terrain\+\_\+terr@{testament\+Terrain\+\_\+terr}}
+\index{testament\+Terrain\+\_\+terr@{testament\+Terrain\+\_\+terr}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{testament\+Terrain\+\_\+terr(\+Terrain $\ast$p\+Terrain)}{testamentTerrain_terr(Terrain *pTerrain)}}]{\setlength{\rightskip}{0pt plus 5cm}void testament\+Terrain\+\_\+terr (
+\begin{DoxyParamCaption}
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_adcec4a15a3bf0455ad742bdcd940f2cb}{}\label{terrain_8c_adcec4a15a3bf0455ad742bdcd940f2cb}
+
+
+Libere la mémoire occupé par un terrain. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Terrain} & Pointeur vers le terrain a liberer \\
+\hline
+\end{DoxyParams}
+\index{terrain.\+c@{terrain.\+c}!test\+Fonctions\+\_\+terr@{test\+Fonctions\+\_\+terr}}
+\index{test\+Fonctions\+\_\+terr@{test\+Fonctions\+\_\+terr}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{test\+Fonctions\+\_\+terr()}{testFonctions_terr()}}]{\setlength{\rightskip}{0pt plus 5cm}void test\+Fonctions\+\_\+terr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_ae671405a2cab0685307937720369b63f}{}\label{terrain_8c_ae671405a2cab0685307937720369b63f}
+
+
+Fonctoin de test des fonction du module terrain. 
+
+\index{terrain.\+c@{terrain.\+c}!verif\+Deplacement\+Bas\+\_\+perso@{verif\+Deplacement\+Bas\+\_\+perso}}
+\index{verif\+Deplacement\+Bas\+\_\+perso@{verif\+Deplacement\+Bas\+\_\+perso}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{verif\+Deplacement\+Bas\+\_\+perso(\+Perso $\ast$p\+Perso, Terrain $\ast$p\+Terrain)}{verifDeplacementBas_perso(Perso *pPerso, Terrain *pTerrain)}}]{\setlength{\rightskip}{0pt plus 5cm}char verif\+Deplacement\+Bas\+\_\+perso (
+\begin{DoxyParamCaption}
+\item[{{\bf Perso} $\ast$}]{p\+Perso, }
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_a8d3c2c01aa89e785014ad2209d990c0a}{}\label{terrain_8c_a8d3c2c01aa89e785014ad2209d990c0a}
+
+
+Verifie si le personnage peut aller en bas. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Perso} & Pointeur vers le personnage dont les deplacement serront testé \\
+\hline
+{\em p\+Terrain} & Le terrain ou les coordonnées vont etre vérifiés \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+1 si oui, 0 sinon, sous forme d\textquotesingle{}un caractere 
+\end{DoxyReturn}
+\index{terrain.\+c@{terrain.\+c}!verif\+Deplacement\+Droite\+\_\+perso@{verif\+Deplacement\+Droite\+\_\+perso}}
+\index{verif\+Deplacement\+Droite\+\_\+perso@{verif\+Deplacement\+Droite\+\_\+perso}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{verif\+Deplacement\+Droite\+\_\+perso(\+Perso $\ast$p\+Perso, Terrain $\ast$p\+Terrain)}{verifDeplacementDroite_perso(Perso *pPerso, Terrain *pTerrain)}}]{\setlength{\rightskip}{0pt plus 5cm}char verif\+Deplacement\+Droite\+\_\+perso (
+\begin{DoxyParamCaption}
+\item[{{\bf Perso} $\ast$}]{p\+Perso, }
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_a0e34d630de41377283db24f865009ce7}{}\label{terrain_8c_a0e34d630de41377283db24f865009ce7}
+
+
+Verifie si le personnage peut aller a droite. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Perso} & Pointeur vers le personnage dont les deplacement serront testé \\
+\hline
+{\em p\+Terrain} & Le terrain ou les coordonnées vont etre vérifiés \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+1 si oui, 0 sinon, sous forme d\textquotesingle{}un caractere 
+\end{DoxyReturn}
+\index{terrain.\+c@{terrain.\+c}!verif\+Deplacement\+Gauche\+\_\+perso@{verif\+Deplacement\+Gauche\+\_\+perso}}
+\index{verif\+Deplacement\+Gauche\+\_\+perso@{verif\+Deplacement\+Gauche\+\_\+perso}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{verif\+Deplacement\+Gauche\+\_\+perso(\+Perso $\ast$p\+Perso, Terrain $\ast$p\+Terrain)}{verifDeplacementGauche_perso(Perso *pPerso, Terrain *pTerrain)}}]{\setlength{\rightskip}{0pt plus 5cm}char verif\+Deplacement\+Gauche\+\_\+perso (
+\begin{DoxyParamCaption}
+\item[{{\bf Perso} $\ast$}]{p\+Perso, }
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_ad8a0578b05cf7d184a2f7c69465cefea}{}\label{terrain_8c_ad8a0578b05cf7d184a2f7c69465cefea}
+
+
+Verifie si le personnage peut aller a gauche. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Perso} & Pointeur vers le personnage dont les deplacement serront testé \\
+\hline
+{\em p\+Terrain} & Le terrain ou les coordonnées vont etre vérifiés \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+1 si oui, 0 sinon, sous forme d\textquotesingle{}un caractere 
+\end{DoxyReturn}
+\index{terrain.\+c@{terrain.\+c}!verif\+Deplacement\+Haut\+\_\+perso@{verif\+Deplacement\+Haut\+\_\+perso}}
+\index{verif\+Deplacement\+Haut\+\_\+perso@{verif\+Deplacement\+Haut\+\_\+perso}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{verif\+Deplacement\+Haut\+\_\+perso(\+Perso $\ast$p\+Perso, Terrain $\ast$p\+Terrain)}{verifDeplacementHaut_perso(Perso *pPerso, Terrain *pTerrain)}}]{\setlength{\rightskip}{0pt plus 5cm}char verif\+Deplacement\+Haut\+\_\+perso (
+\begin{DoxyParamCaption}
+\item[{{\bf Perso} $\ast$}]{p\+Perso, }
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_a9fba0242ab21d6632a379cd00ee20f0e}{}\label{terrain_8c_a9fba0242ab21d6632a379cd00ee20f0e}
+
+
+Verifie si le personnage peut aller en haut. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Perso} & Pointeur vers le personnage dont les deplacement serront testé \\
+\hline
+{\em p\+Terrain} & Le terrain ou les coordonnées vont etre vérifiés \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+1 si oui, 0 sinon, sous forme d\textquotesingle{}un caractere 
+\end{DoxyReturn}
+\index{terrain.\+c@{terrain.\+c}!zombie\+A2\+Droite@{zombie\+A2\+Droite}}
+\index{zombie\+A2\+Droite@{zombie\+A2\+Droite}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{zombie\+A2\+Droite(\+Terrain $\ast$p\+Terrain, Coordonnees $\ast$coord\+Zombie)}{zombieA2Droite(Terrain *pTerrain, Coordonnees *coordZombie)}}]{\setlength{\rightskip}{0pt plus 5cm}char zombie\+A2\+Droite (
+\begin{DoxyParamCaption}
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain, }
+\item[{{\bf Coordonnees} $\ast$}]{coord\+Zombie}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_a97157bb01d1c0e7eed68d43459410dfc}{}\label{terrain_8c_a97157bb01d1c0e7eed68d43459410dfc}
+
+
+Regarde si un zombie se trouve sur la se situant (lire libelé de la fonction) des coordonnées. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Terrain} & Pointeur vers le terrain \\
+\hline
+{\em coord\+Zombie} & Pointeur vers les coordonnées a comparer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+0 si non, 1 si oui, sous forme d\textquotesingle{}un caratère. 
+\end{DoxyReturn}
+\index{terrain.\+c@{terrain.\+c}!zombie\+A2\+Gauche@{zombie\+A2\+Gauche}}
+\index{zombie\+A2\+Gauche@{zombie\+A2\+Gauche}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{zombie\+A2\+Gauche(\+Terrain $\ast$p\+Terrain, Coordonnees $\ast$coord\+Zombie)}{zombieA2Gauche(Terrain *pTerrain, Coordonnees *coordZombie)}}]{\setlength{\rightskip}{0pt plus 5cm}char zombie\+A2\+Gauche (
+\begin{DoxyParamCaption}
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain, }
+\item[{{\bf Coordonnees} $\ast$}]{coord\+Zombie}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_a789481a25a7883fa13a345b5cc86b618}{}\label{terrain_8c_a789481a25a7883fa13a345b5cc86b618}
+
+
+Regarde si un zombie se trouve sur la se situant (lire libelé de la fonction) des coordonnées. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Terrain} & Pointeur vers le terrain \\
+\hline
+{\em coord\+Zombie} & Pointeur vers les coordonnées a comparer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+0 si non, 1 si oui, sous forme d\textquotesingle{}un caratère. 
+\end{DoxyReturn}
+\index{terrain.\+c@{terrain.\+c}!zombie\+A\+Droite@{zombie\+A\+Droite}}
+\index{zombie\+A\+Droite@{zombie\+A\+Droite}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{zombie\+A\+Droite(\+Terrain $\ast$p\+Terrain, Coordonnees $\ast$coord\+Zombie)}{zombieADroite(Terrain *pTerrain, Coordonnees *coordZombie)}}]{\setlength{\rightskip}{0pt plus 5cm}char zombie\+A\+Droite (
+\begin{DoxyParamCaption}
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain, }
+\item[{{\bf Coordonnees} $\ast$}]{coord\+Zombie}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_a26dc558207a13a9ee19f2c78d06bf807}{}\label{terrain_8c_a26dc558207a13a9ee19f2c78d06bf807}
+
+
+Regarde si un zombie se trouve sur la se situant (lire libelé de la fonction) des coordonnées. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Terrain} & Pointeur vers le terrain \\
+\hline
+{\em coord\+Zombie} & Pointeur vers les coordonnées a comparer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+0 si non, 1 si oui, sous forme d\textquotesingle{}un caratère. 
+\end{DoxyReturn}
+\index{terrain.\+c@{terrain.\+c}!zombie\+A\+Gauche@{zombie\+A\+Gauche}}
+\index{zombie\+A\+Gauche@{zombie\+A\+Gauche}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{zombie\+A\+Gauche(\+Terrain $\ast$p\+Terrain, Coordonnees $\ast$coord\+Zombie)}{zombieAGauche(Terrain *pTerrain, Coordonnees *coordZombie)}}]{\setlength{\rightskip}{0pt plus 5cm}char zombie\+A\+Gauche (
+\begin{DoxyParamCaption}
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain, }
+\item[{{\bf Coordonnees} $\ast$}]{coord\+Zombie}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_af6ccfdc77c33d99a1ae6807aa7c8da8a}{}\label{terrain_8c_af6ccfdc77c33d99a1ae6807aa7c8da8a}
+
+
+Regarde si un zombie se trouve sur la se situant (lire libelé de la fonction) des coordonnées. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Terrain} & Pointeur vers le terrain \\
+\hline
+{\em coord\+Zombie} & Pointeur vers les coordonnées a comparer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+0 si non, 1 si oui, sous forme d\textquotesingle{}un caratère. 
+\end{DoxyReturn}
+\index{terrain.\+c@{terrain.\+c}!zombie\+BD@{zombie\+BD}}
+\index{zombie\+BD@{zombie\+BD}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{zombie\+B\+D(\+Terrain $\ast$p\+Terrain, Coordonnees $\ast$coord\+Zombie)}{zombieBD(Terrain *pTerrain, Coordonnees *coordZombie)}}]{\setlength{\rightskip}{0pt plus 5cm}char zombie\+BD (
+\begin{DoxyParamCaption}
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain, }
+\item[{{\bf Coordonnees} $\ast$}]{coord\+Zombie}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_abba9a396650e8815b0a0d8c093fbc352}{}\label{terrain_8c_abba9a396650e8815b0a0d8c093fbc352}
+
+
+Regarde si un zombie se trouve sur la se situant (lire libelé de la fonction) des coordonnées. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Terrain} & Pointeur vers le terrain \\
+\hline
+{\em coord\+Zombie} & Pointeur vers les coordonnées a comparer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+0 si non, 1 si oui, sous forme d\textquotesingle{}un caratère. 
+\end{DoxyReturn}
+\index{terrain.\+c@{terrain.\+c}!zombie\+BG@{zombie\+BG}}
+\index{zombie\+BG@{zombie\+BG}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{zombie\+B\+G(\+Terrain $\ast$p\+Terrain, Coordonnees $\ast$coord\+Zombie)}{zombieBG(Terrain *pTerrain, Coordonnees *coordZombie)}}]{\setlength{\rightskip}{0pt plus 5cm}char zombie\+BG (
+\begin{DoxyParamCaption}
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain, }
+\item[{{\bf Coordonnees} $\ast$}]{coord\+Zombie}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_adc99a25c35fcd27644a47f14129e0278}{}\label{terrain_8c_adc99a25c35fcd27644a47f14129e0278}
+
+
+Regarde si un zombie se trouve sur la se situant (lire libelé de la fonction) des coordonnées. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Terrain} & Pointeur vers le terrain \\
+\hline
+{\em coord\+Zombie} & Pointeur vers les coordonnées a comparer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+0 si non, 1 si oui, sous forme d\textquotesingle{}un caratère. 
+\end{DoxyReturn}
+\index{terrain.\+c@{terrain.\+c}!zombie\+Contamine\+Humain@{zombie\+Contamine\+Humain}}
+\index{zombie\+Contamine\+Humain@{zombie\+Contamine\+Humain}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{zombie\+Contamine\+Humain(\+Perso $\ast$p\+Zombie, Terrain $\ast$p\+Terrain)}{zombieContamineHumain(Perso *pZombie, Terrain *pTerrain)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Perso}$\ast$ zombie\+Contamine\+Humain (
+\begin{DoxyParamCaption}
+\item[{{\bf Perso} $\ast$}]{p\+Zombie, }
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_aef0f8b09c8459770f8901c7f4bc93b6d}{}\label{terrain_8c_aef0f8b09c8459770f8901c7f4bc93b6d}
+\index{terrain.\+c@{terrain.\+c}!zombie\+En2\+Bas@{zombie\+En2\+Bas}}
+\index{zombie\+En2\+Bas@{zombie\+En2\+Bas}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{zombie\+En2\+Bas(\+Terrain $\ast$p\+Terrain, Coordonnees $\ast$coord\+Zombie)}{zombieEn2Bas(Terrain *pTerrain, Coordonnees *coordZombie)}}]{\setlength{\rightskip}{0pt plus 5cm}char zombie\+En2\+Bas (
+\begin{DoxyParamCaption}
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain, }
+\item[{{\bf Coordonnees} $\ast$}]{coord\+Zombie}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_aac1c61b2b5fb5333e2c71072597fe646}{}\label{terrain_8c_aac1c61b2b5fb5333e2c71072597fe646}
+
+
+Regarde si un zombie se trouve sur la se situant (lire libelé de la fonction) des coordonnées. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Terrain} & Pointeur vers le terrain \\
+\hline
+{\em coord\+Zombie} & Pointeur vers les coordonnées a comparer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+0 si non, 1 si oui, sous forme d\textquotesingle{}un caratère. 
+\end{DoxyReturn}
+\index{terrain.\+c@{terrain.\+c}!zombie\+En2\+Haut@{zombie\+En2\+Haut}}
+\index{zombie\+En2\+Haut@{zombie\+En2\+Haut}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{zombie\+En2\+Haut(\+Terrain $\ast$p\+Terrain, Coordonnees $\ast$coord\+Zombie)}{zombieEn2Haut(Terrain *pTerrain, Coordonnees *coordZombie)}}]{\setlength{\rightskip}{0pt plus 5cm}char zombie\+En2\+Haut (
+\begin{DoxyParamCaption}
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain, }
+\item[{{\bf Coordonnees} $\ast$}]{coord\+Zombie}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_ad15a715cc6d4d24dbd1f1b0c5c724c41}{}\label{terrain_8c_ad15a715cc6d4d24dbd1f1b0c5c724c41}
+
+
+Regarde si un zombie se trouve sur la se situant (lire libelé de la fonction) des coordonnées. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Terrain} & Pointeur vers le terrain \\
+\hline
+{\em coord\+Zombie} & Pointeur vers les coordonnées a comparer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+0 si non, 1 si oui, sous forme d\textquotesingle{}un caratère. 
+\end{DoxyReturn}
+\index{terrain.\+c@{terrain.\+c}!zombie\+En\+Bas@{zombie\+En\+Bas}}
+\index{zombie\+En\+Bas@{zombie\+En\+Bas}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{zombie\+En\+Bas(\+Terrain $\ast$p\+Terrain, Coordonnees $\ast$coord\+Zombie)}{zombieEnBas(Terrain *pTerrain, Coordonnees *coordZombie)}}]{\setlength{\rightskip}{0pt plus 5cm}char zombie\+En\+Bas (
+\begin{DoxyParamCaption}
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain, }
+\item[{{\bf Coordonnees} $\ast$}]{coord\+Zombie}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_ad4328106195808c5a5a40e869ad7a580}{}\label{terrain_8c_ad4328106195808c5a5a40e869ad7a580}
+
+
+Regarde si un zombie se trouve sur la se situant (lire libelé de la fonction) des coordonnées. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Terrain} & Pointeur vers le terrain \\
+\hline
+{\em coord\+Zombie} & Pointeur vers les coordonnées a comparer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+0 si non, 1 si oui, sous forme d\textquotesingle{}un caratère. 
+\end{DoxyReturn}
+\index{terrain.\+c@{terrain.\+c}!zombie\+En\+Haut@{zombie\+En\+Haut}}
+\index{zombie\+En\+Haut@{zombie\+En\+Haut}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{zombie\+En\+Haut(\+Terrain $\ast$p\+Terrain, Coordonnees $\ast$coord\+Zombie)}{zombieEnHaut(Terrain *pTerrain, Coordonnees *coordZombie)}}]{\setlength{\rightskip}{0pt plus 5cm}char zombie\+En\+Haut (
+\begin{DoxyParamCaption}
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain, }
+\item[{{\bf Coordonnees} $\ast$}]{coord\+Zombie}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_a001f60dfb98bf19a3868269a3a8d4128}{}\label{terrain_8c_a001f60dfb98bf19a3868269a3a8d4128}
+
+
+Regarde si un zombie se trouve sur la se situant (lire libelé de la fonction) des coordonnées. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Terrain} & Pointeur vers le terrain \\
+\hline
+{\em coord\+Zombie} & Pointeur vers les coordonnées a comparer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+0 si non, 1 si oui, sous forme d\textquotesingle{}un caratère. 
+\end{DoxyReturn}
+\index{terrain.\+c@{terrain.\+c}!zombie\+HD@{zombie\+HD}}
+\index{zombie\+HD@{zombie\+HD}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{zombie\+H\+D(\+Terrain $\ast$p\+Terrain, Coordonnees $\ast$coord\+Zombie)}{zombieHD(Terrain *pTerrain, Coordonnees *coordZombie)}}]{\setlength{\rightskip}{0pt plus 5cm}char zombie\+HD (
+\begin{DoxyParamCaption}
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain, }
+\item[{{\bf Coordonnees} $\ast$}]{coord\+Zombie}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_ac83836d426c8c3f520114923a555a9bb}{}\label{terrain_8c_ac83836d426c8c3f520114923a555a9bb}
+
+
+Regarde si un zombie se trouve sur la se situant (lire libelé de la fonction) des coordonnées. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Terrain} & Pointeur vers le terrain \\
+\hline
+{\em coord\+Zombie} & Pointeur vers les coordonnées a comparer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+0 si non, 1 si oui, sous forme d\textquotesingle{}un caratère. 
+\end{DoxyReturn}
+\index{terrain.\+c@{terrain.\+c}!zombie\+HG@{zombie\+HG}}
+\index{zombie\+HG@{zombie\+HG}!terrain.\+c@{terrain.\+c}}
+\subsubsection[{\texorpdfstring{zombie\+H\+G(\+Terrain $\ast$p\+Terrain, Coordonnees $\ast$coord\+Zombie)}{zombieHG(Terrain *pTerrain, Coordonnees *coordZombie)}}]{\setlength{\rightskip}{0pt plus 5cm}char zombie\+HG (
+\begin{DoxyParamCaption}
+\item[{{\bf Terrain} $\ast$}]{p\+Terrain, }
+\item[{{\bf Coordonnees} $\ast$}]{coord\+Zombie}
+\end{DoxyParamCaption}
+)}\hypertarget{terrain_8c_a620533e1f0789251d879b67d9cef829e}{}\label{terrain_8c_a620533e1f0789251d879b67d9cef829e}
+
+
+Regarde si un zombie se trouve sur la se situant (lire libelé de la fonction) des coordonnées. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Terrain} & Pointeur vers le terrain \\
+\hline
+{\em coord\+Zombie} & Pointeur vers les coordonnées a comparer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+0 si non, 1 si oui, sous forme d\textquotesingle{}un caratère. 
+\end{DoxyReturn}

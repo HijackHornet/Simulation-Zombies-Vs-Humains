@@ -1,0 +1,357 @@
+\hypertarget{personnage_8h}{}\section{Référence du fichier src/personnage.h}
+\label{personnage_8h}\index{src/personnage.\+h@{src/personnage.\+h}}
+
+
+Définit les type de personnage et leurs accesseurs.  
+
+
+{\ttfamily \#include \char`\"{}coordonnees.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}assert.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}time.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+Graphe des dépendances par inclusion de personnage.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{personnage_8h__incl}
+\end{center}
+\end{figure}
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{personnage_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structMPerso}{M\+Perso}
+\begin{DoxyCompactList}\small\item\em Structure definissant un personnage et ses attributs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Définitions de type}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structMPerso}{M\+Perso} \hyperlink{personnage_8h_abd5c92a453bbf273f753b3f5b99da9e7}{Perso}
+\end{DoxyCompactItemize}
+\subsection*{Énumérations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{personnage_8h_a3f6a2951aa3d5d428dd6d61e74db0d75}{type\+Perso} \{ \hyperlink{personnage_8h_a3f6a2951aa3d5d428dd6d61e74db0d75a1db595a33d341b53fbd208d9cce5d0fc}{P\+O\+L\+I\+C\+I\+ER}, 
+\hyperlink{personnage_8h_a3f6a2951aa3d5d428dd6d61e74db0d75a5dfb36109b24f39d54d5c3f48f53def8}{Z\+O\+M\+B\+IE}, 
+\hyperlink{personnage_8h_a3f6a2951aa3d5d428dd6d61e74db0d75aea28a2bbfeeafa3a7de5daa12914e76b}{C\+I\+T\+O\+Y\+EN}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$ \hyperlink{personnage_8h_a19cfc938b3ee58f313b87e7ca4b62be2}{get\+Coordonnees\+Perso\+\_\+perso} (\hyperlink{personnage_8h_abd5c92a453bbf273f753b3f5b99da9e7}{Perso} $\ast$p\+Perso)
+\begin{DoxyCompactList}\small\item\em Retourne des coordonnées d\textquotesingle{}un personnage. \end{DoxyCompactList}\item 
+int \hyperlink{personnage_8h_aec9bc09498be7dab178baa5015d97abf}{get\+X\+Perso\+\_\+perso} (\hyperlink{personnage_8h_abd5c92a453bbf273f753b3f5b99da9e7}{Perso} $\ast$p\+Perso)
+\begin{DoxyCompactList}\small\item\em Retourne les coordonnées X d\textquotesingle{}un personnage. \end{DoxyCompactList}\item 
+int \hyperlink{personnage_8h_aa17a9866dddc2dd8a206364b2b0bcd41}{get\+Y\+Perso\+\_\+perso} (\hyperlink{personnage_8h_abd5c92a453bbf273f753b3f5b99da9e7}{Perso} $\ast$p\+Perso)
+\begin{DoxyCompactList}\small\item\em Retourne les coordonnées Y d\textquotesingle{}un personnage. \end{DoxyCompactList}\item 
+void \hyperlink{personnage_8h_a68b73c56985831aa9167f26278763b1f}{set\+X\+Perso\+\_\+perso} (\hyperlink{personnage_8h_abd5c92a453bbf273f753b3f5b99da9e7}{Perso} $\ast$p\+Perso, int x\+Perso)
+\begin{DoxyCompactList}\small\item\em Change les coordonnées X d\textquotesingle{}un personnage. \end{DoxyCompactList}\item 
+void \hyperlink{personnage_8h_ac36bed180c16d77128a18f79fe4afe8d}{set\+Y\+Perso\+\_\+perso} (\hyperlink{personnage_8h_abd5c92a453bbf273f753b3f5b99da9e7}{Perso} $\ast$p\+Perso, int y\+Perso)
+\begin{DoxyCompactList}\small\item\em Change les coordonnées Y d\textquotesingle{}un personnage. \end{DoxyCompactList}\item 
+\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$ \hyperlink{personnage_8h_aa60f8b12745fc87c9010193290c11ef7}{get\+Coord\+Perso} (\hyperlink{personnage_8h_abd5c92a453bbf273f753b3f5b99da9e7}{Perso} $\ast$p\+Perso)
+\item 
+enum \hyperlink{personnage_8h_a3f6a2951aa3d5d428dd6d61e74db0d75}{type\+Perso} \hyperlink{personnage_8h_ab151e74efaf41694e0ae80d45645b4ae}{get\+Type\+Perso} (\hyperlink{personnage_8h_abd5c92a453bbf273f753b3f5b99da9e7}{Perso} $\ast$p\+Perso)
+\begin{DoxyCompactList}\small\item\em Retourne le type de personnage d\textquotesingle{}un perso. \end{DoxyCompactList}\item 
+void \hyperlink{personnage_8h_ac14e27d8d05362bd811de08b2b73519e}{set\+Type\+Perso\+\_\+perso} (enum \hyperlink{personnage_8h_a3f6a2951aa3d5d428dd6d61e74db0d75}{type\+Perso} type, \hyperlink{personnage_8h_abd5c92a453bbf273f753b3f5b99da9e7}{Perso} $\ast$p\+Perso)
+\begin{DoxyCompactList}\small\item\em Change le type de personnage d\textquotesingle{}un perso. \end{DoxyCompactList}\item 
+void \hyperlink{personnage_8h_ae63f654e86384c7504b289a5e43a0965}{set\+Coord\+Perso\+\_\+perso} (\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$p\+Coord, \hyperlink{personnage_8h_abd5c92a453bbf273f753b3f5b99da9e7}{Perso} $\ast$p\+Perso)
+\begin{DoxyCompactList}\small\item\em Change les coordonnées d\textquotesingle{}un personnage. \end{DoxyCompactList}\item 
+int \hyperlink{personnage_8h_a52435b6bd9906c613c5de660462639c4}{get\+Id\+Perso} (\hyperlink{personnage_8h_abd5c92a453bbf273f753b3f5b99da9e7}{Perso} $\ast$p\+Perso)
+\begin{DoxyCompactList}\small\item\em Retourne l\textquotesingle{}Id d\textquotesingle{}un personnage pointé \end{DoxyCompactList}\item 
+void \hyperlink{personnage_8h_a7ccbdbc540ff48c9bee4e9df01c9e721}{set\+Id\+Perso} (int id\+Perso, \hyperlink{personnage_8h_abd5c92a453bbf273f753b3f5b99da9e7}{Perso} $\ast$p\+Perso)
+\begin{DoxyCompactList}\small\item\em Change l\textquotesingle{}Id d\textquotesingle{}un personnage pointé \end{DoxyCompactList}\item 
+\hyperlink{personnage_8h_abd5c92a453bbf273f753b3f5b99da9e7}{Perso} $\ast$ \hyperlink{personnage_8h_a7c7e7effb953fc825ebbe3ed5d362732}{init\+Perso} (\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$p\+Coord, enum \hyperlink{personnage_8h_a3f6a2951aa3d5d428dd6d61e74db0d75}{type\+Perso} \hyperlink{personnage_8h_a3f6a2951aa3d5d428dd6d61e74db0d75}{type\+Perso}, int id\+Perso)
+\begin{DoxyCompactList}\small\item\em Créer et initialise un personnage et renvoie un pointeur vers lui. \end{DoxyCompactList}\item 
+void \hyperlink{personnage_8h_a2f2cd16139f8de72e55cd99849fea56d}{testament\+Perso} (\hyperlink{personnage_8h_abd5c92a453bbf273f753b3f5b99da9e7}{Perso} $\ast$p\+Perso)
+\begin{DoxyCompactList}\small\item\em Detruit le personnage pointé et libère la mémoire. \end{DoxyCompactList}\item 
+void \hyperlink{personnage_8h_a722d5ef48f2f08ac15e1a4ab7dfdfe87}{test\+Fonctions\+\_\+perso} ()
+\begin{DoxyCompactList}\small\item\em Fontion de test des fonctions du module Personnage. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Définit les type de personnage et leurs accesseurs. 
+
+
+
+\subsection{Documentation des définitions de type}
+\index{personnage.\+h@{personnage.\+h}!Perso@{Perso}}
+\index{Perso@{Perso}!personnage.\+h@{personnage.\+h}}
+\subsubsection[{\texorpdfstring{Perso}{Perso}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf M\+Perso}  {\bf Perso}}\hypertarget{personnage_8h_abd5c92a453bbf273f753b3f5b99da9e7}{}\label{personnage_8h_abd5c92a453bbf273f753b3f5b99da9e7}
+
+
+\subsection{Documentation du type de l\textquotesingle{}énumération}
+\index{personnage.\+h@{personnage.\+h}!type\+Perso@{type\+Perso}}
+\index{type\+Perso@{type\+Perso}!personnage.\+h@{personnage.\+h}}
+\subsubsection[{\texorpdfstring{type\+Perso}{typePerso}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf type\+Perso}}\hypertarget{personnage_8h_a3f6a2951aa3d5d428dd6d61e74db0d75}{}\label{personnage_8h_a3f6a2951aa3d5d428dd6d61e74db0d75}
+Les différents type de personnages \begin{Desc}
+\item[Valeurs énumérées]\par
+\begin{description}
+\index{P\+O\+L\+I\+C\+I\+ER@{P\+O\+L\+I\+C\+I\+ER}!personnage.\+h@{personnage.\+h}}\index{personnage.\+h@{personnage.\+h}!P\+O\+L\+I\+C\+I\+ER@{P\+O\+L\+I\+C\+I\+ER}}\item[{\em 
+P\+O\+L\+I\+C\+I\+ER\hypertarget{personnage_8h_a3f6a2951aa3d5d428dd6d61e74db0d75a1db595a33d341b53fbd208d9cce5d0fc}{}\label{personnage_8h_a3f6a2951aa3d5d428dd6d61e74db0d75a1db595a33d341b53fbd208d9cce5d0fc}
+}]\index{Z\+O\+M\+B\+IE@{Z\+O\+M\+B\+IE}!personnage.\+h@{personnage.\+h}}\index{personnage.\+h@{personnage.\+h}!Z\+O\+M\+B\+IE@{Z\+O\+M\+B\+IE}}\item[{\em 
+Z\+O\+M\+B\+IE\hypertarget{personnage_8h_a3f6a2951aa3d5d428dd6d61e74db0d75a5dfb36109b24f39d54d5c3f48f53def8}{}\label{personnage_8h_a3f6a2951aa3d5d428dd6d61e74db0d75a5dfb36109b24f39d54d5c3f48f53def8}
+}]\index{C\+I\+T\+O\+Y\+EN@{C\+I\+T\+O\+Y\+EN}!personnage.\+h@{personnage.\+h}}\index{personnage.\+h@{personnage.\+h}!C\+I\+T\+O\+Y\+EN@{C\+I\+T\+O\+Y\+EN}}\item[{\em 
+C\+I\+T\+O\+Y\+EN\hypertarget{personnage_8h_a3f6a2951aa3d5d428dd6d61e74db0d75aea28a2bbfeeafa3a7de5daa12914e76b}{}\label{personnage_8h_a3f6a2951aa3d5d428dd6d61e74db0d75aea28a2bbfeeafa3a7de5daa12914e76b}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Documentation des fonctions}
+\index{personnage.\+h@{personnage.\+h}!get\+Coordonnees\+Perso\+\_\+perso@{get\+Coordonnees\+Perso\+\_\+perso}}
+\index{get\+Coordonnees\+Perso\+\_\+perso@{get\+Coordonnees\+Perso\+\_\+perso}!personnage.\+h@{personnage.\+h}}
+\subsubsection[{\texorpdfstring{get\+Coordonnees\+Perso\+\_\+perso(\+Perso $\ast$p\+Perso)}{getCoordonneesPerso_perso(Perso *pPerso)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Coordonnees}$\ast$ get\+Coordonnees\+Perso\+\_\+perso (
+\begin{DoxyParamCaption}
+\item[{{\bf Perso} $\ast$}]{p\+Perso}
+\end{DoxyParamCaption}
+)}\hypertarget{personnage_8h_a19cfc938b3ee58f313b87e7ca4b62be2}{}\label{personnage_8h_a19cfc938b3ee58f313b87e7ca4b62be2}
+
+
+Retourne des coordonnées d\textquotesingle{}un personnage. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Perso} & Personnage dont on veut les coordonnées \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Un pointeur vers les coordonnées du personnage 
+\end{DoxyReturn}
+\index{personnage.\+h@{personnage.\+h}!get\+Coord\+Perso@{get\+Coord\+Perso}}
+\index{get\+Coord\+Perso@{get\+Coord\+Perso}!personnage.\+h@{personnage.\+h}}
+\subsubsection[{\texorpdfstring{get\+Coord\+Perso(\+Perso $\ast$p\+Perso)}{getCoordPerso(Perso *pPerso)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Coordonnees}$\ast$ get\+Coord\+Perso (
+\begin{DoxyParamCaption}
+\item[{{\bf Perso} $\ast$}]{p\+Perso}
+\end{DoxyParamCaption}
+)}\hypertarget{personnage_8h_aa60f8b12745fc87c9010193290c11ef7}{}\label{personnage_8h_aa60f8b12745fc87c9010193290c11ef7}
+\index{personnage.\+h@{personnage.\+h}!get\+Id\+Perso@{get\+Id\+Perso}}
+\index{get\+Id\+Perso@{get\+Id\+Perso}!personnage.\+h@{personnage.\+h}}
+\subsubsection[{\texorpdfstring{get\+Id\+Perso(\+Perso $\ast$p\+Perso)}{getIdPerso(Perso *pPerso)}}]{\setlength{\rightskip}{0pt plus 5cm}int get\+Id\+Perso (
+\begin{DoxyParamCaption}
+\item[{{\bf Perso} $\ast$}]{p\+Perso}
+\end{DoxyParamCaption}
+)}\hypertarget{personnage_8h_a52435b6bd9906c613c5de660462639c4}{}\label{personnage_8h_a52435b6bd9906c613c5de660462639c4}
+
+
+Retourne l\textquotesingle{}Id d\textquotesingle{}un personnage pointé 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Perso} & Le personnage dont on veut l\textquotesingle{}ID \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+L\textquotesingle{}ID sous forme d\textquotesingle{}entier 
+\end{DoxyReturn}
+\index{personnage.\+h@{personnage.\+h}!get\+Type\+Perso@{get\+Type\+Perso}}
+\index{get\+Type\+Perso@{get\+Type\+Perso}!personnage.\+h@{personnage.\+h}}
+\subsubsection[{\texorpdfstring{get\+Type\+Perso(\+Perso $\ast$p\+Perso)}{getTypePerso(Perso *pPerso)}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf type\+Perso} get\+Type\+Perso (
+\begin{DoxyParamCaption}
+\item[{{\bf Perso} $\ast$}]{p\+Perso}
+\end{DoxyParamCaption}
+)}\hypertarget{personnage_8h_ab151e74efaf41694e0ae80d45645b4ae}{}\label{personnage_8h_ab151e74efaf41694e0ae80d45645b4ae}
+
+
+Retourne le type de personnage d\textquotesingle{}un perso. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Perso} & Personnage dont on veut le type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Un enum qui dit le type du perso (zombie, citoyen, policier) 
+\end{DoxyReturn}
+\index{personnage.\+h@{personnage.\+h}!get\+X\+Perso\+\_\+perso@{get\+X\+Perso\+\_\+perso}}
+\index{get\+X\+Perso\+\_\+perso@{get\+X\+Perso\+\_\+perso}!personnage.\+h@{personnage.\+h}}
+\subsubsection[{\texorpdfstring{get\+X\+Perso\+\_\+perso(\+Perso $\ast$p\+Perso)}{getXPerso_perso(Perso *pPerso)}}]{\setlength{\rightskip}{0pt plus 5cm}int get\+X\+Perso\+\_\+perso (
+\begin{DoxyParamCaption}
+\item[{{\bf Perso} $\ast$}]{p\+Perso}
+\end{DoxyParamCaption}
+)}\hypertarget{personnage_8h_aec9bc09498be7dab178baa5015d97abf}{}\label{personnage_8h_aec9bc09498be7dab178baa5015d97abf}
+
+
+Retourne les coordonnées X d\textquotesingle{}un personnage. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Perso} & Personnage dont on veut les coordonnées \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Un entier des coordonnées en X 
+\end{DoxyReturn}
+\index{personnage.\+h@{personnage.\+h}!get\+Y\+Perso\+\_\+perso@{get\+Y\+Perso\+\_\+perso}}
+\index{get\+Y\+Perso\+\_\+perso@{get\+Y\+Perso\+\_\+perso}!personnage.\+h@{personnage.\+h}}
+\subsubsection[{\texorpdfstring{get\+Y\+Perso\+\_\+perso(\+Perso $\ast$p\+Perso)}{getYPerso_perso(Perso *pPerso)}}]{\setlength{\rightskip}{0pt plus 5cm}int get\+Y\+Perso\+\_\+perso (
+\begin{DoxyParamCaption}
+\item[{{\bf Perso} $\ast$}]{p\+Perso}
+\end{DoxyParamCaption}
+)}\hypertarget{personnage_8h_aa17a9866dddc2dd8a206364b2b0bcd41}{}\label{personnage_8h_aa17a9866dddc2dd8a206364b2b0bcd41}
+
+
+Retourne les coordonnées Y d\textquotesingle{}un personnage. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Perso} & Personnage dont on veut les coordonnées \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Un entier des coordonnées en Y 
+\end{DoxyReturn}
+\index{personnage.\+h@{personnage.\+h}!init\+Perso@{init\+Perso}}
+\index{init\+Perso@{init\+Perso}!personnage.\+h@{personnage.\+h}}
+\subsubsection[{\texorpdfstring{init\+Perso(\+Coordonnees $\ast$p\+Coord, enum type\+Perso type\+Perso, int id\+Perso)}{initPerso(Coordonnees *pCoord, enum typePerso typePerso, int idPerso)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Perso}$\ast$ init\+Perso (
+\begin{DoxyParamCaption}
+\item[{{\bf Coordonnees} $\ast$}]{p\+Coord, }
+\item[{enum {\bf type\+Perso}}]{type\+Perso, }
+\item[{int}]{id\+Perso}
+\end{DoxyParamCaption}
+)}\hypertarget{personnage_8h_a7c7e7effb953fc825ebbe3ed5d362732}{}\label{personnage_8h_a7c7e7effb953fc825ebbe3ed5d362732}
+
+
+Créer et initialise un personnage et renvoie un pointeur vers lui. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Coord} & Pointeur vers les coordonnées du personnage a creer \\
+\hline
+{\em type} & Type du personnage \\
+\hline
+{\em id\+Perso} & L\textquotesingle{}ID du personnage a creer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Pointeur vers le personnage créé 
+\end{DoxyReturn}
+\index{personnage.\+h@{personnage.\+h}!set\+Coord\+Perso\+\_\+perso@{set\+Coord\+Perso\+\_\+perso}}
+\index{set\+Coord\+Perso\+\_\+perso@{set\+Coord\+Perso\+\_\+perso}!personnage.\+h@{personnage.\+h}}
+\subsubsection[{\texorpdfstring{set\+Coord\+Perso\+\_\+perso(\+Coordonnees $\ast$p\+Coord, Perso $\ast$p\+Perso)}{setCoordPerso_perso(Coordonnees *pCoord, Perso *pPerso)}}]{\setlength{\rightskip}{0pt plus 5cm}void set\+Coord\+Perso\+\_\+perso (
+\begin{DoxyParamCaption}
+\item[{{\bf Coordonnees} $\ast$}]{p\+Coord, }
+\item[{{\bf Perso} $\ast$}]{p\+Perso}
+\end{DoxyParamCaption}
+)}\hypertarget{personnage_8h_ae63f654e86384c7504b289a5e43a0965}{}\label{personnage_8h_ae63f654e86384c7504b289a5e43a0965}
+
+
+Change les coordonnées d\textquotesingle{}un personnage. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Coord} & Pointeur vers des coordonnées \\
+\hline
+{\em p\+Perso} & Personnage dont on veut changer les coordonnées \\
+\hline
+\end{DoxyParams}
+\index{personnage.\+h@{personnage.\+h}!set\+Id\+Perso@{set\+Id\+Perso}}
+\index{set\+Id\+Perso@{set\+Id\+Perso}!personnage.\+h@{personnage.\+h}}
+\subsubsection[{\texorpdfstring{set\+Id\+Perso(int id\+Perso, Perso $\ast$p\+Perso)}{setIdPerso(int idPerso, Perso *pPerso)}}]{\setlength{\rightskip}{0pt plus 5cm}void set\+Id\+Perso (
+\begin{DoxyParamCaption}
+\item[{int}]{id\+Perso, }
+\item[{{\bf Perso} $\ast$}]{p\+Perso}
+\end{DoxyParamCaption}
+)}\hypertarget{personnage_8h_a7ccbdbc540ff48c9bee4e9df01c9e721}{}\label{personnage_8h_a7ccbdbc540ff48c9bee4e9df01c9e721}
+
+
+Change l\textquotesingle{}Id d\textquotesingle{}un personnage pointé 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em L\textquotesingle{}\+ID} & sous forme d\textquotesingle{}entier \\
+\hline
+{\em p\+Perso} & Le personnage dont on veut l\textquotesingle{}ID \\
+\hline
+\end{DoxyParams}
+\index{personnage.\+h@{personnage.\+h}!set\+Type\+Perso\+\_\+perso@{set\+Type\+Perso\+\_\+perso}}
+\index{set\+Type\+Perso\+\_\+perso@{set\+Type\+Perso\+\_\+perso}!personnage.\+h@{personnage.\+h}}
+\subsubsection[{\texorpdfstring{set\+Type\+Perso\+\_\+perso(enum type\+Perso type, Perso $\ast$p\+Perso)}{setTypePerso_perso(enum typePerso type, Perso *pPerso)}}]{\setlength{\rightskip}{0pt plus 5cm}void set\+Type\+Perso\+\_\+perso (
+\begin{DoxyParamCaption}
+\item[{enum {\bf type\+Perso}}]{type, }
+\item[{{\bf Perso} $\ast$}]{p\+Perso}
+\end{DoxyParamCaption}
+)}\hypertarget{personnage_8h_ac14e27d8d05362bd811de08b2b73519e}{}\label{personnage_8h_ac14e27d8d05362bd811de08b2b73519e}
+
+
+Change le type de personnage d\textquotesingle{}un perso. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em type} & Un enum qui dit le type du perso (zombie, citoyen, policier) \\
+\hline
+{\em p\+Perso} & Personnage dont on veut changer le type \\
+\hline
+\end{DoxyParams}
+\index{personnage.\+h@{personnage.\+h}!set\+X\+Perso\+\_\+perso@{set\+X\+Perso\+\_\+perso}}
+\index{set\+X\+Perso\+\_\+perso@{set\+X\+Perso\+\_\+perso}!personnage.\+h@{personnage.\+h}}
+\subsubsection[{\texorpdfstring{set\+X\+Perso\+\_\+perso(\+Perso $\ast$p\+Perso, int x\+Perso)}{setXPerso_perso(Perso *pPerso, int xPerso)}}]{\setlength{\rightskip}{0pt plus 5cm}void set\+X\+Perso\+\_\+perso (
+\begin{DoxyParamCaption}
+\item[{{\bf Perso} $\ast$}]{p\+Perso, }
+\item[{int}]{x\+Perso}
+\end{DoxyParamCaption}
+)}\hypertarget{personnage_8h_a68b73c56985831aa9167f26278763b1f}{}\label{personnage_8h_a68b73c56985831aa9167f26278763b1f}
+
+
+Change les coordonnées X d\textquotesingle{}un personnage. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Perso} & Personnage dont on veut changer les coordonnées \\
+\hline
+{\em x\+Perso} & Un entier des coordonnées en X à changer \\
+\hline
+\end{DoxyParams}
+\index{personnage.\+h@{personnage.\+h}!set\+Y\+Perso\+\_\+perso@{set\+Y\+Perso\+\_\+perso}}
+\index{set\+Y\+Perso\+\_\+perso@{set\+Y\+Perso\+\_\+perso}!personnage.\+h@{personnage.\+h}}
+\subsubsection[{\texorpdfstring{set\+Y\+Perso\+\_\+perso(\+Perso $\ast$p\+Perso, int y\+Perso)}{setYPerso_perso(Perso *pPerso, int yPerso)}}]{\setlength{\rightskip}{0pt plus 5cm}void set\+Y\+Perso\+\_\+perso (
+\begin{DoxyParamCaption}
+\item[{{\bf Perso} $\ast$}]{p\+Perso, }
+\item[{int}]{y\+Perso}
+\end{DoxyParamCaption}
+)}\hypertarget{personnage_8h_ac36bed180c16d77128a18f79fe4afe8d}{}\label{personnage_8h_ac36bed180c16d77128a18f79fe4afe8d}
+
+
+Change les coordonnées Y d\textquotesingle{}un personnage. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Perso} & Personnage dont on veut changer les coordonnées \\
+\hline
+{\em y\+Perso} & Un entier des coordonnées en Y à changer \\
+\hline
+\end{DoxyParams}
+\index{personnage.\+h@{personnage.\+h}!testament\+Perso@{testament\+Perso}}
+\index{testament\+Perso@{testament\+Perso}!personnage.\+h@{personnage.\+h}}
+\subsubsection[{\texorpdfstring{testament\+Perso(\+Perso $\ast$p\+Perso)}{testamentPerso(Perso *pPerso)}}]{\setlength{\rightskip}{0pt plus 5cm}void testament\+Perso (
+\begin{DoxyParamCaption}
+\item[{{\bf Perso} $\ast$}]{p\+Perso}
+\end{DoxyParamCaption}
+)}\hypertarget{personnage_8h_a2f2cd16139f8de72e55cd99849fea56d}{}\label{personnage_8h_a2f2cd16139f8de72e55cd99849fea56d}
+
+
+Detruit le personnage pointé et libère la mémoire. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Perso} & Pointeur vers le personnage a détruire et liberer \\
+\hline
+\end{DoxyParams}
+\index{personnage.\+h@{personnage.\+h}!test\+Fonctions\+\_\+perso@{test\+Fonctions\+\_\+perso}}
+\index{test\+Fonctions\+\_\+perso@{test\+Fonctions\+\_\+perso}!personnage.\+h@{personnage.\+h}}
+\subsubsection[{\texorpdfstring{test\+Fonctions\+\_\+perso()}{testFonctions_perso()}}]{\setlength{\rightskip}{0pt plus 5cm}void test\+Fonctions\+\_\+perso (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{personnage_8h_a722d5ef48f2f08ac15e1a4ab7dfdfe87}{}\label{personnage_8h_a722d5ef48f2f08ac15e1a4ab7dfdfe87}
+
+
+Fontion de test des fonctions du module Personnage. 
+

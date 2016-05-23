@@ -1,0 +1,805 @@
+\hypertarget{coordonnees_8h}{}\section{Référence du fichier src/coordonnees.h}
+\label{coordonnees_8h}\index{src/coordonnees.\+h@{src/coordonnees.\+h}}
+
+
+Définit les coordonnées atomiques du terrain et ses accesseurs.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$math.\+h$>$}\\*
+{\ttfamily \#include $<$assert.\+h$>$}\\*
+Graphe des dépendances par inclusion de coordonnees.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{coordonnees_8h__incl}
+\end{center}
+\end{figure}
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{coordonnees_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structMCoordonnees}{M\+Coordonnees}
+\begin{DoxyCompactList}\small\item\em Structure definissant des coordonnees en deux dimension (pour des entitées) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Définitions de type}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structMCoordonnees}{M\+Coordonnees} \hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees}
+\end{DoxyCompactItemize}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{coordonnees_8h_a8aff12a5cb5f0533906de5d33d6b70c7}{set\+X\+Coord\+\_\+\+Coord} (int x, \hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$p\+Coord)
+\begin{DoxyCompactList}\small\item\em Edition de x\+Coord dans la structure. \end{DoxyCompactList}\item 
+void \hyperlink{coordonnees_8h_ab348ef93b59b6b652cdeff4bcc65463e}{set\+Y\+Coord\+\_\+\+Coord} (int y, \hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$p\+Coord)
+\begin{DoxyCompactList}\small\item\em Edition de y\+Coord dans la structure. \end{DoxyCompactList}\item 
+void \hyperlink{coordonnees_8h_a0551295b10d2256fdc606611c3f7bb8b}{set\+X\+Y\+Coord\+\_\+\+Coord} (int x, int y, \hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$p\+Coord)
+\begin{DoxyCompactList}\small\item\em Edition de x\+Coord et de y\+Coord dans la structure. \end{DoxyCompactList}\item 
+int \hyperlink{coordonnees_8h_a48eda9077b4d340681e26693e29c8195}{get\+X\+Coord\+\_\+\+Coord} (\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$p\+Coord)
+\begin{DoxyCompactList}\small\item\em Recupère x\+Coord. \end{DoxyCompactList}\item 
+int \hyperlink{coordonnees_8h_a40d9c810656479195c388fa1c776d6d8}{get\+Y\+Coord\+\_\+\+Coord} (\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$p\+Coord)
+\begin{DoxyCompactList}\small\item\em Recupère y\+Coord. \end{DoxyCompactList}\item 
+\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} \hyperlink{coordonnees_8h_a2f71dd7bc9972e801034567e10be73f1}{get\+Coord\+Case\+Bas\+By\+X\+Y\+\_\+terr} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Retourne des coordonnées de la case en dessous des coordonnées X/Y. \end{DoxyCompactList}\item 
+\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} \hyperlink{coordonnees_8h_aafd58dbb37b1ce271a97809e08abd978}{get\+Coord\+Case\+Droite\+By\+X\+Y\+\_\+terr} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Retourne des coordonnées de la case à droite des coordonnées X/Y. \end{DoxyCompactList}\item 
+\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} \hyperlink{coordonnees_8h_abd0e04f3069639088754f073df30b8d2}{get\+Coord\+Case\+Gauche\+By\+X\+Y\+\_\+terr} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Retourne des coordonnées de la case à gauche des coordonnées X/Y. \end{DoxyCompactList}\item 
+\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} \hyperlink{coordonnees_8h_a1a7a40e1f4d1aa2e24701a0d3e9082b1}{get\+Coord\+Case\+Haut\+By\+X\+Y\+\_\+terr} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Retourne des coordonnées de la case en haut des coordonnées X/Y. \end{DoxyCompactList}\item 
+\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} \hyperlink{coordonnees_8h_a27025f633eac2d41fdeb9d57691ea249}{get\+Coord\+Case\+Bas\+By\+Coord\+\_\+terr} (\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$p\+Coord)
+\begin{DoxyCompactList}\small\item\em Retourne des coordonnées de la case en dessous d\textquotesingle{}une structure de coordonnée. \end{DoxyCompactList}\item 
+\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} \hyperlink{coordonnees_8h_a6a86c1be1c447447b80acb0c560dcae6}{get\+Coord\+Case\+Haut\+By\+Coord\+\_\+terr} (\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$p\+Coord)
+\begin{DoxyCompactList}\small\item\em Retourne des coordonnées de la case en haut d\textquotesingle{}une structure de coordonnée. \end{DoxyCompactList}\item 
+\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} \hyperlink{coordonnees_8h_a28bf00e63c6736da38f1e2f2913ce11d}{get\+Coord\+Case\+Gauche\+By\+Coord\+\_\+terr} (\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$p\+Coord)
+\begin{DoxyCompactList}\small\item\em Retourne des coordonnées de la case à gauche d\textquotesingle{}une structure de coordonnée. \end{DoxyCompactList}\item 
+\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} \hyperlink{coordonnees_8h_abd2d0de1459a2cfc78fd6e5afbdc11a5}{get\+Coord\+Case\+Droite\+By\+Coord\+\_\+terr} (\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$p\+Coord)
+\begin{DoxyCompactList}\small\item\em Retourne des coordonnées de la case à droite d\textquotesingle{}une structure de coordonnée. \end{DoxyCompactList}\item 
+\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} \hyperlink{coordonnees_8h_a868ff8a6ca726b637ffffae9972ff652}{get\+Coord\+Case2\+Droite\+By\+X\+Y\+\_\+terr} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Retourne des coordonnées de la 2eme case à droite des coordonnées X/Y. \end{DoxyCompactList}\item 
+\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} \hyperlink{coordonnees_8h_a05fcc3308194d2d8f15e8302837af04f}{get\+Coord\+Case2\+Gauche\+By\+X\+Y\+\_\+terr} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Retourne des coordonnées de la 2eme case à gauche des coordonnées X/Y. \end{DoxyCompactList}\item 
+\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} \hyperlink{coordonnees_8h_a1a930c19d91bcda857a9d7fec9805891}{get\+Coord\+Case2\+Haut\+By\+X\+Y\+\_\+terr} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Retourne des coordonnées de la 2eme case en haut des coordonnées X/Y. \end{DoxyCompactList}\item 
+\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} \hyperlink{coordonnees_8h_a9480eabef95071a9fdf16c931416b73e}{get\+Coord\+Case2\+Bas\+By\+X\+Y\+\_\+terr} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Retourne des coordonnées de la 2eme case en bas des coordonnées X/Y. \end{DoxyCompactList}\item 
+\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} \hyperlink{coordonnees_8h_a296239d2fde59208ca18f88b380b0e2c}{get\+Coord\+Case\+H\+D\+By\+X\+Y\+\_\+terr} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Retourne des coordonnées de la case en haut à droite des coordonnées X/Y. \end{DoxyCompactList}\item 
+\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} \hyperlink{coordonnees_8h_a7dc1f0e0d69c06e304d9d1f8cd97d886}{get\+Coord\+Case\+B\+D\+By\+X\+Y\+\_\+terr} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Retourne des coordonnées de la case en bas à droite des coordonnées X/Y. \end{DoxyCompactList}\item 
+\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} \hyperlink{coordonnees_8h_a477d630118dec1f77d095ba3eb8b373a}{get\+Coord\+Case\+B\+G\+By\+X\+Y\+\_\+terr} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Retourne des coordonnées de la case en bas à gauche des coordonnées X/Y. \end{DoxyCompactList}\item 
+\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} \hyperlink{coordonnees_8h_a7e5298523f25d3bdb07082149740b6dc}{get\+Coord\+Case\+H\+G\+By\+X\+Y\+\_\+terr} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Retourne des coordonnées de la case en haut à gauche des coordonnées X/Y. \end{DoxyCompactList}\item 
+\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} \hyperlink{coordonnees_8h_a611d41db2b5c28115b99ec0113635ffc}{get\+Coord\+Case2\+Bas\+By\+Coord\+\_\+terr} (\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$p\+Coord)
+\begin{DoxyCompactList}\small\item\em Retourne des coordonnées de la 2eme case en bas à partir de coordonnées. \end{DoxyCompactList}\item 
+\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} \hyperlink{coordonnees_8h_a268d68b3b4bf0a9eca1d4cac2e38d4e7}{get\+Coord\+Case2\+Droite\+By\+Coord\+\_\+terr} (\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$p\+Coord)
+\begin{DoxyCompactList}\small\item\em Retourne des coordonnées de la 2eme case à droite à partir de coordonnées. \end{DoxyCompactList}\item 
+\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} \hyperlink{coordonnees_8h_a280ca53928088ad711c959b8ee3c2a81}{get\+Coord\+Case2\+Gauche\+By\+Coord\+\_\+terr} (\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$p\+Coord)
+\begin{DoxyCompactList}\small\item\em Retourne des coordonnées de la 2eme case à gauche à partir de coordonnées. \end{DoxyCompactList}\item 
+\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} \hyperlink{coordonnees_8h_a3fbd55920dc671d5802977574b552a3a}{get\+Coord\+Case2\+Haut\+By\+Coord\+\_\+terr} (\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$p\+Coord)
+\begin{DoxyCompactList}\small\item\em Retourne des coordonnées de la 2eme case en haut à partir de coordonnées. \end{DoxyCompactList}\item 
+\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} \hyperlink{coordonnees_8h_a1a988653b61291da9700913a893cfe14}{get\+Coord\+Case\+H\+D\+By\+Coord\+\_\+terr} (\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$p\+Coord)
+\begin{DoxyCompactList}\small\item\em Retourne des coordonnées de la case en haut à droite à partir de coordonnées. \end{DoxyCompactList}\item 
+\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} \hyperlink{coordonnees_8h_a2da45ab8ad8e1e543c600a5dd3a1b905}{get\+Coord\+Case\+B\+D\+By\+Coord\+\_\+terr} (\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$p\+Coord)
+\begin{DoxyCompactList}\small\item\em Retourne des coordonnées de la case en bas à droite à partir de coordonnées. \end{DoxyCompactList}\item 
+\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} \hyperlink{coordonnees_8h_a624c21a2b978d50e6601bad8f298190b}{get\+Coord\+Case\+B\+G\+By\+Coord\+\_\+terr} (\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$p\+Coord)
+\begin{DoxyCompactList}\small\item\em Retourne des coordonnées de la case en bas à gauche à partir de coordonnées. \end{DoxyCompactList}\item 
+\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} \hyperlink{coordonnees_8h_a096126ba60788fa3cb8c14c12c3777d1}{get\+Coord\+Case\+H\+G\+By\+Coord\+\_\+terr} (\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$p\+Coord)
+\begin{DoxyCompactList}\small\item\em Retourne des coordonnées de la case en haut à gauche à partir de coordonnées. \end{DoxyCompactList}\item 
+\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$ \hyperlink{coordonnees_8h_aefad4fcb9d51c146999a9b0ee90e6b62}{init\+Coordonnees\+\_\+coord} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Crée et initialise des coordonnées avec les valeur XY. \end{DoxyCompactList}\item 
+void \hyperlink{coordonnees_8h_a23c06b4d17cdb6008e96945dfd2ab043}{testament\+Coord} (\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$p\+Coord)
+\begin{DoxyCompactList}\small\item\em Détruit et libère des coordonnées. \end{DoxyCompactList}\item 
+float \hyperlink{coordonnees_8h_ad691c01633ef08dc8831d0544ce01d40}{distance\+Entre\+Deux\+Coordonnees\+\_\+\+Coord} (\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$p\+Coord1, \hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$p\+Coord2)
+\begin{DoxyCompactList}\small\item\em Retourne la distance entre deux Coordonnees. \end{DoxyCompactList}\item 
+int \hyperlink{coordonnees_8h_a15ae1d9835553c9ff38e0ee0ff6db8f5}{sont\+Egale\+\_\+\+Coord} (\hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$p\+Coord1, \hyperlink{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{Coordonnees} $\ast$p\+Coord2)
+\begin{DoxyCompactList}\small\item\em Vérifie si deux Coordonnees donné sont identiques. \end{DoxyCompactList}\item 
+void \hyperlink{coordonnees_8h_abe42b4ebb96328b33c08361965c79512}{test\+Fonctions\+\_\+\+Coord} ()
+\begin{DoxyCompactList}\small\item\em Fontion de test des fonctions du module Coordonnees. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Définit les coordonnées atomiques du terrain et ses accesseurs. 
+
+
+
+\subsection{Documentation des définitions de type}
+\index{coordonnees.\+h@{coordonnees.\+h}!Coordonnees@{Coordonnees}}
+\index{Coordonnees@{Coordonnees}!coordonnees.\+h@{coordonnees.\+h}}
+\subsubsection[{\texorpdfstring{Coordonnees}{Coordonnees}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf M\+Coordonnees}  {\bf Coordonnees}}\hypertarget{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}{}\label{coordonnees_8h_a79929cdfee7bd985a5e4e25276bb3ba9}
+
+
+\subsection{Documentation des fonctions}
+\index{coordonnees.\+h@{coordonnees.\+h}!distance\+Entre\+Deux\+Coordonnees\+\_\+\+Coord@{distance\+Entre\+Deux\+Coordonnees\+\_\+\+Coord}}
+\index{distance\+Entre\+Deux\+Coordonnees\+\_\+\+Coord@{distance\+Entre\+Deux\+Coordonnees\+\_\+\+Coord}!coordonnees.\+h@{coordonnees.\+h}}
+\subsubsection[{\texorpdfstring{distance\+Entre\+Deux\+Coordonnees\+\_\+\+Coord(\+Coordonnees $\ast$p\+Coord1, Coordonnees $\ast$p\+Coord2)}{distanceEntreDeuxCoordonnees_Coord(Coordonnees *pCoord1, Coordonnees *pCoord2)}}]{\setlength{\rightskip}{0pt plus 5cm}float distance\+Entre\+Deux\+Coordonnees\+\_\+\+Coord (
+\begin{DoxyParamCaption}
+\item[{{\bf Coordonnees} $\ast$}]{p\+Coord1, }
+\item[{{\bf Coordonnees} $\ast$}]{p\+Coord2}
+\end{DoxyParamCaption}
+)}\hypertarget{coordonnees_8h_ad691c01633ef08dc8831d0544ce01d40}{}\label{coordonnees_8h_ad691c01633ef08dc8831d0544ce01d40}
+
+
+Retourne la distance entre deux Coordonnees. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em coord1} & Coordonnees de la premier entitée \\
+\hline
+{\em coord2} & Coordonnees de la seconde entitée \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+float représentant la distance entre ses deux coordonnées 
+\end{DoxyReturn}
+\index{coordonnees.\+h@{coordonnees.\+h}!get\+Coord\+Case2\+Bas\+By\+Coord\+\_\+terr@{get\+Coord\+Case2\+Bas\+By\+Coord\+\_\+terr}}
+\index{get\+Coord\+Case2\+Bas\+By\+Coord\+\_\+terr@{get\+Coord\+Case2\+Bas\+By\+Coord\+\_\+terr}!coordonnees.\+h@{coordonnees.\+h}}
+\subsubsection[{\texorpdfstring{get\+Coord\+Case2\+Bas\+By\+Coord\+\_\+terr(\+Coordonnees $\ast$p\+Coord)}{getCoordCase2BasByCoord_terr(Coordonnees *pCoord)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Coordonnees} get\+Coord\+Case2\+Bas\+By\+Coord\+\_\+terr (
+\begin{DoxyParamCaption}
+\item[{{\bf Coordonnees} $\ast$}]{p\+Coord}
+\end{DoxyParamCaption}
+)}\hypertarget{coordonnees_8h_a611d41db2b5c28115b99ec0113635ffc}{}\label{coordonnees_8h_a611d41db2b5c28115b99ec0113635ffc}
+
+
+Retourne des coordonnées de la 2eme case en bas à partir de coordonnées. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em coord} & Pointeur vers les coordonnées de référence \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Les coordonnées de la 2eme case en bas 
+\end{DoxyReturn}
+\index{coordonnees.\+h@{coordonnees.\+h}!get\+Coord\+Case2\+Bas\+By\+X\+Y\+\_\+terr@{get\+Coord\+Case2\+Bas\+By\+X\+Y\+\_\+terr}}
+\index{get\+Coord\+Case2\+Bas\+By\+X\+Y\+\_\+terr@{get\+Coord\+Case2\+Bas\+By\+X\+Y\+\_\+terr}!coordonnees.\+h@{coordonnees.\+h}}
+\subsubsection[{\texorpdfstring{get\+Coord\+Case2\+Bas\+By\+X\+Y\+\_\+terr(int x, int y)}{getCoordCase2BasByXY_terr(int x, int y)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Coordonnees} get\+Coord\+Case2\+Bas\+By\+X\+Y\+\_\+terr (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{coordonnees_8h_a9480eabef95071a9fdf16c931416b73e}{}\label{coordonnees_8h_a9480eabef95071a9fdf16c931416b73e}
+
+
+Retourne des coordonnées de la 2eme case en bas des coordonnées X/Y. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em x} & La coordonnées en X \\
+\hline
+{\em y} & La coordonnées en Y \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Les coordonnées de la 2eme case en bas 
+\end{DoxyReturn}
+\index{coordonnees.\+h@{coordonnees.\+h}!get\+Coord\+Case2\+Droite\+By\+Coord\+\_\+terr@{get\+Coord\+Case2\+Droite\+By\+Coord\+\_\+terr}}
+\index{get\+Coord\+Case2\+Droite\+By\+Coord\+\_\+terr@{get\+Coord\+Case2\+Droite\+By\+Coord\+\_\+terr}!coordonnees.\+h@{coordonnees.\+h}}
+\subsubsection[{\texorpdfstring{get\+Coord\+Case2\+Droite\+By\+Coord\+\_\+terr(\+Coordonnees $\ast$p\+Coord)}{getCoordCase2DroiteByCoord_terr(Coordonnees *pCoord)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Coordonnees} get\+Coord\+Case2\+Droite\+By\+Coord\+\_\+terr (
+\begin{DoxyParamCaption}
+\item[{{\bf Coordonnees} $\ast$}]{p\+Coord}
+\end{DoxyParamCaption}
+)}\hypertarget{coordonnees_8h_a268d68b3b4bf0a9eca1d4cac2e38d4e7}{}\label{coordonnees_8h_a268d68b3b4bf0a9eca1d4cac2e38d4e7}
+
+
+Retourne des coordonnées de la 2eme case à droite à partir de coordonnées. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em coord} & Pointeur vers les coordonnées de référence \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Les coordonnées de la 2eme case à droite 
+\end{DoxyReturn}
+\index{coordonnees.\+h@{coordonnees.\+h}!get\+Coord\+Case2\+Droite\+By\+X\+Y\+\_\+terr@{get\+Coord\+Case2\+Droite\+By\+X\+Y\+\_\+terr}}
+\index{get\+Coord\+Case2\+Droite\+By\+X\+Y\+\_\+terr@{get\+Coord\+Case2\+Droite\+By\+X\+Y\+\_\+terr}!coordonnees.\+h@{coordonnees.\+h}}
+\subsubsection[{\texorpdfstring{get\+Coord\+Case2\+Droite\+By\+X\+Y\+\_\+terr(int x, int y)}{getCoordCase2DroiteByXY_terr(int x, int y)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Coordonnees} get\+Coord\+Case2\+Droite\+By\+X\+Y\+\_\+terr (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{coordonnees_8h_a868ff8a6ca726b637ffffae9972ff652}{}\label{coordonnees_8h_a868ff8a6ca726b637ffffae9972ff652}
+
+
+Retourne des coordonnées de la 2eme case à droite des coordonnées X/Y. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em x} & La coordonnées en X \\
+\hline
+{\em y} & La coordonnées en Y \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Les coordonnées de la 2eme case à droite 
+\end{DoxyReturn}
+\index{coordonnees.\+h@{coordonnees.\+h}!get\+Coord\+Case2\+Gauche\+By\+Coord\+\_\+terr@{get\+Coord\+Case2\+Gauche\+By\+Coord\+\_\+terr}}
+\index{get\+Coord\+Case2\+Gauche\+By\+Coord\+\_\+terr@{get\+Coord\+Case2\+Gauche\+By\+Coord\+\_\+terr}!coordonnees.\+h@{coordonnees.\+h}}
+\subsubsection[{\texorpdfstring{get\+Coord\+Case2\+Gauche\+By\+Coord\+\_\+terr(\+Coordonnees $\ast$p\+Coord)}{getCoordCase2GaucheByCoord_terr(Coordonnees *pCoord)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Coordonnees} get\+Coord\+Case2\+Gauche\+By\+Coord\+\_\+terr (
+\begin{DoxyParamCaption}
+\item[{{\bf Coordonnees} $\ast$}]{p\+Coord}
+\end{DoxyParamCaption}
+)}\hypertarget{coordonnees_8h_a280ca53928088ad711c959b8ee3c2a81}{}\label{coordonnees_8h_a280ca53928088ad711c959b8ee3c2a81}
+
+
+Retourne des coordonnées de la 2eme case à gauche à partir de coordonnées. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em coord} & Pointeur vers les coordonnées de référence \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Les coordonnées de la 2eme case à gauche 
+\end{DoxyReturn}
+\index{coordonnees.\+h@{coordonnees.\+h}!get\+Coord\+Case2\+Gauche\+By\+X\+Y\+\_\+terr@{get\+Coord\+Case2\+Gauche\+By\+X\+Y\+\_\+terr}}
+\index{get\+Coord\+Case2\+Gauche\+By\+X\+Y\+\_\+terr@{get\+Coord\+Case2\+Gauche\+By\+X\+Y\+\_\+terr}!coordonnees.\+h@{coordonnees.\+h}}
+\subsubsection[{\texorpdfstring{get\+Coord\+Case2\+Gauche\+By\+X\+Y\+\_\+terr(int x, int y)}{getCoordCase2GaucheByXY_terr(int x, int y)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Coordonnees} get\+Coord\+Case2\+Gauche\+By\+X\+Y\+\_\+terr (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{coordonnees_8h_a05fcc3308194d2d8f15e8302837af04f}{}\label{coordonnees_8h_a05fcc3308194d2d8f15e8302837af04f}
+
+
+Retourne des coordonnées de la 2eme case à gauche des coordonnées X/Y. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em x} & La coordonnées en X \\
+\hline
+{\em y} & La coordonnées en Y \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Les coordonnées de la 2eme case à gauche 
+\end{DoxyReturn}
+\index{coordonnees.\+h@{coordonnees.\+h}!get\+Coord\+Case2\+Haut\+By\+Coord\+\_\+terr@{get\+Coord\+Case2\+Haut\+By\+Coord\+\_\+terr}}
+\index{get\+Coord\+Case2\+Haut\+By\+Coord\+\_\+terr@{get\+Coord\+Case2\+Haut\+By\+Coord\+\_\+terr}!coordonnees.\+h@{coordonnees.\+h}}
+\subsubsection[{\texorpdfstring{get\+Coord\+Case2\+Haut\+By\+Coord\+\_\+terr(\+Coordonnees $\ast$p\+Coord)}{getCoordCase2HautByCoord_terr(Coordonnees *pCoord)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Coordonnees} get\+Coord\+Case2\+Haut\+By\+Coord\+\_\+terr (
+\begin{DoxyParamCaption}
+\item[{{\bf Coordonnees} $\ast$}]{p\+Coord}
+\end{DoxyParamCaption}
+)}\hypertarget{coordonnees_8h_a3fbd55920dc671d5802977574b552a3a}{}\label{coordonnees_8h_a3fbd55920dc671d5802977574b552a3a}
+
+
+Retourne des coordonnées de la 2eme case en haut à partir de coordonnées. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em coord} & Pointeur vers les coordonnées de référence \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Les coordonnées de la 2eme case en haut 
+\end{DoxyReturn}
+\index{coordonnees.\+h@{coordonnees.\+h}!get\+Coord\+Case2\+Haut\+By\+X\+Y\+\_\+terr@{get\+Coord\+Case2\+Haut\+By\+X\+Y\+\_\+terr}}
+\index{get\+Coord\+Case2\+Haut\+By\+X\+Y\+\_\+terr@{get\+Coord\+Case2\+Haut\+By\+X\+Y\+\_\+terr}!coordonnees.\+h@{coordonnees.\+h}}
+\subsubsection[{\texorpdfstring{get\+Coord\+Case2\+Haut\+By\+X\+Y\+\_\+terr(int x, int y)}{getCoordCase2HautByXY_terr(int x, int y)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Coordonnees} get\+Coord\+Case2\+Haut\+By\+X\+Y\+\_\+terr (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{coordonnees_8h_a1a930c19d91bcda857a9d7fec9805891}{}\label{coordonnees_8h_a1a930c19d91bcda857a9d7fec9805891}
+
+
+Retourne des coordonnées de la 2eme case en haut des coordonnées X/Y. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em x} & La coordonnées en X \\
+\hline
+{\em y} & La coordonnées en Y \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Les coordonnées de la 2eme case en haut 
+\end{DoxyReturn}
+\index{coordonnees.\+h@{coordonnees.\+h}!get\+Coord\+Case\+Bas\+By\+Coord\+\_\+terr@{get\+Coord\+Case\+Bas\+By\+Coord\+\_\+terr}}
+\index{get\+Coord\+Case\+Bas\+By\+Coord\+\_\+terr@{get\+Coord\+Case\+Bas\+By\+Coord\+\_\+terr}!coordonnees.\+h@{coordonnees.\+h}}
+\subsubsection[{\texorpdfstring{get\+Coord\+Case\+Bas\+By\+Coord\+\_\+terr(\+Coordonnees $\ast$p\+Coord)}{getCoordCaseBasByCoord_terr(Coordonnees *pCoord)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Coordonnees} get\+Coord\+Case\+Bas\+By\+Coord\+\_\+terr (
+\begin{DoxyParamCaption}
+\item[{{\bf Coordonnees} $\ast$}]{p\+Coord}
+\end{DoxyParamCaption}
+)}\hypertarget{coordonnees_8h_a27025f633eac2d41fdeb9d57691ea249}{}\label{coordonnees_8h_a27025f633eac2d41fdeb9d57691ea249}
+
+
+Retourne des coordonnées de la case en dessous d\textquotesingle{}une structure de coordonnée. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em coord} & Pointeur sur les coordonnées de reference \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Les coordonnées de la case en dessous 
+\end{DoxyReturn}
+\index{coordonnees.\+h@{coordonnees.\+h}!get\+Coord\+Case\+Bas\+By\+X\+Y\+\_\+terr@{get\+Coord\+Case\+Bas\+By\+X\+Y\+\_\+terr}}
+\index{get\+Coord\+Case\+Bas\+By\+X\+Y\+\_\+terr@{get\+Coord\+Case\+Bas\+By\+X\+Y\+\_\+terr}!coordonnees.\+h@{coordonnees.\+h}}
+\subsubsection[{\texorpdfstring{get\+Coord\+Case\+Bas\+By\+X\+Y\+\_\+terr(int x, int y)}{getCoordCaseBasByXY_terr(int x, int y)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Coordonnees} get\+Coord\+Case\+Bas\+By\+X\+Y\+\_\+terr (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{coordonnees_8h_a2f71dd7bc9972e801034567e10be73f1}{}\label{coordonnees_8h_a2f71dd7bc9972e801034567e10be73f1}
+
+
+Retourne des coordonnées de la case en dessous des coordonnées X/Y. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em x} & La coordonnées en X \\
+\hline
+{\em y} & La coordonnées en Y \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Les coordonnées de la case en dessous 
+\end{DoxyReturn}
+\index{coordonnees.\+h@{coordonnees.\+h}!get\+Coord\+Case\+B\+D\+By\+Coord\+\_\+terr@{get\+Coord\+Case\+B\+D\+By\+Coord\+\_\+terr}}
+\index{get\+Coord\+Case\+B\+D\+By\+Coord\+\_\+terr@{get\+Coord\+Case\+B\+D\+By\+Coord\+\_\+terr}!coordonnees.\+h@{coordonnees.\+h}}
+\subsubsection[{\texorpdfstring{get\+Coord\+Case\+B\+D\+By\+Coord\+\_\+terr(\+Coordonnees $\ast$p\+Coord)}{getCoordCaseBDByCoord_terr(Coordonnees *pCoord)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Coordonnees} get\+Coord\+Case\+B\+D\+By\+Coord\+\_\+terr (
+\begin{DoxyParamCaption}
+\item[{{\bf Coordonnees} $\ast$}]{p\+Coord}
+\end{DoxyParamCaption}
+)}\hypertarget{coordonnees_8h_a2da45ab8ad8e1e543c600a5dd3a1b905}{}\label{coordonnees_8h_a2da45ab8ad8e1e543c600a5dd3a1b905}
+
+
+Retourne des coordonnées de la case en bas à droite à partir de coordonnées. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em coord} & Pointeur vers les coordonnées de référence \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Les coordonnées de la 2eme case en bas à droite 
+\end{DoxyReturn}
+\index{coordonnees.\+h@{coordonnees.\+h}!get\+Coord\+Case\+B\+D\+By\+X\+Y\+\_\+terr@{get\+Coord\+Case\+B\+D\+By\+X\+Y\+\_\+terr}}
+\index{get\+Coord\+Case\+B\+D\+By\+X\+Y\+\_\+terr@{get\+Coord\+Case\+B\+D\+By\+X\+Y\+\_\+terr}!coordonnees.\+h@{coordonnees.\+h}}
+\subsubsection[{\texorpdfstring{get\+Coord\+Case\+B\+D\+By\+X\+Y\+\_\+terr(int x, int y)}{getCoordCaseBDByXY_terr(int x, int y)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Coordonnees} get\+Coord\+Case\+B\+D\+By\+X\+Y\+\_\+terr (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{coordonnees_8h_a7dc1f0e0d69c06e304d9d1f8cd97d886}{}\label{coordonnees_8h_a7dc1f0e0d69c06e304d9d1f8cd97d886}
+
+
+Retourne des coordonnées de la case en bas à droite des coordonnées X/Y. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em x} & La coordonnées en X \\
+\hline
+{\em y} & La coordonnées en Y \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Les coordonnées de la case en bas à droite 
+\end{DoxyReturn}
+\index{coordonnees.\+h@{coordonnees.\+h}!get\+Coord\+Case\+B\+G\+By\+Coord\+\_\+terr@{get\+Coord\+Case\+B\+G\+By\+Coord\+\_\+terr}}
+\index{get\+Coord\+Case\+B\+G\+By\+Coord\+\_\+terr@{get\+Coord\+Case\+B\+G\+By\+Coord\+\_\+terr}!coordonnees.\+h@{coordonnees.\+h}}
+\subsubsection[{\texorpdfstring{get\+Coord\+Case\+B\+G\+By\+Coord\+\_\+terr(\+Coordonnees $\ast$p\+Coord)}{getCoordCaseBGByCoord_terr(Coordonnees *pCoord)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Coordonnees} get\+Coord\+Case\+B\+G\+By\+Coord\+\_\+terr (
+\begin{DoxyParamCaption}
+\item[{{\bf Coordonnees} $\ast$}]{p\+Coord}
+\end{DoxyParamCaption}
+)}\hypertarget{coordonnees_8h_a624c21a2b978d50e6601bad8f298190b}{}\label{coordonnees_8h_a624c21a2b978d50e6601bad8f298190b}
+
+
+Retourne des coordonnées de la case en bas à gauche à partir de coordonnées. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em coord} & Pointeur vers les coordonnées de référence \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Les coordonnées de la 2eme case en bas à gauche 
+\end{DoxyReturn}
+\index{coordonnees.\+h@{coordonnees.\+h}!get\+Coord\+Case\+B\+G\+By\+X\+Y\+\_\+terr@{get\+Coord\+Case\+B\+G\+By\+X\+Y\+\_\+terr}}
+\index{get\+Coord\+Case\+B\+G\+By\+X\+Y\+\_\+terr@{get\+Coord\+Case\+B\+G\+By\+X\+Y\+\_\+terr}!coordonnees.\+h@{coordonnees.\+h}}
+\subsubsection[{\texorpdfstring{get\+Coord\+Case\+B\+G\+By\+X\+Y\+\_\+terr(int x, int y)}{getCoordCaseBGByXY_terr(int x, int y)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Coordonnees} get\+Coord\+Case\+B\+G\+By\+X\+Y\+\_\+terr (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{coordonnees_8h_a477d630118dec1f77d095ba3eb8b373a}{}\label{coordonnees_8h_a477d630118dec1f77d095ba3eb8b373a}
+
+
+Retourne des coordonnées de la case en bas à gauche des coordonnées X/Y. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em x} & La coordonnées en X \\
+\hline
+{\em y} & La coordonnées en Y \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Les coordonnées de la case en bas à gauche 
+\end{DoxyReturn}
+\index{coordonnees.\+h@{coordonnees.\+h}!get\+Coord\+Case\+Droite\+By\+Coord\+\_\+terr@{get\+Coord\+Case\+Droite\+By\+Coord\+\_\+terr}}
+\index{get\+Coord\+Case\+Droite\+By\+Coord\+\_\+terr@{get\+Coord\+Case\+Droite\+By\+Coord\+\_\+terr}!coordonnees.\+h@{coordonnees.\+h}}
+\subsubsection[{\texorpdfstring{get\+Coord\+Case\+Droite\+By\+Coord\+\_\+terr(\+Coordonnees $\ast$p\+Coord)}{getCoordCaseDroiteByCoord_terr(Coordonnees *pCoord)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Coordonnees} get\+Coord\+Case\+Droite\+By\+Coord\+\_\+terr (
+\begin{DoxyParamCaption}
+\item[{{\bf Coordonnees} $\ast$}]{p\+Coord}
+\end{DoxyParamCaption}
+)}\hypertarget{coordonnees_8h_abd2d0de1459a2cfc78fd6e5afbdc11a5}{}\label{coordonnees_8h_abd2d0de1459a2cfc78fd6e5afbdc11a5}
+
+
+Retourne des coordonnées de la case à droite d\textquotesingle{}une structure de coordonnée. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em coord} & Pointeur sur les coordonnées de reference \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Les coordonnées de la case à droite 
+\end{DoxyReturn}
+\index{coordonnees.\+h@{coordonnees.\+h}!get\+Coord\+Case\+Droite\+By\+X\+Y\+\_\+terr@{get\+Coord\+Case\+Droite\+By\+X\+Y\+\_\+terr}}
+\index{get\+Coord\+Case\+Droite\+By\+X\+Y\+\_\+terr@{get\+Coord\+Case\+Droite\+By\+X\+Y\+\_\+terr}!coordonnees.\+h@{coordonnees.\+h}}
+\subsubsection[{\texorpdfstring{get\+Coord\+Case\+Droite\+By\+X\+Y\+\_\+terr(int x, int y)}{getCoordCaseDroiteByXY_terr(int x, int y)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Coordonnees} get\+Coord\+Case\+Droite\+By\+X\+Y\+\_\+terr (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{coordonnees_8h_aafd58dbb37b1ce271a97809e08abd978}{}\label{coordonnees_8h_aafd58dbb37b1ce271a97809e08abd978}
+
+
+Retourne des coordonnées de la case à droite des coordonnées X/Y. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em x} & La coordonnées en X \\
+\hline
+{\em y} & La coordonnées en Y \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Les coordonnées de la case à droite 
+\end{DoxyReturn}
+\index{coordonnees.\+h@{coordonnees.\+h}!get\+Coord\+Case\+Gauche\+By\+Coord\+\_\+terr@{get\+Coord\+Case\+Gauche\+By\+Coord\+\_\+terr}}
+\index{get\+Coord\+Case\+Gauche\+By\+Coord\+\_\+terr@{get\+Coord\+Case\+Gauche\+By\+Coord\+\_\+terr}!coordonnees.\+h@{coordonnees.\+h}}
+\subsubsection[{\texorpdfstring{get\+Coord\+Case\+Gauche\+By\+Coord\+\_\+terr(\+Coordonnees $\ast$p\+Coord)}{getCoordCaseGaucheByCoord_terr(Coordonnees *pCoord)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Coordonnees} get\+Coord\+Case\+Gauche\+By\+Coord\+\_\+terr (
+\begin{DoxyParamCaption}
+\item[{{\bf Coordonnees} $\ast$}]{p\+Coord}
+\end{DoxyParamCaption}
+)}\hypertarget{coordonnees_8h_a28bf00e63c6736da38f1e2f2913ce11d}{}\label{coordonnees_8h_a28bf00e63c6736da38f1e2f2913ce11d}
+
+
+Retourne des coordonnées de la case à gauche d\textquotesingle{}une structure de coordonnée. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em coord} & Pointeur sur les coordonnées de reference \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Les coordonnées de la case à gauche 
+\end{DoxyReturn}
+\index{coordonnees.\+h@{coordonnees.\+h}!get\+Coord\+Case\+Gauche\+By\+X\+Y\+\_\+terr@{get\+Coord\+Case\+Gauche\+By\+X\+Y\+\_\+terr}}
+\index{get\+Coord\+Case\+Gauche\+By\+X\+Y\+\_\+terr@{get\+Coord\+Case\+Gauche\+By\+X\+Y\+\_\+terr}!coordonnees.\+h@{coordonnees.\+h}}
+\subsubsection[{\texorpdfstring{get\+Coord\+Case\+Gauche\+By\+X\+Y\+\_\+terr(int x, int y)}{getCoordCaseGaucheByXY_terr(int x, int y)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Coordonnees} get\+Coord\+Case\+Gauche\+By\+X\+Y\+\_\+terr (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{coordonnees_8h_abd0e04f3069639088754f073df30b8d2}{}\label{coordonnees_8h_abd0e04f3069639088754f073df30b8d2}
+
+
+Retourne des coordonnées de la case à gauche des coordonnées X/Y. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em x} & La coordonnées en X \\
+\hline
+{\em y} & La coordonnées en Y \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Les coordonnées de la case à gauche 
+\end{DoxyReturn}
+\index{coordonnees.\+h@{coordonnees.\+h}!get\+Coord\+Case\+Haut\+By\+Coord\+\_\+terr@{get\+Coord\+Case\+Haut\+By\+Coord\+\_\+terr}}
+\index{get\+Coord\+Case\+Haut\+By\+Coord\+\_\+terr@{get\+Coord\+Case\+Haut\+By\+Coord\+\_\+terr}!coordonnees.\+h@{coordonnees.\+h}}
+\subsubsection[{\texorpdfstring{get\+Coord\+Case\+Haut\+By\+Coord\+\_\+terr(\+Coordonnees $\ast$p\+Coord)}{getCoordCaseHautByCoord_terr(Coordonnees *pCoord)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Coordonnees} get\+Coord\+Case\+Haut\+By\+Coord\+\_\+terr (
+\begin{DoxyParamCaption}
+\item[{{\bf Coordonnees} $\ast$}]{p\+Coord}
+\end{DoxyParamCaption}
+)}\hypertarget{coordonnees_8h_a6a86c1be1c447447b80acb0c560dcae6}{}\label{coordonnees_8h_a6a86c1be1c447447b80acb0c560dcae6}
+
+
+Retourne des coordonnées de la case en haut d\textquotesingle{}une structure de coordonnée. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em coord} & Pointeur sur les coordonnées de reference \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Les coordonnées de la case en haut 
+\end{DoxyReturn}
+\index{coordonnees.\+h@{coordonnees.\+h}!get\+Coord\+Case\+Haut\+By\+X\+Y\+\_\+terr@{get\+Coord\+Case\+Haut\+By\+X\+Y\+\_\+terr}}
+\index{get\+Coord\+Case\+Haut\+By\+X\+Y\+\_\+terr@{get\+Coord\+Case\+Haut\+By\+X\+Y\+\_\+terr}!coordonnees.\+h@{coordonnees.\+h}}
+\subsubsection[{\texorpdfstring{get\+Coord\+Case\+Haut\+By\+X\+Y\+\_\+terr(int x, int y)}{getCoordCaseHautByXY_terr(int x, int y)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Coordonnees} get\+Coord\+Case\+Haut\+By\+X\+Y\+\_\+terr (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{coordonnees_8h_a1a7a40e1f4d1aa2e24701a0d3e9082b1}{}\label{coordonnees_8h_a1a7a40e1f4d1aa2e24701a0d3e9082b1}
+
+
+Retourne des coordonnées de la case en haut des coordonnées X/Y. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em x} & La coordonnées en X \\
+\hline
+{\em y} & La coordonnées en Y \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Les coordonnées de la case en haut 
+\end{DoxyReturn}
+\index{coordonnees.\+h@{coordonnees.\+h}!get\+Coord\+Case\+H\+D\+By\+Coord\+\_\+terr@{get\+Coord\+Case\+H\+D\+By\+Coord\+\_\+terr}}
+\index{get\+Coord\+Case\+H\+D\+By\+Coord\+\_\+terr@{get\+Coord\+Case\+H\+D\+By\+Coord\+\_\+terr}!coordonnees.\+h@{coordonnees.\+h}}
+\subsubsection[{\texorpdfstring{get\+Coord\+Case\+H\+D\+By\+Coord\+\_\+terr(\+Coordonnees $\ast$p\+Coord)}{getCoordCaseHDByCoord_terr(Coordonnees *pCoord)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Coordonnees} get\+Coord\+Case\+H\+D\+By\+Coord\+\_\+terr (
+\begin{DoxyParamCaption}
+\item[{{\bf Coordonnees} $\ast$}]{p\+Coord}
+\end{DoxyParamCaption}
+)}\hypertarget{coordonnees_8h_a1a988653b61291da9700913a893cfe14}{}\label{coordonnees_8h_a1a988653b61291da9700913a893cfe14}
+
+
+Retourne des coordonnées de la case en haut à droite à partir de coordonnées. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em coord} & Pointeur vers les coordonnées de référence \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Les coordonnées de la 2eme case en haut à droite 
+\end{DoxyReturn}
+\index{coordonnees.\+h@{coordonnees.\+h}!get\+Coord\+Case\+H\+D\+By\+X\+Y\+\_\+terr@{get\+Coord\+Case\+H\+D\+By\+X\+Y\+\_\+terr}}
+\index{get\+Coord\+Case\+H\+D\+By\+X\+Y\+\_\+terr@{get\+Coord\+Case\+H\+D\+By\+X\+Y\+\_\+terr}!coordonnees.\+h@{coordonnees.\+h}}
+\subsubsection[{\texorpdfstring{get\+Coord\+Case\+H\+D\+By\+X\+Y\+\_\+terr(int x, int y)}{getCoordCaseHDByXY_terr(int x, int y)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Coordonnees} get\+Coord\+Case\+H\+D\+By\+X\+Y\+\_\+terr (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{coordonnees_8h_a296239d2fde59208ca18f88b380b0e2c}{}\label{coordonnees_8h_a296239d2fde59208ca18f88b380b0e2c}
+
+
+Retourne des coordonnées de la case en haut à droite des coordonnées X/Y. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em x} & La coordonnées en X \\
+\hline
+{\em y} & La coordonnées en Y \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Les coordonnées de la case en haut à droite 
+\end{DoxyReturn}
+\index{coordonnees.\+h@{coordonnees.\+h}!get\+Coord\+Case\+H\+G\+By\+Coord\+\_\+terr@{get\+Coord\+Case\+H\+G\+By\+Coord\+\_\+terr}}
+\index{get\+Coord\+Case\+H\+G\+By\+Coord\+\_\+terr@{get\+Coord\+Case\+H\+G\+By\+Coord\+\_\+terr}!coordonnees.\+h@{coordonnees.\+h}}
+\subsubsection[{\texorpdfstring{get\+Coord\+Case\+H\+G\+By\+Coord\+\_\+terr(\+Coordonnees $\ast$p\+Coord)}{getCoordCaseHGByCoord_terr(Coordonnees *pCoord)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Coordonnees} get\+Coord\+Case\+H\+G\+By\+Coord\+\_\+terr (
+\begin{DoxyParamCaption}
+\item[{{\bf Coordonnees} $\ast$}]{p\+Coord}
+\end{DoxyParamCaption}
+)}\hypertarget{coordonnees_8h_a096126ba60788fa3cb8c14c12c3777d1}{}\label{coordonnees_8h_a096126ba60788fa3cb8c14c12c3777d1}
+
+
+Retourne des coordonnées de la case en haut à gauche à partir de coordonnées. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em coord} & Pointeur vers les coordonnées de référence \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Les coordonnées de la 2eme case en haut à gauche 
+\end{DoxyReturn}
+\index{coordonnees.\+h@{coordonnees.\+h}!get\+Coord\+Case\+H\+G\+By\+X\+Y\+\_\+terr@{get\+Coord\+Case\+H\+G\+By\+X\+Y\+\_\+terr}}
+\index{get\+Coord\+Case\+H\+G\+By\+X\+Y\+\_\+terr@{get\+Coord\+Case\+H\+G\+By\+X\+Y\+\_\+terr}!coordonnees.\+h@{coordonnees.\+h}}
+\subsubsection[{\texorpdfstring{get\+Coord\+Case\+H\+G\+By\+X\+Y\+\_\+terr(int x, int y)}{getCoordCaseHGByXY_terr(int x, int y)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Coordonnees} get\+Coord\+Case\+H\+G\+By\+X\+Y\+\_\+terr (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{coordonnees_8h_a7e5298523f25d3bdb07082149740b6dc}{}\label{coordonnees_8h_a7e5298523f25d3bdb07082149740b6dc}
+
+
+Retourne des coordonnées de la case en haut à gauche des coordonnées X/Y. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em x} & La coordonnées en X \\
+\hline
+{\em y} & La coordonnées en Y \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Les coordonnées de la case en haut à gauche 
+\end{DoxyReturn}
+\index{coordonnees.\+h@{coordonnees.\+h}!get\+X\+Coord\+\_\+\+Coord@{get\+X\+Coord\+\_\+\+Coord}}
+\index{get\+X\+Coord\+\_\+\+Coord@{get\+X\+Coord\+\_\+\+Coord}!coordonnees.\+h@{coordonnees.\+h}}
+\subsubsection[{\texorpdfstring{get\+X\+Coord\+\_\+\+Coord(\+Coordonnees $\ast$p\+Coord)}{getXCoord_Coord(Coordonnees *pCoord)}}]{\setlength{\rightskip}{0pt plus 5cm}int get\+X\+Coord\+\_\+\+Coord (
+\begin{DoxyParamCaption}
+\item[{{\bf Coordonnees} $\ast$}]{p\+Coord}
+\end{DoxyParamCaption}
+)}\hypertarget{coordonnees_8h_a48eda9077b4d340681e26693e29c8195}{}\label{coordonnees_8h_a48eda9077b4d340681e26693e29c8195}
+
+
+Recupère x\+Coord. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Coord} & Pointeur sur la structure Coordonnees à lire \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+La valeur de x\+Coord 
+\end{DoxyReturn}
+\index{coordonnees.\+h@{coordonnees.\+h}!get\+Y\+Coord\+\_\+\+Coord@{get\+Y\+Coord\+\_\+\+Coord}}
+\index{get\+Y\+Coord\+\_\+\+Coord@{get\+Y\+Coord\+\_\+\+Coord}!coordonnees.\+h@{coordonnees.\+h}}
+\subsubsection[{\texorpdfstring{get\+Y\+Coord\+\_\+\+Coord(\+Coordonnees $\ast$p\+Coord)}{getYCoord_Coord(Coordonnees *pCoord)}}]{\setlength{\rightskip}{0pt plus 5cm}int get\+Y\+Coord\+\_\+\+Coord (
+\begin{DoxyParamCaption}
+\item[{{\bf Coordonnees} $\ast$}]{p\+Coord}
+\end{DoxyParamCaption}
+)}\hypertarget{coordonnees_8h_a40d9c810656479195c388fa1c776d6d8}{}\label{coordonnees_8h_a40d9c810656479195c388fa1c776d6d8}
+
+
+Recupère y\+Coord. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Coord} & Pointeur sur la structure Coordonnees à lire \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+La valeur de Y\+Coord 
+\end{DoxyReturn}
+\index{coordonnees.\+h@{coordonnees.\+h}!init\+Coordonnees\+\_\+coord@{init\+Coordonnees\+\_\+coord}}
+\index{init\+Coordonnees\+\_\+coord@{init\+Coordonnees\+\_\+coord}!coordonnees.\+h@{coordonnees.\+h}}
+\subsubsection[{\texorpdfstring{init\+Coordonnees\+\_\+coord(int x, int y)}{initCoordonnees_coord(int x, int y)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Coordonnees}$\ast$ init\+Coordonnees\+\_\+coord (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{coordonnees_8h_aefad4fcb9d51c146999a9b0ee90e6b62}{}\label{coordonnees_8h_aefad4fcb9d51c146999a9b0ee90e6b62}
+
+
+Crée et initialise des coordonnées avec les valeur XY. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em x} & Entier de valeur de X \\
+\hline
+{\em y} & Entier de valeur de Y \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Des coordonnées initialisées 
+\end{DoxyReturn}
+\index{coordonnees.\+h@{coordonnees.\+h}!set\+X\+Coord\+\_\+\+Coord@{set\+X\+Coord\+\_\+\+Coord}}
+\index{set\+X\+Coord\+\_\+\+Coord@{set\+X\+Coord\+\_\+\+Coord}!coordonnees.\+h@{coordonnees.\+h}}
+\subsubsection[{\texorpdfstring{set\+X\+Coord\+\_\+\+Coord(int x, Coordonnees $\ast$p\+Coord)}{setXCoord_Coord(int x, Coordonnees *pCoord)}}]{\setlength{\rightskip}{0pt plus 5cm}void set\+X\+Coord\+\_\+\+Coord (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{{\bf Coordonnees} $\ast$}]{p\+Coord}
+\end{DoxyParamCaption}
+)}\hypertarget{coordonnees_8h_a8aff12a5cb5f0533906de5d33d6b70c7}{}\label{coordonnees_8h_a8aff12a5cb5f0533906de5d33d6b70c7}
+
+
+Edition de x\+Coord dans la structure. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em x} & Valeur sur l\textquotesingle{}axe des x \\
+\hline
+{\em p\+Coord} & Pointeur sur la structure Coordonnees à editer \\
+\hline
+\end{DoxyParams}
+\index{coordonnees.\+h@{coordonnees.\+h}!set\+X\+Y\+Coord\+\_\+\+Coord@{set\+X\+Y\+Coord\+\_\+\+Coord}}
+\index{set\+X\+Y\+Coord\+\_\+\+Coord@{set\+X\+Y\+Coord\+\_\+\+Coord}!coordonnees.\+h@{coordonnees.\+h}}
+\subsubsection[{\texorpdfstring{set\+X\+Y\+Coord\+\_\+\+Coord(int x, int y, Coordonnees $\ast$p\+Coord)}{setXYCoord_Coord(int x, int y, Coordonnees *pCoord)}}]{\setlength{\rightskip}{0pt plus 5cm}void set\+X\+Y\+Coord\+\_\+\+Coord (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{{\bf Coordonnees} $\ast$}]{p\+Coord}
+\end{DoxyParamCaption}
+)}\hypertarget{coordonnees_8h_a0551295b10d2256fdc606611c3f7bb8b}{}\label{coordonnees_8h_a0551295b10d2256fdc606611c3f7bb8b}
+
+
+Edition de x\+Coord et de y\+Coord dans la structure. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em x\+Coord} & Valeur sur l\textquotesingle{}axe des x \\
+\hline
+{\em y\+Coord} & Valeur sur l\textquotesingle{}axe des y \\
+\hline
+{\em p\+Coord} & Pointeur sur la structure Coordonnees à editer \\
+\hline
+\end{DoxyParams}
+\index{coordonnees.\+h@{coordonnees.\+h}!set\+Y\+Coord\+\_\+\+Coord@{set\+Y\+Coord\+\_\+\+Coord}}
+\index{set\+Y\+Coord\+\_\+\+Coord@{set\+Y\+Coord\+\_\+\+Coord}!coordonnees.\+h@{coordonnees.\+h}}
+\subsubsection[{\texorpdfstring{set\+Y\+Coord\+\_\+\+Coord(int y, Coordonnees $\ast$p\+Coord)}{setYCoord_Coord(int y, Coordonnees *pCoord)}}]{\setlength{\rightskip}{0pt plus 5cm}void set\+Y\+Coord\+\_\+\+Coord (
+\begin{DoxyParamCaption}
+\item[{int}]{y, }
+\item[{{\bf Coordonnees} $\ast$}]{p\+Coord}
+\end{DoxyParamCaption}
+)}\hypertarget{coordonnees_8h_ab348ef93b59b6b652cdeff4bcc65463e}{}\label{coordonnees_8h_ab348ef93b59b6b652cdeff4bcc65463e}
+
+
+Edition de y\+Coord dans la structure. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em y} & Valeur sur l\textquotesingle{}axe des y \\
+\hline
+{\em p\+Coord} & Pointeur sur la structure Coordonnees à editer \\
+\hline
+\end{DoxyParams}
+\index{coordonnees.\+h@{coordonnees.\+h}!sont\+Egale\+\_\+\+Coord@{sont\+Egale\+\_\+\+Coord}}
+\index{sont\+Egale\+\_\+\+Coord@{sont\+Egale\+\_\+\+Coord}!coordonnees.\+h@{coordonnees.\+h}}
+\subsubsection[{\texorpdfstring{sont\+Egale\+\_\+\+Coord(\+Coordonnees $\ast$p\+Coord1, Coordonnees $\ast$p\+Coord2)}{sontEgale_Coord(Coordonnees *pCoord1, Coordonnees *pCoord2)}}]{\setlength{\rightskip}{0pt plus 5cm}int sont\+Egale\+\_\+\+Coord (
+\begin{DoxyParamCaption}
+\item[{{\bf Coordonnees} $\ast$}]{p\+Coord1, }
+\item[{{\bf Coordonnees} $\ast$}]{p\+Coord2}
+\end{DoxyParamCaption}
+)}\hypertarget{coordonnees_8h_a15ae1d9835553c9ff38e0ee0ff6db8f5}{}\label{coordonnees_8h_a15ae1d9835553c9ff38e0ee0ff6db8f5}
+
+
+Vérifie si deux Coordonnees donné sont identiques. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em coord1} & Coordonnees de la premier entitée \\
+\hline
+{\em coord2} & Coordonnees de la seconde entitée \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Retourne 1 si elles sont identique, 0 sinon 
+\end{DoxyReturn}
+\index{coordonnees.\+h@{coordonnees.\+h}!testament\+Coord@{testament\+Coord}}
+\index{testament\+Coord@{testament\+Coord}!coordonnees.\+h@{coordonnees.\+h}}
+\subsubsection[{\texorpdfstring{testament\+Coord(\+Coordonnees $\ast$p\+Coord)}{testamentCoord(Coordonnees *pCoord)}}]{\setlength{\rightskip}{0pt plus 5cm}void testament\+Coord (
+\begin{DoxyParamCaption}
+\item[{{\bf Coordonnees} $\ast$}]{p\+Coord}
+\end{DoxyParamCaption}
+)}\hypertarget{coordonnees_8h_a23c06b4d17cdb6008e96945dfd2ab043}{}\label{coordonnees_8h_a23c06b4d17cdb6008e96945dfd2ab043}
+
+
+Détruit et libère des coordonnées. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em coord} & Les coordonnées a liberer et détruire \\
+\hline
+\end{DoxyParams}
+\index{coordonnees.\+h@{coordonnees.\+h}!test\+Fonctions\+\_\+\+Coord@{test\+Fonctions\+\_\+\+Coord}}
+\index{test\+Fonctions\+\_\+\+Coord@{test\+Fonctions\+\_\+\+Coord}!coordonnees.\+h@{coordonnees.\+h}}
+\subsubsection[{\texorpdfstring{test\+Fonctions\+\_\+\+Coord()}{testFonctions_Coord()}}]{\setlength{\rightskip}{0pt plus 5cm}void test\+Fonctions\+\_\+\+Coord (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{coordonnees_8h_abe42b4ebb96328b33c08361965c79512}{}\label{coordonnees_8h_abe42b4ebb96328b33c08361965c79512}
+
+
+Fontion de test des fonctions du module Coordonnees. 
+
